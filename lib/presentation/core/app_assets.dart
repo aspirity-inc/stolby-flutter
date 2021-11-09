@@ -34,3 +34,7 @@ class AppImages {
       "assets/images/pic_pic_vtorojstolb_2.jpg";
   static const String zhabaicypaImage = "assets/images/pic_zhabaicypa.jpg";
 }
+
+class AppDatabase {
+  static const String dataBasePath = "assets/rocks.db";
+}
