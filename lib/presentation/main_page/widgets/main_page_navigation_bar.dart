@@ -29,8 +29,8 @@ class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
 
     return SafeArea(
       child: BottomNavigationBar(
-        currentIndex: currentIndex,
         backgroundColor: Colors.transparent,
+        currentIndex: currentIndex,
         elevation: 0,
         selectedItemColor: Colors.white,
         showUnselectedLabels: false,

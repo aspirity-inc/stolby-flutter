@@ -14,21 +14,20 @@ class AppBottomNavigationBarItem extends StatelessWidget {
     return SizedBox(
       height: 80,
       child: AnimatedContainer(
-        margin: selected ? EdgeInsets.zero : EdgeInsets.only(top: 48),
+        margin: selected
+            ? EdgeInsets.zero
+            : EdgeInsets.only(
+                top: 48,
+              ),
+        height: selected ? 64 : 24,
+        width: selected ? 64 : 24,
+        decoration: BoxDecoration(
+          color: Color(0xFF009688),
+          shape: BoxShape.circle,
+        ),
         duration: const Duration(milliseconds: 64),
         child: Stack(
           children: [
-            Center(
-              child: AnimatedContainer(
-                height: selected ? 64 : 0,
-                width: selected ? 64 : 0,
-                decoration: BoxDecoration(
-                  color: Color(0xFF009688),
-                  shape: BoxShape.circle,
-                ),
-                duration: const Duration(milliseconds: 300),
-              ),
-            ),
             Center(
               child: AnimatedContainer(
                 height: selected ? 48 : 0,
