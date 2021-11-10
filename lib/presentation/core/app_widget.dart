@@ -19,6 +19,7 @@ class StolbyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      debugShowCheckedModeBanner: false,
       supportedLocales: [
         Locale('en', ''),
         Locale('ru', ''),

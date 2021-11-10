@@ -55,6 +55,7 @@ dependencies:
   flutter_svg: ^0.23.0+1
   smooth_page_indicator: ^1.0.0+2
   fluttertoast: ^8.0.8
+  animations: ^2.0.2
 
   # Social media sharing
   share_plus: ^3.0.4

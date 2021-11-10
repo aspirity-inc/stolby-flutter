@@ -4,7 +4,16 @@ class RocksPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Rocks'),
+      backgroundColor: Colors.lightGreen,
+      body: Center(
+        child: Container(
+          width: 100,
+          height: 100,
+          color: Colors.red,
+          child: const Text('Rocks was not implemented'),
+          // TODO: implement rocks page
+        ),
+      ),
     );
   }
 }

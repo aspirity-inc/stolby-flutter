@@ -16,6 +16,7 @@ import '../map_page/map_page.dart' as _i3;
 import '../rocks_page/rocks_page.dart' as _i4;
 import '../setting_page/settings_page.dart' as _i5;
 import '../splash_page/splash_page.dart' as _i1;
+import 'app_router_transaction_builders.dart' as _i8;
 
 class AppRouter extends _i6.RootStackRouter {
   AppRouter([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
@@ -32,16 +33,34 @@ class AppRouter extends _i6.RootStackRouter {
           routeData: routeData, child: _i2.MainPage());
     },
     MapRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i3.MapPage());
+      return _i6.CustomPage<dynamic>(
+          routeData: routeData,
+          child: _i3.MapPage(),
+          transitionsBuilder: _i8.AppRouteTransitionsBuilders.zoomIn,
+          durationInMilliseconds: 500,
+          reverseDurationInMilliseconds: 500,
+          opaque: true,
+          barrierDismissible: false);
     },
     RocksRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i4.RocksPage());
+      return _i6.CustomPage<dynamic>(
+          routeData: routeData,
+          child: _i4.RocksPage(),
+          transitionsBuilder: _i8.AppRouteTransitionsBuilders.zoomIn,
+          durationInMilliseconds: 500,
+          reverseDurationInMilliseconds: 500,
+          opaque: true,
+          barrierDismissible: false);
     },
     SettingsRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i5.SettingsPage());
+      return _i6.CustomPage<dynamic>(
+          routeData: routeData,
+          child: _i5.SettingsPage(),
+          transitionsBuilder: _i8.AppRouteTransitionsBuilders.zoomIn,
+          durationInMilliseconds: 500,
+          reverseDurationInMilliseconds: 500,
+          opaque: true,
+          barrierDismissible: false);
     }
   };
 
@@ -49,8 +68,7 @@ class AppRouter extends _i6.RootStackRouter {
   List<_i6.RouteConfig> get routes => [
         _i6.RouteConfig(SplashRoute.name, path: '/'),
         _i6.RouteConfig(MainRoute.name, path: '/main-page', children: [
-          _i6.RouteConfig(MapRoute.name,
-              path: 'map-page', parent: MainRoute.name),
+          _i6.RouteConfig(MapRoute.name, path: '', parent: MainRoute.name),
           _i6.RouteConfig(RocksRoute.name,
               path: 'rocks-page', parent: MainRoute.name),
           _i6.RouteConfig(SettingsRoute.name,
@@ -76,7 +94,7 @@ class MainRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for [_i3.MapPage]
 class MapRoute extends _i6.PageRouteInfo<void> {
-  const MapRoute() : super(name, path: 'map-page');
+  const MapRoute() : super(name, path: '');
 
   static const String name = 'MapRoute';
 }
