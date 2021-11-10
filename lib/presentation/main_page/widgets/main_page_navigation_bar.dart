@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/presentation/main_page/widgets/app_bottom_navigation_bar_item.dart';
 
@@ -34,7 +35,7 @@ class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
         selectedItemColor: Colors.white,
         showUnselectedLabels: false,
         selectedLabelStyle: const TextStyle(
-          fontSize: 16,
+          fontSize: 12,
           fontWeight: FontWeight.w700,
         ),
         items: [
@@ -49,7 +50,7 @@ class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
             label: localization.appbar_title_rocks,
             icon: AppBottomNavigationBarItem(
               selected: currentIndex == 1,
-              icon: Icons.add,
+              icon: CommunityMaterialIcons.image_filter_hdr,
             ),
           ),
           BottomNavigationBarItem(
