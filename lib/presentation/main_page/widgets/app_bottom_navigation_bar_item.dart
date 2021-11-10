@@ -16,12 +16,12 @@ class AppBottomNavigationBarItem extends StatelessWidget {
       child: AnimatedContainer(
         margin: selected
             ? EdgeInsets.zero
-            : EdgeInsets.only(
+            : const EdgeInsets.only(
                 top: 48,
               ),
         height: selected ? 64 : 24,
         width: selected ? 64 : 24,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFF009688),
           shape: BoxShape.circle,
         ),
@@ -32,7 +32,7 @@ class AppBottomNavigationBarItem extends StatelessWidget {
               child: AnimatedContainer(
                 height: selected ? 48 : 0,
                 width: selected ? 48 : 0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white24,
                   shape: BoxShape.circle,
                 ),
@@ -43,7 +43,7 @@ class AppBottomNavigationBarItem extends StatelessWidget {
               child: AnimatedContainer(
                 height: selected ? 32 : 0,
                 width: selected ? 32 : 0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white24,
                   shape: BoxShape.circle,
                 ),

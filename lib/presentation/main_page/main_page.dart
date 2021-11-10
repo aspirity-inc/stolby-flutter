@@ -6,23 +6,34 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Material(
-        color: Color(0xFF009688),
-        child: SafeArea(
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 64.0),
-                child: const AutoRouter(),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: MainPageNavigationBar(),
-              ),
-            ],
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          const SafeArea(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 64.0),
+              child: AutoRouter(),
+            ),
           ),
-        ),
+          Positioned(
+            left: 0,
+            bottom: 0,
+            right: 0,
+            child: Container(
+              color: const Color(0xFF009688),
+              child: const SafeArea(
+                top: false,
+                child: SizedBox(
+                  height: 64,
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: MainPageNavigationBar(),
+          ),
+        ],
       ),
     );
   }
