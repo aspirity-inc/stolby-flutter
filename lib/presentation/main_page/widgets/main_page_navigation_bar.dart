@@ -16,7 +16,6 @@ class MainPageNavigationBar extends StatefulWidget implements AutoRouteWrapper {
 
 class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
   int currentIndex = 0;
-  final List<IconData> items = [Icons.map, Icons.add, Icons.settings];
   final List<PageRouteInfo> routes = const [
     MapRoute(),
     RocksRoute(),
@@ -26,39 +25,38 @@ class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
-    final List<String> labels = [
-      localization.appbar_title_map,
-      localization.appbar_title_rocks,
-      localization.appbar_title_settings,
-    ];
 
     return SafeArea(
       child: BottomNavigationBar(
+        currentIndex: currentIndex,
         backgroundColor: Colors.transparent,
         elevation: 0,
+        selectedItemColor: Colors.white,
+        showUnselectedLabels: false,
+        selectedLabelStyle: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+        ),
         items: [
           BottomNavigationBarItem(
-            label: '',
+            label: localization.appbar_title_map,
             icon: AppBottomNavigationBarItem(
-              label: labels[0],
-              icon: items[0],
               selected: currentIndex == 0,
+              icon: Icons.map,
             ),
           ),
           BottomNavigationBarItem(
-            label: '',
+            label: localization.appbar_title_rocks,
             icon: AppBottomNavigationBarItem(
-              label: labels[1],
-              icon: items[1],
               selected: currentIndex == 1,
+              icon: Icons.add,
             ),
           ),
           BottomNavigationBarItem(
-            label: '',
+            label: localization.appbar_title_settings,
             icon: AppBottomNavigationBarItem(
-              label: labels[2],
-              icon: items[2],
               selected: currentIndex == 2,
+              icon: Icons.settings,
             ),
           ),
         ],
