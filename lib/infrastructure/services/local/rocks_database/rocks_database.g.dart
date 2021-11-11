@@ -12,12 +12,14 @@ class Rock extends DataClass implements Insertable<Rock> {
   final double latitude;
   final double longitude;
   final int height;
+  final int difficulty;
   final String pic_name;
   Rock(
       {required this.id,
       required this.latitude,
       required this.longitude,
       required this.height,
+      required this.difficulty,
       required this.pic_name});
   factory Rock.fromData(Map<String, dynamic> data, {String? prefix}) {
     final effectivePrefix = prefix ?? '';
@@ -30,6 +32,8 @@ class Rock extends DataClass implements Insertable<Rock> {
           .mapFromDatabaseResponse(data['${effectivePrefix}longitude'])!,
       height: const IntType()
           .mapFromDatabaseResponse(data['${effectivePrefix}height'])!,
+      difficulty: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}difficulty'])!,
       pic_name: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}PicName'])!,
     );
@@ -41,6 +45,7 @@ class Rock extends DataClass implements Insertable<Rock> {
     map['latitude'] = Variable<double>(latitude);
     map['longitude'] = Variable<double>(longitude);
     map['height'] = Variable<int>(height);
+    map['difficulty'] = Variable<int>(difficulty);
     map['PicName'] = Variable<String>(pic_name);
     return map;
   }
@@ -51,6 +56,7 @@ class Rock extends DataClass implements Insertable<Rock> {
       latitude: Value(latitude),
       longitude: Value(longitude),
       height: Value(height),
+      difficulty: Value(difficulty),
       pic_name: Value(pic_name),
     );
   }
@@ -63,6 +69,7 @@ class Rock extends DataClass implements Insertable<Rock> {
       latitude: serializer.fromJson<double>(json['latitude']),
       longitude: serializer.fromJson<double>(json['longitude']),
       height: serializer.fromJson<int>(json['height']),
+      difficulty: serializer.fromJson<int>(json['difficulty']),
       pic_name: serializer.fromJson<String>(json['pic_name']),
     );
   }
@@ -74,6 +81,7 @@ class Rock extends DataClass implements Insertable<Rock> {
       'latitude': serializer.toJson<double>(latitude),
       'longitude': serializer.toJson<double>(longitude),
       'height': serializer.toJson<int>(height),
+      'difficulty': serializer.toJson<int>(difficulty),
       'pic_name': serializer.toJson<String>(pic_name),
     };
   }
@@ -83,12 +91,14 @@ class Rock extends DataClass implements Insertable<Rock> {
           double? latitude,
           double? longitude,
           int? height,
+          int? difficulty,
           String? pic_name}) =>
       Rock(
         id: id ?? this.id,
         latitude: latitude ?? this.latitude,
         longitude: longitude ?? this.longitude,
         height: height ?? this.height,
+        difficulty: difficulty ?? this.difficulty,
         pic_name: pic_name ?? this.pic_name,
       );
   @override
@@ -98,13 +108,15 @@ class Rock extends DataClass implements Insertable<Rock> {
           ..write('latitude: $latitude, ')
           ..write('longitude: $longitude, ')
           ..write('height: $height, ')
+          ..write('difficulty: $difficulty, ')
           ..write('pic_name: $pic_name')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, latitude, longitude, height, pic_name);
+  int get hashCode =>
+      Object.hash(id, latitude, longitude, height, difficulty, pic_name);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -113,6 +125,7 @@ class Rock extends DataClass implements Insertable<Rock> {
           other.latitude == this.latitude &&
           other.longitude == this.longitude &&
           other.height == this.height &&
+          other.difficulty == this.difficulty &&
           other.pic_name == this.pic_name);
 }
 
@@ -121,12 +134,14 @@ class RocksCompanion extends UpdateCompanion<Rock> {
   final Value<double> latitude;
   final Value<double> longitude;
   final Value<int> height;
+  final Value<int> difficulty;
   final Value<String> pic_name;
   const RocksCompanion({
     this.id = const Value.absent(),
     this.latitude = const Value.absent(),
     this.longitude = const Value.absent(),
     this.height = const Value.absent(),
+    this.difficulty = const Value.absent(),
     this.pic_name = const Value.absent(),
   });
   RocksCompanion.insert({
@@ -134,16 +149,19 @@ class RocksCompanion extends UpdateCompanion<Rock> {
     required double latitude,
     required double longitude,
     required int height,
+    required int difficulty,
     required String pic_name,
   })  : latitude = Value(latitude),
         longitude = Value(longitude),
         height = Value(height),
+        difficulty = Value(difficulty),
         pic_name = Value(pic_name);
   static Insertable<Rock> custom({
     Expression<int>? id,
     Expression<double>? latitude,
     Expression<double>? longitude,
     Expression<int>? height,
+    Expression<int>? difficulty,
     Expression<String>? pic_name,
   }) {
     return RawValuesInsertable({
@@ -151,6 +169,7 @@ class RocksCompanion extends UpdateCompanion<Rock> {
       if (latitude != null) 'latitude': latitude,
       if (longitude != null) 'longitude': longitude,
       if (height != null) 'height': height,
+      if (difficulty != null) 'difficulty': difficulty,
       if (pic_name != null) 'PicName': pic_name,
     });
   }
@@ -160,12 +179,14 @@ class RocksCompanion extends UpdateCompanion<Rock> {
       Value<double>? latitude,
       Value<double>? longitude,
       Value<int>? height,
+      Value<int>? difficulty,
       Value<String>? pic_name}) {
     return RocksCompanion(
       id: id ?? this.id,
       latitude: latitude ?? this.latitude,
       longitude: longitude ?? this.longitude,
       height: height ?? this.height,
+      difficulty: difficulty ?? this.difficulty,
       pic_name: pic_name ?? this.pic_name,
     );
   }
@@ -185,6 +206,9 @@ class RocksCompanion extends UpdateCompanion<Rock> {
     if (height.present) {
       map['height'] = Variable<int>(height.value);
     }
+    if (difficulty.present) {
+      map['difficulty'] = Variable<int>(difficulty.value);
+    }
     if (pic_name.present) {
       map['PicName'] = Variable<String>(pic_name.value);
     }
@@ -198,6 +222,7 @@ class RocksCompanion extends UpdateCompanion<Rock> {
           ..write('latitude: $latitude, ')
           ..write('longitude: $longitude, ')
           ..write('height: $height, ')
+          ..write('difficulty: $difficulty, ')
           ..write('pic_name: $pic_name')
           ..write(')'))
         .toString();
@@ -224,13 +249,17 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
   late final GeneratedColumn<int?> height = GeneratedColumn<int?>(
       'height', aliasedName, false,
       typeName: 'INTEGER', requiredDuringInsert: true);
+  final VerificationMeta _difficultyMeta = const VerificationMeta('difficulty');
+  late final GeneratedColumn<int?> difficulty = GeneratedColumn<int?>(
+      'difficulty', aliasedName, false,
+      typeName: 'INTEGER', requiredDuringInsert: true);
   final VerificationMeta _pic_nameMeta = const VerificationMeta('pic_name');
   late final GeneratedColumn<String?> pic_name = GeneratedColumn<String?>(
       'PicName', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, latitude, longitude, height, pic_name];
+      [id, latitude, longitude, height, difficulty, pic_name];
   @override
   String get aliasedName => _alias ?? 'rocks';
   @override
@@ -261,6 +290,14 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
     } else if (isInserting) {
       context.missing(_heightMeta);
     }
+    if (data.containsKey('difficulty')) {
+      context.handle(
+          _difficultyMeta,
+          difficulty.isAcceptableOrUnknown(
+              data['difficulty']!, _difficultyMeta));
+    } else if (isInserting) {
+      context.missing(_difficultyMeta);
+    }
     if (data.containsKey('PicName')) {
       context.handle(_pic_nameMeta,
           pic_name.isAcceptableOrUnknown(data['PicName']!, _pic_nameMeta));
@@ -289,12 +326,14 @@ class RocksLocalizedData extends DataClass
   final int id;
   final int rock_id;
   final String language;
+  final String name;
   final String short_info;
   final String full_info;
   RocksLocalizedData(
       {required this.id,
       required this.rock_id,
       required this.language,
+      required this.name,
       required this.short_info,
       required this.full_info});
   factory RocksLocalizedData.fromData(Map<String, dynamic> data,
@@ -307,6 +346,8 @@ class RocksLocalizedData extends DataClass
           .mapFromDatabaseResponse(data['${effectivePrefix}RockId'])!,
       language: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
+      name: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}name'])!,
       short_info: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}ShortInfo'])!,
       full_info: const StringType()
@@ -319,6 +360,7 @@ class RocksLocalizedData extends DataClass
     map['id'] = Variable<int>(id);
     map['RockId'] = Variable<int>(rock_id);
     map['language'] = Variable<String>(language);
+    map['name'] = Variable<String>(name);
     map['ShortInfo'] = Variable<String>(short_info);
     map['FullInfo'] = Variable<String>(full_info);
     return map;
@@ -329,6 +371,7 @@ class RocksLocalizedData extends DataClass
       id: Value(id),
       rock_id: Value(rock_id),
       language: Value(language),
+      name: Value(name),
       short_info: Value(short_info),
       full_info: Value(full_info),
     );
@@ -341,6 +384,7 @@ class RocksLocalizedData extends DataClass
       id: serializer.fromJson<int>(json['id']),
       rock_id: serializer.fromJson<int>(json['rock_id']),
       language: serializer.fromJson<String>(json['language']),
+      name: serializer.fromJson<String>(json['name']),
       short_info: serializer.fromJson<String>(json['short_info']),
       full_info: serializer.fromJson<String>(json['full_info']),
     );
@@ -352,6 +396,7 @@ class RocksLocalizedData extends DataClass
       'id': serializer.toJson<int>(id),
       'rock_id': serializer.toJson<int>(rock_id),
       'language': serializer.toJson<String>(language),
+      'name': serializer.toJson<String>(name),
       'short_info': serializer.toJson<String>(short_info),
       'full_info': serializer.toJson<String>(full_info),
     };
@@ -361,12 +406,14 @@ class RocksLocalizedData extends DataClass
           {int? id,
           int? rock_id,
           String? language,
+          String? name,
           String? short_info,
           String? full_info}) =>
       RocksLocalizedData(
         id: id ?? this.id,
         rock_id: rock_id ?? this.rock_id,
         language: language ?? this.language,
+        name: name ?? this.name,
         short_info: short_info ?? this.short_info,
         full_info: full_info ?? this.full_info,
       );
@@ -376,6 +423,7 @@ class RocksLocalizedData extends DataClass
           ..write('id: $id, ')
           ..write('rock_id: $rock_id, ')
           ..write('language: $language, ')
+          ..write('name: $name, ')
           ..write('short_info: $short_info, ')
           ..write('full_info: $full_info')
           ..write(')'))
@@ -383,7 +431,8 @@ class RocksLocalizedData extends DataClass
   }
 
   @override
-  int get hashCode => Object.hash(id, rock_id, language, short_info, full_info);
+  int get hashCode =>
+      Object.hash(id, rock_id, language, name, short_info, full_info);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -391,6 +440,7 @@ class RocksLocalizedData extends DataClass
           other.id == this.id &&
           other.rock_id == this.rock_id &&
           other.language == this.language &&
+          other.name == this.name &&
           other.short_info == this.short_info &&
           other.full_info == this.full_info);
 }
@@ -399,12 +449,14 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
   final Value<int> id;
   final Value<int> rock_id;
   final Value<String> language;
+  final Value<String> name;
   final Value<String> short_info;
   final Value<String> full_info;
   const RocksLocalizedCompanion({
     this.id = const Value.absent(),
     this.rock_id = const Value.absent(),
     this.language = const Value.absent(),
+    this.name = const Value.absent(),
     this.short_info = const Value.absent(),
     this.full_info = const Value.absent(),
   });
@@ -412,16 +464,19 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
     this.id = const Value.absent(),
     required int rock_id,
     required String language,
+    required String name,
     required String short_info,
     required String full_info,
   })  : rock_id = Value(rock_id),
         language = Value(language),
+        name = Value(name),
         short_info = Value(short_info),
         full_info = Value(full_info);
   static Insertable<RocksLocalizedData> custom({
     Expression<int>? id,
     Expression<int>? rock_id,
     Expression<String>? language,
+    Expression<String>? name,
     Expression<String>? short_info,
     Expression<String>? full_info,
   }) {
@@ -429,6 +484,7 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
       if (id != null) 'id': id,
       if (rock_id != null) 'RockId': rock_id,
       if (language != null) 'language': language,
+      if (name != null) 'name': name,
       if (short_info != null) 'ShortInfo': short_info,
       if (full_info != null) 'FullInfo': full_info,
     });
@@ -438,12 +494,14 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
       {Value<int>? id,
       Value<int>? rock_id,
       Value<String>? language,
+      Value<String>? name,
       Value<String>? short_info,
       Value<String>? full_info}) {
     return RocksLocalizedCompanion(
       id: id ?? this.id,
       rock_id: rock_id ?? this.rock_id,
       language: language ?? this.language,
+      name: name ?? this.name,
       short_info: short_info ?? this.short_info,
       full_info: full_info ?? this.full_info,
     );
@@ -461,6 +519,9 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
     if (language.present) {
       map['language'] = Variable<String>(language.value);
     }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
     if (short_info.present) {
       map['ShortInfo'] = Variable<String>(short_info.value);
     }
@@ -476,6 +537,7 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
           ..write('id: $id, ')
           ..write('rock_id: $rock_id, ')
           ..write('language: $language, ')
+          ..write('name: $name, ')
           ..write('short_info: $short_info, ')
           ..write('full_info: $full_info')
           ..write(')'))
@@ -502,6 +564,10 @@ class $RocksLocalizedTable extends RocksLocalized
   late final GeneratedColumn<String?> language = GeneratedColumn<String?>(
       'language', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
+  final VerificationMeta _nameMeta = const VerificationMeta('name');
+  late final GeneratedColumn<String?> name = GeneratedColumn<String?>(
+      'name', aliasedName, false,
+      typeName: 'TEXT', requiredDuringInsert: true);
   final VerificationMeta _short_infoMeta = const VerificationMeta('short_info');
   late final GeneratedColumn<String?> short_info = GeneratedColumn<String?>(
       'ShortInfo', aliasedName, false,
@@ -512,7 +578,7 @@ class $RocksLocalizedTable extends RocksLocalized
       typeName: 'TEXT', requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, rock_id, language, short_info, full_info];
+      [id, rock_id, language, name, short_info, full_info];
   @override
   String get aliasedName => _alias ?? 'rocks_localized';
   @override
@@ -536,6 +602,12 @@ class $RocksLocalizedTable extends RocksLocalized
           language.isAcceptableOrUnknown(data['language']!, _languageMeta));
     } else if (isInserting) {
       context.missing(_languageMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
+    } else if (isInserting) {
+      context.missing(_nameMeta);
     }
     if (data.containsKey('ShortInfo')) {
       context.handle(
@@ -572,7 +644,6 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $RocksTable rocks = $RocksTable(this);
   late final $RocksLocalizedTable rocksLocalized = $RocksLocalizedTable(this);
-  late final RocksDao rocksDao = RocksDao(this as AppDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override

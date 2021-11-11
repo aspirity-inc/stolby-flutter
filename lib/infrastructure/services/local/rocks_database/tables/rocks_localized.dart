@@ -6,6 +6,7 @@ class RocksLocalized extends Table {
       .customConstraint('NOT NULL REFERENCES rocks(id)')
       .named('RockId')();
   TextColumn get language => text()();
+  TextColumn get name => text()();
   TextColumn get short_info => text().named('ShortInfo')();
   TextColumn get full_info => text().named('FullInfo')();
   @override
