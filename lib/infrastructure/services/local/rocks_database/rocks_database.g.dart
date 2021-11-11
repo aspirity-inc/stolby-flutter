@@ -572,6 +572,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
   late final $RocksTable rocks = $RocksTable(this);
   late final $RocksLocalizedTable rocksLocalized = $RocksLocalizedTable(this);
+  late final RocksDao rocksDao = RocksDao(this as AppDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
