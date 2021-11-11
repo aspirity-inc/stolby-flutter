@@ -31,7 +31,7 @@ class AppDatabase extends _$AppDatabase {
       [
         leftOuterJoin(
           rocksLocalized,
-          rocksLocalized.rock_id.equalsExp(rocks.id),
+          rocksLocalized.rockId.equalsExp(rocks.id),
         ),
       ],
     )..where(
@@ -47,7 +47,7 @@ class AppDatabase extends _$AppDatabase {
             longitude: row.readTable(rocks).longitude,
             difficulty: row.readTable(rocks).difficulty,
             height: row.readTable(rocks).height,
-            picName: row.readTable(rocks).pic_name,
+            picName: row.readTable(rocks).picName,
             localizedName: row.readTable(rocksLocalized).name,
           ),
         )
