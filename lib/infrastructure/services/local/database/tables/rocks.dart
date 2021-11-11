@@ -5,6 +5,7 @@ class Rocks extends Table {
   RealColumn get latitude => real()();
   RealColumn get longitude => real()();
   IntColumn get height => integer()();
+  IntColumn get difficulty => integer()();
   TextColumn get picName => text().named('pic_name')();
   @override
   Set<Column> get primaryKey => {id};
