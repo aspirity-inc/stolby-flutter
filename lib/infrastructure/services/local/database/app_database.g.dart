@@ -12,13 +12,15 @@ class Rock extends DataClass implements Insertable<Rock> {
   final double latitude;
   final double longitude;
   final int height;
-  final String PicName;
+  final int difficulty;
+  final String pic_name;
   Rock(
       {required this.id,
       required this.latitude,
       required this.longitude,
       required this.height,
-      required this.PicName});
+      required this.difficulty,
+      required this.pic_name});
   factory Rock.fromData(Map<String, dynamic> data, {String? prefix}) {
     final effectivePrefix = prefix ?? '';
     return Rock(
@@ -30,8 +32,10 @@ class Rock extends DataClass implements Insertable<Rock> {
           .mapFromDatabaseResponse(data['${effectivePrefix}longitude'])!,
       height: const IntType()
           .mapFromDatabaseResponse(data['${effectivePrefix}height'])!,
-      PicName: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}pic_name'])!,
+      difficulty: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}difficulty'])!,
+      pic_name: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}PicName'])!,
     );
   }
   @override
@@ -41,7 +45,8 @@ class Rock extends DataClass implements Insertable<Rock> {
     map['latitude'] = Variable<double>(latitude);
     map['longitude'] = Variable<double>(longitude);
     map['height'] = Variable<int>(height);
-    map['pic_name'] = Variable<String>(PicName);
+    map['difficulty'] = Variable<int>(difficulty);
+    map['PicName'] = Variable<String>(pic_name);
     return map;
   }
 
@@ -51,7 +56,8 @@ class Rock extends DataClass implements Insertable<Rock> {
       latitude: Value(latitude),
       longitude: Value(longitude),
       height: Value(height),
-      PicName: Value(PicName),
+      difficulty: Value(difficulty),
+      pic_name: Value(pic_name),
     );
   }
 
@@ -63,7 +69,8 @@ class Rock extends DataClass implements Insertable<Rock> {
       latitude: serializer.fromJson<double>(json['latitude']),
       longitude: serializer.fromJson<double>(json['longitude']),
       height: serializer.fromJson<int>(json['height']),
-      PicName: serializer.fromJson<String>(json['PicName']),
+      difficulty: serializer.fromJson<int>(json['difficulty']),
+      pic_name: serializer.fromJson<String>(json['pic_name']),
     );
   }
   @override
@@ -74,7 +81,8 @@ class Rock extends DataClass implements Insertable<Rock> {
       'latitude': serializer.toJson<double>(latitude),
       'longitude': serializer.toJson<double>(longitude),
       'height': serializer.toJson<int>(height),
-      'PicName': serializer.toJson<String>(PicName),
+      'difficulty': serializer.toJson<int>(difficulty),
+      'pic_name': serializer.toJson<String>(pic_name),
     };
   }
 
@@ -83,13 +91,15 @@ class Rock extends DataClass implements Insertable<Rock> {
           double? latitude,
           double? longitude,
           int? height,
-          String? PicName}) =>
+          int? difficulty,
+          String? pic_name}) =>
       Rock(
         id: id ?? this.id,
         latitude: latitude ?? this.latitude,
         longitude: longitude ?? this.longitude,
         height: height ?? this.height,
-        PicName: PicName ?? this.PicName,
+        difficulty: difficulty ?? this.difficulty,
+        pic_name: pic_name ?? this.pic_name,
       );
   @override
   String toString() {
@@ -98,13 +108,15 @@ class Rock extends DataClass implements Insertable<Rock> {
           ..write('latitude: $latitude, ')
           ..write('longitude: $longitude, ')
           ..write('height: $height, ')
-          ..write('PicName: $PicName')
+          ..write('difficulty: $difficulty, ')
+          ..write('pic_name: $pic_name')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, latitude, longitude, height, PicName);
+  int get hashCode =>
+      Object.hash(id, latitude, longitude, height, difficulty, pic_name);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -113,7 +125,8 @@ class Rock extends DataClass implements Insertable<Rock> {
           other.latitude == this.latitude &&
           other.longitude == this.longitude &&
           other.height == this.height &&
-          other.PicName == this.PicName);
+          other.difficulty == this.difficulty &&
+          other.pic_name == this.pic_name);
 }
 
 class RocksCompanion extends UpdateCompanion<Rock> {
@@ -121,37 +134,43 @@ class RocksCompanion extends UpdateCompanion<Rock> {
   final Value<double> latitude;
   final Value<double> longitude;
   final Value<int> height;
-  final Value<String> PicName;
+  final Value<int> difficulty;
+  final Value<String> pic_name;
   const RocksCompanion({
     this.id = const Value.absent(),
     this.latitude = const Value.absent(),
     this.longitude = const Value.absent(),
     this.height = const Value.absent(),
-    this.PicName = const Value.absent(),
+    this.difficulty = const Value.absent(),
+    this.pic_name = const Value.absent(),
   });
   RocksCompanion.insert({
     this.id = const Value.absent(),
     required double latitude,
     required double longitude,
     required int height,
-    required String PicName,
+    required int difficulty,
+    required String pic_name,
   })  : latitude = Value(latitude),
         longitude = Value(longitude),
         height = Value(height),
-        PicName = Value(PicName);
+        difficulty = Value(difficulty),
+        pic_name = Value(pic_name);
   static Insertable<Rock> custom({
     Expression<int>? id,
     Expression<double>? latitude,
     Expression<double>? longitude,
     Expression<int>? height,
-    Expression<String>? PicName,
+    Expression<int>? difficulty,
+    Expression<String>? pic_name,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (latitude != null) 'latitude': latitude,
       if (longitude != null) 'longitude': longitude,
       if (height != null) 'height': height,
-      if (PicName != null) 'pic_name': PicName,
+      if (difficulty != null) 'difficulty': difficulty,
+      if (pic_name != null) 'PicName': pic_name,
     });
   }
 
@@ -160,13 +179,15 @@ class RocksCompanion extends UpdateCompanion<Rock> {
       Value<double>? latitude,
       Value<double>? longitude,
       Value<int>? height,
-      Value<String>? PicName}) {
+      Value<int>? difficulty,
+      Value<String>? pic_name}) {
     return RocksCompanion(
       id: id ?? this.id,
       latitude: latitude ?? this.latitude,
       longitude: longitude ?? this.longitude,
       height: height ?? this.height,
-      PicName: PicName ?? this.PicName,
+      difficulty: difficulty ?? this.difficulty,
+      pic_name: pic_name ?? this.pic_name,
     );
   }
 
@@ -185,8 +206,11 @@ class RocksCompanion extends UpdateCompanion<Rock> {
     if (height.present) {
       map['height'] = Variable<int>(height.value);
     }
-    if (PicName.present) {
-      map['pic_name'] = Variable<String>(PicName.value);
+    if (difficulty.present) {
+      map['difficulty'] = Variable<int>(difficulty.value);
+    }
+    if (pic_name.present) {
+      map['PicName'] = Variable<String>(pic_name.value);
     }
     return map;
   }
@@ -198,7 +222,8 @@ class RocksCompanion extends UpdateCompanion<Rock> {
           ..write('latitude: $latitude, ')
           ..write('longitude: $longitude, ')
           ..write('height: $height, ')
-          ..write('PicName: $PicName')
+          ..write('difficulty: $difficulty, ')
+          ..write('pic_name: $pic_name')
           ..write(')'))
         .toString();
   }
@@ -224,13 +249,17 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
   late final GeneratedColumn<int?> height = GeneratedColumn<int?>(
       'height', aliasedName, false,
       typeName: 'INTEGER', requiredDuringInsert: true);
-  final VerificationMeta _PicNameMeta = const VerificationMeta('PicName');
-  late final GeneratedColumn<String?> PicName = GeneratedColumn<String?>(
-      'pic_name', aliasedName, false,
+  final VerificationMeta _difficultyMeta = const VerificationMeta('difficulty');
+  late final GeneratedColumn<int?> difficulty = GeneratedColumn<int?>(
+      'difficulty', aliasedName, false,
+      typeName: 'INTEGER', requiredDuringInsert: true);
+  final VerificationMeta _pic_nameMeta = const VerificationMeta('pic_name');
+  late final GeneratedColumn<String?> pic_name = GeneratedColumn<String?>(
+      'PicName', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, latitude, longitude, height, PicName];
+      [id, latitude, longitude, height, difficulty, pic_name];
   @override
   String get aliasedName => _alias ?? 'rocks';
   @override
@@ -261,11 +290,19 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
     } else if (isInserting) {
       context.missing(_heightMeta);
     }
-    if (data.containsKey('pic_name')) {
-      context.handle(_PicNameMeta,
-          PicName.isAcceptableOrUnknown(data['pic_name']!, _PicNameMeta));
+    if (data.containsKey('difficulty')) {
+      context.handle(
+          _difficultyMeta,
+          difficulty.isAcceptableOrUnknown(
+              data['difficulty']!, _difficultyMeta));
     } else if (isInserting) {
-      context.missing(_PicNameMeta);
+      context.missing(_difficultyMeta);
+    }
+    if (data.containsKey('PicName')) {
+      context.handle(_pic_nameMeta,
+          pic_name.isAcceptableOrUnknown(data['PicName']!, _pic_nameMeta));
+    } else if (isInserting) {
+      context.missing(_pic_nameMeta);
     }
     return context;
   }
@@ -287,50 +324,56 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
 class RocksLocalizedData extends DataClass
     implements Insertable<RocksLocalizedData> {
   final int id;
-  final int RockId;
+  final int rock_id;
   final String language;
-  final String ShortInfo;
-  final String FullInfo;
+  final String name;
+  final String short_info;
+  final String full_info;
   RocksLocalizedData(
       {required this.id,
-      required this.RockId,
+      required this.rock_id,
       required this.language,
-      required this.ShortInfo,
-      required this.FullInfo});
+      required this.name,
+      required this.short_info,
+      required this.full_info});
   factory RocksLocalizedData.fromData(Map<String, dynamic> data,
       {String? prefix}) {
     final effectivePrefix = prefix ?? '';
     return RocksLocalizedData(
       id: const IntType()
           .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
-      RockId: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}rock_id'])!,
+      rock_id: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}RockId'])!,
       language: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
-      ShortInfo: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}short_info'])!,
-      FullInfo: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}full_info'])!,
+      name: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}name'])!,
+      short_info: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}ShortInfo'])!,
+      full_info: const StringType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}FullInfo'])!,
     );
   }
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['id'] = Variable<int>(id);
-    map['rock_id'] = Variable<int>(RockId);
+    map['RockId'] = Variable<int>(rock_id);
     map['language'] = Variable<String>(language);
-    map['short_info'] = Variable<String>(ShortInfo);
-    map['full_info'] = Variable<String>(FullInfo);
+    map['name'] = Variable<String>(name);
+    map['ShortInfo'] = Variable<String>(short_info);
+    map['FullInfo'] = Variable<String>(full_info);
     return map;
   }
 
   RocksLocalizedCompanion toCompanion(bool nullToAbsent) {
     return RocksLocalizedCompanion(
       id: Value(id),
-      RockId: Value(RockId),
+      rock_id: Value(rock_id),
       language: Value(language),
-      ShortInfo: Value(ShortInfo),
-      FullInfo: Value(FullInfo),
+      name: Value(name),
+      short_info: Value(short_info),
+      full_info: Value(full_info),
     );
   }
 
@@ -339,10 +382,11 @@ class RocksLocalizedData extends DataClass
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return RocksLocalizedData(
       id: serializer.fromJson<int>(json['id']),
-      RockId: serializer.fromJson<int>(json['RockId']),
+      rock_id: serializer.fromJson<int>(json['rock_id']),
       language: serializer.fromJson<String>(json['language']),
-      ShortInfo: serializer.fromJson<String>(json['ShortInfo']),
-      FullInfo: serializer.fromJson<String>(json['FullInfo']),
+      name: serializer.fromJson<String>(json['name']),
+      short_info: serializer.fromJson<String>(json['short_info']),
+      full_info: serializer.fromJson<String>(json['full_info']),
     );
   }
   @override
@@ -350,102 +394,116 @@ class RocksLocalizedData extends DataClass
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
-      'RockId': serializer.toJson<int>(RockId),
+      'rock_id': serializer.toJson<int>(rock_id),
       'language': serializer.toJson<String>(language),
-      'ShortInfo': serializer.toJson<String>(ShortInfo),
-      'FullInfo': serializer.toJson<String>(FullInfo),
+      'name': serializer.toJson<String>(name),
+      'short_info': serializer.toJson<String>(short_info),
+      'full_info': serializer.toJson<String>(full_info),
     };
   }
 
   RocksLocalizedData copyWith(
           {int? id,
-          int? RockId,
+          int? rock_id,
           String? language,
-          String? ShortInfo,
-          String? FullInfo}) =>
+          String? name,
+          String? short_info,
+          String? full_info}) =>
       RocksLocalizedData(
         id: id ?? this.id,
-        RockId: RockId ?? this.RockId,
+        rock_id: rock_id ?? this.rock_id,
         language: language ?? this.language,
-        ShortInfo: ShortInfo ?? this.ShortInfo,
-        FullInfo: FullInfo ?? this.FullInfo,
+        name: name ?? this.name,
+        short_info: short_info ?? this.short_info,
+        full_info: full_info ?? this.full_info,
       );
   @override
   String toString() {
     return (StringBuffer('RocksLocalizedData(')
           ..write('id: $id, ')
-          ..write('RockId: $RockId, ')
+          ..write('rock_id: $rock_id, ')
           ..write('language: $language, ')
-          ..write('ShortInfo: $ShortInfo, ')
-          ..write('FullInfo: $FullInfo')
+          ..write('name: $name, ')
+          ..write('short_info: $short_info, ')
+          ..write('full_info: $full_info')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, RockId, language, ShortInfo, FullInfo);
+  int get hashCode =>
+      Object.hash(id, rock_id, language, name, short_info, full_info);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is RocksLocalizedData &&
           other.id == this.id &&
-          other.RockId == this.RockId &&
+          other.rock_id == this.rock_id &&
           other.language == this.language &&
-          other.ShortInfo == this.ShortInfo &&
-          other.FullInfo == this.FullInfo);
+          other.name == this.name &&
+          other.short_info == this.short_info &&
+          other.full_info == this.full_info);
 }
 
 class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
   final Value<int> id;
-  final Value<int> RockId;
+  final Value<int> rock_id;
   final Value<String> language;
-  final Value<String> ShortInfo;
-  final Value<String> FullInfo;
+  final Value<String> name;
+  final Value<String> short_info;
+  final Value<String> full_info;
   const RocksLocalizedCompanion({
     this.id = const Value.absent(),
-    this.RockId = const Value.absent(),
+    this.rock_id = const Value.absent(),
     this.language = const Value.absent(),
-    this.ShortInfo = const Value.absent(),
-    this.FullInfo = const Value.absent(),
+    this.name = const Value.absent(),
+    this.short_info = const Value.absent(),
+    this.full_info = const Value.absent(),
   });
   RocksLocalizedCompanion.insert({
     this.id = const Value.absent(),
-    required int RockId,
+    required int rock_id,
     required String language,
-    required String ShortInfo,
-    required String FullInfo,
-  })  : RockId = Value(RockId),
+    required String name,
+    required String short_info,
+    required String full_info,
+  })  : rock_id = Value(rock_id),
         language = Value(language),
-        ShortInfo = Value(ShortInfo),
-        FullInfo = Value(FullInfo);
+        name = Value(name),
+        short_info = Value(short_info),
+        full_info = Value(full_info);
   static Insertable<RocksLocalizedData> custom({
     Expression<int>? id,
-    Expression<int>? RockId,
+    Expression<int>? rock_id,
     Expression<String>? language,
-    Expression<String>? ShortInfo,
-    Expression<String>? FullInfo,
+    Expression<String>? name,
+    Expression<String>? short_info,
+    Expression<String>? full_info,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
-      if (RockId != null) 'rock_id': RockId,
+      if (rock_id != null) 'RockId': rock_id,
       if (language != null) 'language': language,
-      if (ShortInfo != null) 'short_info': ShortInfo,
-      if (FullInfo != null) 'full_info': FullInfo,
+      if (name != null) 'name': name,
+      if (short_info != null) 'ShortInfo': short_info,
+      if (full_info != null) 'FullInfo': full_info,
     });
   }
 
   RocksLocalizedCompanion copyWith(
       {Value<int>? id,
-      Value<int>? RockId,
+      Value<int>? rock_id,
       Value<String>? language,
-      Value<String>? ShortInfo,
-      Value<String>? FullInfo}) {
+      Value<String>? name,
+      Value<String>? short_info,
+      Value<String>? full_info}) {
     return RocksLocalizedCompanion(
       id: id ?? this.id,
-      RockId: RockId ?? this.RockId,
+      rock_id: rock_id ?? this.rock_id,
       language: language ?? this.language,
-      ShortInfo: ShortInfo ?? this.ShortInfo,
-      FullInfo: FullInfo ?? this.FullInfo,
+      name: name ?? this.name,
+      short_info: short_info ?? this.short_info,
+      full_info: full_info ?? this.full_info,
     );
   }
 
@@ -455,17 +513,20 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
     if (id.present) {
       map['id'] = Variable<int>(id.value);
     }
-    if (RockId.present) {
-      map['rock_id'] = Variable<int>(RockId.value);
+    if (rock_id.present) {
+      map['RockId'] = Variable<int>(rock_id.value);
     }
     if (language.present) {
       map['language'] = Variable<String>(language.value);
     }
-    if (ShortInfo.present) {
-      map['short_info'] = Variable<String>(ShortInfo.value);
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
     }
-    if (FullInfo.present) {
-      map['full_info'] = Variable<String>(FullInfo.value);
+    if (short_info.present) {
+      map['ShortInfo'] = Variable<String>(short_info.value);
+    }
+    if (full_info.present) {
+      map['FullInfo'] = Variable<String>(full_info.value);
     }
     return map;
   }
@@ -474,10 +535,11 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
   String toString() {
     return (StringBuffer('RocksLocalizedCompanion(')
           ..write('id: $id, ')
-          ..write('RockId: $RockId, ')
+          ..write('rock_id: $rock_id, ')
           ..write('language: $language, ')
-          ..write('ShortInfo: $ShortInfo, ')
-          ..write('FullInfo: $FullInfo')
+          ..write('name: $name, ')
+          ..write('short_info: $short_info, ')
+          ..write('full_info: $full_info')
           ..write(')'))
         .toString();
   }
@@ -492,9 +554,9 @@ class $RocksLocalizedTable extends RocksLocalized
   late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
       'id', aliasedName, false,
       typeName: 'INTEGER', requiredDuringInsert: false);
-  final VerificationMeta _RockIdMeta = const VerificationMeta('RockId');
-  late final GeneratedColumn<int?> RockId = GeneratedColumn<int?>(
-      'rock_id', aliasedName, false,
+  final VerificationMeta _rock_idMeta = const VerificationMeta('rock_id');
+  late final GeneratedColumn<int?> rock_id = GeneratedColumn<int?>(
+      'RockId', aliasedName, false,
       typeName: 'INTEGER',
       requiredDuringInsert: true,
       $customConstraints: 'NOT NULL REFERENCES rocks(id)');
@@ -502,17 +564,21 @@ class $RocksLocalizedTable extends RocksLocalized
   late final GeneratedColumn<String?> language = GeneratedColumn<String?>(
       'language', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
-  final VerificationMeta _ShortInfoMeta = const VerificationMeta('ShortInfo');
-  late final GeneratedColumn<String?> ShortInfo = GeneratedColumn<String?>(
-      'short_info', aliasedName, false,
+  final VerificationMeta _nameMeta = const VerificationMeta('name');
+  late final GeneratedColumn<String?> name = GeneratedColumn<String?>(
+      'name', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
-  final VerificationMeta _FullInfoMeta = const VerificationMeta('FullInfo');
-  late final GeneratedColumn<String?> FullInfo = GeneratedColumn<String?>(
-      'full_info', aliasedName, false,
+  final VerificationMeta _short_infoMeta = const VerificationMeta('short_info');
+  late final GeneratedColumn<String?> short_info = GeneratedColumn<String?>(
+      'ShortInfo', aliasedName, false,
+      typeName: 'TEXT', requiredDuringInsert: true);
+  final VerificationMeta _full_infoMeta = const VerificationMeta('full_info');
+  late final GeneratedColumn<String?> full_info = GeneratedColumn<String?>(
+      'FullInfo', aliasedName, false,
       typeName: 'TEXT', requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, RockId, language, ShortInfo, FullInfo];
+      [id, rock_id, language, name, short_info, full_info];
   @override
   String get aliasedName => _alias ?? 'rocks_localized';
   @override
@@ -525,11 +591,11 @@ class $RocksLocalizedTable extends RocksLocalized
     if (data.containsKey('id')) {
       context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
     }
-    if (data.containsKey('rock_id')) {
-      context.handle(_RockIdMeta,
-          RockId.isAcceptableOrUnknown(data['rock_id']!, _RockIdMeta));
+    if (data.containsKey('RockId')) {
+      context.handle(_rock_idMeta,
+          rock_id.isAcceptableOrUnknown(data['RockId']!, _rock_idMeta));
     } else if (isInserting) {
-      context.missing(_RockIdMeta);
+      context.missing(_rock_idMeta);
     }
     if (data.containsKey('language')) {
       context.handle(_languageMeta,
@@ -537,17 +603,25 @@ class $RocksLocalizedTable extends RocksLocalized
     } else if (isInserting) {
       context.missing(_languageMeta);
     }
-    if (data.containsKey('short_info')) {
-      context.handle(_ShortInfoMeta,
-          ShortInfo.isAcceptableOrUnknown(data['short_info']!, _ShortInfoMeta));
+    if (data.containsKey('name')) {
+      context.handle(
+          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
     } else if (isInserting) {
-      context.missing(_ShortInfoMeta);
+      context.missing(_nameMeta);
     }
-    if (data.containsKey('full_info')) {
-      context.handle(_FullInfoMeta,
-          FullInfo.isAcceptableOrUnknown(data['full_info']!, _FullInfoMeta));
+    if (data.containsKey('ShortInfo')) {
+      context.handle(
+          _short_infoMeta,
+          short_info.isAcceptableOrUnknown(
+              data['ShortInfo']!, _short_infoMeta));
     } else if (isInserting) {
-      context.missing(_FullInfoMeta);
+      context.missing(_short_infoMeta);
+    }
+    if (data.containsKey('FullInfo')) {
+      context.handle(_full_infoMeta,
+          full_info.isAcceptableOrUnknown(data['FullInfo']!, _full_infoMeta));
+    } else if (isInserting) {
+      context.missing(_full_infoMeta);
     }
     return context;
   }
