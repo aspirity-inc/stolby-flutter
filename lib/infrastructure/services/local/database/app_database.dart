@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks_localized.dart';
+import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_coordinates_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_list_view.dart';
 
 part 'app_database.g.dart';
@@ -47,6 +48,34 @@ class AppDatabase extends _$AppDatabase {
             longitude: row.readTable(rocks).longitude,
             difficulty: row.readTable(rocks).difficulty,
             height: row.readTable(rocks).height,
+            picName: row.readTable(rocks).picName,
+            localizedName: row.readTable(rocksLocalized).name,
+          ),
+        )
+        .toList();
+  }
+
+  Future<List<RocksCoordinatesListView>> getRocksCoordinatesList(
+    String language,
+  ) async {
+    final query = select(rocks).join(
+      [
+        leftOuterJoin(
+          rocksLocalized,
+          rocksLocalized.rockId.equalsExp(rocks.id),
+        ),
+      ],
+    )..where(
+        rocksLocalized.language.equals(language),
+      );
+    final result = await query.get();
+
+    return result
+        .map(
+          (row) => RocksCoordinatesListView(
+            id: row.readTable(rocks).id,
+            latitude: row.readTable(rocks).latitude,
+            longitude: row.readTable(rocks).longitude,
             picName: row.readTable(rocks).picName,
             localizedName: row.readTable(rocksLocalized).name,
           ),
