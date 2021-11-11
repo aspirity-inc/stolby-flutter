@@ -35,7 +35,7 @@ class AppDatabase extends _$AppDatabase {
         ),
       ],
     )..where(
-        rocksLocalized.language.like(language),
+        rocksLocalized.language.equals(language),
       );
     final result = await query.get();
 
