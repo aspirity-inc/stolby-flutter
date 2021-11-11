@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'rocks_database.dart';
+part of 'app_database.dart';
 
 // **************************************************************************
 // MoorGenerator
