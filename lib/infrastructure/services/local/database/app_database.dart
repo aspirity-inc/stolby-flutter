@@ -3,10 +3,11 @@ import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:injectable/injectable.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks_localized.dart';
 
-part 'rocks_database.g.dart';
+part 'app_database.g.dart';
 
 LazyDatabase _openConnection() {
   return LazyDatabase(() async {
@@ -17,6 +18,7 @@ LazyDatabase _openConnection() {
 }
 
 @DriftDatabase(tables: [Rocks, RocksLocalized])
+@LazySingleton()
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
