@@ -8,6 +8,7 @@ import 'package:stolby_flutter/infrastructure/services/local/database/tables/roc
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks_localized.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_coordinates_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_list_view.dart';
+import 'package:stolby_flutter/infrastructure/services/local/database/views/single_rock_view.dart';
 
 part 'app_database.g.dart';
 
@@ -81,5 +82,33 @@ class AppDatabase extends _$AppDatabase {
           ),
         )
         .toList();
+  }
+
+  Future<SingleRockView> getSingleRock(
+    String language,
+    int id,
+  ) async {
+    final query = select(rocks).join(
+      [
+        leftOuterJoin(
+          rocksLocalized,
+          rocksLocalized.rockId.equalsExp(rocks.id),
+        ),
+      ],
+    )..where(
+        rocks.id.equals(id) & rocksLocalized.language.equals(language),
+      );
+    final result = await query.getSingle();
+    return SingleRockView(
+      id: result.readTable(rocks).id,
+      latitude: result.readTable(rocks).latitude,
+      longitude: result.readTable(rocks).latitude,
+      difficulty: result.readTable(rocks).difficulty,
+      height: result.readTable(rocks).height,
+      picName: result.readTable(rocks).picName,
+      localizedName: result.readTable(rocksLocalized).name,
+      shortInfo: result.readTable(rocksLocalized).shortInfo,
+      fullInfo: result.readTable(rocksLocalized).fullInfo,
+    );
   }
 }
