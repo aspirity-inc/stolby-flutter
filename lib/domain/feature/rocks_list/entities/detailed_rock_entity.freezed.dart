@@ -24,7 +24,9 @@ class _$DetailedRockEntityTearOff {
       required int difficulty,
       required int height,
       required String picName,
-      required String localizedName}) {
+      required String localizedName,
+      required String shortInfo,
+      required String fullInfo}) {
     return _DetailedRockEntity(
       id: id,
       latitude: latitude,
@@ -33,6 +35,8 @@ class _$DetailedRockEntityTearOff {
       height: height,
       picName: picName,
       localizedName: localizedName,
+      shortInfo: shortInfo,
+      fullInfo: fullInfo,
     );
   }
 }
@@ -49,6 +53,8 @@ mixin _$DetailedRockEntity {
   int get height => throw _privateConstructorUsedError;
   String get picName => throw _privateConstructorUsedError;
   String get localizedName => throw _privateConstructorUsedError;
+  String get shortInfo => throw _privateConstructorUsedError;
+  String get fullInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DetailedRockEntityCopyWith<DetailedRockEntity> get copyWith =>
@@ -67,7 +73,9 @@ abstract class $DetailedRockEntityCopyWith<$Res> {
       int difficulty,
       int height,
       String picName,
-      String localizedName});
+      String localizedName,
+      String shortInfo,
+      String fullInfo});
 }
 
 /// @nodoc
@@ -88,6 +96,8 @@ class _$DetailedRockEntityCopyWithImpl<$Res>
     Object? height = freezed,
     Object? picName = freezed,
     Object? localizedName = freezed,
+    Object? shortInfo = freezed,
+    Object? fullInfo = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -118,6 +128,14 @@ class _$DetailedRockEntityCopyWithImpl<$Res>
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
+      shortInfo: shortInfo == freezed
+          ? _value.shortInfo
+          : shortInfo // ignore: cast_nullable_to_non_nullable
+              as String,
+      fullInfo: fullInfo == freezed
+          ? _value.fullInfo
+          : fullInfo // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -136,7 +154,9 @@ abstract class _$DetailedRockEntityCopyWith<$Res>
       int difficulty,
       int height,
       String picName,
-      String localizedName});
+      String localizedName,
+      String shortInfo,
+      String fullInfo});
 }
 
 /// @nodoc
@@ -159,6 +179,8 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
     Object? height = freezed,
     Object? picName = freezed,
     Object? localizedName = freezed,
+    Object? shortInfo = freezed,
+    Object? fullInfo = freezed,
   }) {
     return _then(_DetailedRockEntity(
       id: id == freezed
@@ -189,6 +211,14 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
+      shortInfo: shortInfo == freezed
+          ? _value.shortInfo
+          : shortInfo // ignore: cast_nullable_to_non_nullable
+              as String,
+      fullInfo: fullInfo == freezed
+          ? _value.fullInfo
+          : fullInfo // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -203,7 +233,9 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
       required this.difficulty,
       required this.height,
       required this.picName,
-      required this.localizedName});
+      required this.localizedName,
+      required this.shortInfo,
+      required this.fullInfo});
 
   @override
   final int id;
@@ -219,10 +251,14 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
   final String picName;
   @override
   final String localizedName;
+  @override
+  final String shortInfo;
+  @override
+  final String fullInfo;
 
   @override
   String toString() {
-    return 'DetailedRockEntity(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName)';
+    return 'DetailedRockEntity(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName, shortInfo: $shortInfo, fullInfo: $fullInfo)';
   }
 
   @override
@@ -240,12 +276,16 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
             (identical(other.height, height) || other.height == height) &&
             (identical(other.picName, picName) || other.picName == picName) &&
             (identical(other.localizedName, localizedName) ||
-                other.localizedName == localizedName));
+                other.localizedName == localizedName) &&
+            (identical(other.shortInfo, shortInfo) ||
+                other.shortInfo == shortInfo) &&
+            (identical(other.fullInfo, fullInfo) ||
+                other.fullInfo == fullInfo));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
-      difficulty, height, picName, localizedName);
+      difficulty, height, picName, localizedName, shortInfo, fullInfo);
 
   @JsonKey(ignore: true)
   @override
@@ -261,7 +301,9 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
       required int difficulty,
       required int height,
       required String picName,
-      required String localizedName}) = _$_DetailedRockEntity;
+      required String localizedName,
+      required String shortInfo,
+      required String fullInfo}) = _$_DetailedRockEntity;
 
   @override
   int get id;
@@ -277,6 +319,10 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
   String get picName;
   @override
   String get localizedName;
+  @override
+  String get shortInfo;
+  @override
+  String get fullInfo;
   @override
   @JsonKey(ignore: true)
   _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>

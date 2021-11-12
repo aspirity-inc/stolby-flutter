@@ -1,3 +1,5 @@
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+
 class RocksListView {
   final int id;
   final double latitude;
@@ -16,4 +18,14 @@ class RocksListView {
     required this.picName,
     required this.localizedName,
   });
+
+  RockListItemEntity toDomain() => RockListItemEntity(
+        id: id,
+        latitude: latitude,
+        longitude: longitude,
+        difficulty: difficulty,
+        height: height,
+        picName: picName,
+        localizedName: localizedName,
+      );
 }
