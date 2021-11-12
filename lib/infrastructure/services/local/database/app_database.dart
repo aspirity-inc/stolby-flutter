@@ -99,6 +99,7 @@ class AppDatabase extends _$AppDatabase {
         rocks.id.equals(id) & rocksLocalized.language.equals(language),
       );
     final result = await query.getSingle();
+
     return SingleRockView(
       id: result.readTable(rocks).id,
       latitude: result.readTable(rocks).latitude,
