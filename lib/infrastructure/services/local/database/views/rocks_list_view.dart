@@ -1,13 +1,10 @@
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
-
-import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'rocks_list_view.freezed.dart';
 
 @freezed
 class RocksListView with _$RocksListView {
-
   const RocksListView._();
 
   const factory RocksListView({
