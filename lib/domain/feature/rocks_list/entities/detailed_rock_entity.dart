@@ -12,5 +12,7 @@ class DetailedRockEntity with _$DetailedRockEntity {
     required int height,
     required String picName,
     required String localizedName,
+    required String shortInfo,
+    required String fullInfo,
   }) = _DetailedRockEntity;
 }

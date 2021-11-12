@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'detailed_rock_entity.dart';
+part of 'rocks_list_view.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,20 +14,18 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$DetailedRockEntityTearOff {
-  const _$DetailedRockEntityTearOff();
+class _$RocksListViewTearOff {
+  const _$RocksListViewTearOff();
 
-  _DetailedRockEntity call(
+  _RocksListView call(
       {required int id,
       required double latitude,
       required double longitude,
       required int difficulty,
       required int height,
       required String picName,
-      required String localizedName,
-      required String shortInfo,
-      required String fullInfo}) {
-    return _DetailedRockEntity(
+      required String localizedName}) {
+    return _RocksListView(
       id: id,
       latitude: latitude,
       longitude: longitude,
@@ -35,17 +33,15 @@ class _$DetailedRockEntityTearOff {
       height: height,
       picName: picName,
       localizedName: localizedName,
-      shortInfo: shortInfo,
-      fullInfo: fullInfo,
     );
   }
 }
 
 /// @nodoc
-const $DetailedRockEntity = _$DetailedRockEntityTearOff();
+const $RocksListView = _$RocksListViewTearOff();
 
 /// @nodoc
-mixin _$DetailedRockEntity {
+mixin _$RocksListView {
   int get id => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -53,19 +49,17 @@ mixin _$DetailedRockEntity {
   int get height => throw _privateConstructorUsedError;
   String get picName => throw _privateConstructorUsedError;
   String get localizedName => throw _privateConstructorUsedError;
-  String get shortInfo => throw _privateConstructorUsedError;
-  String get fullInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DetailedRockEntityCopyWith<DetailedRockEntity> get copyWith =>
+  $RocksListViewCopyWith<RocksListView> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DetailedRockEntityCopyWith<$Res> {
-  factory $DetailedRockEntityCopyWith(
-          DetailedRockEntity value, $Res Function(DetailedRockEntity) then) =
-      _$DetailedRockEntityCopyWithImpl<$Res>;
+abstract class $RocksListViewCopyWith<$Res> {
+  factory $RocksListViewCopyWith(
+          RocksListView value, $Res Function(RocksListView) then) =
+      _$RocksListViewCopyWithImpl<$Res>;
   $Res call(
       {int id,
       double latitude,
@@ -73,19 +67,17 @@ abstract class $DetailedRockEntityCopyWith<$Res> {
       int difficulty,
       int height,
       String picName,
-      String localizedName,
-      String shortInfo,
-      String fullInfo});
+      String localizedName});
 }
 
 /// @nodoc
-class _$DetailedRockEntityCopyWithImpl<$Res>
-    implements $DetailedRockEntityCopyWith<$Res> {
-  _$DetailedRockEntityCopyWithImpl(this._value, this._then);
+class _$RocksListViewCopyWithImpl<$Res>
+    implements $RocksListViewCopyWith<$Res> {
+  _$RocksListViewCopyWithImpl(this._value, this._then);
 
-  final DetailedRockEntity _value;
+  final RocksListView _value;
   // ignore: unused_field
-  final $Res Function(DetailedRockEntity) _then;
+  final $Res Function(RocksListView) _then;
 
   @override
   $Res call({
@@ -96,8 +88,6 @@ class _$DetailedRockEntityCopyWithImpl<$Res>
     Object? height = freezed,
     Object? picName = freezed,
     Object? localizedName = freezed,
-    Object? shortInfo = freezed,
-    Object? fullInfo = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -128,24 +118,16 @@ class _$DetailedRockEntityCopyWithImpl<$Res>
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
-      shortInfo: shortInfo == freezed
-          ? _value.shortInfo
-          : shortInfo // ignore: cast_nullable_to_non_nullable
-              as String,
-      fullInfo: fullInfo == freezed
-          ? _value.fullInfo
-          : fullInfo // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$DetailedRockEntityCopyWith<$Res>
-    implements $DetailedRockEntityCopyWith<$Res> {
-  factory _$DetailedRockEntityCopyWith(
-          _DetailedRockEntity value, $Res Function(_DetailedRockEntity) then) =
-      __$DetailedRockEntityCopyWithImpl<$Res>;
+abstract class _$RocksListViewCopyWith<$Res>
+    implements $RocksListViewCopyWith<$Res> {
+  factory _$RocksListViewCopyWith(
+          _RocksListView value, $Res Function(_RocksListView) then) =
+      __$RocksListViewCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -154,21 +136,19 @@ abstract class _$DetailedRockEntityCopyWith<$Res>
       int difficulty,
       int height,
       String picName,
-      String localizedName,
-      String shortInfo,
-      String fullInfo});
+      String localizedName});
 }
 
 /// @nodoc
-class __$DetailedRockEntityCopyWithImpl<$Res>
-    extends _$DetailedRockEntityCopyWithImpl<$Res>
-    implements _$DetailedRockEntityCopyWith<$Res> {
-  __$DetailedRockEntityCopyWithImpl(
-      _DetailedRockEntity _value, $Res Function(_DetailedRockEntity) _then)
-      : super(_value, (v) => _then(v as _DetailedRockEntity));
+class __$RocksListViewCopyWithImpl<$Res>
+    extends _$RocksListViewCopyWithImpl<$Res>
+    implements _$RocksListViewCopyWith<$Res> {
+  __$RocksListViewCopyWithImpl(
+      _RocksListView _value, $Res Function(_RocksListView) _then)
+      : super(_value, (v) => _then(v as _RocksListView));
 
   @override
-  _DetailedRockEntity get _value => super._value as _DetailedRockEntity;
+  _RocksListView get _value => super._value as _RocksListView;
 
   @override
   $Res call({
@@ -179,10 +159,8 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
     Object? height = freezed,
     Object? picName = freezed,
     Object? localizedName = freezed,
-    Object? shortInfo = freezed,
-    Object? fullInfo = freezed,
   }) {
-    return _then(_DetailedRockEntity(
+    return _then(_RocksListView(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -211,31 +189,22 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
-      shortInfo: shortInfo == freezed
-          ? _value.shortInfo
-          : shortInfo // ignore: cast_nullable_to_non_nullable
-              as String,
-      fullInfo: fullInfo == freezed
-          ? _value.fullInfo
-          : fullInfo // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_DetailedRockEntity implements _DetailedRockEntity {
-  const _$_DetailedRockEntity(
+class _$_RocksListView extends _RocksListView with DiagnosticableTreeMixin {
+  const _$_RocksListView(
       {required this.id,
       required this.latitude,
       required this.longitude,
       required this.difficulty,
       required this.height,
       required this.picName,
-      required this.localizedName,
-      required this.shortInfo,
-      required this.fullInfo});
+      required this.localizedName})
+      : super._();
 
   @override
   final int id;
@@ -251,21 +220,31 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
   final String picName;
   @override
   final String localizedName;
-  @override
-  final String shortInfo;
-  @override
-  final String fullInfo;
 
   @override
-  String toString() {
-    return 'DetailedRockEntity(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName, shortInfo: $shortInfo, fullInfo: $fullInfo)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RocksListView(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'RocksListView'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('latitude', latitude))
+      ..add(DiagnosticsProperty('longitude', longitude))
+      ..add(DiagnosticsProperty('difficulty', difficulty))
+      ..add(DiagnosticsProperty('height', height))
+      ..add(DiagnosticsProperty('picName', picName))
+      ..add(DiagnosticsProperty('localizedName', localizedName));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DetailedRockEntity &&
+            other is _RocksListView &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
@@ -276,34 +255,29 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
             (identical(other.height, height) || other.height == height) &&
             (identical(other.picName, picName) || other.picName == picName) &&
             (identical(other.localizedName, localizedName) ||
-                other.localizedName == localizedName) &&
-            (identical(other.shortInfo, shortInfo) ||
-                other.shortInfo == shortInfo) &&
-            (identical(other.fullInfo, fullInfo) ||
-                other.fullInfo == fullInfo));
+                other.localizedName == localizedName));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
-      difficulty, height, picName, localizedName, shortInfo, fullInfo);
+      difficulty, height, picName, localizedName);
 
   @JsonKey(ignore: true)
   @override
-  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
-      __$DetailedRockEntityCopyWithImpl<_DetailedRockEntity>(this, _$identity);
+  _$RocksListViewCopyWith<_RocksListView> get copyWith =>
+      __$RocksListViewCopyWithImpl<_RocksListView>(this, _$identity);
 }
 
-abstract class _DetailedRockEntity implements DetailedRockEntity {
-  const factory _DetailedRockEntity(
+abstract class _RocksListView extends RocksListView {
+  const factory _RocksListView(
       {required int id,
       required double latitude,
       required double longitude,
       required int difficulty,
       required int height,
       required String picName,
-      required String localizedName,
-      required String shortInfo,
-      required String fullInfo}) = _$_DetailedRockEntity;
+      required String localizedName}) = _$_RocksListView;
+  const _RocksListView._() : super._();
 
   @override
   int get id;
@@ -320,11 +294,7 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
   @override
   String get localizedName;
   @override
-  String get shortInfo;
-  @override
-  String get fullInfo;
-  @override
   @JsonKey(ignore: true)
-  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
+  _$RocksListViewCopyWith<_RocksListView> get copyWith =>
       throw _privateConstructorUsedError;
 }

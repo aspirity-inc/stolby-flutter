@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'detailed_rock_entity.dart';
+part of 'single_rock_view.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,10 +14,10 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$DetailedRockEntityTearOff {
-  const _$DetailedRockEntityTearOff();
+class _$SingleRockViewTearOff {
+  const _$SingleRockViewTearOff();
 
-  _DetailedRockEntity call(
+  _SingleRockView call(
       {required int id,
       required double latitude,
       required double longitude,
@@ -27,7 +27,7 @@ class _$DetailedRockEntityTearOff {
       required String localizedName,
       required String shortInfo,
       required String fullInfo}) {
-    return _DetailedRockEntity(
+    return _SingleRockView(
       id: id,
       latitude: latitude,
       longitude: longitude,
@@ -42,10 +42,10 @@ class _$DetailedRockEntityTearOff {
 }
 
 /// @nodoc
-const $DetailedRockEntity = _$DetailedRockEntityTearOff();
+const $SingleRockView = _$SingleRockViewTearOff();
 
 /// @nodoc
-mixin _$DetailedRockEntity {
+mixin _$SingleRockView {
   int get id => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -57,15 +57,15 @@ mixin _$DetailedRockEntity {
   String get fullInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DetailedRockEntityCopyWith<DetailedRockEntity> get copyWith =>
+  $SingleRockViewCopyWith<SingleRockView> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DetailedRockEntityCopyWith<$Res> {
-  factory $DetailedRockEntityCopyWith(
-          DetailedRockEntity value, $Res Function(DetailedRockEntity) then) =
-      _$DetailedRockEntityCopyWithImpl<$Res>;
+abstract class $SingleRockViewCopyWith<$Res> {
+  factory $SingleRockViewCopyWith(
+          SingleRockView value, $Res Function(SingleRockView) then) =
+      _$SingleRockViewCopyWithImpl<$Res>;
   $Res call(
       {int id,
       double latitude,
@@ -79,13 +79,13 @@ abstract class $DetailedRockEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DetailedRockEntityCopyWithImpl<$Res>
-    implements $DetailedRockEntityCopyWith<$Res> {
-  _$DetailedRockEntityCopyWithImpl(this._value, this._then);
+class _$SingleRockViewCopyWithImpl<$Res>
+    implements $SingleRockViewCopyWith<$Res> {
+  _$SingleRockViewCopyWithImpl(this._value, this._then);
 
-  final DetailedRockEntity _value;
+  final SingleRockView _value;
   // ignore: unused_field
-  final $Res Function(DetailedRockEntity) _then;
+  final $Res Function(SingleRockView) _then;
 
   @override
   $Res call({
@@ -141,11 +141,11 @@ class _$DetailedRockEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DetailedRockEntityCopyWith<$Res>
-    implements $DetailedRockEntityCopyWith<$Res> {
-  factory _$DetailedRockEntityCopyWith(
-          _DetailedRockEntity value, $Res Function(_DetailedRockEntity) then) =
-      __$DetailedRockEntityCopyWithImpl<$Res>;
+abstract class _$SingleRockViewCopyWith<$Res>
+    implements $SingleRockViewCopyWith<$Res> {
+  factory _$SingleRockViewCopyWith(
+          _SingleRockView value, $Res Function(_SingleRockView) then) =
+      __$SingleRockViewCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -160,15 +160,15 @@ abstract class _$DetailedRockEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DetailedRockEntityCopyWithImpl<$Res>
-    extends _$DetailedRockEntityCopyWithImpl<$Res>
-    implements _$DetailedRockEntityCopyWith<$Res> {
-  __$DetailedRockEntityCopyWithImpl(
-      _DetailedRockEntity _value, $Res Function(_DetailedRockEntity) _then)
-      : super(_value, (v) => _then(v as _DetailedRockEntity));
+class __$SingleRockViewCopyWithImpl<$Res>
+    extends _$SingleRockViewCopyWithImpl<$Res>
+    implements _$SingleRockViewCopyWith<$Res> {
+  __$SingleRockViewCopyWithImpl(
+      _SingleRockView _value, $Res Function(_SingleRockView) _then)
+      : super(_value, (v) => _then(v as _SingleRockView));
 
   @override
-  _DetailedRockEntity get _value => super._value as _DetailedRockEntity;
+  _SingleRockView get _value => super._value as _SingleRockView;
 
   @override
   $Res call({
@@ -182,7 +182,7 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
     Object? shortInfo = freezed,
     Object? fullInfo = freezed,
   }) {
-    return _then(_DetailedRockEntity(
+    return _then(_SingleRockView(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -225,8 +225,8 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DetailedRockEntity implements _DetailedRockEntity {
-  const _$_DetailedRockEntity(
+class _$_SingleRockView extends _SingleRockView {
+  const _$_SingleRockView(
       {required this.id,
       required this.latitude,
       required this.longitude,
@@ -235,7 +235,8 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
       required this.picName,
       required this.localizedName,
       required this.shortInfo,
-      required this.fullInfo});
+      required this.fullInfo})
+      : super._();
 
   @override
   final int id;
@@ -258,14 +259,14 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
 
   @override
   String toString() {
-    return 'DetailedRockEntity(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName, shortInfo: $shortInfo, fullInfo: $fullInfo)';
+    return 'SingleRockView(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName, shortInfo: $shortInfo, fullInfo: $fullInfo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DetailedRockEntity &&
+            other is _SingleRockView &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
@@ -289,12 +290,12 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
-      __$DetailedRockEntityCopyWithImpl<_DetailedRockEntity>(this, _$identity);
+  _$SingleRockViewCopyWith<_SingleRockView> get copyWith =>
+      __$SingleRockViewCopyWithImpl<_SingleRockView>(this, _$identity);
 }
 
-abstract class _DetailedRockEntity implements DetailedRockEntity {
-  const factory _DetailedRockEntity(
+abstract class _SingleRockView extends SingleRockView {
+  const factory _SingleRockView(
       {required int id,
       required double latitude,
       required double longitude,
@@ -303,7 +304,8 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
       required String picName,
       required String localizedName,
       required String shortInfo,
-      required String fullInfo}) = _$_DetailedRockEntity;
+      required String fullInfo}) = _$_SingleRockView;
+  const _SingleRockView._() : super._();
 
   @override
   int get id;
@@ -325,6 +327,6 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
   String get fullInfo;
   @override
   @JsonKey(ignore: true)
-  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
+  _$SingleRockViewCopyWith<_SingleRockView> get copyWith =>
       throw _privateConstructorUsedError;
 }
