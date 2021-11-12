@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'rocks_list_item.freezed.dart';
+part 'rock_list_item_entity.freezed.dart';
 
 @freezed
-class RocksListItem with _$RocksListItem {
-  const factory RocksListItem({
+class RockListItemEntity with _$RockListItemEntity {
+  const factory RockListItemEntity({
     required int id,
     required double latitude,
     required double longitude,
@@ -12,5 +12,5 @@ class RocksListItem with _$RocksListItem {
     required int height,
     required String picName,
     required String localizedName,
-  }) = _RocksListItem;
+  }) = _RockListItemEntity;
 }
