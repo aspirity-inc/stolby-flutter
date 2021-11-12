@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'rock_map_info.dart';
+part of 'rock_list_item_entity.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,19 +14,23 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$RockMapInfoTearOff {
-  const _$RockMapInfoTearOff();
+class _$RockListItemEntityTearOff {
+  const _$RockListItemEntityTearOff();
 
-  _RockMapInfo call(
+  _RockListItemEntity call(
       {required int id,
       required double latitude,
       required double longitude,
+      required int difficulty,
+      required int height,
       required String picName,
       required String localizedName}) {
-    return _RockMapInfo(
+    return _RockListItemEntity(
       id: id,
       latitude: latitude,
       longitude: longitude,
+      difficulty: difficulty,
+      height: height,
       picName: picName,
       localizedName: localizedName,
     );
@@ -34,47 +38,54 @@ class _$RockMapInfoTearOff {
 }
 
 /// @nodoc
-const $RockMapInfo = _$RockMapInfoTearOff();
+const $RockListItemEntity = _$RockListItemEntityTearOff();
 
 /// @nodoc
-mixin _$RockMapInfo {
+mixin _$RockListItemEntity {
   int get id => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
+  int get difficulty => throw _privateConstructorUsedError;
+  int get height => throw _privateConstructorUsedError;
   String get picName => throw _privateConstructorUsedError;
   String get localizedName => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RockMapInfoCopyWith<RockMapInfo> get copyWith =>
+  $RockListItemEntityCopyWith<RockListItemEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RockMapInfoCopyWith<$Res> {
-  factory $RockMapInfoCopyWith(
-          RockMapInfo value, $Res Function(RockMapInfo) then) =
-      _$RockMapInfoCopyWithImpl<$Res>;
+abstract class $RockListItemEntityCopyWith<$Res> {
+  factory $RockListItemEntityCopyWith(
+          RockListItemEntity value, $Res Function(RockListItemEntity) then) =
+      _$RockListItemEntityCopyWithImpl<$Res>;
   $Res call(
       {int id,
       double latitude,
       double longitude,
+      int difficulty,
+      int height,
       String picName,
       String localizedName});
 }
 
 /// @nodoc
-class _$RockMapInfoCopyWithImpl<$Res> implements $RockMapInfoCopyWith<$Res> {
-  _$RockMapInfoCopyWithImpl(this._value, this._then);
+class _$RockListItemEntityCopyWithImpl<$Res>
+    implements $RockListItemEntityCopyWith<$Res> {
+  _$RockListItemEntityCopyWithImpl(this._value, this._then);
 
-  final RockMapInfo _value;
+  final RockListItemEntity _value;
   // ignore: unused_field
-  final $Res Function(RockMapInfo) _then;
+  final $Res Function(RockListItemEntity) _then;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? difficulty = freezed,
+    Object? height = freezed,
     Object? picName = freezed,
     Object? localizedName = freezed,
   }) {
@@ -91,6 +102,14 @@ class _$RockMapInfoCopyWithImpl<$Res> implements $RockMapInfoCopyWith<$Res> {
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
       picName: picName == freezed
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
@@ -104,39 +123,44 @@ class _$RockMapInfoCopyWithImpl<$Res> implements $RockMapInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RockMapInfoCopyWith<$Res>
-    implements $RockMapInfoCopyWith<$Res> {
-  factory _$RockMapInfoCopyWith(
-          _RockMapInfo value, $Res Function(_RockMapInfo) then) =
-      __$RockMapInfoCopyWithImpl<$Res>;
+abstract class _$RockListItemEntityCopyWith<$Res>
+    implements $RockListItemEntityCopyWith<$Res> {
+  factory _$RockListItemEntityCopyWith(
+          _RockListItemEntity value, $Res Function(_RockListItemEntity) then) =
+      __$RockListItemEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
       double latitude,
       double longitude,
+      int difficulty,
+      int height,
       String picName,
       String localizedName});
 }
 
 /// @nodoc
-class __$RockMapInfoCopyWithImpl<$Res> extends _$RockMapInfoCopyWithImpl<$Res>
-    implements _$RockMapInfoCopyWith<$Res> {
-  __$RockMapInfoCopyWithImpl(
-      _RockMapInfo _value, $Res Function(_RockMapInfo) _then)
-      : super(_value, (v) => _then(v as _RockMapInfo));
+class __$RockListItemEntityCopyWithImpl<$Res>
+    extends _$RockListItemEntityCopyWithImpl<$Res>
+    implements _$RockListItemEntityCopyWith<$Res> {
+  __$RockListItemEntityCopyWithImpl(
+      _RockListItemEntity _value, $Res Function(_RockListItemEntity) _then)
+      : super(_value, (v) => _then(v as _RockListItemEntity));
 
   @override
-  _RockMapInfo get _value => super._value as _RockMapInfo;
+  _RockListItemEntity get _value => super._value as _RockListItemEntity;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? difficulty = freezed,
+    Object? height = freezed,
     Object? picName = freezed,
     Object? localizedName = freezed,
   }) {
-    return _then(_RockMapInfo(
+    return _then(_RockListItemEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -149,6 +173,14 @@ class __$RockMapInfoCopyWithImpl<$Res> extends _$RockMapInfoCopyWithImpl<$Res>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
+      difficulty: difficulty == freezed
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
       picName: picName == freezed
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
@@ -163,11 +195,13 @@ class __$RockMapInfoCopyWithImpl<$Res> extends _$RockMapInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RockMapInfo implements _RockMapInfo {
-  const _$_RockMapInfo(
+class _$_RockListItemEntity implements _RockListItemEntity {
+  const _$_RockListItemEntity(
       {required this.id,
       required this.latitude,
       required this.longitude,
+      required this.difficulty,
+      required this.height,
       required this.picName,
       required this.localizedName});
 
@@ -178,47 +212,56 @@ class _$_RockMapInfo implements _RockMapInfo {
   @override
   final double longitude;
   @override
+  final int difficulty;
+  @override
+  final int height;
+  @override
   final String picName;
   @override
   final String localizedName;
 
   @override
   String toString() {
-    return 'RockMapInfo(id: $id, latitude: $latitude, longitude: $longitude, picName: $picName, localizedName: $localizedName)';
+    return 'RockListItemEntity(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RockMapInfo &&
+            other is _RockListItemEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.height, height) || other.height == height) &&
             (identical(other.picName, picName) || other.picName == picName) &&
             (identical(other.localizedName, localizedName) ||
                 other.localizedName == localizedName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, latitude, longitude, picName, localizedName);
+  int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
+      difficulty, height, picName, localizedName);
 
   @JsonKey(ignore: true)
   @override
-  _$RockMapInfoCopyWith<_RockMapInfo> get copyWith =>
-      __$RockMapInfoCopyWithImpl<_RockMapInfo>(this, _$identity);
+  _$RockListItemEntityCopyWith<_RockListItemEntity> get copyWith =>
+      __$RockListItemEntityCopyWithImpl<_RockListItemEntity>(this, _$identity);
 }
 
-abstract class _RockMapInfo implements RockMapInfo {
-  const factory _RockMapInfo(
+abstract class _RockListItemEntity implements RockListItemEntity {
+  const factory _RockListItemEntity(
       {required int id,
       required double latitude,
       required double longitude,
+      required int difficulty,
+      required int height,
       required String picName,
-      required String localizedName}) = _$_RockMapInfo;
+      required String localizedName}) = _$_RockListItemEntity;
 
   @override
   int get id;
@@ -227,11 +270,15 @@ abstract class _RockMapInfo implements RockMapInfo {
   @override
   double get longitude;
   @override
+  int get difficulty;
+  @override
+  int get height;
+  @override
   String get picName;
   @override
   String get localizedName;
   @override
   @JsonKey(ignore: true)
-  _$RockMapInfoCopyWith<_RockMapInfo> get copyWith =>
+  _$RockListItemEntityCopyWith<_RockListItemEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

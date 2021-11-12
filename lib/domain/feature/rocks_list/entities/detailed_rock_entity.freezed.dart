@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'full_rock_info.dart';
+part of 'detailed_rock_entity.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,10 +14,10 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$FullRockInfoTearOff {
-  const _$FullRockInfoTearOff();
+class _$DetailedRockEntityTearOff {
+  const _$DetailedRockEntityTearOff();
 
-  _FullRockInfo call(
+  _DetailedRockEntity call(
       {required int id,
       required double latitude,
       required double longitude,
@@ -25,7 +25,7 @@ class _$FullRockInfoTearOff {
       required int height,
       required String picName,
       required String localizedName}) {
-    return _FullRockInfo(
+    return _DetailedRockEntity(
       id: id,
       latitude: latitude,
       longitude: longitude,
@@ -38,10 +38,10 @@ class _$FullRockInfoTearOff {
 }
 
 /// @nodoc
-const $FullRockInfo = _$FullRockInfoTearOff();
+const $DetailedRockEntity = _$DetailedRockEntityTearOff();
 
 /// @nodoc
-mixin _$FullRockInfo {
+mixin _$DetailedRockEntity {
   int get id => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -51,15 +51,15 @@ mixin _$FullRockInfo {
   String get localizedName => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FullRockInfoCopyWith<FullRockInfo> get copyWith =>
+  $DetailedRockEntityCopyWith<DetailedRockEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FullRockInfoCopyWith<$Res> {
-  factory $FullRockInfoCopyWith(
-          FullRockInfo value, $Res Function(FullRockInfo) then) =
-      _$FullRockInfoCopyWithImpl<$Res>;
+abstract class $DetailedRockEntityCopyWith<$Res> {
+  factory $DetailedRockEntityCopyWith(
+          DetailedRockEntity value, $Res Function(DetailedRockEntity) then) =
+      _$DetailedRockEntityCopyWithImpl<$Res>;
   $Res call(
       {int id,
       double latitude,
@@ -71,12 +71,13 @@ abstract class $FullRockInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FullRockInfoCopyWithImpl<$Res> implements $FullRockInfoCopyWith<$Res> {
-  _$FullRockInfoCopyWithImpl(this._value, this._then);
+class _$DetailedRockEntityCopyWithImpl<$Res>
+    implements $DetailedRockEntityCopyWith<$Res> {
+  _$DetailedRockEntityCopyWithImpl(this._value, this._then);
 
-  final FullRockInfo _value;
+  final DetailedRockEntity _value;
   // ignore: unused_field
-  final $Res Function(FullRockInfo) _then;
+  final $Res Function(DetailedRockEntity) _then;
 
   @override
   $Res call({
@@ -122,11 +123,11 @@ class _$FullRockInfoCopyWithImpl<$Res> implements $FullRockInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FullRockInfoCopyWith<$Res>
-    implements $FullRockInfoCopyWith<$Res> {
-  factory _$FullRockInfoCopyWith(
-          _FullRockInfo value, $Res Function(_FullRockInfo) then) =
-      __$FullRockInfoCopyWithImpl<$Res>;
+abstract class _$DetailedRockEntityCopyWith<$Res>
+    implements $DetailedRockEntityCopyWith<$Res> {
+  factory _$DetailedRockEntityCopyWith(
+          _DetailedRockEntity value, $Res Function(_DetailedRockEntity) then) =
+      __$DetailedRockEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -139,14 +140,15 @@ abstract class _$FullRockInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$FullRockInfoCopyWithImpl<$Res> extends _$FullRockInfoCopyWithImpl<$Res>
-    implements _$FullRockInfoCopyWith<$Res> {
-  __$FullRockInfoCopyWithImpl(
-      _FullRockInfo _value, $Res Function(_FullRockInfo) _then)
-      : super(_value, (v) => _then(v as _FullRockInfo));
+class __$DetailedRockEntityCopyWithImpl<$Res>
+    extends _$DetailedRockEntityCopyWithImpl<$Res>
+    implements _$DetailedRockEntityCopyWith<$Res> {
+  __$DetailedRockEntityCopyWithImpl(
+      _DetailedRockEntity _value, $Res Function(_DetailedRockEntity) _then)
+      : super(_value, (v) => _then(v as _DetailedRockEntity));
 
   @override
-  _FullRockInfo get _value => super._value as _FullRockInfo;
+  _DetailedRockEntity get _value => super._value as _DetailedRockEntity;
 
   @override
   $Res call({
@@ -158,7 +160,7 @@ class __$FullRockInfoCopyWithImpl<$Res> extends _$FullRockInfoCopyWithImpl<$Res>
     Object? picName = freezed,
     Object? localizedName = freezed,
   }) {
-    return _then(_FullRockInfo(
+    return _then(_DetailedRockEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -193,8 +195,8 @@ class __$FullRockInfoCopyWithImpl<$Res> extends _$FullRockInfoCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FullRockInfo implements _FullRockInfo {
-  const _$_FullRockInfo(
+class _$_DetailedRockEntity implements _DetailedRockEntity {
+  const _$_DetailedRockEntity(
       {required this.id,
       required this.latitude,
       required this.longitude,
@@ -220,14 +222,14 @@ class _$_FullRockInfo implements _FullRockInfo {
 
   @override
   String toString() {
-    return 'FullRockInfo(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName)';
+    return 'DetailedRockEntity(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FullRockInfo &&
+            other is _DetailedRockEntity &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
@@ -247,19 +249,19 @@ class _$_FullRockInfo implements _FullRockInfo {
 
   @JsonKey(ignore: true)
   @override
-  _$FullRockInfoCopyWith<_FullRockInfo> get copyWith =>
-      __$FullRockInfoCopyWithImpl<_FullRockInfo>(this, _$identity);
+  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
+      __$DetailedRockEntityCopyWithImpl<_DetailedRockEntity>(this, _$identity);
 }
 
-abstract class _FullRockInfo implements FullRockInfo {
-  const factory _FullRockInfo(
+abstract class _DetailedRockEntity implements DetailedRockEntity {
+  const factory _DetailedRockEntity(
       {required int id,
       required double latitude,
       required double longitude,
       required int difficulty,
       required int height,
       required String picName,
-      required String localizedName}) = _$_FullRockInfo;
+      required String localizedName}) = _$_DetailedRockEntity;
 
   @override
   int get id;
@@ -277,6 +279,6 @@ abstract class _FullRockInfo implements FullRockInfo {
   String get localizedName;
   @override
   @JsonKey(ignore: true)
-  _$FullRockInfoCopyWith<_FullRockInfo> get copyWith =>
+  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
