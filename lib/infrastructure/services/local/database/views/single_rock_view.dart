@@ -5,7 +5,6 @@ part 'single_rock_view.freezed.dart';
 
 @freezed
 class SingleRockView with _$SingleRockView {
-
   const SingleRockView._();
 
   const factory SingleRockView({

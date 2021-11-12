@@ -5,7 +5,6 @@ part 'rocks_coordinates_list_view.freezed.dart';
 
 @freezed
 class RocksCoordinatesListView with _$RocksCoordinatesListView {
-
   const RocksCoordinatesListView._();
 
   const factory RocksCoordinatesListView({

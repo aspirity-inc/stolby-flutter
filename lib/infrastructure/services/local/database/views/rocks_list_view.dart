@@ -5,7 +5,6 @@ part 'rocks_list_view.freezed.dart';
 
 @freezed
 class RocksListView with _$RocksListView {
-
   const RocksListView._();
 
   const factory RocksListView({
