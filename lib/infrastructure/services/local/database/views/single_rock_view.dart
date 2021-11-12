@@ -1,26 +1,24 @@
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class SingleRockView {
-  final int id;
-  final double latitude;
-  final double longitude;
-  final int difficulty;
-  final int height;
-  final String picName;
-  final String localizedName;
-  final String shortInfo;
-  final String fullInfo;
-  SingleRockView({
-    required this.id,
-    required this.latitude,
-    required this.longitude,
-    required this.difficulty,
-    required this.height,
-    required this.picName,
-    required this.localizedName,
-    required this.shortInfo,
-    required this.fullInfo,
-  });
+part 'single_rock_view.freezed.dart';
+
+@freezed
+class SingleRockView with _$SingleRockView {
+
+  const SingleRockView._();
+
+  const factory SingleRockView({
+    required int id,
+    required double latitude,
+    required double longitude,
+    required int difficulty,
+    required int height,
+    required String picName,
+    required String localizedName,
+    required String shortInfo,
+    required String fullInfo,
+  }) = _SingleRockView;
 
   DetailedRockEntity toDomain() => DetailedRockEntity(
         id: id,

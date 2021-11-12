@@ -1,19 +1,22 @@
 import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
 
-class RocksCoordinatesListView {
-  final int id;
-  final double latitude;
-  final double longitude;
-  final String picName;
-  final String localizedName;
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  RocksCoordinatesListView({
-    required this.id,
-    required this.latitude,
-    required this.longitude,
-    required this.picName,
-    required this.localizedName,
-  });
+part 'rocks_coordinates_list_view.freezed.dart';
+
+@freezed
+class RocksCoordinatesListView with _$RocksCoordinatesListView {
+
+  const RocksCoordinatesListView._();
+
+  const factory RocksCoordinatesListView({
+    required int id,
+    required double latitude,
+    required double longitude,
+    required String picName,
+    required String localizedName,
+  }) = _RocksCoordinatesListView;
 
   RockMapEntity toDomain() => RockMapEntity(
         id: id,
