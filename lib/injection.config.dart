@@ -19,7 +19,7 @@ import 'infrastructure/services/local/database/app_database.dart'
 _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
-  gh.lazySingleton<_i3.AppDatabase>(() => _i3.AppDatabase());
+  gh.lazySingleton<_i3.AppDatabase>(() => _i3.AppDatabase.open());
   gh.lazySingleton<_i4.IMapRepository>(
       () => _i5.MapRepository(get<_i3.AppDatabase>()));
   gh.lazySingleton<_i6.IRockListRepository>(

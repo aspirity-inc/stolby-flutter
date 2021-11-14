@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
@@ -18,7 +17,9 @@ class MapRepository implements IMapRepository {
       getRocksCoordinatesList() async {
     try {
       final language = Intl.getCurrentLocale().split('_')[0];
-      final result = await db.getRocksCoordinatesList(language);
+      final result = await db.getRocksCoordinatesList(
+        language == 'ru' ? 'ru' : 'en',
+      );
 
       return right(
         result
@@ -27,7 +28,7 @@ class MapRepository implements IMapRepository {
             )
             .toList(),
       );
-    } on PlatformException {
+    } catch (_) {
       return left(const DatabaseFailure.notFound());
     }
   }

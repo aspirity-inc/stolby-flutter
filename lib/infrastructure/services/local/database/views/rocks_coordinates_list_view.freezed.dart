@@ -166,8 +166,7 @@ class __$RocksCoordinatesListViewCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RocksCoordinatesListView extends _RocksCoordinatesListView
-    with DiagnosticableTreeMixin {
+class _$_RocksCoordinatesListView extends _RocksCoordinatesListView {
   const _$_RocksCoordinatesListView(
       {required this.id,
       required this.latitude,
@@ -188,20 +187,8 @@ class _$_RocksCoordinatesListView extends _RocksCoordinatesListView
   final String localizedName;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RocksCoordinatesListView(id: $id, latitude: $latitude, longitude: $longitude, picName: $picName, localizedName: $localizedName)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RocksCoordinatesListView'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('latitude', latitude))
-      ..add(DiagnosticsProperty('longitude', longitude))
-      ..add(DiagnosticsProperty('picName', picName))
-      ..add(DiagnosticsProperty('localizedName', localizedName));
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
@@ -19,7 +18,9 @@ class RockListRepository implements IRockListRepository {
       getRocksList() async {
     try {
       final language = Intl.getCurrentLocale().split('_')[0];
-      final result = await db.getRocksList(language);
+      final result = await db.getRocksList(
+        language == 'ru' ? 'ru' : 'en',
+      );
 
       return right(
         result
@@ -28,7 +29,7 @@ class RockListRepository implements IRockListRepository {
             )
             .toList(),
       );
-    } on PlatformException {
+    } catch (_) {
       return left(const DatabaseFailure.notFound());
     }
   }
@@ -39,10 +40,10 @@ class RockListRepository implements IRockListRepository {
   ) async {
     try {
       final language = Intl.getCurrentLocale().split('_')[0];
-      final result = await db.getSingleRock(language, id);
+      final result = await db.getSingleRock(language == 'ru' ? 'ru' : 'en', id);
 
       return right(result.toDomain());
-    } on PlatformException {
+    } catch (_) {
       return left(const DatabaseFailure.notFound());
     }
   }
