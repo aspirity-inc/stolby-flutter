@@ -122,20 +122,3 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     );
   }
 }
-/*
-state.rocksToShow.sort(
-                  (a, b) => calculateDistance(
-                    location.latitude,
-                    location.longitude,
-                    a.latitude,
-                    a.longitude,
-                  ).compareTo(
-                    calculateDistance(
-                      location.latitude,
-                      location.longitude,
-                      b.latitude,
-                      b.longitude,
-                    ),
-                  ),
-                );
- */
