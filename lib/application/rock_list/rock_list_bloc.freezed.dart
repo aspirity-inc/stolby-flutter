@@ -21,16 +21,14 @@ class _$RockListEventTearOff {
     return const _Initialized();
   }
 
-  _SearchLineChanged searchLineChanged({required String searchLineString}) {
-    return _SearchLineChanged(
-      searchLineString: searchLineString,
+  _SearchStringChanged searchStringChanged({required String searchString}) {
+    return _SearchStringChanged(
+      searchString: searchString,
     );
   }
 
-  _Filtered filtered({required int difficulty}) {
-    return _Filtered(
-      difficulty: difficulty,
-    );
+  _Filtered filtered() {
+    return const _Filtered();
   }
 
   _Sorted sorted({required LatLng location}) {
@@ -58,8 +56,8 @@ mixin _$RockListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
@@ -68,8 +66,8 @@ mixin _$RockListEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -78,8 +76,8 @@ mixin _$RockListEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -89,7 +87,7 @@ mixin _$RockListEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
@@ -99,7 +97,7 @@ mixin _$RockListEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -109,7 +107,7 @@ mixin _$RockListEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -177,8 +175,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
@@ -190,8 +188,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -203,8 +201,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -220,7 +218,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
@@ -233,7 +231,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -246,7 +244,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -265,32 +263,32 @@ abstract class _Initialized implements RockListEvent {
 }
 
 /// @nodoc
-abstract class _$SearchLineChangedCopyWith<$Res> {
-  factory _$SearchLineChangedCopyWith(
-          _SearchLineChanged value, $Res Function(_SearchLineChanged) then) =
-      __$SearchLineChangedCopyWithImpl<$Res>;
-  $Res call({String searchLineString});
+abstract class _$SearchStringChangedCopyWith<$Res> {
+  factory _$SearchStringChangedCopyWith(_SearchStringChanged value,
+          $Res Function(_SearchStringChanged) then) =
+      __$SearchStringChangedCopyWithImpl<$Res>;
+  $Res call({String searchString});
 }
 
 /// @nodoc
-class __$SearchLineChangedCopyWithImpl<$Res>
+class __$SearchStringChangedCopyWithImpl<$Res>
     extends _$RockListEventCopyWithImpl<$Res>
-    implements _$SearchLineChangedCopyWith<$Res> {
-  __$SearchLineChangedCopyWithImpl(
-      _SearchLineChanged _value, $Res Function(_SearchLineChanged) _then)
-      : super(_value, (v) => _then(v as _SearchLineChanged));
+    implements _$SearchStringChangedCopyWith<$Res> {
+  __$SearchStringChangedCopyWithImpl(
+      _SearchStringChanged _value, $Res Function(_SearchStringChanged) _then)
+      : super(_value, (v) => _then(v as _SearchStringChanged));
 
   @override
-  _SearchLineChanged get _value => super._value as _SearchLineChanged;
+  _SearchStringChanged get _value => super._value as _SearchStringChanged;
 
   @override
   $Res call({
-    Object? searchLineString = freezed,
+    Object? searchString = freezed,
   }) {
-    return _then(_SearchLineChanged(
-      searchLineString: searchLineString == freezed
-          ? _value.searchLineString
-          : searchLineString // ignore: cast_nullable_to_non_nullable
+    return _then(_SearchStringChanged(
+      searchString: searchString == freezed
+          ? _value.searchString
+          : searchString // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -298,73 +296,74 @@ class __$SearchLineChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchLineChanged implements _SearchLineChanged {
-  const _$_SearchLineChanged({required this.searchLineString});
+class _$_SearchStringChanged implements _SearchStringChanged {
+  const _$_SearchStringChanged({required this.searchString});
 
   @override
-  final String searchLineString;
+  final String searchString;
 
   @override
   String toString() {
-    return 'RockListEvent.searchLineChanged(searchLineString: $searchLineString)';
+    return 'RockListEvent.searchStringChanged(searchString: $searchString)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchLineChanged &&
-            (identical(other.searchLineString, searchLineString) ||
-                other.searchLineString == searchLineString));
+            other is _SearchStringChanged &&
+            (identical(other.searchString, searchString) ||
+                other.searchString == searchString));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, searchLineString);
+  int get hashCode => Object.hash(runtimeType, searchString);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchLineChangedCopyWith<_SearchLineChanged> get copyWith =>
-      __$SearchLineChangedCopyWithImpl<_SearchLineChanged>(this, _$identity);
+  _$SearchStringChangedCopyWith<_SearchStringChanged> get copyWith =>
+      __$SearchStringChangedCopyWithImpl<_SearchStringChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
-    return searchLineChanged(searchLineString);
+    return searchStringChanged(searchString);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
-    return searchLineChanged?.call(searchLineString);
+    return searchStringChanged?.call(searchString);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
   }) {
-    if (searchLineChanged != null) {
-      return searchLineChanged(searchLineString);
+    if (searchStringChanged != null) {
+      return searchStringChanged(searchString);
     }
     return orElse();
   }
@@ -373,53 +372,53 @@ class _$_SearchLineChanged implements _SearchLineChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
     required TResult Function(_SearchLineCleared value) searchLineCleared,
   }) {
-    return searchLineChanged(this);
+    return searchStringChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_SearchLineCleared value)? searchLineCleared,
   }) {
-    return searchLineChanged?.call(this);
+    return searchStringChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
     TResult Function(_SearchLineCleared value)? searchLineCleared,
     required TResult orElse(),
   }) {
-    if (searchLineChanged != null) {
-      return searchLineChanged(this);
+    if (searchStringChanged != null) {
+      return searchStringChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _SearchLineChanged implements RockListEvent {
-  const factory _SearchLineChanged({required String searchLineString}) =
-      _$_SearchLineChanged;
+abstract class _SearchStringChanged implements RockListEvent {
+  const factory _SearchStringChanged({required String searchString}) =
+      _$_SearchStringChanged;
 
-  String get searchLineString;
+  String get searchString;
   @JsonKey(ignore: true)
-  _$SearchLineChangedCopyWith<_SearchLineChanged> get copyWith =>
+  _$SearchStringChangedCopyWith<_SearchStringChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -427,7 +426,6 @@ abstract class _SearchLineChanged implements RockListEvent {
 abstract class _$FilteredCopyWith<$Res> {
   factory _$FilteredCopyWith(_Filtered value, $Res Function(_Filtered) then) =
       __$FilteredCopyWithImpl<$Res>;
-  $Res call({int difficulty});
 }
 
 /// @nodoc
@@ -438,89 +436,66 @@ class __$FilteredCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
 
   @override
   _Filtered get _value => super._value as _Filtered;
-
-  @override
-  $Res call({
-    Object? difficulty = freezed,
-  }) {
-    return _then(_Filtered(
-      difficulty: difficulty == freezed
-          ? _value.difficulty
-          : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_Filtered implements _Filtered {
-  const _$_Filtered({required this.difficulty});
-
-  @override
-  final int difficulty;
+  const _$_Filtered();
 
   @override
   String toString() {
-    return 'RockListEvent.filtered(difficulty: $difficulty)';
+    return 'RockListEvent.filtered()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Filtered &&
-            (identical(other.difficulty, difficulty) ||
-                other.difficulty == difficulty));
+        (other.runtimeType == runtimeType && other is _Filtered);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, difficulty);
-
-  @JsonKey(ignore: true)
-  @override
-  _$FilteredCopyWith<_Filtered> get copyWith =>
-      __$FilteredCopyWithImpl<_Filtered>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
-    return filtered(difficulty);
+    return filtered();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
-    return filtered?.call(difficulty);
+    return filtered?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
   }) {
     if (filtered != null) {
-      return filtered(difficulty);
+      return filtered();
     }
     return orElse();
   }
@@ -529,7 +504,7 @@ class _$_Filtered implements _Filtered {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
@@ -542,7 +517,7 @@ class _$_Filtered implements _Filtered {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -555,7 +530,7 @@ class _$_Filtered implements _Filtered {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -570,12 +545,7 @@ class _$_Filtered implements _Filtered {
 }
 
 abstract class _Filtered implements RockListEvent {
-  const factory _Filtered({required int difficulty}) = _$_Filtered;
-
-  int get difficulty;
-  @JsonKey(ignore: true)
-  _$FilteredCopyWith<_Filtered> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _Filtered() = _$_Filtered;
 }
 
 /// @nodoc
@@ -641,8 +611,8 @@ class _$_Sorted implements _Sorted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
@@ -654,8 +624,8 @@ class _$_Sorted implements _Sorted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -667,8 +637,8 @@ class _$_Sorted implements _Sorted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -684,7 +654,7 @@ class _$_Sorted implements _Sorted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
@@ -697,7 +667,7 @@ class _$_Sorted implements _Sorted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -710,7 +680,7 @@ class _$_Sorted implements _Sorted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -798,8 +768,8 @@ class _$_LocationChanged implements _LocationChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
@@ -811,8 +781,8 @@ class _$_LocationChanged implements _LocationChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -824,8 +794,8 @@ class _$_LocationChanged implements _LocationChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -841,7 +811,7 @@ class _$_LocationChanged implements _LocationChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
@@ -854,7 +824,7 @@ class _$_LocationChanged implements _LocationChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -867,7 +837,7 @@ class _$_LocationChanged implements _LocationChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -933,8 +903,8 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String searchLineString) searchLineChanged,
-    required TResult Function(int difficulty) filtered,
+    required TResult Function(String searchString) searchStringChanged,
+    required TResult Function() filtered,
     required TResult Function(LatLng location) sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
@@ -946,8 +916,8 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -959,8 +929,8 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String searchLineString)? searchLineChanged,
-    TResult Function(int difficulty)? filtered,
+    TResult Function(String searchString)? searchStringChanged,
+    TResult Function()? filtered,
     TResult Function(LatLng location)? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
@@ -976,7 +946,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SearchLineChanged value) searchLineChanged,
+    required TResult Function(_SearchStringChanged value) searchStringChanged,
     required TResult Function(_Filtered value) filtered,
     required TResult Function(_Sorted value) sorted,
     required TResult Function(_LocationChanged value) locationChanged,
@@ -989,7 +959,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,
@@ -1002,7 +972,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchLineChanged value)? searchLineChanged,
+    TResult Function(_SearchStringChanged value)? searchStringChanged,
     TResult Function(_Filtered value)? filtered,
     TResult Function(_Sorted value)? sorted,
     TResult Function(_LocationChanged value)? locationChanged,

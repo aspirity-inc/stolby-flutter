@@ -3,12 +3,10 @@ part of 'rock_list_bloc.dart';
 @freezed
 class RockListEvent with _$RockListEvent {
   const factory RockListEvent.initialized() = _Initialized;
-  const factory RockListEvent.searchLineChanged({
-    required String searchLineString,
-  }) = _SearchLineChanged;
-  const factory RockListEvent.filtered({
-    required int difficulty,
-  }) = _Filtered;
+  const factory RockListEvent.searchStringChanged({
+    required String searchString,
+  }) = _SearchStringChanged;
+  const factory RockListEvent.filtered() = _Filtered;
   const factory RockListEvent.sorted({
     required LatLng location,
   }) = _Sorted;
