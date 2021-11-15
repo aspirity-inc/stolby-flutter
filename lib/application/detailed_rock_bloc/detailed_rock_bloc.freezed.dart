@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'single_rock_bloc.dart';
+part of 'detailed_rock_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,8 +14,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$SingleRockEventTearOff {
-  const _$SingleRockEventTearOff();
+class _$DetailedRockEventTearOff {
+  const _$DetailedRockEventTearOff();
 
   _Initialized initialized({required int id}) {
     return _Initialized(
@@ -31,10 +31,10 @@ class _$SingleRockEventTearOff {
 }
 
 /// @nodoc
-const $SingleRockEvent = _$SingleRockEventTearOff();
+const $DetailedRockEvent = _$DetailedRockEventTearOff();
 
 /// @nodoc
-mixin _$SingleRockEvent {
+mixin _$DetailedRockEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) initialized,
@@ -76,20 +76,20 @@ mixin _$SingleRockEvent {
 }
 
 /// @nodoc
-abstract class $SingleRockEventCopyWith<$Res> {
-  factory $SingleRockEventCopyWith(
-          SingleRockEvent value, $Res Function(SingleRockEvent) then) =
-      _$SingleRockEventCopyWithImpl<$Res>;
+abstract class $DetailedRockEventCopyWith<$Res> {
+  factory $DetailedRockEventCopyWith(
+          DetailedRockEvent value, $Res Function(DetailedRockEvent) then) =
+      _$DetailedRockEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SingleRockEventCopyWithImpl<$Res>
-    implements $SingleRockEventCopyWith<$Res> {
-  _$SingleRockEventCopyWithImpl(this._value, this._then);
+class _$DetailedRockEventCopyWithImpl<$Res>
+    implements $DetailedRockEventCopyWith<$Res> {
+  _$DetailedRockEventCopyWithImpl(this._value, this._then);
 
-  final SingleRockEvent _value;
+  final DetailedRockEvent _value;
   // ignore: unused_field
-  final $Res Function(SingleRockEvent) _then;
+  final $Res Function(DetailedRockEvent) _then;
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ abstract class _$InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$InitializedCopyWithImpl<$Res>
-    extends _$SingleRockEventCopyWithImpl<$Res>
+    extends _$DetailedRockEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(
       _Initialized _value, $Res Function(_Initialized) _then)
@@ -134,7 +134,7 @@ class _$_Initialized implements _Initialized {
 
   @override
   String toString() {
-    return 'SingleRockEvent.initialized(id: $id)';
+    return 'DetailedRockEvent.initialized(id: $id)';
   }
 
   @override
@@ -216,7 +216,7 @@ class _$_Initialized implements _Initialized {
   }
 }
 
-abstract class _Initialized implements SingleRockEvent {
+abstract class _Initialized implements DetailedRockEvent {
   const factory _Initialized({required int id}) = _$_Initialized;
 
   int get id;
@@ -235,7 +235,7 @@ abstract class _$LocationChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$LocationChangedCopyWithImpl<$Res>
-    extends _$SingleRockEventCopyWithImpl<$Res>
+    extends _$DetailedRockEventCopyWithImpl<$Res>
     implements _$LocationChangedCopyWith<$Res> {
   __$LocationChangedCopyWithImpl(
       _LocationChanged _value, $Res Function(_LocationChanged) _then)
@@ -267,7 +267,7 @@ class _$_LocationChanged implements _LocationChanged {
 
   @override
   String toString() {
-    return 'SingleRockEvent.locationChanged(location: $location)';
+    return 'DetailedRockEvent.locationChanged(location: $location)';
   }
 
   @override
@@ -350,7 +350,7 @@ class _$_LocationChanged implements _LocationChanged {
   }
 }
 
-abstract class _LocationChanged implements SingleRockEvent {
+abstract class _LocationChanged implements DetailedRockEvent {
   const factory _LocationChanged({required LatLng location}) =
       _$_LocationChanged;
 
@@ -361,13 +361,13 @@ abstract class _LocationChanged implements SingleRockEvent {
 }
 
 /// @nodoc
-class _$SingleRockStateTearOff {
-  const _$SingleRockStateTearOff();
+class _$DetailedRockStateTearOff {
+  const _$DetailedRockStateTearOff();
 
-  _SingleRockState call(
+  _DetailedRockState call(
       {required Option<DetailedRockEntity> rock,
       required Option<double> distance}) {
-    return _SingleRockState(
+    return _DetailedRockState(
       rock: rock,
       distance: distance,
     );
@@ -375,34 +375,34 @@ class _$SingleRockStateTearOff {
 }
 
 /// @nodoc
-const $SingleRockState = _$SingleRockStateTearOff();
+const $DetailedRockState = _$DetailedRockStateTearOff();
 
 /// @nodoc
-mixin _$SingleRockState {
+mixin _$DetailedRockState {
   Option<DetailedRockEntity> get rock => throw _privateConstructorUsedError;
   Option<double> get distance => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SingleRockStateCopyWith<SingleRockState> get copyWith =>
+  $DetailedRockStateCopyWith<DetailedRockState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SingleRockStateCopyWith<$Res> {
-  factory $SingleRockStateCopyWith(
-          SingleRockState value, $Res Function(SingleRockState) then) =
-      _$SingleRockStateCopyWithImpl<$Res>;
+abstract class $DetailedRockStateCopyWith<$Res> {
+  factory $DetailedRockStateCopyWith(
+          DetailedRockState value, $Res Function(DetailedRockState) then) =
+      _$DetailedRockStateCopyWithImpl<$Res>;
   $Res call({Option<DetailedRockEntity> rock, Option<double> distance});
 }
 
 /// @nodoc
-class _$SingleRockStateCopyWithImpl<$Res>
-    implements $SingleRockStateCopyWith<$Res> {
-  _$SingleRockStateCopyWithImpl(this._value, this._then);
+class _$DetailedRockStateCopyWithImpl<$Res>
+    implements $DetailedRockStateCopyWith<$Res> {
+  _$DetailedRockStateCopyWithImpl(this._value, this._then);
 
-  final SingleRockState _value;
+  final DetailedRockState _value;
   // ignore: unused_field
-  final $Res Function(SingleRockState) _then;
+  final $Res Function(DetailedRockState) _then;
 
   @override
   $Res call({
@@ -423,32 +423,32 @@ class _$SingleRockStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SingleRockStateCopyWith<$Res>
-    implements $SingleRockStateCopyWith<$Res> {
-  factory _$SingleRockStateCopyWith(
-          _SingleRockState value, $Res Function(_SingleRockState) then) =
-      __$SingleRockStateCopyWithImpl<$Res>;
+abstract class _$DetailedRockStateCopyWith<$Res>
+    implements $DetailedRockStateCopyWith<$Res> {
+  factory _$DetailedRockStateCopyWith(
+          _DetailedRockState value, $Res Function(_DetailedRockState) then) =
+      __$DetailedRockStateCopyWithImpl<$Res>;
   @override
   $Res call({Option<DetailedRockEntity> rock, Option<double> distance});
 }
 
 /// @nodoc
-class __$SingleRockStateCopyWithImpl<$Res>
-    extends _$SingleRockStateCopyWithImpl<$Res>
-    implements _$SingleRockStateCopyWith<$Res> {
-  __$SingleRockStateCopyWithImpl(
-      _SingleRockState _value, $Res Function(_SingleRockState) _then)
-      : super(_value, (v) => _then(v as _SingleRockState));
+class __$DetailedRockStateCopyWithImpl<$Res>
+    extends _$DetailedRockStateCopyWithImpl<$Res>
+    implements _$DetailedRockStateCopyWith<$Res> {
+  __$DetailedRockStateCopyWithImpl(
+      _DetailedRockState _value, $Res Function(_DetailedRockState) _then)
+      : super(_value, (v) => _then(v as _DetailedRockState));
 
   @override
-  _SingleRockState get _value => super._value as _SingleRockState;
+  _DetailedRockState get _value => super._value as _DetailedRockState;
 
   @override
   $Res call({
     Object? rock = freezed,
     Object? distance = freezed,
   }) {
-    return _then(_SingleRockState(
+    return _then(_DetailedRockState(
       rock: rock == freezed
           ? _value.rock
           : rock // ignore: cast_nullable_to_non_nullable
@@ -463,8 +463,8 @@ class __$SingleRockStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SingleRockState implements _SingleRockState {
-  const _$_SingleRockState({required this.rock, required this.distance});
+class _$_DetailedRockState implements _DetailedRockState {
+  const _$_DetailedRockState({required this.rock, required this.distance});
 
   @override
   final Option<DetailedRockEntity> rock;
@@ -473,14 +473,14 @@ class _$_SingleRockState implements _SingleRockState {
 
   @override
   String toString() {
-    return 'SingleRockState(rock: $rock, distance: $distance)';
+    return 'DetailedRockState(rock: $rock, distance: $distance)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SingleRockState &&
+            other is _DetailedRockState &&
             (identical(other.rock, rock) || other.rock == rock) &&
             (identical(other.distance, distance) ||
                 other.distance == distance));
@@ -491,14 +491,14 @@ class _$_SingleRockState implements _SingleRockState {
 
   @JsonKey(ignore: true)
   @override
-  _$SingleRockStateCopyWith<_SingleRockState> get copyWith =>
-      __$SingleRockStateCopyWithImpl<_SingleRockState>(this, _$identity);
+  _$DetailedRockStateCopyWith<_DetailedRockState> get copyWith =>
+      __$DetailedRockStateCopyWithImpl<_DetailedRockState>(this, _$identity);
 }
 
-abstract class _SingleRockState implements SingleRockState {
-  const factory _SingleRockState(
+abstract class _DetailedRockState implements DetailedRockState {
+  const factory _DetailedRockState(
       {required Option<DetailedRockEntity> rock,
-      required Option<double> distance}) = _$_SingleRockState;
+      required Option<double> distance}) = _$_DetailedRockState;
 
   @override
   Option<DetailedRockEntity> get rock;
@@ -506,6 +506,6 @@ abstract class _SingleRockState implements SingleRockState {
   Option<double> get distance;
   @override
   @JsonKey(ignore: true)
-  _$SingleRockStateCopyWith<_SingleRockState> get copyWith =>
+  _$DetailedRockStateCopyWith<_DetailedRockState> get copyWith =>
       throw _privateConstructorUsedError;
 }
