@@ -32,16 +32,12 @@ class MapBloc extends Bloc<MapEvent, MapState> {
             ),
           );
         },
-        zoomChanged: (e) {
-          emit(
-            state.copyWith(zoom: e.zoom),
-          );
-        },
-        angleChanged: (e) {
-          emit(
-            state.copyWith(angle: e.angle),
-          );
-        },
+        zoomChanged: (e) => emit(
+          state.copyWith(zoom: e.zoom),
+        ),
+        angleChanged: (e) => emit(
+          state.copyWith(angle: e.angle),
+        ),
       );
     });
   }

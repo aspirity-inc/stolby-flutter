@@ -26,7 +26,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i5.MapRepository(get<_i3.AppDatabase>()));
   gh.lazySingleton<_i6.IRockListRepository>(
       () => _i7.RockListRepository(get<_i3.AppDatabase>()));
-  gh.factory<_i8.MapBloc>(() => _i8.MapBloc());
+  gh.factory<_i8.MapBloc>(() => _i8.MapBloc(get<_i4.IMapRepository>()));
   gh.factory<_i9.RockListBloc>(
       () => _i9.RockListBloc(get<_i6.IRockListRepository>()));
   return get;
