@@ -36,6 +36,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             );
           },
           searchStringChanged: (e) {
+            e.searchString.length >= 3 ? add(RockListEvent.filtered()) : null;
             emit(
               state.copyWith(searchString: e.searchString),
             );
