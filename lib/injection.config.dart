@@ -8,6 +8,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/rock_list/rock_list_bloc.dart' as _i8;
+import 'application/single_rock_bloc/single_rock_bloc.dart' as _i9;
 import 'domain/feature/rocks_list/i_rock_list_repository.dart' as _i6;
 import 'domain/feature/rocks_map/i_map_repository.dart' as _i4;
 import 'infrastructure/features/rocks_list/rock_list_repository.dart' as _i7;
@@ -27,5 +28,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i7.RockListRepository(get<_i3.AppDatabase>()));
   gh.factory<_i8.RockListBloc>(
       () => _i8.RockListBloc(get<_i6.IRockListRepository>()));
+  gh.factory<_i9.SingleRockBloc>(
+      () => _i9.SingleRockBloc(get<_i6.IRockListRepository>()));
   return get;
 }
