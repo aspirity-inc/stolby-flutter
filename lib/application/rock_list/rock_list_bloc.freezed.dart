@@ -21,27 +21,27 @@ class _$RockListEventTearOff {
     return const _Initialized();
   }
 
-  _SearchLineChanged searchLineChanged(String searchLineString) {
+  _SearchLineChanged searchLineChanged({required String searchLineString}) {
     return _SearchLineChanged(
-      searchLineString,
+      searchLineString: searchLineString,
     );
   }
 
-  _Filtered filtered(int difficulty) {
+  _Filtered filtered({required int difficulty}) {
     return _Filtered(
-      difficulty,
+      difficulty: difficulty,
     );
   }
 
-  _Sorted sorted(LatLng location) {
+  _Sorted sorted({required LatLng location}) {
     return _Sorted(
-      location,
+      location: location,
     );
   }
 
-  _LocationChanged locationChanged(LatLng location) {
+  _LocationChanged locationChanged({required LatLng location}) {
     return _LocationChanged(
-      location,
+      location: location,
     );
   }
 
@@ -288,7 +288,7 @@ class __$SearchLineChangedCopyWithImpl<$Res>
     Object? searchLineString = freezed,
   }) {
     return _then(_SearchLineChanged(
-      searchLineString == freezed
+      searchLineString: searchLineString == freezed
           ? _value.searchLineString
           : searchLineString // ignore: cast_nullable_to_non_nullable
               as String,
@@ -299,7 +299,7 @@ class __$SearchLineChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchLineChanged implements _SearchLineChanged {
-  const _$_SearchLineChanged(this.searchLineString);
+  const _$_SearchLineChanged({required this.searchLineString});
 
   @override
   final String searchLineString;
@@ -414,7 +414,7 @@ class _$_SearchLineChanged implements _SearchLineChanged {
 }
 
 abstract class _SearchLineChanged implements RockListEvent {
-  const factory _SearchLineChanged(String searchLineString) =
+  const factory _SearchLineChanged({required String searchLineString}) =
       _$_SearchLineChanged;
 
   String get searchLineString;
@@ -444,7 +444,7 @@ class __$FilteredCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
     Object? difficulty = freezed,
   }) {
     return _then(_Filtered(
-      difficulty == freezed
+      difficulty: difficulty == freezed
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
@@ -455,7 +455,7 @@ class __$FilteredCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Filtered implements _Filtered {
-  const _$_Filtered(this.difficulty);
+  const _$_Filtered({required this.difficulty});
 
   @override
   final int difficulty;
@@ -570,7 +570,7 @@ class _$_Filtered implements _Filtered {
 }
 
 abstract class _Filtered implements RockListEvent {
-  const factory _Filtered(int difficulty) = _$_Filtered;
+  const factory _Filtered({required int difficulty}) = _$_Filtered;
 
   int get difficulty;
   @JsonKey(ignore: true)
@@ -599,7 +599,7 @@ class __$SortedCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
     Object? location = freezed,
   }) {
     return _then(_Sorted(
-      location == freezed
+      location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -610,7 +610,7 @@ class __$SortedCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Sorted implements _Sorted {
-  const _$_Sorted(this.location);
+  const _$_Sorted({required this.location});
 
   @override
   final LatLng location;
@@ -725,7 +725,7 @@ class _$_Sorted implements _Sorted {
 }
 
 abstract class _Sorted implements RockListEvent {
-  const factory _Sorted(LatLng location) = _$_Sorted;
+  const factory _Sorted({required LatLng location}) = _$_Sorted;
 
   LatLng get location;
   @JsonKey(ignore: true)
@@ -756,7 +756,7 @@ class __$LocationChangedCopyWithImpl<$Res>
     Object? location = freezed,
   }) {
     return _then(_LocationChanged(
-      location == freezed
+      location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -767,7 +767,7 @@ class __$LocationChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LocationChanged implements _LocationChanged {
-  const _$_LocationChanged(this.location);
+  const _$_LocationChanged({required this.location});
 
   @override
   final LatLng location;
@@ -882,7 +882,8 @@ class _$_LocationChanged implements _LocationChanged {
 }
 
 abstract class _LocationChanged implements RockListEvent {
-  const factory _LocationChanged(LatLng location) = _$_LocationChanged;
+  const factory _LocationChanged({required LatLng location}) =
+      _$_LocationChanged;
 
   LatLng get location;
   @JsonKey(ignore: true)
