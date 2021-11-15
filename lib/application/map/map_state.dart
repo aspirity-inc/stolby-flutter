@@ -11,7 +11,7 @@ class MapState with _$MapState {
   factory MapState.initial() => MapState(
         rocks: [],
         loading: false,
-        zoom: 1.0,
+        zoom: 13,
         angle: 0,
       );
 }
