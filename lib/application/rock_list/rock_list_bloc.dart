@@ -14,25 +14,59 @@ part 'rock_list_state.dart';
 class RockListBloc extends Bloc<RockListEvent, RockListState> {
   final IRockListRepository _rockListRepository;
 
+  List<RockListItemEntity> _sortRocksList(
+    List<RockListItemEntity> list,
+    LatLng latLng,
+  ) {
+    const distance = Distance();
+
+    return list.sorted(
+      (a, b) => distance
+          .distance(
+            LatLng(a.latitude, a.longitude),
+            latLng,
+          )
+          .compareTo(
+            distance.distance(
+              LatLng(b.latitude, b.longitude),
+              latLng,
+            ),
+          ),
+    );
+  }
+
+  List<RockListItemEntity> _filterRocksList(
+    List<RockListItemEntity> list,
+    String filter,
+  ) =>
+      list
+          .where(
+            (element) => element.localizedName.contains(filter),
+          )
+          .toList();
+
+  void _sortListByLocation(Option<LatLng> location) {
+    location.fold(
+      () => null,
+      (a) => add(
+        const RockListEvent.sorted(),
+      ),
+    );
+  }
+
   RockListBloc(this._rockListRepository) : super(RockListState.initial()) {
     on<RockListEvent>(
       (event, emit) async {
         await event.map(
           initialized: (e) async {
-            emit(
-              state.copyWith(loading: true),
-            );
+            emit(state.copyWith(loading: true));
             final rocksOrError = await _rockListRepository.getRocksList();
             rocksOrError.fold(
-              (f) => emit(
-                state.copyWith(loading: false),
-              ),
+              (l) => emit(state.copyWith(
+                loading: false,
+              )),
               (r) => emit(
-                state.copyWith(
-                  loading: false,
-                  allRocks: r,
-                  rocksToShow: r,
-                ),
+                state.copyWith(loading: false, rocksToShow: r, allRocks: r),
               ),
             );
           },
@@ -40,63 +74,33 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             e.searchString.length >= 3
                 ? add(const RockListEvent.filtered())
                 : null;
-            emit(
-              state.copyWith(searchString: e.searchString),
-            );
+            emit(state.copyWith(searchString: e.searchString));
           },
           sorted: (e) {
-            const distance = Distance();
             state.userLocation.fold(
               () => null,
-              (r) {
-                emit(
-                  state.copyWith(
-                    rocksToShow: state.rocksToShow.sorted(
-                      (a, b) => distance
-                          .distance(LatLng(a.latitude, a.longitude), r)
-                          .compareTo(
-                            distance.distance(
-                                LatLng(b.latitude, b.longitude), r),
-                          ),
-                    ),
-                  ),
-                );
-              },
+              (r) => emit(state.copyWith(
+                rocksToShow: _sortRocksList(state.rocksToShow, r),
+              )),
             );
           },
           filtered: (e) {
-            if (state.searchString.length >= 3) {
-              final filteredRocks = state.allRocks
-                  .where(
-                    (element) =>
-                        element.localizedName.contains(state.searchString),
-                  )
-                  .toList();
-              emit(
-                state.copyWith(
-                  rocksToShow: filteredRocks,
-                ),
-              );
-            }
+            state.searchString.length >= 3
+                ? emit(state.copyWith(
+                    rocksToShow:
+                        _filterRocksList(state.allRocks, state.searchString),
+                  ))
+                : null;
           },
           locationChanged: (e) {
-            add(RockListEvent.sorted());
+            _sortListByLocation(some(e.location));
             emit(
-              state.copyWith(
-                userLocation: some(e.location),
-              ),
+              state.copyWith(userLocation: some(e.location)),
             );
           },
           searchLineCleared: (e) {
-            state.userLocation.fold(
-              () => null,
-              (a) => add(
-                RockListEvent.sorted(),
-              ),
-            );
-            emit(
-              state.copyWith(rocksToShow: state.allRocks, searchString: ''),
-            );
+            _sortListByLocation(state.userLocation);
+            emit(state.copyWith(rocksToShow: state.allRocks, searchString: ''));
           },
         );
       },
