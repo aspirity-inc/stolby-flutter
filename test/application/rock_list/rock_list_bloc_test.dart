@@ -150,48 +150,48 @@ void main() {
       seed: () => RockListState.initial().copyWith(
         allRocks: [
           testItem.copyWith(
-            latitude: 55.918,
-            longitude: 92.73849,
+            latitude: 55.99,
+            longitude: 92.77,
           ),
           testItem.copyWith(
-            latitude: 55.9172,
-            longitude: 92.7384,
+            latitude: 55.90,
+            longitude: 92.70,
           ),
         ],
         rocksToShow: [
           testItem.copyWith(
-            latitude: 55.918,
-            longitude: 92.73849,
+            latitude: 55.99,
+            longitude: 92.77,
           ),
           testItem.copyWith(
-            latitude: 55.9172,
-            longitude: 92.7384,
+            latitude: 55.90,
+            longitude: 92.70,
           ),
         ],
         searchString: '',
         userLocation: some(LatLng(55.9174, 92.73843)),
       ),
-      act: (RockListBloc bloc) => bloc.add(RockListEvent.sorted()),
+      act: (RockListBloc bloc) => bloc.add(const RockListEvent.sorted()),
       expect: () => [
         RockListState.initial().copyWith(
           allRocks: [
             testItem.copyWith(
-              latitude: 55.918,
-              longitude: 92.73849,
+              latitude: 55.99,
+              longitude: 92.77,
             ),
             testItem.copyWith(
-              latitude: 55.9172,
-              longitude: 92.7384,
+              latitude: 55.90,
+              longitude: 92.70,
             ),
           ],
           rocksToShow: [
             testItem.copyWith(
-              latitude: 55.9172,
-              longitude: 92.7384,
+              latitude: 55.90,
+              longitude: 92.70,
             ),
             testItem.copyWith(
-              latitude: 55.918,
-              longitude: 92.73849,
+              latitude: 55.99,
+              longitude: 92.77,
             ),
           ],
           searchString: '',
@@ -257,22 +257,22 @@ void main() {
       seed: () => RockListState.initial().copyWith(
         allRocks: [
           testItem.copyWith(
-            latitude: 55.918,
-            longitude: 92.73849,
+            latitude: 55.99,
+            longitude: 92.77,
           ),
           testItem.copyWith(
-            latitude: 55.9172,
-            longitude: 92.7384,
+            latitude: 55.90,
+            longitude: 92.70,
           ),
         ],
         rocksToShow: [
           testItem.copyWith(
-            latitude: 55.918,
-            longitude: 92.73849,
+            latitude: 55.99,
+            longitude: 92.77,
           ),
           testItem.copyWith(
-            latitude: 55.9172,
-            longitude: 92.7384,
+            latitude: 55.90,
+            longitude: 92.70,
           ),
         ],
       ),
@@ -285,22 +285,22 @@ void main() {
         RockListState.initial().copyWith(
           allRocks: [
             testItem.copyWith(
-              latitude: 55.918,
-              longitude: 92.73849,
+              latitude: 55.99,
+              longitude: 92.77,
             ),
             testItem.copyWith(
-              latitude: 55.9172,
-              longitude: 92.7384,
+              latitude: 55.90,
+              longitude: 92.70,
             ),
           ],
           rocksToShow: [
             testItem.copyWith(
-              latitude: 55.918,
-              longitude: 92.73849,
+              latitude: 55.99,
+              longitude: 92.77,
             ),
             testItem.copyWith(
-              latitude: 55.9172,
-              longitude: 92.7384,
+              latitude: 55.90,
+              longitude: 92.70,
             ),
           ],
           searchString: '',
@@ -309,22 +309,22 @@ void main() {
         RockListState.initial().copyWith(
           allRocks: [
             testItem.copyWith(
-              latitude: 55.9172,
-              longitude: 92.7384,
+              latitude: 55.99,
+              longitude: 92.77,
             ),
             testItem.copyWith(
-              latitude: 55.918,
-              longitude: 92.73849,
+              latitude: 55.90,
+              longitude: 92.70,
             ),
           ],
           rocksToShow: [
             testItem.copyWith(
-              latitude: 55.9172,
-              longitude: 92.7384,
+              latitude: 55.90,
+              longitude: 92.70,
             ),
             testItem.copyWith(
-              latitude: 55.918,
-              longitude: 92.73849,
+              latitude: 55.99,
+              longitude: 92.77,
             ),
           ],
           searchString: '',

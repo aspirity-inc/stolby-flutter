@@ -45,22 +45,20 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             );
           },
           sorted: (e) {
-            final sortedRocks = state.rocksToShow;
             const distance = Distance();
             state.userLocation.fold(
               () => null,
               (r) {
-                sortedRocks.sort(
-                  (a, b) => distance
-                      .distance(LatLng(a.latitude, a.longitude), r)
-                      .compareTo(
-                        distance.distance(LatLng(b.latitude, b.longitude), r),
-                      ),
-                );
                 emit(
                   state.copyWith(
-                    loading: true,
-                    rocksToShow: sortedRocks,
+                    rocksToShow: state.rocksToShow.sorted(
+                      (a, b) => distance
+                          .distance(LatLng(a.latitude, a.longitude), r)
+                          .compareTo(
+                            distance.distance(
+                                LatLng(b.latitude, b.longitude), r),
+                          ),
+                    ),
                   ),
                 );
               },
