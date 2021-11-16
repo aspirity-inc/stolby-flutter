@@ -13,6 +13,7 @@ part 'rock_list_state.dart';
 @injectable
 class RockListBloc extends Bloc<RockListEvent, RockListState> {
   final IRockListRepository _rockListRepository;
+
   RockListBloc(this._rockListRepository) : super(RockListState.initial()) {
     on<RockListEvent>(
       (event, emit) async {
