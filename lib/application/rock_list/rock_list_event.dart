@@ -7,9 +7,7 @@ class RockListEvent with _$RockListEvent {
     required String searchString,
   }) = _SearchStringChanged;
   const factory RockListEvent.filtered() = _Filtered;
-  const factory RockListEvent.sorted({
-    required LatLng location,
-  }) = _Sorted;
+  const factory RockListEvent.sorted() = _Sorted;
   const factory RockListEvent.locationChanged({
     required LatLng location,
   }) = _LocationChanged;

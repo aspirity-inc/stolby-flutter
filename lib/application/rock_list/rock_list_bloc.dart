@@ -37,7 +37,9 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             );
           },
           searchStringChanged: (e) {
-            e.searchString.length >= 3 ? add(RockListEvent.filtered()) : null;
+            e.searchString.length >= 3
+                ? add(const RockListEvent.filtered())
+                : null;
             emit(
               state.copyWith(searchString: e.searchString),
             );
@@ -45,14 +47,23 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
           sorted: (e) {
             final sortedRocks = state.rocksToShow;
             const distance = Distance();
-            sortedRocks.sort(
-              (a, b) => distance(LatLng(a.latitude, a.longitude), e.location)
-                  .compareTo(
-                distance(LatLng(b.latitude, b.longitude), e.location),
-              ),
-            );
-            emit(
-              state.copyWith(rocksToShow: sortedRocks),
+            state.userLocation.fold(
+              () => null,
+              (r) {
+                sortedRocks.sort(
+                  (a, b) => distance
+                      .distance(LatLng(a.latitude, a.longitude), r)
+                      .compareTo(
+                        distance.distance(LatLng(b.latitude, b.longitude), r),
+                      ),
+                );
+                emit(
+                  state.copyWith(
+                    loading: true,
+                    rocksToShow: sortedRocks,
+                  ),
+                );
+              },
             );
           },
           filtered: (e) {
@@ -63,13 +74,15 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
                         element.localizedName.contains(state.searchString),
                   )
                   .toList();
-              emit(state.copyWith(
-                rocksToShow: filteredRocks,
-              ));
+              emit(
+                state.copyWith(
+                  rocksToShow: filteredRocks,
+                ),
+              );
             }
           },
           locationChanged: (e) {
-            add(RockListEvent.sorted(location: e.location));
+            add(RockListEvent.sorted());
             emit(
               state.copyWith(
                 userLocation: some(e.location),
@@ -80,7 +93,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             state.userLocation.fold(
               () => null,
               (a) => add(
-                RockListEvent.sorted(location: a),
+                RockListEvent.sorted(),
               ),
             );
             emit(

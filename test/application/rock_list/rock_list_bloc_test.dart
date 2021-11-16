@@ -114,7 +114,7 @@ void main() {
     );
   });
 
-  /* group('sorted()', () {
+  group('sorted()', () {
     blocTest(
       'Should emit nothing if no user location',
       build: () => _bloc,
@@ -129,14 +129,16 @@ void main() {
             longitude: 92.7384,
           ),
         ],
-        rocksToShow: [testItem.copyWith(
+        rocksToShow: [
+          testItem.copyWith(
             latitude: 55.918,
             longitude: 92.73849,
           ),
           testItem.copyWith(
             latitude: 55.9172,
             longitude: 92.7384,
-          ),],
+          ),
+        ],
         searchString: '',
       ),
       act: (RockListBloc bloc) => bloc.add(const RockListEvent.sorted()),
@@ -156,21 +158,33 @@ void main() {
             longitude: 92.7384,
           ),
         ],
-        rocksToShow: [testItem.copyWith(
+        rocksToShow: [
+          testItem.copyWith(
             latitude: 55.918,
             longitude: 92.73849,
           ),
           testItem.copyWith(
             latitude: 55.9172,
             longitude: 92.7384,
-          ),],
+          ),
+        ],
         searchString: '',
         userLocation: some(LatLng(55.9174, 92.73843)),
       ),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.sorted()),
+      act: (RockListBloc bloc) => bloc.add(RockListEvent.sorted()),
       expect: () => [
         RockListState.initial().copyWith(
           allRocks: [
+            testItem.copyWith(
+              latitude: 55.918,
+              longitude: 92.73849,
+            ),
+            testItem.copyWith(
+              latitude: 55.9172,
+              longitude: 92.7384,
+            ),
+          ],
+          rocksToShow: [
             testItem.copyWith(
               latitude: 55.9172,
               longitude: 92.7384,
@@ -180,13 +194,12 @@ void main() {
               longitude: 92.73849,
             ),
           ],
-          rocksToShow: [testItem, testItem],
           searchString: '',
           userLocation: some(LatLng(55.9174, 92.73843)),
         ),
       ],
     );
-  }); */
+  });
 
   group('searchStringChanged()', () {
     blocTest(
@@ -280,7 +293,16 @@ void main() {
               longitude: 92.7384,
             ),
           ],
-          rocksToShow: [testItem, testItem],
+          rocksToShow: [
+            testItem.copyWith(
+              latitude: 55.918,
+              longitude: 92.73849,
+            ),
+            testItem.copyWith(
+              latitude: 55.9172,
+              longitude: 92.7384,
+            ),
+          ],
           searchString: '',
           userLocation: some(LatLng(55.9174, 92.73843)),
         ),
@@ -295,7 +317,16 @@ void main() {
               longitude: 92.73849,
             ),
           ],
-          rocksToShow: [testItem, testItem],
+          rocksToShow: [
+            testItem.copyWith(
+              latitude: 55.9172,
+              longitude: 92.7384,
+            ),
+            testItem.copyWith(
+              latitude: 55.918,
+              longitude: 92.73849,
+            ),
+          ],
           searchString: '',
           userLocation: some(LatLng(55.9174, 92.73843)),
         ),
