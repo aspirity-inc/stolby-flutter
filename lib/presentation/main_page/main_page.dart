@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:stolby_flutter/presentation/main_page/widgets/main_page_navigation_bar.dart';
 
 class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +31,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: MainPageNavigationBar(),
           ),

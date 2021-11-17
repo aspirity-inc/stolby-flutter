@@ -1,6 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';
@@ -37,11 +38,11 @@ void main() {
     'initialized()',
     () {
       blocTest(
-        'Should emit rocks from DB',
+        'Should emit detailed rock info from DB',
         build: () {
-          when(_repository.getRocksCoordinatesList()).thenAnswer(
+          when(_repository.getSingleRock(0)).thenAnswer(
             (_) async => right(
-              [testItem],
+              testItem,
             ),
           );
 
@@ -54,10 +55,8 @@ void main() {
           ),
         ),
         expect: () => [
-          DetailedRockState.initial().copyWith(loading: true),
           DetailedRockState.initial().copyWith(
-            loading: false,
-            rocks: [testItem],
+            rock: some(testItem),
           ),
         ],
       );
@@ -65,19 +64,38 @@ void main() {
       blocTest(
         'Should emit nothing on error',
         build: () {
-          when(_repository.getRocksCoordinatesList()).thenAnswer(
+          when(_repository.getSingleRock(0)).thenAnswer(
             (_) async => left(const DatabaseFailure.notFound()),
           );
 
           return _bloc;
         },
-        seed: () => MapState.initial(),
-        act: (MapBloc bloc) => bloc.add(const MapEvent.initialized()),
-        expect: () => [
-          MapState.initial().copyWith(loading: true),
-          MapState.initial().copyWith(loading: false),
-        ],
+        seed: () => DetailedRockState.initial(),
+        act: (DetailedRockBloc bloc) => bloc.add(
+          const DetailedRockEvent.initialized(
+            id: 0,
+          ),
+        ),
+        expect: () => [],
       );
     },
   );
+  group('locationChanged()', () {
+    blocTest(
+      'should emit distance in meters on user position',
+      build: () => _bloc,
+      seed: () => DetailedRockState(rock: some(testItem), distance: none()),
+      act: (DetailedRockBloc bloc) => bloc.add(
+        DetailedRockEvent.locationChanged(
+          location: LatLng(55.9074, 92.73843),
+        ),
+      ),
+      expect: () => [
+        DetailedRockState.initial().copyWith(
+          rock: some(testItem),
+          distance: some(1113),
+        ),
+      ],
+    );
+  });
 }
