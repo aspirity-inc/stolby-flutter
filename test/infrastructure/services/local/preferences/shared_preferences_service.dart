@@ -11,24 +11,36 @@ class SharedPreferencesService {
 
   bool get geolocationEnabled =>
       _preferences.getBool(PrefNames.geolocationEnabled) ?? false;
-  Future<void> setGeolocationEnabled(bool? geolocationEnabled) => _preferences
-      .setBool(PrefNames.geolocationEnabled, geolocationEnabled ?? false);
+  Future<void> setGeolocationEnabled(bool geolocationEnabled) =>
+      _preferences.setBool(
+        PrefNames.geolocationEnabled,
+        geolocationEnabled,
+      );
 
   bool get reversedMap => _preferences.getBool(PrefNames.reversedMap) ?? false;
-  Future<void> setReversedMap(bool? reversedMap) =>
-      _preferences.setBool(PrefNames.reversedMap, reversedMap ?? false);
+  Future<void> setReversedMap(bool reversedMap) => _preferences.setBool(
+        PrefNames.reversedMap,
+        reversedMap,
+      );
 
   bool get mapUserCentering =>
       _preferences.getBool(PrefNames.mapUserCentering) ?? false;
-  Future<void> setMapUserCentering(bool? mapUserCentering) => _preferences
-      .setBool(PrefNames.mapUserCentering, mapUserCentering ?? false);
+  Future<void> setMapUserCentering(bool mapUserCentering) =>
+      _preferences.setBool(
+        PrefNames.mapUserCentering,
+        mapUserCentering,
+      );
 
   bool get autoThemeChange =>
       _preferences.getBool(PrefNames.autoThemeChange) ?? false;
-  Future<void> setAutoThemeChange(bool? autoThemeChange) =>
-      _preferences.setBool(PrefNames.autoThemeChange, autoThemeChange ?? false);
+  Future<void> setAutoThemeChange(bool autoThemeChange) => _preferences.setBool(
+        PrefNames.autoThemeChange,
+        autoThemeChange,
+      );
 
   bool get lightTheme => _preferences.getBool(PrefNames.lightTheme) ?? false;
-  Future<void> setLightTheme(bool? lightTheme) =>
-      _preferences.setBool(PrefNames.lightTheme, lightTheme ?? false);
+  Future<void> setLightTheme(bool lightTheme) => _preferences.setBool(
+        PrefNames.lightTheme,
+        lightTheme,
+      );
 }
