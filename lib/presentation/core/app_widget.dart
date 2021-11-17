@@ -6,6 +6,8 @@ import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 class StolbyApp extends StatelessWidget {
   final _router = AppRouter();
 
+  StolbyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

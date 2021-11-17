@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RocksPage extends StatelessWidget {
+  const RocksPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

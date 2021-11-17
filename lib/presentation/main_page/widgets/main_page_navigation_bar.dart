@@ -6,6 +6,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/presentation/main_page/widgets/app_bottom_navigation_bar_item.dart';
 
 class MainPageNavigationBar extends StatefulWidget implements AutoRouteWrapper {
+  const MainPageNavigationBar({Key? key}) : super(key: key);
+
   @override
   State<MainPageNavigationBar> createState() => _MainPageNavigationBarState();
 
