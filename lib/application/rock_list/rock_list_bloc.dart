@@ -14,46 +14,6 @@ part 'rock_list_state.dart';
 class RockListBloc extends Bloc<RockListEvent, RockListState> {
   final IRockListRepository _rockListRepository;
 
-  List<RockListItemEntity> _sortRocksList(
-    List<RockListItemEntity> list,
-    LatLng latLng,
-  ) {
-    const distance = Distance();
-
-    return list.sorted(
-      (a, b) => distance
-          .distance(
-            LatLng(a.latitude, a.longitude),
-            latLng,
-          )
-          .compareTo(
-            distance.distance(
-              LatLng(b.latitude, b.longitude),
-              latLng,
-            ),
-          ),
-    );
-  }
-
-  List<RockListItemEntity> _filterRocksList(
-    List<RockListItemEntity> list,
-    String filter,
-  ) =>
-      list
-          .where(
-            (element) => element.localizedName.contains(filter),
-          )
-          .toList();
-
-  void _sortListByLocation(Option<LatLng> location) {
-    location.fold(
-      () => null,
-      (a) => add(
-        const RockListEvent.sorted(),
-      ),
-    );
-  }
-
   RockListBloc(this._rockListRepository) : super(RockListState.initial()) {
     on<RockListEvent>(
       (event, emit) async {
@@ -62,7 +22,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             emit(state.copyWith(loading: true));
             final rocksOrError = await _rockListRepository.getRocksList();
             rocksOrError.fold(
-              (l) => emit(state.copyWith(
+              (f) => emit(state.copyWith(
                 loading: false,
               )),
               (r) => emit(
@@ -104,6 +64,46 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
           },
         );
       },
+    );
+  }
+
+  List<RockListItemEntity> _sortRocksList(
+    List<RockListItemEntity> list,
+    LatLng latLng,
+  ) {
+    const distance = Distance();
+
+    return list.sorted(
+      (a, b) => distance
+          .distance(
+            LatLng(a.latitude, a.longitude),
+            latLng,
+          )
+          .compareTo(
+            distance.distance(
+              LatLng(b.latitude, b.longitude),
+              latLng,
+            ),
+          ),
+    );
+  }
+
+  List<RockListItemEntity> _filterRocksList(
+    List<RockListItemEntity> list,
+    String filter,
+  ) =>
+      list
+          .where(
+            (element) => element.localizedName.contains(filter),
+          )
+          .toList();
+
+  void _sortListByLocation(Option<LatLng> location) {
+    location.fold(
+      () => null,
+      (a) => add(
+        const RockListEvent.sorted(),
+      ),
     );
   }
 }
