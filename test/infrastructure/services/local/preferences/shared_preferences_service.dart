@@ -4,10 +4,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'pref_names.dart';
 
 @lazySingleton
-class SharedPreferncesService {
+class SharedPreferencesService {
   final SharedPreferences _preferences;
 
-  SharedPreferncesService(this._preferences);
+  SharedPreferencesService(this._preferences);
 
   bool? get geolocationEnabled =>
       _preferences.getBool(PrefNames.geolocationEnabled);
