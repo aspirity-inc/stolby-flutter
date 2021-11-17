@@ -31,10 +31,8 @@ class _$RockListEventTearOff {
     return const _Filtered();
   }
 
-  _Sorted sorted({required LatLng location}) {
-    return _Sorted(
-      location: location,
-    );
+  _Sorted sorted() {
+    return const _Sorted();
   }
 
   _LocationChanged locationChanged({required LatLng location}) {
@@ -58,7 +56,7 @@ mixin _$RockListEvent {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) =>
@@ -68,7 +66,7 @@ mixin _$RockListEvent {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) =>
@@ -78,7 +76,7 @@ mixin _$RockListEvent {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
@@ -177,7 +175,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
@@ -190,7 +188,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
@@ -203,7 +201,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
@@ -331,7 +329,7 @@ class _$_SearchStringChanged implements _SearchStringChanged {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
@@ -344,7 +342,7 @@ class _$_SearchStringChanged implements _SearchStringChanged {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
@@ -357,7 +355,7 @@ class _$_SearchStringChanged implements _SearchStringChanged {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
@@ -463,7 +461,7 @@ class _$_Filtered implements _Filtered {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
@@ -476,7 +474,7 @@ class _$_Filtered implements _Filtered {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
@@ -489,7 +487,7 @@ class _$_Filtered implements _Filtered {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
@@ -552,7 +550,6 @@ abstract class _Filtered implements RockListEvent {
 abstract class _$SortedCopyWith<$Res> {
   factory _$SortedCopyWith(_Sorted value, $Res Function(_Sorted) then) =
       __$SortedCopyWithImpl<$Res>;
-  $Res call({LatLng location});
 }
 
 /// @nodoc
@@ -563,49 +560,26 @@ class __$SortedCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
 
   @override
   _Sorted get _value => super._value as _Sorted;
-
-  @override
-  $Res call({
-    Object? location = freezed,
-  }) {
-    return _then(_Sorted(
-      location: location == freezed
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as LatLng,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_Sorted implements _Sorted {
-  const _$_Sorted({required this.location});
-
-  @override
-  final LatLng location;
+  const _$_Sorted();
 
   @override
   String toString() {
-    return 'RockListEvent.sorted(location: $location)';
+    return 'RockListEvent.sorted()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Sorted &&
-            (identical(other.location, location) ||
-                other.location == location));
+        (other.runtimeType == runtimeType && other is _Sorted);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SortedCopyWith<_Sorted> get copyWith =>
-      __$SortedCopyWithImpl<_Sorted>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -613,11 +587,11 @@ class _$_Sorted implements _Sorted {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
-    return sorted(location);
+    return sorted();
   }
 
   @override
@@ -626,11 +600,11 @@ class _$_Sorted implements _Sorted {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
-    return sorted?.call(location);
+    return sorted?.call();
   }
 
   @override
@@ -639,13 +613,13 @@ class _$_Sorted implements _Sorted {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
   }) {
     if (sorted != null) {
-      return sorted(location);
+      return sorted();
     }
     return orElse();
   }
@@ -695,11 +669,7 @@ class _$_Sorted implements _Sorted {
 }
 
 abstract class _Sorted implements RockListEvent {
-  const factory _Sorted({required LatLng location}) = _$_Sorted;
-
-  LatLng get location;
-  @JsonKey(ignore: true)
-  _$SortedCopyWith<_Sorted> get copyWith => throw _privateConstructorUsedError;
+  const factory _Sorted() = _$_Sorted;
 }
 
 /// @nodoc
@@ -770,7 +740,7 @@ class _$_LocationChanged implements _LocationChanged {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
@@ -783,7 +753,7 @@ class _$_LocationChanged implements _LocationChanged {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
@@ -796,7 +766,7 @@ class _$_LocationChanged implements _LocationChanged {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),
@@ -905,7 +875,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
     required TResult Function() initialized,
     required TResult Function(String searchString) searchStringChanged,
     required TResult Function() filtered,
-    required TResult Function(LatLng location) sorted,
+    required TResult Function() sorted,
     required TResult Function(LatLng location) locationChanged,
     required TResult Function() searchLineCleared,
   }) {
@@ -918,7 +888,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
   }) {
@@ -931,7 +901,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
     TResult Function()? initialized,
     TResult Function(String searchString)? searchStringChanged,
     TResult Function()? filtered,
-    TResult Function(LatLng location)? sorted,
+    TResult Function()? sorted,
     TResult Function(LatLng location)? locationChanged,
     TResult Function()? searchLineCleared,
     required TResult orElse(),

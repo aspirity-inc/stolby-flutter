@@ -8,7 +8,7 @@ class MapState with _$MapState {
     required double zoom,
     required double angle,
   }) = _MapState;
-  factory MapState.initial() => MapState(
+  factory MapState.initial() => const MapState(
         rocks: [],
         loading: false,
         zoom: 13,
