@@ -22,13 +22,15 @@ class _$AppSettingsEntityTearOff {
       required bool reversedMap,
       required bool mapUserCentering,
       required bool autoThemeChange,
-      required bool lightTheme}) {
+      required bool lightTheme,
+      required bool onboardingVisited}) {
     return _AppSettingsEntity(
       geolocationEnabled: geolocationEnabled,
       reversedMap: reversedMap,
       mapUserCentering: mapUserCentering,
       autoThemeChange: autoThemeChange,
       lightTheme: lightTheme,
+      onboardingVisited: onboardingVisited,
     );
   }
 }
@@ -43,6 +45,7 @@ mixin _$AppSettingsEntity {
   bool get mapUserCentering => throw _privateConstructorUsedError;
   bool get autoThemeChange => throw _privateConstructorUsedError;
   bool get lightTheme => throw _privateConstructorUsedError;
+  bool get onboardingVisited => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppSettingsEntityCopyWith<AppSettingsEntity> get copyWith =>
@@ -59,7 +62,8 @@ abstract class $AppSettingsEntityCopyWith<$Res> {
       bool reversedMap,
       bool mapUserCentering,
       bool autoThemeChange,
-      bool lightTheme});
+      bool lightTheme,
+      bool onboardingVisited});
 }
 
 /// @nodoc
@@ -78,6 +82,7 @@ class _$AppSettingsEntityCopyWithImpl<$Res>
     Object? mapUserCentering = freezed,
     Object? autoThemeChange = freezed,
     Object? lightTheme = freezed,
+    Object? onboardingVisited = freezed,
   }) {
     return _then(_value.copyWith(
       geolocationEnabled: geolocationEnabled == freezed
@@ -100,6 +105,10 @@ class _$AppSettingsEntityCopyWithImpl<$Res>
           ? _value.lightTheme
           : lightTheme // ignore: cast_nullable_to_non_nullable
               as bool,
+      onboardingVisited: onboardingVisited == freezed
+          ? _value.onboardingVisited
+          : onboardingVisited // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -116,7 +125,8 @@ abstract class _$AppSettingsEntityCopyWith<$Res>
       bool reversedMap,
       bool mapUserCentering,
       bool autoThemeChange,
-      bool lightTheme});
+      bool lightTheme,
+      bool onboardingVisited});
 }
 
 /// @nodoc
@@ -137,6 +147,7 @@ class __$AppSettingsEntityCopyWithImpl<$Res>
     Object? mapUserCentering = freezed,
     Object? autoThemeChange = freezed,
     Object? lightTheme = freezed,
+    Object? onboardingVisited = freezed,
   }) {
     return _then(_AppSettingsEntity(
       geolocationEnabled: geolocationEnabled == freezed
@@ -159,6 +170,10 @@ class __$AppSettingsEntityCopyWithImpl<$Res>
           ? _value.lightTheme
           : lightTheme // ignore: cast_nullable_to_non_nullable
               as bool,
+      onboardingVisited: onboardingVisited == freezed
+          ? _value.onboardingVisited
+          : onboardingVisited // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -171,7 +186,8 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
       required this.reversedMap,
       required this.mapUserCentering,
       required this.autoThemeChange,
-      required this.lightTheme});
+      required this.lightTheme,
+      required this.onboardingVisited});
 
   @override
   final bool geolocationEnabled;
@@ -183,10 +199,12 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
   final bool autoThemeChange;
   @override
   final bool lightTheme;
+  @override
+  final bool onboardingVisited;
 
   @override
   String toString() {
-    return 'AppSettingsEntity(geolocationEnabled: $geolocationEnabled, reversedMap: $reversedMap, mapUserCentering: $mapUserCentering, autoThemeChange: $autoThemeChange, lightTheme: $lightTheme)';
+    return 'AppSettingsEntity(geolocationEnabled: $geolocationEnabled, reversedMap: $reversedMap, mapUserCentering: $mapUserCentering, autoThemeChange: $autoThemeChange, lightTheme: $lightTheme, onboardingVisited: $onboardingVisited)';
   }
 
   @override
@@ -203,12 +221,14 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
             (identical(other.autoThemeChange, autoThemeChange) ||
                 other.autoThemeChange == autoThemeChange) &&
             (identical(other.lightTheme, lightTheme) ||
-                other.lightTheme == lightTheme));
+                other.lightTheme == lightTheme) &&
+            (identical(other.onboardingVisited, onboardingVisited) ||
+                other.onboardingVisited == onboardingVisited));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, geolocationEnabled, reversedMap,
-      mapUserCentering, autoThemeChange, lightTheme);
+      mapUserCentering, autoThemeChange, lightTheme, onboardingVisited);
 
   @JsonKey(ignore: true)
   @override
@@ -222,7 +242,8 @@ abstract class _AppSettingsEntity implements AppSettingsEntity {
       required bool reversedMap,
       required bool mapUserCentering,
       required bool autoThemeChange,
-      required bool lightTheme}) = _$_AppSettingsEntity;
+      required bool lightTheme,
+      required bool onboardingVisited}) = _$_AppSettingsEntity;
 
   @override
   bool get geolocationEnabled;
@@ -234,6 +255,8 @@ abstract class _AppSettingsEntity implements AppSettingsEntity {
   bool get autoThemeChange;
   @override
   bool get lightTheme;
+  @override
+  bool get onboardingVisited;
   @override
   @JsonKey(ignore: true)
   _$AppSettingsEntityCopyWith<_AppSettingsEntity> get copyWith =>

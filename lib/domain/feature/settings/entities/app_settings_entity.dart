@@ -10,5 +10,6 @@ class AppSettingsEntity with _$AppSettingsEntity {
     required bool mapUserCentering,
     required bool autoThemeChange,
     required bool lightTheme,
+    required bool onboardingVisited,
   }) = _AppSettingsEntity;
 }
