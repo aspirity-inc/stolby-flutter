@@ -5,7 +5,7 @@ import 'package:stolby_flutter/infrastructure/services/local/preferences/shared_
 
 @LazySingleton(as: ISettingsRepository)
 class SettingsRepository implements ISettingsRepository {
-  SharedPreferencesService _preferencesService;
+  final SharedPreferencesService _preferencesService;
 
   SettingsRepository(this._preferencesService);
 
