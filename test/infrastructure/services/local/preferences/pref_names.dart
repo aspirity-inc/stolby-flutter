@@ -4,4 +4,5 @@ class PrefNames {
   static const String mapUserCentering = "mapUserCentering";
   static const String autoThemeChange = "autoThemeChange";
   static const String lightTheme = "lightTheme";
+  static const String onboardingVisited = "onboardingVisited";
 }
