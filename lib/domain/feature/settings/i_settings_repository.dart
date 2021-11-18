@@ -7,4 +7,5 @@ abstract class ISettingsRepository {
   Future<void> toggleMapReverse();
   Future<void> toggleUserCentering();
   Future<void> toggleGeolocation();
+  Future<void> onBoardingVisited();
 }

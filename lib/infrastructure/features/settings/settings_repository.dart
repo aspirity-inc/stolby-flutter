@@ -11,28 +11,7 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<AppSettingsEntity> fetchSettings() async {
-    return AppSettingsEntity(
-      geolocationEnabled: _preferencesService.getGeolocationEnabled(),
-      reversedMap: _preferencesService.getReversedMap(),
-      mapUserCentering: _preferencesService.getMapUserCentering(),
-      autoThemeChange: _preferencesService.getAutoThemeChange(),
-      lightTheme: _preferencesService.getLightTheme(),
-      onboardingVisited: _preferencesService.getOnboardingVisited(),
-    );
-  }
-
-  @override
-  Future<void> toggleAutoTheme() async {
-    _preferencesService.setAutoThemeChange(
-      !_preferencesService.getAutoThemeChange(),
-    );
-  }
-
-  @override
-  Future<void> toggleDarkTheme() async {
-    _preferencesService.setLightTheme(
-      !_preferencesService.getLightTheme(),
-    );
+    return _preferencesService.getSettings().toDomain();
   }
 
   @override
@@ -54,5 +33,24 @@ class SettingsRepository implements ISettingsRepository {
     _preferencesService.setMapUserCentering(
       !_preferencesService.getMapUserCentering(),
     );
+  }
+
+  @override
+  Future<void> toggleAutoTheme() async {
+    _preferencesService.setAutoThemeChange(
+      !_preferencesService.getAutoThemeChange(),
+    );
+  }
+
+  @override
+  Future<void> toggleDarkTheme() async {
+    _preferencesService.setLightTheme(
+      !_preferencesService.getLightTheme(),
+    );
+  }
+
+  @override
+  Future<void> onBoardingVisited() async {
+    _preferencesService.setOnboardingVisited();
   }
 }

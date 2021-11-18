@@ -9,7 +9,7 @@ class AppSettingsEntity with _$AppSettingsEntity {
     required bool reversedMap,
     required bool mapUserCentering,
     required bool autoThemeChange,
-    required bool lightTheme,
+    required bool darkTheme,
     required bool onboardingVisited,
   }) = _AppSettingsEntity;
 }

@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'app_settings_entity.dart';
+part of 'shared_preferences_view.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,17 +14,17 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$AppSettingsEntityTearOff {
-  const _$AppSettingsEntityTearOff();
+class _$SharedPreferencesViewTearOff {
+  const _$SharedPreferencesViewTearOff();
 
-  _AppSettingsEntity call(
+  _SharedPreferencesView call(
       {required bool geolocationEnabled,
       required bool reversedMap,
       required bool mapUserCentering,
       required bool autoThemeChange,
       required bool darkTheme,
       required bool onboardingVisited}) {
-    return _AppSettingsEntity(
+    return _SharedPreferencesView(
       geolocationEnabled: geolocationEnabled,
       reversedMap: reversedMap,
       mapUserCentering: mapUserCentering,
@@ -36,10 +36,10 @@ class _$AppSettingsEntityTearOff {
 }
 
 /// @nodoc
-const $AppSettingsEntity = _$AppSettingsEntityTearOff();
+const $SharedPreferencesView = _$SharedPreferencesViewTearOff();
 
 /// @nodoc
-mixin _$AppSettingsEntity {
+mixin _$SharedPreferencesView {
   bool get geolocationEnabled => throw _privateConstructorUsedError;
   bool get reversedMap => throw _privateConstructorUsedError;
   bool get mapUserCentering => throw _privateConstructorUsedError;
@@ -48,15 +48,15 @@ mixin _$AppSettingsEntity {
   bool get onboardingVisited => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AppSettingsEntityCopyWith<AppSettingsEntity> get copyWith =>
+  $SharedPreferencesViewCopyWith<SharedPreferencesView> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppSettingsEntityCopyWith<$Res> {
-  factory $AppSettingsEntityCopyWith(
-          AppSettingsEntity value, $Res Function(AppSettingsEntity) then) =
-      _$AppSettingsEntityCopyWithImpl<$Res>;
+abstract class $SharedPreferencesViewCopyWith<$Res> {
+  factory $SharedPreferencesViewCopyWith(SharedPreferencesView value,
+          $Res Function(SharedPreferencesView) then) =
+      _$SharedPreferencesViewCopyWithImpl<$Res>;
   $Res call(
       {bool geolocationEnabled,
       bool reversedMap,
@@ -67,13 +67,13 @@ abstract class $AppSettingsEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppSettingsEntityCopyWithImpl<$Res>
-    implements $AppSettingsEntityCopyWith<$Res> {
-  _$AppSettingsEntityCopyWithImpl(this._value, this._then);
+class _$SharedPreferencesViewCopyWithImpl<$Res>
+    implements $SharedPreferencesViewCopyWith<$Res> {
+  _$SharedPreferencesViewCopyWithImpl(this._value, this._then);
 
-  final AppSettingsEntity _value;
+  final SharedPreferencesView _value;
   // ignore: unused_field
-  final $Res Function(AppSettingsEntity) _then;
+  final $Res Function(SharedPreferencesView) _then;
 
   @override
   $Res call({
@@ -114,11 +114,11 @@ class _$AppSettingsEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AppSettingsEntityCopyWith<$Res>
-    implements $AppSettingsEntityCopyWith<$Res> {
-  factory _$AppSettingsEntityCopyWith(
-          _AppSettingsEntity value, $Res Function(_AppSettingsEntity) then) =
-      __$AppSettingsEntityCopyWithImpl<$Res>;
+abstract class _$SharedPreferencesViewCopyWith<$Res>
+    implements $SharedPreferencesViewCopyWith<$Res> {
+  factory _$SharedPreferencesViewCopyWith(_SharedPreferencesView value,
+          $Res Function(_SharedPreferencesView) then) =
+      __$SharedPreferencesViewCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool geolocationEnabled,
@@ -130,15 +130,15 @@ abstract class _$AppSettingsEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AppSettingsEntityCopyWithImpl<$Res>
-    extends _$AppSettingsEntityCopyWithImpl<$Res>
-    implements _$AppSettingsEntityCopyWith<$Res> {
-  __$AppSettingsEntityCopyWithImpl(
-      _AppSettingsEntity _value, $Res Function(_AppSettingsEntity) _then)
-      : super(_value, (v) => _then(v as _AppSettingsEntity));
+class __$SharedPreferencesViewCopyWithImpl<$Res>
+    extends _$SharedPreferencesViewCopyWithImpl<$Res>
+    implements _$SharedPreferencesViewCopyWith<$Res> {
+  __$SharedPreferencesViewCopyWithImpl(_SharedPreferencesView _value,
+      $Res Function(_SharedPreferencesView) _then)
+      : super(_value, (v) => _then(v as _SharedPreferencesView));
 
   @override
-  _AppSettingsEntity get _value => super._value as _AppSettingsEntity;
+  _SharedPreferencesView get _value => super._value as _SharedPreferencesView;
 
   @override
   $Res call({
@@ -149,7 +149,7 @@ class __$AppSettingsEntityCopyWithImpl<$Res>
     Object? darkTheme = freezed,
     Object? onboardingVisited = freezed,
   }) {
-    return _then(_AppSettingsEntity(
+    return _then(_SharedPreferencesView(
       geolocationEnabled: geolocationEnabled == freezed
           ? _value.geolocationEnabled
           : geolocationEnabled // ignore: cast_nullable_to_non_nullable
@@ -180,14 +180,15 @@ class __$AppSettingsEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppSettingsEntity implements _AppSettingsEntity {
-  const _$_AppSettingsEntity(
+class _$_SharedPreferencesView extends _SharedPreferencesView {
+  const _$_SharedPreferencesView(
       {required this.geolocationEnabled,
       required this.reversedMap,
       required this.mapUserCentering,
       required this.autoThemeChange,
       required this.darkTheme,
-      required this.onboardingVisited});
+      required this.onboardingVisited})
+      : super._();
 
   @override
   final bool geolocationEnabled;
@@ -204,14 +205,14 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
 
   @override
   String toString() {
-    return 'AppSettingsEntity(geolocationEnabled: $geolocationEnabled, reversedMap: $reversedMap, mapUserCentering: $mapUserCentering, autoThemeChange: $autoThemeChange, darkTheme: $darkTheme, onboardingVisited: $onboardingVisited)';
+    return 'SharedPreferencesView(geolocationEnabled: $geolocationEnabled, reversedMap: $reversedMap, mapUserCentering: $mapUserCentering, autoThemeChange: $autoThemeChange, darkTheme: $darkTheme, onboardingVisited: $onboardingVisited)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AppSettingsEntity &&
+            other is _SharedPreferencesView &&
             (identical(other.geolocationEnabled, geolocationEnabled) ||
                 other.geolocationEnabled == geolocationEnabled) &&
             (identical(other.reversedMap, reversedMap) ||
@@ -232,18 +233,20 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$AppSettingsEntityCopyWith<_AppSettingsEntity> get copyWith =>
-      __$AppSettingsEntityCopyWithImpl<_AppSettingsEntity>(this, _$identity);
+  _$SharedPreferencesViewCopyWith<_SharedPreferencesView> get copyWith =>
+      __$SharedPreferencesViewCopyWithImpl<_SharedPreferencesView>(
+          this, _$identity);
 }
 
-abstract class _AppSettingsEntity implements AppSettingsEntity {
-  const factory _AppSettingsEntity(
+abstract class _SharedPreferencesView extends SharedPreferencesView {
+  const factory _SharedPreferencesView(
       {required bool geolocationEnabled,
       required bool reversedMap,
       required bool mapUserCentering,
       required bool autoThemeChange,
       required bool darkTheme,
-      required bool onboardingVisited}) = _$_AppSettingsEntity;
+      required bool onboardingVisited}) = _$_SharedPreferencesView;
+  const _SharedPreferencesView._() : super._();
 
   @override
   bool get geolocationEnabled;
@@ -259,6 +262,6 @@ abstract class _AppSettingsEntity implements AppSettingsEntity {
   bool get onboardingVisited;
   @override
   @JsonKey(ignore: true)
-  _$AppSettingsEntityCopyWith<_AppSettingsEntity> get copyWith =>
+  _$SharedPreferencesViewCopyWith<_SharedPreferencesView> get copyWith =>
       throw _privateConstructorUsedError;
 }
