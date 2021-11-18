@@ -43,9 +43,6 @@ void main() {
         () {
           when(_prefs.getBool(PrefNames.geolocationEnabled))
               .thenAnswer((_) => true);
-          when(_prefs.setBool(PrefNames.geolocationEnabled, true))
-              .thenAnswer((_) async => false);
-          _prefsService.setGeolocationEnabled(true);
           bool result = _prefsService.getGeolocationEnabled();
           expect(true, result);
         },
@@ -94,9 +91,6 @@ void main() {
         'Should get value stored',
         () {
           when(_prefs.getBool(PrefNames.reversedMap)).thenAnswer((_) => true);
-          when(_prefs.setBool(PrefNames.reversedMap, true))
-              .thenAnswer((_) async => false);
-          _prefsService.setReversedMap(true);
           bool result = _prefsService.getReversedMap();
           expect(true, result);
         },
@@ -147,9 +141,6 @@ void main() {
         () {
           when(_prefs.getBool(PrefNames.mapUserCentering))
               .thenAnswer((_) => true);
-          when(_prefs.setBool(PrefNames.mapUserCentering, true))
-              .thenAnswer((_) async => false);
-          _prefsService.setMapUserCentering(true);
           bool result = _prefsService.getMapUserCentering();
           expect(true, result);
         },
@@ -291,9 +282,6 @@ void main() {
         () {
           when(_prefs.getBool(PrefNames.onboardingVisited))
               .thenAnswer((_) => true);
-          when(_prefs.setBool(PrefNames.onboardingVisited, true))
-              .thenAnswer((_) async => false);
-          _prefsService.setOnboardingVisited();
           bool result = _prefsService.getOnboardingVisited();
           expect(true, result);
         },
