@@ -1,8 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:stolby_flutter/infrastructure/services/local/preferences/views/shared_preferences_view.dart';
-
-import 'pref_names.dart';
+import 'package:stolby_flutter/infrastructure/services/local/preferences/pref_names.dart';
 
 @lazySingleton
 class SharedPreferencesService {
@@ -59,13 +57,4 @@ class SharedPreferencesService {
 
   Future<void> setOnboardingVisited() =>
       _preferences.setBool(PrefNames.onboardingVisited, true);
-
-  SharedPreferencesView getSettings() => SharedPreferencesView(
-        geolocationEnabled: getGeolocationEnabled(),
-        reversedMap: getReversedMap(),
-        mapUserCentering: getMapUserCentering(),
-        autoThemeChange: getAutoThemeChange(),
-        darkTheme: getLightTheme(),
-        onboardingVisited: getOnboardingVisited(),
-      );
 }

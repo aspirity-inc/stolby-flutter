@@ -11,43 +11,36 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<AppSettingsEntity> fetchSettings() async {
-    return _preferencesService.getSettings().toDomain();
-  }
-
-  @override
-  Future<void> toggleGeolocation() async {
-    _preferencesService.setGeolocationEnabled(
-      !_preferencesService.getGeolocationEnabled(),
+    return AppSettingsEntity(
+      geolocationEnabled: _preferencesService.getGeolocationEnabled(),
+      reversedMap: _preferencesService.getReversedMap(),
+      mapUserCentering: _preferencesService.getMapUserCentering(),
+      autoThemeChange:
+          _preferencesService.getAutoThemeChange(defaultValue: true),
+      darkTheme: _preferencesService.getLightTheme(),
+      onboardingVisited: _preferencesService.getOnboardingVisited(),
     );
   }
 
   @override
-  Future<void> toggleMapReverse() async {
-    _preferencesService.setReversedMap(
-      !_preferencesService.getReversedMap(),
-    );
-  }
+  Future<void> toggleGeolocation(bool value) async =>
+      _preferencesService.setGeolocationEnabled(value);
 
   @override
-  Future<void> toggleUserCentering() async {
-    _preferencesService.setMapUserCentering(
-      !_preferencesService.getMapUserCentering(),
-    );
-  }
+  Future<void> toggleMapReverse(bool value) async =>
+      _preferencesService.setReversedMap(value);
 
   @override
-  Future<void> toggleAutoTheme() async {
-    _preferencesService.setAutoThemeChange(
-      !_preferencesService.getAutoThemeChange(),
-    );
-  }
+  Future<void> toggleUserCentering(bool value) async =>
+      _preferencesService.setMapUserCentering(value);
 
   @override
-  Future<void> toggleDarkTheme() async {
-    _preferencesService.setLightTheme(
-      !_preferencesService.getLightTheme(),
-    );
-  }
+  Future<void> toggleAutoTheme(bool value) async =>
+      _preferencesService.setAutoThemeChange(value);
+
+  @override
+  Future<void> toggleDarkTheme(bool value) async =>
+      _preferencesService.setLightTheme(value);
 
   @override
   Future<void> onBoardingVisited() async {
