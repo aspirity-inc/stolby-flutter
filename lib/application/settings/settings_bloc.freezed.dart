@@ -18,31 +18,31 @@ class _$SettingsEventTearOff {
   const _$SettingsEventTearOff();
 
   _Initialized initialized() {
-    return _Initialized();
+    return const _Initialized();
   }
 
-  _ToogleGeolocation toogleGeolocation() {
-    return _ToogleGeolocation();
+  _ToggledGeolocation toggledGeolocation() {
+    return const _ToggledGeolocation();
   }
 
-  _ToogleMapReverse toogleMapReverse() {
-    return _ToogleMapReverse();
+  _ToggledMapReverse toggledMapReverse() {
+    return const _ToggledMapReverse();
   }
 
-  _ToogleUserMapCentering toogleUserMapCentering() {
-    return _ToogleUserMapCentering();
+  _ToggledUserMapCentering toggledUserMapCentering() {
+    return const _ToggledUserMapCentering();
   }
 
-  _ToogleAutoTheme toogleAutoTheme() {
-    return _ToogleAutoTheme();
+  _ToggledAutoTheme toggledAutoTheme() {
+    return const _ToggledAutoTheme();
   }
 
-  _ToogleDarkTheme toogleDartTheme() {
-    return _ToogleDarkTheme();
+  _ToggledDarkTheme toggledDarkTheme() {
+    return const _ToggledDarkTheme();
   }
 
   _OnboardingVisited onboardingVisited() {
-    return _OnboardingVisited();
+    return const _OnboardingVisited();
   }
 }
 
@@ -54,33 +54,33 @@ mixin _$SettingsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) =>
@@ -88,34 +88,34 @@ mixin _$SettingsEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) =>
@@ -160,7 +160,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  _$_Initialized();
+  const _$_Initialized();
 
   @override
   String toString() {
@@ -180,11 +180,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
     return initialized();
@@ -194,11 +194,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
     return initialized?.call();
@@ -208,11 +208,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
@@ -226,12 +226,12 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
     return initialized(this);
@@ -241,11 +241,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return initialized?.call(this);
@@ -255,11 +255,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
@@ -271,42 +271,42 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements SettingsEvent {
-  factory _Initialized() = _$_Initialized;
+  const factory _Initialized() = _$_Initialized;
 }
 
 /// @nodoc
-abstract class _$ToogleGeolocationCopyWith<$Res> {
-  factory _$ToogleGeolocationCopyWith(
-          _ToogleGeolocation value, $Res Function(_ToogleGeolocation) then) =
-      __$ToogleGeolocationCopyWithImpl<$Res>;
+abstract class _$ToggledGeolocationCopyWith<$Res> {
+  factory _$ToggledGeolocationCopyWith(
+          _ToggledGeolocation value, $Res Function(_ToggledGeolocation) then) =
+      __$ToggledGeolocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToogleGeolocationCopyWithImpl<$Res>
+class __$ToggledGeolocationCopyWithImpl<$Res>
     extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToogleGeolocationCopyWith<$Res> {
-  __$ToogleGeolocationCopyWithImpl(
-      _ToogleGeolocation _value, $Res Function(_ToogleGeolocation) _then)
-      : super(_value, (v) => _then(v as _ToogleGeolocation));
+    implements _$ToggledGeolocationCopyWith<$Res> {
+  __$ToggledGeolocationCopyWithImpl(
+      _ToggledGeolocation _value, $Res Function(_ToggledGeolocation) _then)
+      : super(_value, (v) => _then(v as _ToggledGeolocation));
 
   @override
-  _ToogleGeolocation get _value => super._value as _ToogleGeolocation;
+  _ToggledGeolocation get _value => super._value as _ToggledGeolocation;
 }
 
 /// @nodoc
 
-class _$_ToogleGeolocation implements _ToogleGeolocation {
-  _$_ToogleGeolocation();
+class _$_ToggledGeolocation implements _ToggledGeolocation {
+  const _$_ToggledGeolocation();
 
   @override
   String toString() {
-    return 'SettingsEvent.toogleGeolocation()';
+    return 'SettingsEvent.toggledGeolocation()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToogleGeolocation);
+        (other.runtimeType == runtimeType && other is _ToggledGeolocation);
   }
 
   @override
@@ -316,44 +316,44 @@ class _$_ToogleGeolocation implements _ToogleGeolocation {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
-    return toogleGeolocation();
+    return toggledGeolocation();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
-    return toogleGeolocation?.call();
+    return toggledGeolocation?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleGeolocation != null) {
-      return toogleGeolocation();
+    if (toggledGeolocation != null) {
+      return toggledGeolocation();
     }
     return orElse();
   }
@@ -362,87 +362,87 @@ class _$_ToogleGeolocation implements _ToogleGeolocation {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
-    return toogleGeolocation(this);
+    return toggledGeolocation(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
-    return toogleGeolocation?.call(this);
+    return toggledGeolocation?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleGeolocation != null) {
-      return toogleGeolocation(this);
+    if (toggledGeolocation != null) {
+      return toggledGeolocation(this);
     }
     return orElse();
   }
 }
 
-abstract class _ToogleGeolocation implements SettingsEvent {
-  factory _ToogleGeolocation() = _$_ToogleGeolocation;
+abstract class _ToggledGeolocation implements SettingsEvent {
+  const factory _ToggledGeolocation() = _$_ToggledGeolocation;
 }
 
 /// @nodoc
-abstract class _$ToogleMapReverseCopyWith<$Res> {
-  factory _$ToogleMapReverseCopyWith(
-          _ToogleMapReverse value, $Res Function(_ToogleMapReverse) then) =
-      __$ToogleMapReverseCopyWithImpl<$Res>;
+abstract class _$ToggledMapReverseCopyWith<$Res> {
+  factory _$ToggledMapReverseCopyWith(
+          _ToggledMapReverse value, $Res Function(_ToggledMapReverse) then) =
+      __$ToggledMapReverseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToogleMapReverseCopyWithImpl<$Res>
+class __$ToggledMapReverseCopyWithImpl<$Res>
     extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToogleMapReverseCopyWith<$Res> {
-  __$ToogleMapReverseCopyWithImpl(
-      _ToogleMapReverse _value, $Res Function(_ToogleMapReverse) _then)
-      : super(_value, (v) => _then(v as _ToogleMapReverse));
+    implements _$ToggledMapReverseCopyWith<$Res> {
+  __$ToggledMapReverseCopyWithImpl(
+      _ToggledMapReverse _value, $Res Function(_ToggledMapReverse) _then)
+      : super(_value, (v) => _then(v as _ToggledMapReverse));
 
   @override
-  _ToogleMapReverse get _value => super._value as _ToogleMapReverse;
+  _ToggledMapReverse get _value => super._value as _ToggledMapReverse;
 }
 
 /// @nodoc
 
-class _$_ToogleMapReverse implements _ToogleMapReverse {
-  _$_ToogleMapReverse();
+class _$_ToggledMapReverse implements _ToggledMapReverse {
+  const _$_ToggledMapReverse();
 
   @override
   String toString() {
-    return 'SettingsEvent.toogleMapReverse()';
+    return 'SettingsEvent.toggledMapReverse()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToogleMapReverse);
+        (other.runtimeType == runtimeType && other is _ToggledMapReverse);
   }
 
   @override
@@ -452,44 +452,44 @@ class _$_ToogleMapReverse implements _ToogleMapReverse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
-    return toogleMapReverse();
+    return toggledMapReverse();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
-    return toogleMapReverse?.call();
+    return toggledMapReverse?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleMapReverse != null) {
-      return toogleMapReverse();
+    if (toggledMapReverse != null) {
+      return toggledMapReverse();
     }
     return orElse();
   }
@@ -498,87 +498,88 @@ class _$_ToogleMapReverse implements _ToogleMapReverse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
-    return toogleMapReverse(this);
+    return toggledMapReverse(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
-    return toogleMapReverse?.call(this);
+    return toggledMapReverse?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleMapReverse != null) {
-      return toogleMapReverse(this);
+    if (toggledMapReverse != null) {
+      return toggledMapReverse(this);
     }
     return orElse();
   }
 }
 
-abstract class _ToogleMapReverse implements SettingsEvent {
-  factory _ToogleMapReverse() = _$_ToogleMapReverse;
+abstract class _ToggledMapReverse implements SettingsEvent {
+  const factory _ToggledMapReverse() = _$_ToggledMapReverse;
 }
 
 /// @nodoc
-abstract class _$ToogleUserMapCenteringCopyWith<$Res> {
-  factory _$ToogleUserMapCenteringCopyWith(_ToogleUserMapCentering value,
-          $Res Function(_ToogleUserMapCentering) then) =
-      __$ToogleUserMapCenteringCopyWithImpl<$Res>;
+abstract class _$ToggledUserMapCenteringCopyWith<$Res> {
+  factory _$ToggledUserMapCenteringCopyWith(_ToggledUserMapCentering value,
+          $Res Function(_ToggledUserMapCentering) then) =
+      __$ToggledUserMapCenteringCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToogleUserMapCenteringCopyWithImpl<$Res>
+class __$ToggledUserMapCenteringCopyWithImpl<$Res>
     extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToogleUserMapCenteringCopyWith<$Res> {
-  __$ToogleUserMapCenteringCopyWithImpl(_ToogleUserMapCentering _value,
-      $Res Function(_ToogleUserMapCentering) _then)
-      : super(_value, (v) => _then(v as _ToogleUserMapCentering));
+    implements _$ToggledUserMapCenteringCopyWith<$Res> {
+  __$ToggledUserMapCenteringCopyWithImpl(_ToggledUserMapCentering _value,
+      $Res Function(_ToggledUserMapCentering) _then)
+      : super(_value, (v) => _then(v as _ToggledUserMapCentering));
 
   @override
-  _ToogleUserMapCentering get _value => super._value as _ToogleUserMapCentering;
+  _ToggledUserMapCentering get _value =>
+      super._value as _ToggledUserMapCentering;
 }
 
 /// @nodoc
 
-class _$_ToogleUserMapCentering implements _ToogleUserMapCentering {
-  _$_ToogleUserMapCentering();
+class _$_ToggledUserMapCentering implements _ToggledUserMapCentering {
+  const _$_ToggledUserMapCentering();
 
   @override
   String toString() {
-    return 'SettingsEvent.toogleUserMapCentering()';
+    return 'SettingsEvent.toggledUserMapCentering()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToogleUserMapCentering);
+        (other.runtimeType == runtimeType && other is _ToggledUserMapCentering);
   }
 
   @override
@@ -588,44 +589,44 @@ class _$_ToogleUserMapCentering implements _ToogleUserMapCentering {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
-    return toogleUserMapCentering();
+    return toggledUserMapCentering();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
-    return toogleUserMapCentering?.call();
+    return toggledUserMapCentering?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleUserMapCentering != null) {
-      return toogleUserMapCentering();
+    if (toggledUserMapCentering != null) {
+      return toggledUserMapCentering();
     }
     return orElse();
   }
@@ -634,87 +635,87 @@ class _$_ToogleUserMapCentering implements _ToogleUserMapCentering {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
-    return toogleUserMapCentering(this);
+    return toggledUserMapCentering(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
-    return toogleUserMapCentering?.call(this);
+    return toggledUserMapCentering?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleUserMapCentering != null) {
-      return toogleUserMapCentering(this);
+    if (toggledUserMapCentering != null) {
+      return toggledUserMapCentering(this);
     }
     return orElse();
   }
 }
 
-abstract class _ToogleUserMapCentering implements SettingsEvent {
-  factory _ToogleUserMapCentering() = _$_ToogleUserMapCentering;
+abstract class _ToggledUserMapCentering implements SettingsEvent {
+  const factory _ToggledUserMapCentering() = _$_ToggledUserMapCentering;
 }
 
 /// @nodoc
-abstract class _$ToogleAutoThemeCopyWith<$Res> {
-  factory _$ToogleAutoThemeCopyWith(
-          _ToogleAutoTheme value, $Res Function(_ToogleAutoTheme) then) =
-      __$ToogleAutoThemeCopyWithImpl<$Res>;
+abstract class _$ToggledAutoThemeCopyWith<$Res> {
+  factory _$ToggledAutoThemeCopyWith(
+          _ToggledAutoTheme value, $Res Function(_ToggledAutoTheme) then) =
+      __$ToggledAutoThemeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToogleAutoThemeCopyWithImpl<$Res>
+class __$ToggledAutoThemeCopyWithImpl<$Res>
     extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToogleAutoThemeCopyWith<$Res> {
-  __$ToogleAutoThemeCopyWithImpl(
-      _ToogleAutoTheme _value, $Res Function(_ToogleAutoTheme) _then)
-      : super(_value, (v) => _then(v as _ToogleAutoTheme));
+    implements _$ToggledAutoThemeCopyWith<$Res> {
+  __$ToggledAutoThemeCopyWithImpl(
+      _ToggledAutoTheme _value, $Res Function(_ToggledAutoTheme) _then)
+      : super(_value, (v) => _then(v as _ToggledAutoTheme));
 
   @override
-  _ToogleAutoTheme get _value => super._value as _ToogleAutoTheme;
+  _ToggledAutoTheme get _value => super._value as _ToggledAutoTheme;
 }
 
 /// @nodoc
 
-class _$_ToogleAutoTheme implements _ToogleAutoTheme {
-  _$_ToogleAutoTheme();
+class _$_ToggledAutoTheme implements _ToggledAutoTheme {
+  const _$_ToggledAutoTheme();
 
   @override
   String toString() {
-    return 'SettingsEvent.toogleAutoTheme()';
+    return 'SettingsEvent.toggledAutoTheme()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToogleAutoTheme);
+        (other.runtimeType == runtimeType && other is _ToggledAutoTheme);
   }
 
   @override
@@ -724,44 +725,44 @@ class _$_ToogleAutoTheme implements _ToogleAutoTheme {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
-    return toogleAutoTheme();
+    return toggledAutoTheme();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
-    return toogleAutoTheme?.call();
+    return toggledAutoTheme?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleAutoTheme != null) {
-      return toogleAutoTheme();
+    if (toggledAutoTheme != null) {
+      return toggledAutoTheme();
     }
     return orElse();
   }
@@ -770,87 +771,87 @@ class _$_ToogleAutoTheme implements _ToogleAutoTheme {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
-    return toogleAutoTheme(this);
+    return toggledAutoTheme(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
-    return toogleAutoTheme?.call(this);
+    return toggledAutoTheme?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleAutoTheme != null) {
-      return toogleAutoTheme(this);
+    if (toggledAutoTheme != null) {
+      return toggledAutoTheme(this);
     }
     return orElse();
   }
 }
 
-abstract class _ToogleAutoTheme implements SettingsEvent {
-  factory _ToogleAutoTheme() = _$_ToogleAutoTheme;
+abstract class _ToggledAutoTheme implements SettingsEvent {
+  const factory _ToggledAutoTheme() = _$_ToggledAutoTheme;
 }
 
 /// @nodoc
-abstract class _$ToogleDarkThemeCopyWith<$Res> {
-  factory _$ToogleDarkThemeCopyWith(
-          _ToogleDarkTheme value, $Res Function(_ToogleDarkTheme) then) =
-      __$ToogleDarkThemeCopyWithImpl<$Res>;
+abstract class _$ToggledDarkThemeCopyWith<$Res> {
+  factory _$ToggledDarkThemeCopyWith(
+          _ToggledDarkTheme value, $Res Function(_ToggledDarkTheme) then) =
+      __$ToggledDarkThemeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToogleDarkThemeCopyWithImpl<$Res>
+class __$ToggledDarkThemeCopyWithImpl<$Res>
     extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToogleDarkThemeCopyWith<$Res> {
-  __$ToogleDarkThemeCopyWithImpl(
-      _ToogleDarkTheme _value, $Res Function(_ToogleDarkTheme) _then)
-      : super(_value, (v) => _then(v as _ToogleDarkTheme));
+    implements _$ToggledDarkThemeCopyWith<$Res> {
+  __$ToggledDarkThemeCopyWithImpl(
+      _ToggledDarkTheme _value, $Res Function(_ToggledDarkTheme) _then)
+      : super(_value, (v) => _then(v as _ToggledDarkTheme));
 
   @override
-  _ToogleDarkTheme get _value => super._value as _ToogleDarkTheme;
+  _ToggledDarkTheme get _value => super._value as _ToggledDarkTheme;
 }
 
 /// @nodoc
 
-class _$_ToogleDarkTheme implements _ToogleDarkTheme {
-  _$_ToogleDarkTheme();
+class _$_ToggledDarkTheme implements _ToggledDarkTheme {
+  const _$_ToggledDarkTheme();
 
   @override
   String toString() {
-    return 'SettingsEvent.toogleDartTheme()';
+    return 'SettingsEvent.toggledDarkTheme()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToogleDarkTheme);
+        (other.runtimeType == runtimeType && other is _ToggledDarkTheme);
   }
 
   @override
@@ -860,44 +861,44 @@ class _$_ToogleDarkTheme implements _ToogleDarkTheme {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
-    return toogleDartTheme();
+    return toggledDarkTheme();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
-    return toogleDartTheme?.call();
+    return toggledDarkTheme?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleDartTheme != null) {
-      return toogleDartTheme();
+    if (toggledDarkTheme != null) {
+      return toggledDarkTheme();
     }
     return orElse();
   }
@@ -906,52 +907,52 @@ class _$_ToogleDarkTheme implements _ToogleDarkTheme {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
-    return toogleDartTheme(this);
+    return toggledDarkTheme(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
-    return toogleDartTheme?.call(this);
+    return toggledDarkTheme?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
-    if (toogleDartTheme != null) {
-      return toogleDartTheme(this);
+    if (toggledDarkTheme != null) {
+      return toggledDarkTheme(this);
     }
     return orElse();
   }
 }
 
-abstract class _ToogleDarkTheme implements SettingsEvent {
-  factory _ToogleDarkTheme() = _$_ToogleDarkTheme;
+abstract class _ToggledDarkTheme implements SettingsEvent {
+  const factory _ToggledDarkTheme() = _$_ToggledDarkTheme;
 }
 
 /// @nodoc
@@ -976,7 +977,7 @@ class __$OnboardingVisitedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnboardingVisited implements _OnboardingVisited {
-  _$_OnboardingVisited();
+  const _$_OnboardingVisited();
 
   @override
   String toString() {
@@ -996,11 +997,11 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function() toogleGeolocation,
-    required TResult Function() toogleMapReverse,
-    required TResult Function() toogleUserMapCentering,
-    required TResult Function() toogleAutoTheme,
-    required TResult Function() toogleDartTheme,
+    required TResult Function() toggledGeolocation,
+    required TResult Function() toggledMapReverse,
+    required TResult Function() toggledUserMapCentering,
+    required TResult Function() toggledAutoTheme,
+    required TResult Function() toggledDarkTheme,
     required TResult Function() onboardingVisited,
   }) {
     return onboardingVisited();
@@ -1010,11 +1011,11 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
   }) {
     return onboardingVisited?.call();
@@ -1024,11 +1025,11 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function()? toogleGeolocation,
-    TResult Function()? toogleMapReverse,
-    TResult Function()? toogleUserMapCentering,
-    TResult Function()? toogleAutoTheme,
-    TResult Function()? toogleDartTheme,
+    TResult Function()? toggledGeolocation,
+    TResult Function()? toggledMapReverse,
+    TResult Function()? toggledUserMapCentering,
+    TResult Function()? toggledAutoTheme,
+    TResult Function()? toggledDarkTheme,
     TResult Function()? onboardingVisited,
     required TResult orElse(),
   }) {
@@ -1042,12 +1043,12 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ToogleGeolocation value) toogleGeolocation,
-    required TResult Function(_ToogleMapReverse value) toogleMapReverse,
-    required TResult Function(_ToogleUserMapCentering value)
-        toogleUserMapCentering,
-    required TResult Function(_ToogleAutoTheme value) toogleAutoTheme,
-    required TResult Function(_ToogleDarkTheme value) toogleDartTheme,
+    required TResult Function(_ToggledGeolocation value) toggledGeolocation,
+    required TResult Function(_ToggledMapReverse value) toggledMapReverse,
+    required TResult Function(_ToggledUserMapCentering value)
+        toggledUserMapCentering,
+    required TResult Function(_ToggledAutoTheme value) toggledAutoTheme,
+    required TResult Function(_ToggledDarkTheme value) toggledDarkTheme,
     required TResult Function(_OnboardingVisited value) onboardingVisited,
   }) {
     return onboardingVisited(this);
@@ -1057,11 +1058,11 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return onboardingVisited?.call(this);
@@ -1071,11 +1072,11 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToogleGeolocation value)? toogleGeolocation,
-    TResult Function(_ToogleMapReverse value)? toogleMapReverse,
-    TResult Function(_ToogleUserMapCentering value)? toogleUserMapCentering,
-    TResult Function(_ToogleAutoTheme value)? toogleAutoTheme,
-    TResult Function(_ToogleDarkTheme value)? toogleDartTheme,
+    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
     TResult Function(_OnboardingVisited value)? onboardingVisited,
     required TResult orElse(),
   }) {
@@ -1087,7 +1088,7 @@ class _$_OnboardingVisited implements _OnboardingVisited {
 }
 
 abstract class _OnboardingVisited implements SettingsEvent {
-  factory _OnboardingVisited() = _$_OnboardingVisited;
+  const factory _OnboardingVisited() = _$_OnboardingVisited;
 }
 
 /// @nodoc

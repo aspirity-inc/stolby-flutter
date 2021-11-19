@@ -11,10 +11,11 @@ import 'package:shared_preferences/shared_preferences.dart' as _i10;
 import 'application/detailed_rock_bloc/detailed_rock_bloc.dart' as _i12;
 import 'application/map/map_bloc.dart' as _i8;
 import 'application/rock_list/rock_list_bloc.dart' as _i9;
+import 'application/settings/settings_bloc.dart' as _i15;
 import 'domain/feature/rocks_list/i_rock_list_repository.dart' as _i6;
 import 'domain/feature/rocks_map/i_map_repository.dart' as _i4;
 import 'domain/feature/settings/i_settings_repository.dart' as _i13;
-import 'infrastructure/core/services_injectable_module.dart' as _i15;
+import 'infrastructure/core/services_injectable_module.dart' as _i16;
 import 'infrastructure/features/rocks_list/rock_list_repository.dart' as _i7;
 import 'infrastructure/features/rocks_map/map_repository.dart' as _i5;
 import 'infrastructure/features/settings/settings_repository.dart' as _i14;
@@ -45,7 +46,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i12.DetailedRockBloc(get<_i6.IRockListRepository>()));
   gh.lazySingleton<_i13.ISettingsRepository>(
       () => _i14.SettingsRepository(get<_i11.SharedPreferencesService>()));
+  gh.factory<_i15.SettingsBloc>(
+      () => _i15.SettingsBloc(get<_i13.ISettingsRepository>()));
   return get;
 }
 
-class _$ServicesInjectionModule extends _i15.ServicesInjectionModule {}
+class _$ServicesInjectionModule extends _i16.ServicesInjectionModule {}

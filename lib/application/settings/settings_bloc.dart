@@ -27,27 +27,27 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
             ),
           );
         },
-        toogleGeolocation: (e) async {
+        toggledGeolocation: (e) async {
           final value = !state.geolocationEnabled;
           _settingsRepository.toggleGeolocation(value);
           emit(state.copyWith(geolocationEnabled: value));
         },
-        toogleMapReverse: (e) async {
+        toggledMapReverse: (e) async {
           final value = !state.reversedMap;
           _settingsRepository.toggleMapReverse(value);
           emit(state.copyWith(reversedMap: value));
         },
-        toogleUserMapCentering: (e) async {
+        toggledUserMapCentering: (e) async {
           final value = !state.mapUserCentering;
           _settingsRepository.toggleUserCentering(value);
           emit(state.copyWith(mapUserCentering: value));
         },
-        toogleAutoTheme: (e) async {
+        toggledAutoTheme: (e) async {
           final value = !state.autoThemeChange;
           _settingsRepository.toggleAutoTheme(value);
           emit(state.copyWith(autoThemeChange: value));
         },
-        toogleDartTheme: (e) async {
+        toggledDarkTheme: (e) async {
           final value = !state.darkTheme;
           _settingsRepository.toggleDarkTheme(value);
           emit(state.copyWith(darkTheme: value));
