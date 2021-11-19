@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'pref_names.dart';
+import 'package:stolby_flutter/infrastructure/services/local/preferences/pref_names.dart';
 
 @lazySingleton
 class SharedPreferencesService {
@@ -58,5 +57,4 @@ class SharedPreferencesService {
 
   Future<void> setOnboardingVisited() =>
       _preferences.setBool(PrefNames.onboardingVisited, true);
-
 }

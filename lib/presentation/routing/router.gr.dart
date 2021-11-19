@@ -26,16 +26,16 @@ class AppRouter extends _i6.RootStackRouter {
   final Map<String, _i6.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
       return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i1.SplashPage());
+          routeData: routeData, child: const _i1.SplashPage());
     },
     MainRoute.name: (routeData) {
       return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i2.MainPage());
+          routeData: routeData, child: const _i2.MainPage());
     },
     MapRoute.name: (routeData) {
       return _i6.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i3.MapPage(),
+          child: const _i3.MapPage(),
           transitionsBuilder: _i8.AppRouteTransitionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
@@ -45,7 +45,7 @@ class AppRouter extends _i6.RootStackRouter {
     RocksRoute.name: (routeData) {
       return _i6.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i4.RocksPage(),
+          child: const _i4.RocksPage(),
           transitionsBuilder: _i8.AppRouteTransitionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
@@ -55,7 +55,7 @@ class AppRouter extends _i6.RootStackRouter {
     SettingsRoute.name: (routeData) {
       return _i6.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i5.SettingsPage(),
+          child: const _i5.SettingsPage(),
           transitionsBuilder: _i8.AppRouteTransitionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
