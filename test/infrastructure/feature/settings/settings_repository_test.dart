@@ -33,11 +33,28 @@ void main() {
       test(
         'Should get settings entity',
         () async {
-          // arrange
-          when(_prefs.getSettings()).thenAnswer((_) => testItem);
-          // act
+          //arrange
+          when(_prefs.getGeolocationEnabled()).thenAnswer(
+            (_) => false,
+          );
+          when(_prefs.getReversedMap()).thenAnswer(
+            (_) => false,
+          );
+          when(_prefs.getMapUserCentering()).thenAnswer(
+            (_) => false,
+          );
+          when(_prefs.getAutoThemeChange(defaultValue: true)).thenAnswer(
+            (_) => true,
+          );
+          when(_prefs.getLightTheme()).thenAnswer(
+            (_) => false,
+          );
+          when(_prefs.getOnboardingVisited()).thenAnswer(
+            (_) => false,
+          );
+          //act
           final result = await _repository.fetchSettings();
-          // assert
+          //assert
           expect(
             testItem,
             result,
