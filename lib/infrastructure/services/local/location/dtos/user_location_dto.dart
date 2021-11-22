@@ -13,7 +13,7 @@ class UserLocationDto with _$UserLocationDto {
     required double heading,
   }) = _UserLocationDto;
 
-  UserLocationDto fromLocationData(LocationData locationData) =>
+  static UserLocationDto fromLocationData(LocationData locationData) =>
       UserLocationDto(
         latitude: locationData.latitude ?? 0,
         longitude: locationData.longitude ?? 0,

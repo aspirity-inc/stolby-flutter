@@ -5,6 +5,7 @@ import 'package:rxdart/rxdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:location/location.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
+import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_location_dto.dart';
 
 @lazySingleton
 class LocationService {
@@ -55,7 +56,7 @@ class LocationService {
     return right(unit);
   }
 
-  Stream<Either<LocationFailure, LocationData>> getUserLocation() async* {
+  Stream<Either<LocationFailure, UserLocationDto>> getUserLocation() async* {
     final locationService = await geolocationService();
     if (locationService.isLeft()) {
       yield locationService.fold(
@@ -79,8 +80,10 @@ class LocationService {
     }
 
     yield* _location.onLocationChanged
-        .map<Either<LocationFailure, LocationData>>(
-          (event) => right(event),
+        .map<Either<LocationFailure, UserLocationDto>>(
+          (event) => right(
+            UserLocationDto.fromLocationData(event),
+          ),
         )
         .debounce(
           (_) => TimerStream(
