@@ -173,3 +173,700 @@ class _$NotFound implements NotFound {
 abstract class NotFound implements DatabaseFailure {
   const factory NotFound() = _$NotFound;
 }
+
+/// @nodoc
+class _$PermissionFailureTearOff {
+  const _$PermissionFailureTearOff();
+
+  Denied denied() {
+    return const Denied();
+  }
+
+  PermanentlyDenied permanentlyDenied() {
+    return const PermanentlyDenied();
+  }
+
+  NotAsked notAsked() {
+    return const NotAsked();
+  }
+}
+
+/// @nodoc
+const $PermissionFailure = _$PermissionFailureTearOff();
+
+/// @nodoc
+mixin _$PermissionFailure {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() denied,
+    required TResult Function() permanentlyDenied,
+    required TResult Function() notAsked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Denied value) denied,
+    required TResult Function(PermanentlyDenied value) permanentlyDenied,
+    required TResult Function(NotAsked value) notAsked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PermissionFailureCopyWith<$Res> {
+  factory $PermissionFailureCopyWith(
+          PermissionFailure value, $Res Function(PermissionFailure) then) =
+      _$PermissionFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermissionFailureCopyWithImpl<$Res>
+    implements $PermissionFailureCopyWith<$Res> {
+  _$PermissionFailureCopyWithImpl(this._value, this._then);
+
+  final PermissionFailure _value;
+  // ignore: unused_field
+  final $Res Function(PermissionFailure) _then;
+}
+
+/// @nodoc
+abstract class $DeniedCopyWith<$Res> {
+  factory $DeniedCopyWith(Denied value, $Res Function(Denied) then) =
+      _$DeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$DeniedCopyWithImpl<$Res> extends _$PermissionFailureCopyWithImpl<$Res>
+    implements $DeniedCopyWith<$Res> {
+  _$DeniedCopyWithImpl(Denied _value, $Res Function(Denied) _then)
+      : super(_value, (v) => _then(v as Denied));
+
+  @override
+  Denied get _value => super._value as Denied;
+}
+
+/// @nodoc
+
+class _$Denied implements Denied {
+  const _$Denied();
+
+  @override
+  String toString() {
+    return 'PermissionFailure.denied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Denied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() denied,
+    required TResult Function() permanentlyDenied,
+    required TResult Function() notAsked,
+  }) {
+    return denied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+  }) {
+    return denied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+    required TResult orElse(),
+  }) {
+    if (denied != null) {
+      return denied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Denied value) denied,
+    required TResult Function(PermanentlyDenied value) permanentlyDenied,
+    required TResult Function(NotAsked value) notAsked,
+  }) {
+    return denied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+  }) {
+    return denied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+    required TResult orElse(),
+  }) {
+    if (denied != null) {
+      return denied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Denied implements PermissionFailure {
+  const factory Denied() = _$Denied;
+}
+
+/// @nodoc
+abstract class $PermanentlyDeniedCopyWith<$Res> {
+  factory $PermanentlyDeniedCopyWith(
+          PermanentlyDenied value, $Res Function(PermanentlyDenied) then) =
+      _$PermanentlyDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermanentlyDeniedCopyWithImpl<$Res>
+    extends _$PermissionFailureCopyWithImpl<$Res>
+    implements $PermanentlyDeniedCopyWith<$Res> {
+  _$PermanentlyDeniedCopyWithImpl(
+      PermanentlyDenied _value, $Res Function(PermanentlyDenied) _then)
+      : super(_value, (v) => _then(v as PermanentlyDenied));
+
+  @override
+  PermanentlyDenied get _value => super._value as PermanentlyDenied;
+}
+
+/// @nodoc
+
+class _$PermanentlyDenied implements PermanentlyDenied {
+  const _$PermanentlyDenied();
+
+  @override
+  String toString() {
+    return 'PermissionFailure.permanentlyDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PermanentlyDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() denied,
+    required TResult Function() permanentlyDenied,
+    required TResult Function() notAsked,
+  }) {
+    return permanentlyDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+  }) {
+    return permanentlyDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+    required TResult orElse(),
+  }) {
+    if (permanentlyDenied != null) {
+      return permanentlyDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Denied value) denied,
+    required TResult Function(PermanentlyDenied value) permanentlyDenied,
+    required TResult Function(NotAsked value) notAsked,
+  }) {
+    return permanentlyDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+  }) {
+    return permanentlyDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+    required TResult orElse(),
+  }) {
+    if (permanentlyDenied != null) {
+      return permanentlyDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermanentlyDenied implements PermissionFailure {
+  const factory PermanentlyDenied() = _$PermanentlyDenied;
+}
+
+/// @nodoc
+abstract class $NotAskedCopyWith<$Res> {
+  factory $NotAskedCopyWith(NotAsked value, $Res Function(NotAsked) then) =
+      _$NotAskedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$NotAskedCopyWithImpl<$Res> extends _$PermissionFailureCopyWithImpl<$Res>
+    implements $NotAskedCopyWith<$Res> {
+  _$NotAskedCopyWithImpl(NotAsked _value, $Res Function(NotAsked) _then)
+      : super(_value, (v) => _then(v as NotAsked));
+
+  @override
+  NotAsked get _value => super._value as NotAsked;
+}
+
+/// @nodoc
+
+class _$NotAsked implements NotAsked {
+  const _$NotAsked();
+
+  @override
+  String toString() {
+    return 'PermissionFailure.notAsked()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NotAsked);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() denied,
+    required TResult Function() permanentlyDenied,
+    required TResult Function() notAsked,
+  }) {
+    return notAsked();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+  }) {
+    return notAsked?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? denied,
+    TResult Function()? permanentlyDenied,
+    TResult Function()? notAsked,
+    required TResult orElse(),
+  }) {
+    if (notAsked != null) {
+      return notAsked();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Denied value) denied,
+    required TResult Function(PermanentlyDenied value) permanentlyDenied,
+    required TResult Function(NotAsked value) notAsked,
+  }) {
+    return notAsked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+  }) {
+    return notAsked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Denied value)? denied,
+    TResult Function(PermanentlyDenied value)? permanentlyDenied,
+    TResult Function(NotAsked value)? notAsked,
+    required TResult orElse(),
+  }) {
+    if (notAsked != null) {
+      return notAsked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotAsked implements PermissionFailure {
+  const factory NotAsked() = _$NotAsked;
+}
+
+/// @nodoc
+class _$LocationFailureTearOff {
+  const _$LocationFailureTearOff();
+
+  PermissionDenied permissionDenied() {
+    return const PermissionDenied();
+  }
+
+  ServiceDisabled serviceDisabled() {
+    return const ServiceDisabled();
+  }
+}
+
+/// @nodoc
+const $LocationFailure = _$LocationFailureTearOff();
+
+/// @nodoc
+mixin _$LocationFailure {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() serviceDisabled,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serviceDisabled,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serviceDisabled,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServiceDisabled value) serviceDisabled,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocationFailureCopyWith<$Res> {
+  factory $LocationFailureCopyWith(
+          LocationFailure value, $Res Function(LocationFailure) then) =
+      _$LocationFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LocationFailureCopyWithImpl<$Res>
+    implements $LocationFailureCopyWith<$Res> {
+  _$LocationFailureCopyWithImpl(this._value, this._then);
+
+  final LocationFailure _value;
+  // ignore: unused_field
+  final $Res Function(LocationFailure) _then;
+}
+
+/// @nodoc
+abstract class $PermissionDeniedCopyWith<$Res> {
+  factory $PermissionDeniedCopyWith(
+          PermissionDenied value, $Res Function(PermissionDenied) then) =
+      _$PermissionDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermissionDeniedCopyWithImpl<$Res>
+    extends _$LocationFailureCopyWithImpl<$Res>
+    implements $PermissionDeniedCopyWith<$Res> {
+  _$PermissionDeniedCopyWithImpl(
+      PermissionDenied _value, $Res Function(PermissionDenied) _then)
+      : super(_value, (v) => _then(v as PermissionDenied));
+
+  @override
+  PermissionDenied get _value => super._value as PermissionDenied;
+}
+
+/// @nodoc
+
+class _$PermissionDenied implements PermissionDenied {
+  const _$PermissionDenied();
+
+  @override
+  String toString() {
+    return 'LocationFailure.permissionDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PermissionDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() serviceDisabled,
+  }) {
+    return permissionDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serviceDisabled,
+  }) {
+    return permissionDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serviceDisabled,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServiceDisabled value) serviceDisabled,
+  }) {
+    return permissionDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+  }) {
+    return permissionDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermissionDenied implements LocationFailure {
+  const factory PermissionDenied() = _$PermissionDenied;
+}
+
+/// @nodoc
+abstract class $ServiceDisabledCopyWith<$Res> {
+  factory $ServiceDisabledCopyWith(
+          ServiceDisabled value, $Res Function(ServiceDisabled) then) =
+      _$ServiceDisabledCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ServiceDisabledCopyWithImpl<$Res>
+    extends _$LocationFailureCopyWithImpl<$Res>
+    implements $ServiceDisabledCopyWith<$Res> {
+  _$ServiceDisabledCopyWithImpl(
+      ServiceDisabled _value, $Res Function(ServiceDisabled) _then)
+      : super(_value, (v) => _then(v as ServiceDisabled));
+
+  @override
+  ServiceDisabled get _value => super._value as ServiceDisabled;
+}
+
+/// @nodoc
+
+class _$ServiceDisabled implements ServiceDisabled {
+  const _$ServiceDisabled();
+
+  @override
+  String toString() {
+    return 'LocationFailure.serviceDisabled()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServiceDisabled);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() serviceDisabled,
+  }) {
+    return serviceDisabled();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serviceDisabled,
+  }) {
+    return serviceDisabled?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serviceDisabled,
+    required TResult orElse(),
+  }) {
+    if (serviceDisabled != null) {
+      return serviceDisabled();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServiceDisabled value) serviceDisabled,
+  }) {
+    return serviceDisabled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+  }) {
+    return serviceDisabled?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServiceDisabled value)? serviceDisabled,
+    required TResult orElse(),
+  }) {
+    if (serviceDisabled != null) {
+      return serviceDisabled(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ServiceDisabled implements LocationFailure {
+  const factory ServiceDisabled() = _$ServiceDisabled;
+}
