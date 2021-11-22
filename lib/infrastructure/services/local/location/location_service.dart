@@ -1,10 +1,10 @@
+import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:location/location.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_location_dto.dart';
-import 'package:stolby_flutter/infrastructure/services/local/location/platform_wrapper.dart';
 
 @lazySingleton
 class LocationService {
@@ -39,7 +39,7 @@ class LocationService {
 
   Future<Either<LocationFailure, Unit>> geolocationService() async {
     bool serviceEnabled = await _location.serviceEnabled();
-    if (PlatformWrapper().isIos) {
+    if (Platform.isIOS) {
       return !serviceEnabled
           ? left(const LocationFailure.serviceDisabled())
           : right(unit);
