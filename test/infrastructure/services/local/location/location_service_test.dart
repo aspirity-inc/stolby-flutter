@@ -40,7 +40,7 @@ void main() {
       expect(result, right(unit));
     });
 
-    test('Should emit PermissionFailure if permission denied ', () async {
+    test('Should return PermissionFailure if permission denied ', () async {
       //arrange
       when(_location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.denied,
