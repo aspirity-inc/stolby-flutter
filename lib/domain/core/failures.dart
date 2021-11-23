@@ -19,3 +19,10 @@ class LocationFailure with _$LocationFailure {
   const factory LocationFailure.permissionDenied() = PermissionDenied;
   const factory LocationFailure.serviceDisabled() = ServiceDisabled;
 }
+
+@freezed
+class LocationRepositoryFailure with _$LocationRepositoryFailure {
+  const factory LocationRepositoryFailure.notGranted() = NotGranted;
+  const factory LocationRepositoryFailure.disabled() = Disabled;
+  const factory LocationRepositoryFailure.unexpected() = Unexpected;
+}

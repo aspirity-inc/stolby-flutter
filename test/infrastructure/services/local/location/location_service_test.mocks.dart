@@ -9,8 +9,6 @@ import 'package:location/location.dart' as _i3;
 import 'package:location_platform_interface/location_platform_interface.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:stolby_flutter/infrastructure/services/local/location/platform_wrapper.dart'
-    as _i6;
 
 // ignore_for_file: avoid_redundant_argument_values
 // ignore_for_file: avoid_setters_without_getters
@@ -103,22 +101,6 @@ class MockLocation extends _i1.Mock implements _i3.Location {
               }),
               returnValue: Future<_i2.AndroidNotificationData?>.value())
           as _i4.Future<_i2.AndroidNotificationData?>);
-  @override
-  String toString() => super.toString();
-}
-
-/// A class which mocks [PlatformWrapper].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockPlatformWrapper extends _i1.Mock implements _i6.PlatformWrapper {
-  MockPlatformWrapper() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  bool get isIos =>
-      (super.noSuchMethod(Invocation.getter(#isIos), returnValue: false)
-          as bool);
   @override
   String toString() => super.toString();
 }
