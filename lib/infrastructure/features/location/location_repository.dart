@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:location/location.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
+import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/location/i_location_repository.dart';
-import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_location_dto.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/location_service.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -44,11 +44,11 @@ class LocationRepository implements ILocationRepository {
   }
 
   @override
-  Stream<Either<LocationFailure, UserLocationDto>>
+  Stream<Either<LocationFailure, UserLocationEntity>>
       startWatchingLocation() async* {
     final service = await _service.geolocationService();
     if (!service) {
-      yield left(LocationFailure.disabledService());
+      yield left(const LocationFailure.disabledService());
     }
     final permissions = await getLocationPermissions();
     if (permissions.isLeft()) {
@@ -57,8 +57,8 @@ class LocationRepository implements ILocationRepository {
 
     yield* _service
         .getUserLocation()
-        .map<Either<LocationFailure, UserLocationDto>>(
-          (event) => right(event),
+        .map<Either<LocationFailure, UserLocationEntity>>(
+          (event) => right(event.toDomain()),
         )
         .debounceTime(
           const Duration(milliseconds: 300),
