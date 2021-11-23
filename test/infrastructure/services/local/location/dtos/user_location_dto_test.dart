@@ -28,4 +28,23 @@ void main() {
       );
     },
   );
+  group("toDomain()", () {
+    test("Should return correct entity", () {
+      //arrange
+      const UserLocationDto initial = UserLocationDto(
+        latitude: 56.0098,
+        longitude: 92.8143,
+        heading: 90.0,
+      );
+      const UserLocationEntity expected = UserLocationEntity(
+        latitude: 56.0098,
+        longitude: 92.8143,
+        heading: 90.0,
+      );
+      //act
+      final result = initial.toDomain();
+      //assert
+      expect(result, expected);
+    });
+  });
 }
