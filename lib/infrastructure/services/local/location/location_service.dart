@@ -22,6 +22,8 @@ class LocationService {
         return left(const PermissionFailure.notAsked());
       case PermissionStatus.deniedForever:
         return left(const PermissionFailure.permanentlyDenied());
+      default:
+        return left(const PermissionFailure.notAsked());
     }
   }
 
@@ -85,14 +87,7 @@ class LocationService {
             UserLocationDto.fromLocationData(event),
           ),
         )
-        .debounce(
-          (_) => TimerStream(
-            true,
-            const Duration(
-              milliseconds: 500,
-            ),
-          ),
-        )
+        .debounceTime(const Duration(milliseconds: 500))
         .onErrorReturn(
           left(
             const LocationFailure.serviceDisabled(),
