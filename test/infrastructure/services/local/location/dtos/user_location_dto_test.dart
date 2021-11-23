@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:location/location.dart';
+import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_location_dto.dart';
 
 void main() {
