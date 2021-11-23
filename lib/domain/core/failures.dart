@@ -8,15 +8,9 @@ class DatabaseFailure with _$DatabaseFailure {
 }
 
 @freezed
-class PermissionFailure with _$PermissionFailure {
-  const factory PermissionFailure.denied() = Denied;
-  const factory PermissionFailure.permanentlyDenied() = PermanentlyDenied;
-  const factory PermissionFailure.notAsked() = NotAsked;
-}
-
-@freezed
 class LocationFailure with _$LocationFailure {
-  const factory LocationFailure.permissionDenied() = PermissionDenied;
+  const factory LocationFailure.notGranted() = NotGranted;
+  const factory LocationFailure.disabled() = Disabled;
   const factory LocationFailure.serviceDisabled() = ServiceDisabled;
 }
 
