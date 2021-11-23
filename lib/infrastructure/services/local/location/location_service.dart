@@ -6,6 +6,7 @@ import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_
 @lazySingleton
 class LocationService {
   final Location _location;
+
   LocationService(this._location);
 
   Future<PermissionStatus> checkPermission() async =>
