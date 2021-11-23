@@ -10,12 +10,12 @@ void main() {
         "Should return correct dto",
         () {
           //arrange
-          Map<String, dynamic> dataMap = new Map<String, dynamic>();
+          Map<String, dynamic> dataMap = <String, dynamic>{};
           dataMap["latitude"] = 56.0098;
           dataMap["longitude"] = 92.8143;
           dataMap["heading"] = 90.0;
           final initial = LocationData.fromMap(dataMap);
-          final expected = const UserLocationDto(
+          const expected = UserLocationDto(
             latitude: 56.0098,
             longitude: 92.8143,
             heading: 90.0,

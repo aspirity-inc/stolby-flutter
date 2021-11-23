@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:injectable/injectable.dart';
 import 'package:location/location.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
@@ -55,47 +54,9 @@ class LocationService {
     return right(unit);
   }
 
-  Stream<Either<LocationFailure, UserLocationDto>> getUserLocation() async* {
-    final locationService = await geolocationService();
-    if (locationService.isLeft()) {
-      yield locationService.fold(
-        (l) => left(l),
-        (r) => throw Error,
-      );
-    }
-    Either<PermissionFailure, Unit> permissionStatus = await checkPermission();
-    final needToRequest = permissionStatus.fold(
-      (l) => l == PermissionFailure.notAsked() ? true : false,
-      (r) => false,
+  Stream<UserLocationDto> getUserLocation() async* {
+    yield* _location.onLocationChanged.map<UserLocationDto>(
+      (event) => UserLocationDto.fromLocationData(event),
     );
-    if (needToRequest) {
-      final requestResult = await requestLocationPermission();
-      if (requestResult.isLeft()) {
-        yield requestResult.fold(
-          (l) => left(const LocationFailure.permissionDenied()),
-          (r) => throw Error,
-        );
-      }
-    }
-
-    yield* _location.onLocationChanged
-        .map<Either<LocationFailure, UserLocationDto>>(
-          (event) => right(
-            UserLocationDto.fromLocationData(event),
-          ),
-        )
-        .debounce(
-          (_) => TimerStream(
-            true,
-            const Duration(
-              milliseconds: 500,
-            ),
-          ),
-        )
-        .onErrorReturn(
-          left(
-            const LocationFailure.serviceDisabled(),
-          ),
-        );
   }
 }
