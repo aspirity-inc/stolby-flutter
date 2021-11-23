@@ -19,7 +19,7 @@ void main() {
   });
 
   group('checkPermission()', () {
-    test('Should emit unit if permission granted', () async {
+    test('Should return unit if permission granted', () async {
       //arrange
       when(_location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.granted,
@@ -29,7 +29,7 @@ void main() {
       //assert
       expect(result, right(unit));
     });
-    test('Should emit unit if permission grantedLimited', () async {
+    test('Should return unit if permission grantedLimited', () async {
       //arrange
       when(_location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.grantedLimited,
@@ -51,7 +51,8 @@ void main() {
       expect(result, left(const PermissionFailure.notAsked()));
     });
 
-    test('Should emit PermissionFailure if permission deniedForever', () async {
+    test('Should return PermissionFailure if permission deniedForever',
+        () async {
       //arrange
       when(_location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.deniedForever,
@@ -64,7 +65,7 @@ void main() {
   });
 
   group('requestLocationPermission()', () {
-    test('Should emit unit if permission granted', () async {
+    test('Should return unit if permission granted', () async {
       //arrange
       when(_location.requestPermission())
           .thenAnswer((_) async => PermissionStatus.granted);
@@ -74,7 +75,7 @@ void main() {
       expect(result, right(unit));
     });
 
-    test('Should emit unit if permission grantedLimited', () async {
+    test('Should return unit if permission grantedLimited', () async {
       //arrange
       when(_location.requestPermission())
           .thenAnswer((_) async => PermissionStatus.grantedLimited);
@@ -84,7 +85,7 @@ void main() {
       expect(result, right(unit));
     });
 
-    test('Should emit PermissionFailure if permission denied ', () async {
+    test('Should return PermissionFailure if permission denied ', () async {
       //arrange
       when(_location.requestPermission())
           .thenAnswer((_) async => PermissionStatus.denied);
@@ -95,7 +96,7 @@ void main() {
     });
 
     test(
-      'Should emit PermissionFailure if permission deniedForever',
+      'Should return PermissionFailure if permission deniedForever',
       () async {
         //arrange
         when(_location.requestPermission())
@@ -109,7 +110,7 @@ void main() {
   });
 
   group('geolocationService()', () {
-    test('Should emit unit if service enabled', () async {
+    test('Should return unit if service enabled', () async {
       //arrange
       when(_location.serviceEnabled()).thenAnswer((_) async => true);
       //act
@@ -118,7 +119,7 @@ void main() {
       expect(result, right(unit));
     });
 
-    test('Should emit unit on service turned on', () async {
+    test('Should return unit on service turned on', () async {
       //arrange
       when(_location.serviceEnabled()).thenAnswer((_) async => false);
       when(_location.requestService()).thenAnswer((_) async => true);
@@ -128,7 +129,7 @@ void main() {
       expect(result, right(unit));
     });
 
-    test('Should emit ServiceFailure on service not turned on', () async {
+    test('Should return ServiceFailure on service not turned on', () async {
       //arrange
       when(_location.serviceEnabled()).thenAnswer((_) async => false);
       when(_location.requestService()).thenAnswer((_) async => false);
