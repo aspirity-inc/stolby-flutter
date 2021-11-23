@@ -9,11 +9,10 @@ class LocationService {
 
   LocationService(this._location);
 
-  Future<PermissionStatus> checkPermission() async => await _location
-      .hasPermission()
-      .catchError((error) => PermissionStatus.denied);
+  Future<PermissionStatus> checkPermission() =>
+      _location.hasPermission().catchError((error) => PermissionStatus.denied);
 
-  Future<PermissionStatus> requestLocationPermission() async => await _location
+  Future<PermissionStatus> requestLocationPermission() => _location
       .requestPermission()
       .catchError((error) => PermissionStatus.denied);
 
@@ -34,9 +33,8 @@ class LocationService {
     return serviceEnabled;
   }
 
-  Stream<UserLocationDto> getUserLocation() async* {
-    yield* _location.onLocationChanged.map<UserLocationDto>(
-      (event) => UserLocationDto.fromLocationData(event),
-    );
-  }
+  Stream<UserLocationDto> getUserLocation() =>
+      _location.onLocationChanged.map<UserLocationDto>(
+        (event) => UserLocationDto.fromLocationData(event),
+      );
 }
