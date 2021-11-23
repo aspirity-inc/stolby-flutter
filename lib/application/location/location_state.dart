@@ -4,14 +4,16 @@ part of 'location_bloc.dart';
 class LocationState with _$LocationState {
   const factory LocationState({
     required bool hasPermission,
-    required bool isChecking,
+    required bool loading,
+    required bool permissionAsked,
     required Option<Either<LocationFailure, UserLocationEntity>>
         failureOrLocation,
   }) = _LocationState;
 
   factory LocationState.initial() => LocationState(
         hasPermission: false,
-        isChecking: false,
+        permissionAsked: false,
+        loading: false,
         failureOrLocation: none(),
       );
 }
