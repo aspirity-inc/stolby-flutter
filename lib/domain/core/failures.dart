@@ -10,6 +10,6 @@ class DatabaseFailure with _$DatabaseFailure {
 @freezed
 class LocationFailure with _$LocationFailure {
   const factory LocationFailure.notGranted() = NotGranted;
-  const factory LocationFailure.disabled() = Disabled;
-  const factory LocationFailure.serviceDisabled() = ServiceDisabled;
+  const factory LocationFailure.disabledService() = DisabledService;
+  const factory LocationFailure.unexpected() = Unexpected;
 }

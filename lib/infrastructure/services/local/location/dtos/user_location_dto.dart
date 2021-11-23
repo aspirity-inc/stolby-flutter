@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:location/location.dart';
+import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 
 part 'user_location_dto.freezed.dart';
 
@@ -18,5 +19,11 @@ class UserLocationDto with _$UserLocationDto {
         latitude: locationData.latitude ?? 0,
         longitude: locationData.longitude ?? 0,
         heading: locationData.heading ?? 0,
+      );
+
+  UserLocationEntity toDomain() => UserLocationEntity(
+        latitude: latitude,
+        longitude: longitude,
+        heading: heading,
       );
 }

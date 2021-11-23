@@ -12,14 +12,16 @@ import 'package:shared_preferences/shared_preferences.dart' as _i12;
 import 'application/detailed_rock_bloc/detailed_rock_bloc.dart' as _i14;
 import 'application/map/map_bloc.dart' as _i10;
 import 'application/rock_list/rock_list_bloc.dart' as _i11;
-import 'application/settings/settings_bloc.dart' as _i17;
+import 'application/settings/settings_bloc.dart' as _i19;
+import 'domain/feature/location/i_location_repository.dart' as _i15;
 import 'domain/feature/rocks_list/i_rock_list_repository.dart' as _i6;
 import 'domain/feature/rocks_map/i_map_repository.dart' as _i4;
-import 'domain/feature/settings/i_settings_repository.dart' as _i15;
-import 'infrastructure/core/services_injectable_module.dart' as _i18;
+import 'domain/feature/settings/i_settings_repository.dart' as _i17;
+import 'infrastructure/core/services_injectable_module.dart' as _i20;
+import 'infrastructure/features/location/location_repository.dart' as _i16;
 import 'infrastructure/features/rocks_list/rock_list_repository.dart' as _i7;
 import 'infrastructure/features/rocks_map/map_repository.dart' as _i5;
-import 'infrastructure/features/settings/settings_repository.dart' as _i16;
+import 'infrastructure/features/settings/settings_repository.dart' as _i18;
 import 'infrastructure/services/local/database/app_database.dart' as _i3;
 import 'infrastructure/services/local/location/location_service.dart' as _i9;
 import 'infrastructure/services/local/preferences/shared_preferences_service.dart'
@@ -49,11 +51,13 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i13.SharedPreferencesService(get<_i12.SharedPreferences>()));
   gh.factory<_i14.DetailedRockBloc>(
       () => _i14.DetailedRockBloc(get<_i6.IRockListRepository>()));
-  gh.lazySingleton<_i15.ISettingsRepository>(
-      () => _i16.SettingsRepository(get<_i13.SharedPreferencesService>()));
-  gh.factory<_i17.SettingsBloc>(
-      () => _i17.SettingsBloc(get<_i15.ISettingsRepository>()));
+  gh.lazySingleton<_i15.ILocationRepository>(
+      () => _i16.LocationRepository(get<_i9.LocationService>()));
+  gh.lazySingleton<_i17.ISettingsRepository>(
+      () => _i18.SettingsRepository(get<_i13.SharedPreferencesService>()));
+  gh.factory<_i19.SettingsBloc>(
+      () => _i19.SettingsBloc(get<_i17.ISettingsRepository>()));
   return get;
 }
 
-class _$ServicesInjectionModule extends _i18.ServicesInjectionModule {}
+class _$ServicesInjectionModule extends _i20.ServicesInjectionModule {}
