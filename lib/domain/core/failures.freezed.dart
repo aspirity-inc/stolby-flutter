@@ -182,12 +182,12 @@ class _$LocationFailureTearOff {
     return const NotGranted();
   }
 
-  Disabled disabled() {
-    return const Disabled();
+  DisabledService disabledService() {
+    return const DisabledService();
   }
 
-  ServiceDisabled serviceDisabled() {
-    return const ServiceDisabled();
+  Unexpected unexpected() {
+    return const Unexpected();
   }
 }
 
@@ -199,44 +199,44 @@ mixin _$LocationFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notGranted,
-    required TResult Function() disabled,
-    required TResult Function() serviceDisabled,
+    required TResult Function() disabledService,
+    required TResult Function() unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
+    TResult Function()? disabledService,
+    TResult Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
+    TResult Function()? disabledService,
+    TResult Function()? unexpected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
-    required TResult Function(ServiceDisabled value) serviceDisabled,
+    required TResult Function(DisabledService value) disabledService,
+    required TResult Function(Unexpected value) unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
+    TResult Function(DisabledService value)? disabledService,
+    TResult Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
+    TResult Function(DisabledService value)? disabledService,
+    TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -299,8 +299,8 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notGranted,
-    required TResult Function() disabled,
-    required TResult Function() serviceDisabled,
+    required TResult Function() disabledService,
+    required TResult Function() unexpected,
   }) {
     return notGranted();
   }
@@ -309,8 +309,8 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
+    TResult Function()? disabledService,
+    TResult Function()? unexpected,
   }) {
     return notGranted?.call();
   }
@@ -319,8 +319,8 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
+    TResult Function()? disabledService,
+    TResult Function()? unexpected,
     required TResult orElse(),
   }) {
     if (notGranted != null) {
@@ -333,8 +333,8 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
-    required TResult Function(ServiceDisabled value) serviceDisabled,
+    required TResult Function(DisabledService value) disabledService,
+    required TResult Function(Unexpected value) unexpected,
   }) {
     return notGranted(this);
   }
@@ -343,8 +343,8 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
+    TResult Function(DisabledService value)? disabledService,
+    TResult Function(Unexpected value)? unexpected,
   }) {
     return notGranted?.call(this);
   }
@@ -353,8 +353,8 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
+    TResult Function(DisabledService value)? disabledService,
+    TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
     if (notGranted != null) {
@@ -369,146 +369,38 @@ abstract class NotGranted implements LocationFailure {
 }
 
 /// @nodoc
-abstract class $DisabledCopyWith<$Res> {
-  factory $DisabledCopyWith(Disabled value, $Res Function(Disabled) then) =
-      _$DisabledCopyWithImpl<$Res>;
+abstract class $DisabledServiceCopyWith<$Res> {
+  factory $DisabledServiceCopyWith(
+          DisabledService value, $Res Function(DisabledService) then) =
+      _$DisabledServiceCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DisabledCopyWithImpl<$Res> extends _$LocationFailureCopyWithImpl<$Res>
-    implements $DisabledCopyWith<$Res> {
-  _$DisabledCopyWithImpl(Disabled _value, $Res Function(Disabled) _then)
-      : super(_value, (v) => _then(v as Disabled));
-
-  @override
-  Disabled get _value => super._value as Disabled;
-}
-
-/// @nodoc
-
-class _$Disabled implements Disabled {
-  const _$Disabled();
-
-  @override
-  String toString() {
-    return 'LocationFailure.disabled()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Disabled);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() notGranted,
-    required TResult Function() disabled,
-    required TResult Function() serviceDisabled,
-  }) {
-    return disabled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
-  }) {
-    return disabled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
-    required TResult orElse(),
-  }) {
-    if (disabled != null) {
-      return disabled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
-    required TResult Function(ServiceDisabled value) serviceDisabled,
-  }) {
-    return disabled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
-  }) {
-    return disabled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
-    required TResult orElse(),
-  }) {
-    if (disabled != null) {
-      return disabled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Disabled implements LocationFailure {
-  const factory Disabled() = _$Disabled;
-}
-
-/// @nodoc
-abstract class $ServiceDisabledCopyWith<$Res> {
-  factory $ServiceDisabledCopyWith(
-          ServiceDisabled value, $Res Function(ServiceDisabled) then) =
-      _$ServiceDisabledCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ServiceDisabledCopyWithImpl<$Res>
+class _$DisabledServiceCopyWithImpl<$Res>
     extends _$LocationFailureCopyWithImpl<$Res>
-    implements $ServiceDisabledCopyWith<$Res> {
-  _$ServiceDisabledCopyWithImpl(
-      ServiceDisabled _value, $Res Function(ServiceDisabled) _then)
-      : super(_value, (v) => _then(v as ServiceDisabled));
+    implements $DisabledServiceCopyWith<$Res> {
+  _$DisabledServiceCopyWithImpl(
+      DisabledService _value, $Res Function(DisabledService) _then)
+      : super(_value, (v) => _then(v as DisabledService));
 
   @override
-  ServiceDisabled get _value => super._value as ServiceDisabled;
+  DisabledService get _value => super._value as DisabledService;
 }
 
 /// @nodoc
 
-class _$ServiceDisabled implements ServiceDisabled {
-  const _$ServiceDisabled();
+class _$DisabledService implements DisabledService {
+  const _$DisabledService();
 
   @override
   String toString() {
-    return 'LocationFailure.serviceDisabled()';
+    return 'LocationFailure.disabledService()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServiceDisabled);
+        (other.runtimeType == runtimeType && other is DisabledService);
   }
 
   @override
@@ -518,227 +410,32 @@ class _$ServiceDisabled implements ServiceDisabled {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notGranted,
-    required TResult Function() disabled,
-    required TResult Function() serviceDisabled,
-  }) {
-    return serviceDisabled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
-  }) {
-    return serviceDisabled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? serviceDisabled,
-    required TResult orElse(),
-  }) {
-    if (serviceDisabled != null) {
-      return serviceDisabled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
-    required TResult Function(ServiceDisabled value) serviceDisabled,
-  }) {
-    return serviceDisabled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
-  }) {
-    return serviceDisabled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(ServiceDisabled value)? serviceDisabled,
-    required TResult orElse(),
-  }) {
-    if (serviceDisabled != null) {
-      return serviceDisabled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ServiceDisabled implements LocationFailure {
-  const factory ServiceDisabled() = _$ServiceDisabled;
-}
-
-/// @nodoc
-class _$LocationRepositoryFailureTearOff {
-  const _$LocationRepositoryFailureTearOff();
-
-  NotGranted notGranted() {
-    return const NotGranted();
-  }
-
-  Disabled disabled() {
-    return const Disabled();
-  }
-
-  Unexpected unexpected() {
-    return const Unexpected();
-  }
-}
-
-/// @nodoc
-const $LocationRepositoryFailure = _$LocationRepositoryFailureTearOff();
-
-/// @nodoc
-mixin _$LocationRepositoryFailure {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() notGranted,
-    required TResult Function() disabled,
-    required TResult Function() unexpected,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? unexpected,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? unexpected,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
-    required TResult Function(Unexpected value) unexpected,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(Unexpected value)? unexpected,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(Unexpected value)? unexpected,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LocationRepositoryFailureCopyWith<$Res> {
-  factory $LocationRepositoryFailureCopyWith(LocationRepositoryFailure value,
-          $Res Function(LocationRepositoryFailure) then) =
-      _$LocationRepositoryFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$LocationRepositoryFailureCopyWithImpl<$Res>
-    implements $LocationRepositoryFailureCopyWith<$Res> {
-  _$LocationRepositoryFailureCopyWithImpl(this._value, this._then);
-
-  final LocationRepositoryFailure _value;
-  // ignore: unused_field
-  final $Res Function(LocationRepositoryFailure) _then;
-}
-
-/// @nodoc
-abstract class $NotGrantedCopyWith<$Res> {
-  factory $NotGrantedCopyWith(
-          NotGranted value, $Res Function(NotGranted) then) =
-      _$NotGrantedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$NotGrantedCopyWithImpl<$Res>
-    extends _$LocationRepositoryFailureCopyWithImpl<$Res>
-    implements $NotGrantedCopyWith<$Res> {
-  _$NotGrantedCopyWithImpl(NotGranted _value, $Res Function(NotGranted) _then)
-      : super(_value, (v) => _then(v as NotGranted));
-
-  @override
-  NotGranted get _value => super._value as NotGranted;
-}
-
-/// @nodoc
-
-class _$NotGranted implements NotGranted {
-  const _$NotGranted();
-
-  @override
-  String toString() {
-    return 'LocationRepositoryFailure.notGranted()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NotGranted);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() notGranted,
-    required TResult Function() disabled,
+    required TResult Function() disabledService,
     required TResult Function() unexpected,
   }) {
-    return notGranted();
+    return disabledService();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
+    TResult Function()? disabledService,
     TResult Function()? unexpected,
   }) {
-    return notGranted?.call();
+    return disabledService?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
+    TResult Function()? disabledService,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
-    if (notGranted != null) {
-      return notGranted();
+    if (disabledService != null) {
+      return disabledService();
     }
     return orElse();
   }
@@ -747,148 +444,39 @@ class _$NotGranted implements NotGranted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
+    required TResult Function(DisabledService value) disabledService,
     required TResult Function(Unexpected value) unexpected,
   }) {
-    return notGranted(this);
+    return disabledService(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
+    TResult Function(DisabledService value)? disabledService,
     TResult Function(Unexpected value)? unexpected,
   }) {
-    return notGranted?.call(this);
+    return disabledService?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
+    TResult Function(DisabledService value)? disabledService,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
-    if (notGranted != null) {
-      return notGranted(this);
+    if (disabledService != null) {
+      return disabledService(this);
     }
     return orElse();
   }
 }
 
-abstract class NotGranted implements LocationRepositoryFailure {
-  const factory NotGranted() = _$NotGranted;
-}
-
-/// @nodoc
-abstract class $DisabledCopyWith<$Res> {
-  factory $DisabledCopyWith(Disabled value, $Res Function(Disabled) then) =
-      _$DisabledCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$DisabledCopyWithImpl<$Res>
-    extends _$LocationRepositoryFailureCopyWithImpl<$Res>
-    implements $DisabledCopyWith<$Res> {
-  _$DisabledCopyWithImpl(Disabled _value, $Res Function(Disabled) _then)
-      : super(_value, (v) => _then(v as Disabled));
-
-  @override
-  Disabled get _value => super._value as Disabled;
-}
-
-/// @nodoc
-
-class _$Disabled implements Disabled {
-  const _$Disabled();
-
-  @override
-  String toString() {
-    return 'LocationRepositoryFailure.disabled()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Disabled);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() notGranted,
-    required TResult Function() disabled,
-    required TResult Function() unexpected,
-  }) {
-    return disabled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? unexpected,
-  }) {
-    return disabled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabled,
-    TResult Function()? unexpected,
-    required TResult orElse(),
-  }) {
-    if (disabled != null) {
-      return disabled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
-    required TResult Function(Unexpected value) unexpected,
-  }) {
-    return disabled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(Unexpected value)? unexpected,
-  }) {
-    return disabled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
-    TResult Function(Unexpected value)? unexpected,
-    required TResult orElse(),
-  }) {
-    if (disabled != null) {
-      return disabled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Disabled implements LocationRepositoryFailure {
-  const factory Disabled() = _$Disabled;
+abstract class DisabledService implements LocationFailure {
+  const factory DisabledService() = _$DisabledService;
 }
 
 /// @nodoc
@@ -899,8 +487,7 @@ abstract class $UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UnexpectedCopyWithImpl<$Res>
-    extends _$LocationRepositoryFailureCopyWithImpl<$Res>
+class _$UnexpectedCopyWithImpl<$Res> extends _$LocationFailureCopyWithImpl<$Res>
     implements $UnexpectedCopyWith<$Res> {
   _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
       : super(_value, (v) => _then(v as Unexpected));
@@ -916,7 +503,7 @@ class _$Unexpected implements Unexpected {
 
   @override
   String toString() {
-    return 'LocationRepositoryFailure.unexpected()';
+    return 'LocationFailure.unexpected()';
   }
 
   @override
@@ -932,7 +519,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() notGranted,
-    required TResult Function() disabled,
+    required TResult Function() disabledService,
     required TResult Function() unexpected,
   }) {
     return unexpected();
@@ -942,7 +529,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
+    TResult Function()? disabledService,
     TResult Function()? unexpected,
   }) {
     return unexpected?.call();
@@ -952,7 +539,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notGranted,
-    TResult Function()? disabled,
+    TResult Function()? disabledService,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -966,7 +553,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotGranted value) notGranted,
-    required TResult Function(Disabled value) disabled,
+    required TResult Function(DisabledService value) disabledService,
     required TResult Function(Unexpected value) unexpected,
   }) {
     return unexpected(this);
@@ -976,7 +563,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
+    TResult Function(DisabledService value)? disabledService,
     TResult Function(Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
@@ -986,7 +573,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotGranted value)? notGranted,
-    TResult Function(Disabled value)? disabled,
+    TResult Function(DisabledService value)? disabledService,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -997,6 +584,6 @@ class _$Unexpected implements Unexpected {
   }
 }
 
-abstract class Unexpected implements LocationRepositoryFailure {
+abstract class Unexpected implements LocationFailure {
   const factory Unexpected() = _$Unexpected;
 }
