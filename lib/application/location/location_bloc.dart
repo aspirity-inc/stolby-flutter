@@ -24,13 +24,20 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
     on<LocationEvent>((event, emit) async {
       event.map(
         checkedPermission: (e) async {
+          emit(state.copyWith(loading: true));
           final permissionResult = await _repository.getLocationPermissions();
           permissionResult.fold(
             (l) => emit(state.copyWith(
               failureOrLocation: some(left(l)),
               hasPermission: false,
+              permissionAsked: false,
+              loading: false,
             )),
-            (r) => emit(state.copyWith(hasPermission: true)),
+            (r) => emit(state.copyWith(
+              hasPermission: true,
+              permissionAsked: true,
+              loading: false,
+            )),
           );
         },
         startWatchingLocation: (e) {
