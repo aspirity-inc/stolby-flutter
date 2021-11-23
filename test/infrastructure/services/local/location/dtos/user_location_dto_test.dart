@@ -28,6 +28,7 @@ void main() {
       );
     },
   );
+
   group("toDomain()", () {
     test("Should return correct entity", () {
       //arrange

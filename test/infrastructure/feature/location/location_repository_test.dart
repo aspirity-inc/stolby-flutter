@@ -71,6 +71,7 @@ void main() {
         expect(result, right(unit));
       },
     );
+
     test(
       'Should return unit if permission denied initally and after request grantedLimited',
       () async {
@@ -86,6 +87,7 @@ void main() {
         expect(result, right(unit));
       },
     );
+
     test(
       'Should return LocationFailure if permission denied initally and after request denied',
       () async {
@@ -101,6 +103,7 @@ void main() {
         expect(result, left(const LocationFailure.notGranted()));
       },
     );
+
     test(
       'Should return unit if permission denied initally and after request deniedForever',
       () async {

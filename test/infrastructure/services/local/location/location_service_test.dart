@@ -27,6 +27,7 @@ void main() {
       //assert
       expect(result, PermissionStatus.granted);
     });
+
     test('Should return PermissionStatus.grantedLimited', () async {
       //arrange
       when(_location.hasPermission()).thenAnswer(
