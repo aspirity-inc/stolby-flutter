@@ -9,19 +9,23 @@ class LocationService {
 
   LocationService(this._location);
 
-  Future<PermissionStatus> checkPermission() async =>
-      await _location.hasPermission();
+  Future<PermissionStatus> checkPermission() async => await _location
+      .hasPermission()
+      .catchError((error) => PermissionStatus.denied);
 
-  Future<PermissionStatus> requestLocationPermission() async =>
-      await _location.requestPermission();
+  Future<PermissionStatus> requestLocationPermission() async => await _location
+      .requestPermission()
+      .catchError((error) => PermissionStatus.denied);
 
   Future<bool> geolocationService() async {
-    bool serviceEnabled = await _location.serviceEnabled();
+    bool serviceEnabled =
+        await _location.serviceEnabled().catchError((error) => false);
     if (Platform.isIOS) {
       return serviceEnabled;
     } else {
       if (!serviceEnabled) {
-        serviceEnabled = await _location.requestService();
+        serviceEnabled =
+            await _location.requestService().catchError((error) => false);
 
         return serviceEnabled;
       }
