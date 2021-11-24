@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:stolby_flutter/presentation/core/themes/app_colors.dart';
 
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  primaryColor: const Color(0xFF009688),
   colorScheme: const ColorScheme.light().copyWith(
-    primary: const Color(0xFF009688),
+    primary: AppColors.primaryLight,
+    secondary: AppColors.secondaryColor,
   ),
   scaffoldBackgroundColor: Colors.white,
 );

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:stolby_flutter/presentation/core/themes/app_colors.dart';
 
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
-  primaryColor: const Color(0xFF161616),
   colorScheme: const ColorScheme.dark().copyWith(
-    primary: const Color(0xFF161616),
+    primary: AppColors.primaryDark,
+    secondary: AppColors.secondaryColor,
   ),
-  scaffoldBackgroundColor: const Color(0xFF262626),
+  scaffoldBackgroundColor: AppColors.backgroundDark,
 );

@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: Container(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               child: const SafeArea(
                 top: false,
                 child: SizedBox(

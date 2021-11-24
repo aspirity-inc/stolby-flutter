@@ -22,7 +22,7 @@ class AppBottomNavigationBarItem extends StatelessWidget {
         height: selected ? 64 : 24,
         width: selected ? 64 : 24,
         decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.primary,
           shape: BoxShape.circle,
         ),
         duration: const Duration(milliseconds: 64),
