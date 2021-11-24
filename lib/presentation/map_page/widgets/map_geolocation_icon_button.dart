@@ -28,8 +28,8 @@ class MapGeolocationIconButton extends StatelessWidget {
         ),
         child: Icon(
           enabled
-              ? CommunityMaterialIcons.crosshairs
-              : CommunityMaterialIcons.crosshairs_gps,
+              ? CommunityMaterialIcons.crosshairs_gps
+              : CommunityMaterialIcons.crosshairs,
           size: 24,
           color: Colors.white,
         ),
