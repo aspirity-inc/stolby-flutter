@@ -41,7 +41,9 @@ void main() {
       act: (LocationBloc bloc) =>
           bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
-        LocationState.initial().copyWith(hasPermission: true),
+        LocationState.initial().copyWith(loading: true),
+        LocationState.initial()
+            .copyWith(hasPermission: true, permissionAsked: true),
       ],
     );
 
@@ -53,6 +55,14 @@ void main() {
 
         return _bloc;
       },
+      seed: () => LocationState.initial(),
+      act: (LocationBloc bloc) =>
+          bloc.add(const LocationEvent.checkedPermission()),
+      expect: () => [
+        LocationState.initial().copyWith(loading: true),
+        LocationState.initial()
+            .copyWith(hasPermission: false, permissionAsked: false),
+      ],
     );
 
     blocTest(
@@ -63,8 +73,15 @@ void main() {
 
         return _bloc;
       },
+      seed: () => LocationState.initial(),
+      act: (LocationBloc bloc) =>
+          bloc.add(const LocationEvent.checkedPermission()),
+      expect: () => [
+        LocationState.initial().copyWith(loading: true),
+        LocationState.initial()
+            .copyWith(hasPermission: false, permissionAsked: false),
+      ],
     );
   });
   group("startWatchingLocation()", () {});
-  group("stopWatchingLocation()", () {});
 }
