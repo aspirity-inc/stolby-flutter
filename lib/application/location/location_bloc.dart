@@ -27,7 +27,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
           final permissionResult = await _repository.getLocationPermissions();
           permissionResult.fold(
             (l) => emit(state.copyWith(
-              failureOrLocation: some(left(l)),
+              failureOption: some(l),
               hasPermission: false,
               permissionAsked: false,
             )),
@@ -40,7 +40,20 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
         startWatchingLocation: (e) {
           _locationSubscription =
               _repository.startWatchingLocation().listen((failureOrLocation) {
-            emit(state.copyWith(failureOrLocation: some(failureOrLocation)));
+            failureOrLocation.fold(
+              (l) => emit(
+                state.copyWith(
+                  failureOption: some(l),
+                  userLocation: none(),
+                ),
+              ),
+              (r) => emit(
+                state.copyWith(
+                  failureOption: none(),
+                  userLocation: some(r),
+                ),
+              ),
+            );
           });
         },
         stopWatchingLocation: (e) {
