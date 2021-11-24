@@ -5,13 +5,14 @@ class LocationState with _$LocationState {
   const factory LocationState({
     required bool hasPermission,
     required bool permissionAsked,
-    required Option<Either<LocationFailure, UserLocationEntity>>
-        failureOrLocation,
+    required Option<LocationFailure> failureOption,
+    required Option<UserLocationEntity> userLocation,
   }) = _LocationState;
 
   factory LocationState.initial() => LocationState(
         hasPermission: false,
         permissionAsked: false,
-        failureOrLocation: none(),
+        failureOption: none(),
+        userLocation: none(),
       );
 }
