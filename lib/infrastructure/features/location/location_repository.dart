@@ -26,7 +26,7 @@ class LocationRepository implements ILocationRepository {
       case PermissionStatus.denied:
         break;
       default:
-        break;
+        return right(unit);
     }
     final permissionRequest = await _service.requestLocationPermission();
     switch (permissionRequest) {
