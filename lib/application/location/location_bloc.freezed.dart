@@ -442,12 +442,13 @@ class _$LocationStateTearOff {
   _LocationState call(
       {required bool hasPermission,
       required bool permissionAsked,
-      required Option<Either<LocationFailure, UserLocationEntity>>
-          failureOrLocation}) {
+      required Option<LocationFailure> failureOption,
+      required Option<UserLocationEntity> userLocation}) {
     return _LocationState(
       hasPermission: hasPermission,
       permissionAsked: permissionAsked,
-      failureOrLocation: failureOrLocation,
+      failureOption: failureOption,
+      userLocation: userLocation,
     );
   }
 }
@@ -459,7 +460,9 @@ const $LocationState = _$LocationStateTearOff();
 mixin _$LocationState {
   bool get hasPermission => throw _privateConstructorUsedError;
   bool get permissionAsked => throw _privateConstructorUsedError;
-  Option<Either<LocationFailure, UserLocationEntity>> get failureOrLocation =>
+  Option<LocationFailure> get failureOption =>
+      throw _privateConstructorUsedError;
+  Option<UserLocationEntity> get userLocation =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -475,7 +478,8 @@ abstract class $LocationStateCopyWith<$Res> {
   $Res call(
       {bool hasPermission,
       bool permissionAsked,
-      Option<Either<LocationFailure, UserLocationEntity>> failureOrLocation});
+      Option<LocationFailure> failureOption,
+      Option<UserLocationEntity> userLocation});
 }
 
 /// @nodoc
@@ -491,7 +495,8 @@ class _$LocationStateCopyWithImpl<$Res>
   $Res call({
     Object? hasPermission = freezed,
     Object? permissionAsked = freezed,
-    Object? failureOrLocation = freezed,
+    Object? failureOption = freezed,
+    Object? userLocation = freezed,
   }) {
     return _then(_value.copyWith(
       hasPermission: hasPermission == freezed
@@ -502,10 +507,14 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.permissionAsked
           : permissionAsked // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOrLocation: failureOrLocation == freezed
-          ? _value.failureOrLocation
-          : failureOrLocation // ignore: cast_nullable_to_non_nullable
-              as Option<Either<LocationFailure, UserLocationEntity>>,
+      failureOption: failureOption == freezed
+          ? _value.failureOption
+          : failureOption // ignore: cast_nullable_to_non_nullable
+              as Option<LocationFailure>,
+      userLocation: userLocation == freezed
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as Option<UserLocationEntity>,
     ));
   }
 }
@@ -520,7 +529,8 @@ abstract class _$LocationStateCopyWith<$Res>
   $Res call(
       {bool hasPermission,
       bool permissionAsked,
-      Option<Either<LocationFailure, UserLocationEntity>> failureOrLocation});
+      Option<LocationFailure> failureOption,
+      Option<UserLocationEntity> userLocation});
 }
 
 /// @nodoc
@@ -538,7 +548,8 @@ class __$LocationStateCopyWithImpl<$Res>
   $Res call({
     Object? hasPermission = freezed,
     Object? permissionAsked = freezed,
-    Object? failureOrLocation = freezed,
+    Object? failureOption = freezed,
+    Object? userLocation = freezed,
   }) {
     return _then(_LocationState(
       hasPermission: hasPermission == freezed
@@ -549,10 +560,14 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.permissionAsked
           : permissionAsked // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOrLocation: failureOrLocation == freezed
-          ? _value.failureOrLocation
-          : failureOrLocation // ignore: cast_nullable_to_non_nullable
-              as Option<Either<LocationFailure, UserLocationEntity>>,
+      failureOption: failureOption == freezed
+          ? _value.failureOption
+          : failureOption // ignore: cast_nullable_to_non_nullable
+              as Option<LocationFailure>,
+      userLocation: userLocation == freezed
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as Option<UserLocationEntity>,
     ));
   }
 }
@@ -563,18 +578,21 @@ class _$_LocationState implements _LocationState {
   const _$_LocationState(
       {required this.hasPermission,
       required this.permissionAsked,
-      required this.failureOrLocation});
+      required this.failureOption,
+      required this.userLocation});
 
   @override
   final bool hasPermission;
   @override
   final bool permissionAsked;
   @override
-  final Option<Either<LocationFailure, UserLocationEntity>> failureOrLocation;
+  final Option<LocationFailure> failureOption;
+  @override
+  final Option<UserLocationEntity> userLocation;
 
   @override
   String toString() {
-    return 'LocationState(hasPermission: $hasPermission, permissionAsked: $permissionAsked, failureOrLocation: $failureOrLocation)';
+    return 'LocationState(hasPermission: $hasPermission, permissionAsked: $permissionAsked, failureOption: $failureOption, userLocation: $userLocation)';
   }
 
   @override
@@ -586,13 +604,15 @@ class _$_LocationState implements _LocationState {
                 other.hasPermission == hasPermission) &&
             (identical(other.permissionAsked, permissionAsked) ||
                 other.permissionAsked == permissionAsked) &&
-            (identical(other.failureOrLocation, failureOrLocation) ||
-                other.failureOrLocation == failureOrLocation));
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.userLocation, userLocation) ||
+                other.userLocation == userLocation));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, hasPermission, permissionAsked, failureOrLocation);
+      runtimeType, hasPermission, permissionAsked, failureOption, userLocation);
 
   @JsonKey(ignore: true)
   @override
@@ -604,15 +624,17 @@ abstract class _LocationState implements LocationState {
   const factory _LocationState(
       {required bool hasPermission,
       required bool permissionAsked,
-      required Option<Either<LocationFailure, UserLocationEntity>>
-          failureOrLocation}) = _$_LocationState;
+      required Option<LocationFailure> failureOption,
+      required Option<UserLocationEntity> userLocation}) = _$_LocationState;
 
   @override
   bool get hasPermission;
   @override
   bool get permissionAsked;
   @override
-  Option<Either<LocationFailure, UserLocationEntity>> get failureOrLocation;
+  Option<LocationFailure> get failureOption;
+  @override
+  Option<UserLocationEntity> get userLocation;
   @override
   @JsonKey(ignore: true)
   _$LocationStateCopyWith<_LocationState> get copyWith =>

@@ -41,7 +41,6 @@ void main() {
       act: (LocationBloc bloc) =>
           bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
-        LocationState.initial().copyWith(loading: true),
         LocationState.initial()
             .copyWith(hasPermission: true, permissionAsked: true),
       ],
@@ -59,9 +58,11 @@ void main() {
       act: (LocationBloc bloc) =>
           bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
-        LocationState.initial().copyWith(loading: true),
-        LocationState.initial()
-            .copyWith(hasPermission: false, permissionAsked: false),
+        LocationState.initial().copyWith(
+          hasPermission: false,
+          permissionAsked: false,
+          failureOption: some(const LocationFailure.notGranted()),
+        ),
       ],
     );
 
@@ -77,9 +78,11 @@ void main() {
       act: (LocationBloc bloc) =>
           bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
-        LocationState.initial().copyWith(loading: true),
-        LocationState.initial()
-            .copyWith(hasPermission: false, permissionAsked: false),
+        LocationState.initial().copyWith(
+          hasPermission: false,
+          permissionAsked: false,
+          failureOption: some(const LocationFailure.unexpected()),
+        ),
       ],
     );
   });
