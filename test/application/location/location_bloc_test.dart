@@ -61,7 +61,7 @@ void main() {
         LocationState.initial().copyWith(
           hasPermission: false,
           permissionAsked: false,
-          failureOrLocation: some(left(const LocationFailure.notGranted())),
+          failureOption: some(const LocationFailure.notGranted()),
         ),
       ],
     );
@@ -81,7 +81,7 @@ void main() {
         LocationState.initial().copyWith(
           hasPermission: false,
           permissionAsked: false,
-          failureOrLocation: some(left(const LocationFailure.unexpected())),
+          failureOption: some(const LocationFailure.unexpected()),
         ),
       ],
     );
