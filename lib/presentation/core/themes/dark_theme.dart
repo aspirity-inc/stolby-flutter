@@ -13,7 +13,7 @@ final ThemeData darkTheme = ThemeData(
   iconTheme: const IconThemeData(
     color: Colors.white,
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     bodyText1: TextStyle(color: Colors.white),
   ),
 );
