@@ -54,6 +54,7 @@ class RocksPageContent extends StatelessWidget {
                       (context, index) {
                         return RockListItem(index: index);
                       },
+                      // TODO: add real data
                       childCount: 20,
                     ),
                   ),
