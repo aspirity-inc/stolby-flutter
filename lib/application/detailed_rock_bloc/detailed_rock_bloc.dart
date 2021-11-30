@@ -18,7 +18,7 @@ class DetailedRockBloc extends Bloc<DetailedRockEvent, DetailedRockState> {
       : super(DetailedRockState.initial()) {
     on<DetailedRockEvent>(
       (event, emit) async {
-        event.map(
+        await event.map(
           initialized: (e) async {
             final rockOrError = await _rockListRepository.getSingleRock(e.id);
             rockOrError.fold(

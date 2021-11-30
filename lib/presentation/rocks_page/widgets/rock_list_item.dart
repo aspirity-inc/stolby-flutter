@@ -3,11 +3,16 @@ import 'dart:math' as math;
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:stolby_flutter/application/settings/settings_bloc.dart';
+import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
 
 class RockListItem extends StatelessWidget {
   final int index;
+  final UserLocationEntity? location;
 
   // TODO: remove const item and add items from list
   final RockListItemEntity item = const RockListItemEntity(
@@ -22,6 +27,7 @@ class RockListItem extends StatelessWidget {
 
   const RockListItem({
     Key? key,
+    this.location,
     required this.index,
   }) : super(key: key);
 
@@ -38,6 +44,22 @@ class RockListItem extends StatelessWidget {
       default:
         return "difficulty name not found";
     }
+  }
+
+  String _getDistance(
+    UserLocationEntity user,
+    RockListItemEntity item,
+    AppLocalizations localization,
+  ) {
+    const distance = Distance();
+    final strDistance = distance.distance(
+      LatLng(user.latitude, user.longitude),
+      LatLng(item.latitude, item.longitude),
+    );
+
+    return strDistance >= 1000
+        ? "${(strDistance / 1000).toStringAsFixed(2)} ${localization.distance_kilometers}"
+        : "${strDistance.ceil()} ${localization.distance_meters}";
   }
 
   @override
@@ -141,10 +163,20 @@ class RockListItem extends StatelessWidget {
                                 const SizedBox(
                                   width: 8.0,
                                 ),
-                                // TODO: Add distance if location enabled
-                                const Text(
-                                  '1.25 km',
-                                  style: TextStyle(
+                                Text(
+                                  context
+                                          .read<SettingsBloc>()
+                                          .state
+                                          .geolocationEnabled
+                                      ? location != null
+                                          ? _getDistance(
+                                              location!,
+                                              item,
+                                              localization,
+                                            )
+                                          : localization.distance_not_defined
+                                      : localization.distance_not_defined,
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -165,3 +197,6 @@ class RockListItem extends StatelessWidget {
     );
   }
 }
+/*
+
+ */

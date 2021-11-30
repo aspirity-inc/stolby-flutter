@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stolby_flutter/application/location/location_bloc.dart';
 import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/presentation/rocks_page/widgets/rock_list_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -52,7 +53,14 @@ class RocksPageContent extends StatelessWidget {
                     ),
                     delegate: SliverChildBuilderDelegate(
                       (context, index) {
-                        return RockListItem(index: index);
+                        return RockListItem(
+                          index: index,
+                          location: context
+                              .read<LocationBloc>()
+                              .state
+                              .userLocation
+                              .fold(() => null, (a) => a),
+                        );
                       },
                       // TODO: add real data
                       childCount: 20,

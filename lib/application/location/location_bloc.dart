@@ -22,7 +22,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
 
   LocationBloc(this._repository) : super(LocationState.initial()) {
     on<LocationEvent>((event, emit) async {
-      event.map(
+      await event.map(
         checkedPermission: (e) async {
           final permissionResult = await _repository.getLocationPermissions();
           permissionResult.fold(
@@ -37,7 +37,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
             )),
           );
         },
-        startWatchingLocation: (e) {
+        startWatchingLocation: (e) async {
           _locationSubscription =
               _repository.startWatchingLocation().listen((failureOrLocation) {
             failureOrLocation.fold(
@@ -56,7 +56,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
             );
           });
         },
-        stopWatchingLocation: (e) {
+        stopWatchingLocation: (e) async {
           _locationSubscription?.cancel();
         },
       );
