@@ -18,13 +18,11 @@ LazyDatabase _openConnection() {
   return LazyDatabase(() async {
     final dbFolder = await getApplicationDocumentsDirectory();
     final file = File(p.join(dbFolder.path, 'rocks.db'));
-    if (!await file.exists()) {
-      final dbBytes = await rootBundle.load("assets/rocks.db");
-      await file.writeAsBytes(
-        dbBytes.buffer
-            .asUint8List(dbBytes.offsetInBytes, dbBytes.lengthInBytes),
-      );
-    }
+
+    final dbBytes = await rootBundle.load("assets/rocks.db");
+    await file.writeAsBytes(
+      dbBytes.buffer.asUint8List(dbBytes.offsetInBytes, dbBytes.lengthInBytes),
+    );
 
     return NativeDatabase(file);
   });
