@@ -58,12 +58,16 @@
   "menu_search": "Search the rocks",
   "about_developer": "Developed with love by ASPIRITY.",
   "about_version": "Version",
-  "about_app": "Unofficial app of Krasnoyarsk \"Stolby\" Nature Sanctuary. Version %s. Developed with love by ASPIRITY.",
+  "about_app": "Unofficial app of Krasnoyarsk \"Stolby\" Nature Sanctuary. Version ",
+  "about_app_2": ". Developed with love by ASPIRITY.",
   "about_aspirity_website": "https://aspirity.com/",
   "search_hint": "Search the rocks by name",
   "search_toolbar_hint": "Search",
   "search_not_found": "Not found",
   "outside_title": "Your location",
-  "outside_description": "Device location is currently not within sanctuary borders. What is the point in wasting power for useless GPS? Further location updates will be disabled."
-
+  "outside_description": "Device location is currently not within sanctuary borders. What is the point in wasting power for useless GPS? Further location updates will be disabled.",
+  "settings_auto_theme": "Theme same as in device",
+  "settings_dark_theme": "Dark theme",
+  "settings_user_map_centering": "Map following",
+  "settings_reverse_map": "Reverse map"
 }

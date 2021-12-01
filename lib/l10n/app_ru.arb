@@ -24,7 +24,7 @@
   "dialog_nogps_button_close":  "Закрыть",
   "drawer_item_title_map": "Карта",
   "drawer_item_title_rocks": "Все скалы",
-  "drawer_item_title_feedback": "Отзыв &amp; Поддержка",
+  "drawer_item_title_feedback": "Отзыв & Поддержка",
   "drawer_item_title_rate": "Оценить",
   "drawer_head_title_help": "Помогите нам стать лучше",
   "appbar_title_map": "Карта",
@@ -58,11 +58,16 @@
   "menu_search": "Поиск",
   "about_developer": "Разработано с любовью командой ASPIRITY.\n\nБлагодарим за помощь:\nСергея Афанасенко.",
   "about_version":  "Версия",
-  "about_app": "Неофициальное приложение Красноярского заповедника \"Столбы\". Версия %s. Разработано с любовью командой ASPIRITY.\n\nБлагодарим за помощь:\nСергея Афанасенко.",
+  "about_app": "Неофициальное приложение Красноярского заповедника \"Столбы\". Версия ",
+  "about_app_2": ". Разработано с любовью командой ASPIRITY.\n\nБлагодарим за помощь:\nСергея Афанасенко.",
   "about_aspirity_website": "https://aspirity.com/",
   "search_hint": "Ищите скалы по названию",
   "search_toolbar_hint": "Поиск",
   "search_not_found": "Ничего не найдено",
   "outside_title":  "Ваше местоплоожение",
-  "outside_description": "Судя по всему, вы находитесь за пределами заповедника. Зачем тратить энергию аккумулятора на GPS впустую? Поиск местоположения будет отключен."
+  "outside_description": "Судя по всему, вы находитесь за пределами заповедника. Зачем тратить энергию аккумулятора на GPS впустую? Поиск местоположения будет отключен.",
+  "settings_auto_theme": "Такая же тема, как и на устройстве",
+  "settings_dark_theme": "Темная тема",
+  "settings_user_map_centering": "Следовать за мной",
+  "settings_reverse_map": "Развернуть карту"
 }
