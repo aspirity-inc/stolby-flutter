@@ -55,6 +55,7 @@ class RocksPageContent extends StatelessWidget {
                       (context, index) {
                         return RockListItem(
                           index: index,
+                          item: state.rocksToShow[index],
                           location: context
                               .read<LocationBloc>()
                               .state
@@ -62,8 +63,7 @@ class RocksPageContent extends StatelessWidget {
                               .fold(() => null, (a) => a),
                         );
                       },
-                      // TODO: add real data
-                      childCount: 20,
+                      childCount: state.rocksToShow.length,
                     ),
                   ),
                 ),

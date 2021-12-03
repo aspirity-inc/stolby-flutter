@@ -6,28 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:stolby_flutter/presentation/routing/router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
 
 class RockListItem extends StatelessWidget {
   final int index;
+  final RockListItemEntity item;
   final UserLocationEntity? location;
-
-  // TODO: remove const item and add items from list
-  final RockListItemEntity item = const RockListItemEntity(
-    id: 0,
-    latitude: 55.9174,
-    longitude: 92.73843,
-    picName: 'pic_babkaivnuchka',
-    localizedName: 'The Granny and the Granddaughter',
-    height: 40,
-    difficulty: 1,
-  );
 
   const RockListItem({
     Key? key,
     this.location,
+    required this.item,
     required this.index,
   }) : super(key: key);
 
@@ -75,121 +68,126 @@ class RockListItem extends StatelessWidget {
       child: SlideAnimation(
         verticalOffset: 100,
         child: FadeInAnimation(
-          child: Container(
-            height: 188,
-            margin: EdgeInsets.only(
-              left: index % 2 == 0 ? 16 : 8,
-              right: index % 2 == 0 ? 8 : 16,
-              bottom: 16.0,
+          child: InkWell(
+            onTap: () => context.router.push(
+              DetailedRockRoute(rockId: index),
             ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
-                    "assets/images/" + item.picName + ".jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: ClipRRect(
+            child: Container(
+              height: 188,
+              margin: EdgeInsets.only(
+                left: index % 2 == 0 ? 16 : 8,
+                right: index % 2 == 0 ? 8 : 16,
+                bottom: 16.0,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  ClipRRect(
                     borderRadius: BorderRadius.circular(16),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(
-                        sigmaX: 5.0,
-                        sigmaY: 5.0,
-                      ),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8.0,
-                          horizontal: 16.0,
+                    child: Image.asset(
+                      "assets/images/" + item.picName + ".jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 5.0,
+                          sigmaY: 5.0,
                         ),
-                        color: Colors.white54,
-                        child: Text(
-                          _difficultyToString(item.difficulty, localization),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 8.0,
+                            horizontal: 16.0,
+                          ),
+                          color: Colors.white54,
+                          child: Text(
+                            _difficultyToString(item.difficulty, localization),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Positioned(
-                  bottom: 8,
-                  left: 8,
-                  right: 8,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(
-                        sigmaX: 5.0,
-                        sigmaY: 5.0,
-                      ),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0,
-                          vertical: 8.0,
+                  Positioned(
+                    bottom: 8,
+                    left: 8,
+                    right: 8,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 5.0,
+                          sigmaY: 5.0,
                         ),
-                        color: Colors.white54,
-                        child: Column(
-                          children: [
-                            Text(
-                              item.localizedName,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                            vertical: 8.0,
+                          ),
+                          color: Colors.white54,
+                          child: Column(
+                            children: [
+                              Text(
+                                item.localizedName,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
                               ),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                            ),
-                            Row(
-                              children: [
-                                Transform.rotate(
-                                  angle: 3 * math.pi / 12,
-                                  child: const Icon(
-                                    CommunityMaterialIcons.navigation,
-                                    color: Colors.black,
-                                    size: 16,
+                              Row(
+                                children: [
+                                  Transform.rotate(
+                                    angle: 3 * math.pi / 12,
+                                    child: const Icon(
+                                      CommunityMaterialIcons.navigation,
+                                      color: Colors.black,
+                                      size: 16,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  width: 8.0,
-                                ),
-                                Text(
-                                  context
-                                          .read<SettingsBloc>()
-                                          .state
-                                          .geolocationEnabled
-                                      ? location != null
-                                          ? _getDistance(
-                                              location!,
-                                              item,
-                                              localization,
-                                            )
-                                          : localization.distance_not_defined
-                                      : localization.distance_not_defined,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
+                                  const SizedBox(
+                                    width: 8.0,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Text(
+                                    context
+                                            .read<SettingsBloc>()
+                                            .state
+                                            .geolocationEnabled
+                                        ? location != null
+                                            ? _getDistance(
+                                                location!,
+                                                item,
+                                                localization,
+                                              )
+                                            : localization.distance_not_defined
+                                        : localization.distance_not_defined,
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
