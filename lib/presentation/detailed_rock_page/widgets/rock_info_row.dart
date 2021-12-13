@@ -27,6 +27,7 @@ class RockInfoRow extends StatelessWidget {
         RockCoordinates(
           latitude: rock.latitude,
           longitude: rock.longitude,
+          localizedName: rock.localizedName,
         ),
       ],
     );

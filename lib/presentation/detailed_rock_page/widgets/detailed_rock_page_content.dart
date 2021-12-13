@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';
 import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/add_marker_button.dart';
-import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/detailed_rock_appbar.dart';
+import 'package:stolby_flutter/presentation/routing/router.gr.dart';
+import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/rock_info_row.dart';
 import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/rock_text.dart';
 
@@ -63,7 +65,11 @@ class DetailedRockPageContent extends StatelessWidget {
                         height: 16,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () => context.router.push(
+                          RockViewImageRoute(
+                            picturePath: rock.picName,
+                          ),
+                        ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16),
                           child: Image.asset(
@@ -97,7 +103,7 @@ class DetailedRockPageContent extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: AddMarkerButton(
-                    onPressed: () {},
+                    onPressed: () {}, // TODO: ADD MARKER TO THE MAP
                   ),
                 ),
               ],

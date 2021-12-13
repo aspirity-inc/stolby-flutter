@@ -37,9 +37,9 @@ class AboutAppButton extends StatelessWidget {
                 ),
               ],
             ),
-            const Icon(
+            Icon(
               Icons.info_outline,
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
           ],
         ),

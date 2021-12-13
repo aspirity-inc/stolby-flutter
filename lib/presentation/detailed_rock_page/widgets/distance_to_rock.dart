@@ -24,10 +24,10 @@ class DistanceToRock extends StatelessWidget {
 
     return Column(
       children: [
-        const Icon(
+        Icon(
           CommunityMaterialIcons.map_marker_distance,
-          color: Colors.black,
           size: 36,
+          color: Theme.of(context).colorScheme.onBackground,
         ),
         SizedBox(
           height: distance != null ? 8 : 16,
@@ -40,7 +40,6 @@ class DistanceToRock extends StatelessWidget {
           style: const TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.w700,
-            color: Colors.black,
           ),
         ),
         Text(

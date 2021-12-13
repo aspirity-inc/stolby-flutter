@@ -11,7 +11,7 @@ final ThemeData lightTheme = ThemeData(
   ),
   scaffoldBackgroundColor: Colors.white,
   iconTheme: const IconThemeData(
-    color: Colors.white,
+    color: Colors.black,
   ),
   textTheme: const TextTheme(
     bodyText1: TextStyle(color: Colors.white),

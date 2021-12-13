@@ -36,6 +36,7 @@ class AddMarkerButton extends StatelessWidget {
               children: [
                 const Icon(
                   Icons.location_on,
+                  color: Colors.white,
                 ),
                 const SizedBox(
                   width: 8,

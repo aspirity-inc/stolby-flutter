@@ -37,9 +37,9 @@ class FeedbackButton extends StatelessWidget {
                 ),
               ],
             ),
-            const Icon(
+            Icon(
               CommunityMaterialIcons.comment_text_outline,
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
           ],
         ),

@@ -16,10 +16,10 @@ class DetailedRockAppbar extends StatelessWidget
     return AppBar(
       leading: IconButton(
         onPressed: () => context.router.pop(),
-        icon: const Icon(
+        icon: Icon(
           Icons.arrow_back_sharp,
           size: 24,
-          color: Colors.black,
+          color: Theme.of(context).colorScheme.onBackground,
         ),
       ),
       backgroundColor: Colors.transparent,
@@ -44,6 +44,7 @@ class DetailedRockAppbar extends StatelessWidget
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
+                      color: Colors.white,
                     ),
                   ),
                 ),

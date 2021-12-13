@@ -15,10 +15,10 @@ class RockElevation extends StatelessWidget {
 
     return Column(
       children: [
-        const Icon(
+        Icon(
           Icons.trending_up,
-          color: Colors.black,
           size: 36,
+          color: Theme.of(context).colorScheme.onBackground,
         ),
         const SizedBox(
           height: 8,
@@ -28,7 +28,6 @@ class RockElevation extends StatelessWidget {
           style: const TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.bold,
-            color: Colors.black,
           ),
         ),
         Text(
@@ -36,7 +35,6 @@ class RockElevation extends StatelessWidget {
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: Colors.black,
           ),
         ),
       ],
