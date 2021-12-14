@@ -3,8 +3,8 @@ import 'package:injectable/injectable.dart';
 import 'package:stolby_flutter/injection.dart';
 import 'package:stolby_flutter/presentation/core/app_widget.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.dev);
+  await configureInjection(Environment.dev);
   runApp(StolbyApp());
 }

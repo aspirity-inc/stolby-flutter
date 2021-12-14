@@ -32,7 +32,7 @@ class FeedbackPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 8,
+              height: 16,
             ),
             Container(
               decoration: BoxDecoration(
@@ -45,13 +45,18 @@ class FeedbackPage extends StatelessWidget {
               child: TextField(
                 controller: _deviceController,
                 maxLines: 1,
-                decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
                   focusedBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
+                  hintText: localization.feedback_device_model,
+                  hintStyle: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
             ),
@@ -93,7 +98,10 @@ class FeedbackPage extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(24)),
               onTap: () {}, // TODO: SEND FEEDBACK
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                 decoration: BoxDecoration(

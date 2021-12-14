@@ -53,6 +53,7 @@
   "feedback_aspirity_email_android": "Android-app Stolby",
   "feedback_action": "Send feedback",
   "feedback_device": "If some error happened please enter you device model",
+  "feedback_device_model": "device model (optional)",
   "share_content_ios": "Today I am going to #Stolby. Get \"Stolby\" application:",
   "share_content_android": "Today I am going to #Stolby. Get \"Stolby\" application:",
   "menu_tutorial": "Overview",
