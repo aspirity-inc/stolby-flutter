@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:stolby_flutter/presentation/pages/main_page/widgets/app_bottom_navigation_bar_item.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:stolby_flutter/presentation/main_page/widgets/app_bottom_navigation_bar_item.dart';
 
 class MainPageNavigationBar extends StatefulWidget implements AutoRouteWrapper {
   const MainPageNavigationBar({Key? key}) : super(key: key);

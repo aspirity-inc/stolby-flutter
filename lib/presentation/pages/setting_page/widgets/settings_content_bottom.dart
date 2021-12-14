@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stolby_flutter/presentation/setting_page/widgets/about_app_button.dart';
-import 'package:stolby_flutter/presentation/setting_page/widgets/feedback_button.dart';
-import 'package:stolby_flutter/presentation/setting_page/widgets/rate_app_button.dart';
+import 'package:stolby_flutter/presentation/pages/setting_page/widgets/about_app_button.dart';
+import 'package:stolby_flutter/presentation/pages/setting_page/widgets/feedback_button.dart';
+import 'package:stolby_flutter/presentation/pages/setting_page/widgets/rate_app_button.dart';
 
 class SettingsContentBottom extends StatelessWidget {
   const SettingsContentBottom({Key? key}) : super(key: key);

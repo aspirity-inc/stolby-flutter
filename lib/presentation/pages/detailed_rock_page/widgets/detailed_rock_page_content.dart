@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';
-import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/add_marker_button.dart';
+import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/add_marker_button.dart';
+import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_info_row.dart';
+import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_text.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/rock_info_row.dart';
-import 'package:stolby_flutter/presentation/detailed_rock_page/widgets/rock_text.dart';
 
 class DetailedRockPageContent extends StatelessWidget {
   const DetailedRockPageContent({Key? key}) : super(key: key);

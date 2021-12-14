@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:stolby_flutter/presentation/main_page/widgets/main_page_navigation_bar.dart';
+import 'package:stolby_flutter/presentation/pages/main_page/widgets/main_page_navigation_bar.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

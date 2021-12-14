@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class FeedBackPage extends StatelessWidget {
+class FeedbackPage extends StatelessWidget {
   final _deviceController = TextEditingController();
   final _controller = TextEditingController();
 
-  FeedBackPage({Key? key}) : super(key: key);
+  FeedbackPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

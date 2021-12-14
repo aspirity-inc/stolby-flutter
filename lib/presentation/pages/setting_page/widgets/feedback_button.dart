@@ -12,7 +12,7 @@ class FeedbackButton extends StatelessWidget {
     final localization = AppLocalizations.of(context)!;
 
     return InkWell(
-      onTap: () => context.router.push(FeedBackRoute()),
+      onTap: () => context.router.push(FeedbackRoute()),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(

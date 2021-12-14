@@ -11,14 +11,14 @@
 import 'package:auto_route/auto_route.dart' as _i9;
 import 'package:flutter/material.dart' as _i10;
 
-import '../detailed_rock_page/detailed_rock_page.dart' as _i3;
-import '../feedback_page/feedback_page.dart' as _i5;
-import '../main_page/main_page.dart' as _i2;
-import '../map_page/map_page.dart' as _i6;
-import '../rock_view_image_page/rock_view_image_page.dart' as _i4;
-import '../rocks_page/rocks_page.dart' as _i7;
-import '../setting_page/settings_page.dart' as _i8;
-import '../splash_page/splash_page.dart' as _i1;
+import '../pages/detailed_rock_page/detailed_rock_page.dart' as _i3;
+import '../pages/feedback_page/feedback_page.dart' as _i5;
+import '../pages/main_page/main_page.dart' as _i2;
+import '../pages/map_page/map_page.dart' as _i6;
+import '../pages/rock_view_image_page/rock_view_image_page.dart' as _i4;
+import '../pages/rocks_page/rocks_page.dart' as _i7;
+import '../pages/setting_page/settings_page.dart' as _i8;
+import '../pages/splash_page/splash_page.dart' as _i1;
 import 'app_router_transaction_builders.dart' as _i11;
 
 class AppRouter extends _i9.RootStackRouter {
@@ -58,12 +58,12 @@ class AppRouter extends _i9.RootStackRouter {
           opaque: true,
           barrierDismissible: false);
     },
-    FeedBackRoute.name: (routeData) {
-      final args = routeData.argsAs<FeedBackRouteArgs>(
-          orElse: () => const FeedBackRouteArgs());
+    FeedbackRoute.name: (routeData) {
+      final args = routeData.argsAs<FeedbackRouteArgs>(
+          orElse: () => const FeedbackRouteArgs());
       return _i9.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i5.FeedBackPage(key: args.key),
+          child: _i5.FeedbackPage(key: args.key),
           transitionsBuilder: _i11.AppRouteTransitionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
@@ -114,7 +114,7 @@ class AppRouter extends _i9.RootStackRouter {
         ]),
         _i9.RouteConfig(DetailedRockRoute.name, path: '/detailed-rock-page'),
         _i9.RouteConfig(RockViewImageRoute.name, path: '/rock-view-image-page'),
-        _i9.RouteConfig(FeedBackRoute.name, path: '/feed-back-page')
+        _i9.RouteConfig(FeedbackRoute.name, path: '/feedback-page')
       ];
 }
 
@@ -169,16 +169,16 @@ class RockViewImageRouteArgs {
   final String picturePath;
 }
 
-/// generated route for [_i5.FeedBackPage]
-class FeedBackRoute extends _i9.PageRouteInfo<FeedBackRouteArgs> {
-  FeedBackRoute({_i10.Key? key})
-      : super(name, path: '/feed-back-page', args: FeedBackRouteArgs(key: key));
+/// generated route for [_i5.FeedbackPage]
+class FeedbackRoute extends _i9.PageRouteInfo<FeedbackRouteArgs> {
+  FeedbackRoute({_i10.Key? key})
+      : super(name, path: '/feedback-page', args: FeedbackRouteArgs(key: key));
 
-  static const String name = 'FeedBackRoute';
+  static const String name = 'FeedbackRoute';
 }
 
-class FeedBackRouteArgs {
-  const FeedBackRouteArgs({this.key});
+class FeedbackRouteArgs {
+  const FeedbackRouteArgs({this.key});
 
   final _i10.Key? key;
 }

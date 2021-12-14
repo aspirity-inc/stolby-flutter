@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stolby_flutter/application/location/location_bloc.dart';
 import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
-import 'package:stolby_flutter/presentation/rocks_page/widgets/rock_list_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:stolby_flutter/presentation/rocks_page/widgets/rock_list_search_field.dart';
+import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rock_list_item.dart';
+import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rock_list_search_field.dart';
 
 class RocksPageContent extends StatelessWidget {
   const RocksPageContent({Key? key}) : super(key: key);

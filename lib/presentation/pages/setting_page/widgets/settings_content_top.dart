@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
-import 'package:stolby_flutter/presentation/setting_page/widgets/settings_switch.dart';
+import 'package:stolby_flutter/presentation/pages/setting_page/widgets/settings_switch.dart';
 
 class SettingsContentTop extends StatelessWidget {
   const SettingsContentTop({Key? key}) : super(key: key);
