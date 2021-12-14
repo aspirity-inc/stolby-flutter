@@ -10,6 +10,7 @@ class RockListSearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
 
     return BlocBuilder<RockListBloc, RockListState>(
       builder: (context, state) {
@@ -20,8 +21,8 @@ class RockListSearchField extends StatelessWidget {
             vertical: 8.0,
           ),
           height: 48,
-          decoration: const BoxDecoration(
-            color: Color(0xFFEAEAEA),
+          decoration: BoxDecoration(
+            color: theme.cardColor,
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
           child: TextFormField(
@@ -31,19 +32,24 @@ class RockListSearchField extends StatelessWidget {
                   ),
                 ),
             initialValue: '',
+            style: const TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+            ),
             decoration: InputDecoration(
               contentPadding: EdgeInsets.zero,
               hintText: localization.search_toolbar_hint,
               focusedBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
-              hintStyle: const TextStyle(
+              hintStyle: TextStyle(
+                color: theme.colorScheme.onBackground,
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),
-              suffixIcon: const Icon(
+              suffixIcon: Icon(
                 Icons.search,
-                color: Colors.black,
+                color: theme.colorScheme.onBackground,
                 size: 24,
               ),
             ),

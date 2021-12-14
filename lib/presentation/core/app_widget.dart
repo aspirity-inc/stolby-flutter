@@ -24,29 +24,32 @@ class StolbyApp extends StatelessWidget {
               getIt<SettingsBloc>()..add(const SettingsEvent.initialized()),
         ),
       ],
-      child: MaterialApp.router(
-        title: 'Stolby',
-        theme: lightTheme,
-        darkTheme: darkTheme,
-        /*
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) {
+          return MaterialApp.router(
+            title: 'Stolby',
+            theme: lightTheme,
+            darkTheme: darkTheme,
             themeMode: state.autoThemeChange
                 ? ThemeMode.system
                 : state.darkTheme
-                    ? ThemeMode.light
-                    : ThemeMode.dark,*/
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        debugShowCheckedModeBanner: false,
-        supportedLocales: const [
-          Locale('en', ''),
-          Locale('ru', ''),
-        ],
-        routeInformationParser: _router.defaultRouteParser(),
-        routerDelegate: _router.delegate(),
+                    ? ThemeMode.dark
+                    : ThemeMode.light,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            debugShowCheckedModeBanner: false,
+            supportedLocales: const [
+              Locale('en', ''),
+              Locale('ru', ''),
+            ],
+            routeInformationParser: _router.defaultRouteParser(),
+            routerDelegate: _router.delegate(),
+          );
+        },
       ),
     );
   }

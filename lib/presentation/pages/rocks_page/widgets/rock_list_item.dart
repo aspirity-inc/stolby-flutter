@@ -144,6 +144,7 @@ class RockListItem extends StatelessWidget {
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700,
+                                  color: Colors.black,
                                 ),
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
@@ -175,6 +176,7 @@ class RockListItem extends StatelessWidget {
                                             : localization.distance_not_defined
                                         : localization.distance_not_defined,
                                     style: const TextStyle(
+                                      color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.w400,
                                     ),

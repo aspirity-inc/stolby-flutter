@@ -9,6 +9,7 @@ final ThemeData lightTheme = ThemeData(
     secondaryVariant: AppColors.primary,
     onSurface: AppColors.secondaryLight,
   ),
+  cardColor: AppColors.greyLight,
   scaffoldBackgroundColor: Colors.white,
   iconTheme: const IconThemeData(
     color: Colors.black,
