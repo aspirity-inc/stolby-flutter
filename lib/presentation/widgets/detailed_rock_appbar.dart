@@ -34,8 +34,8 @@ class DetailedRockAppbar extends StatelessWidget
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24.0,
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(24)),
                   color: AppColors.primary,
                 ),
                 child: Center(

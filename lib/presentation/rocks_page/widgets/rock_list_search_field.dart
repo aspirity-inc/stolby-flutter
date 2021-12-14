@@ -20,9 +20,9 @@ class RockListSearchField extends StatelessWidget {
             vertical: 8.0,
           ),
           height: 48,
-          decoration: BoxDecoration(
-            color: const Color(0xFFEAEAEA),
-            borderRadius: BorderRadius.circular(16),
+          decoration: const BoxDecoration(
+            color: Color(0xFFEAEAEA),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
           child: TextFormField(
             onChanged: (value) => context.read<RockListBloc>().add(

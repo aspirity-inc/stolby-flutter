@@ -43,7 +43,7 @@ class _RockTextState extends State<RockText> {
               vertical: 8.0,
             ),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: const BorderRadius.all(Radius.circular(24)),
               border: Border.all(color: color),
             ),
             child: Text(

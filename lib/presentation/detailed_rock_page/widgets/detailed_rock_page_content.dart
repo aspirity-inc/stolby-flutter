@@ -71,7 +71,8 @@ class DetailedRockPageContent extends StatelessWidget {
                           ),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(16)),
                           child: Image.asset(
                             "assets/images/" + rock.picName + ".jpg",
                             fit: BoxFit.cover,

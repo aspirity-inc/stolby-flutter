@@ -79,14 +79,14 @@ class RockListItem extends StatelessWidget {
                 right: index % 2 == 0 ? 8 : 16,
                 bottom: 16.0,
               ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
               ),
               child: Stack(
                 fit: StackFit.expand,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
                     child: Image.asset(
                       "assets/images/" + item.picName + ".jpg",
                       fit: BoxFit.cover,
@@ -96,7 +96,7 @@ class RockListItem extends StatelessWidget {
                     top: 8,
                     right: 8,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: const BorderRadius.all(Radius.circular(16)),
                       child: BackdropFilter(
                         filter: ImageFilter.blur(
                           sigmaX: 5.0,
@@ -124,7 +124,7 @@ class RockListItem extends StatelessWidget {
                     left: 8,
                     right: 8,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: const BorderRadius.all(Radius.circular(16)),
                       child: BackdropFilter(
                         filter: ImageFilter.blur(
                           sigmaX: 5.0,

@@ -20,14 +20,14 @@ class AddMarkerButton extends StatelessWidget {
         ),
         InkWell(
           onTap: onPressed,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: const BorderRadius.all(Radius.circular(24)),
           child: Container(
             padding: const EdgeInsets.symmetric(
               vertical: 8.0,
               horizontal: 24.0,
             ),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: const BorderRadius.all(Radius.circular(24)),
               color: Theme.of(context).colorScheme.secondary,
             ),
             child: Row(

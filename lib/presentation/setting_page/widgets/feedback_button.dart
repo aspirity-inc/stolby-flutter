@@ -1,5 +1,7 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FeedbackButton extends StatelessWidget {
@@ -10,8 +12,7 @@ class FeedbackButton extends StatelessWidget {
     final localization = AppLocalizations.of(context)!;
 
     return InkWell(
-      onTap: () {},
-      // TODO: Add feedback pop-up/screen (need to specify desing) pop-up
+      onTap: () => context.router.push(FeedBackRoute()),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(

@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:stolby_flutter/application/location/location_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/injection.dart';
+import 'package:stolby_flutter/presentation/core/themes/dark_theme.dart';
 import 'package:stolby_flutter/presentation/core/themes/light_theme.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 
@@ -26,6 +27,13 @@ class StolbyApp extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Stolby',
         theme: lightTheme,
+        darkTheme: darkTheme,
+        /*
+            themeMode: state.autoThemeChange
+                ? ThemeMode.system
+                : state.darkTheme
+                    ? ThemeMode.light
+                    : ThemeMode.dark,*/
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
