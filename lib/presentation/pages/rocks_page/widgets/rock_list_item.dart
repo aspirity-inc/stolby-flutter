@@ -137,6 +137,7 @@ class RockListItem extends StatelessWidget {
                           ),
                           color: Colors.white54,
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 item.localizedName,

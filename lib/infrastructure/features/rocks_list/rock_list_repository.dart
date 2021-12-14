@@ -41,7 +41,7 @@ class RockListRepository implements IRockListRepository {
     int id,
   ) async {
     try {
-      final language = Intl.getCurrentLocale().split('_')[0];
+      final language = Platform.localeName.split('_')[0];
       final result = await db.getSingleRock(language == 'ru' ? 'ru' : 'en', id);
 
       return right(result.toDomain());
