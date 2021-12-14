@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
@@ -17,7 +19,7 @@ class RockListRepository implements IRockListRepository {
   Future<Either<DatabaseFailure, List<RockListItemEntity>>>
       getRocksList() async {
     try {
-      final language = Intl.getCurrentLocale().split('_')[0];
+      final language = Platform.localeName.split('_')[0];
       final result = await db.getRocksList(
         language == 'ru' ? 'ru' : 'en',
       );
