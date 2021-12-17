@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/presentation/core/app_widget.dart</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">lib/presentation/core</a> - app_widget.dart<span style="font-size: 80%;"> (source / <a href="app_widget.dart.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-12-17 12:49:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : import 'package:flutter/material.dart';</a>
+<span class="lineNum">       2 </span>            : import 'package:flutter_bloc/flutter_bloc.dart';
+<span class="lineNum">       3 </span>            : import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+<span class="lineNum">       4 </span>            : import 'package:flutter_localizations/flutter_localizations.dart';
+<span class="lineNum">       5 </span>            : import 'package:stolby_flutter/application/location/location_bloc.dart';
+<span class="lineNum">       6 </span>            : import 'package:stolby_flutter/application/settings/settings_bloc.dart';
+<span class="lineNum">       7 </span>            : import 'package:stolby_flutter/injection.dart';
+<span class="lineNum">       8 </span>            : import 'package:stolby_flutter/presentation/core/themes/dark_theme.dart';
+<span class="lineNum">       9 </span>            : import 'package:stolby_flutter/presentation/core/themes/light_theme.dart';
+<span class="lineNum">      10 </span>            : import 'package:stolby_flutter/presentation/routing/router.gr.dart';
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : class StolbyApp extends StatelessWidget {
+<span class="lineNum">      13 </span>            :   final _router = AppRouter();
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span><span class="lineNoCov">          0 :   StolbyApp({Key? key}) : super(key: key);</span>
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span><span class="lineNoCov">          0 :   @override</span>
+<span class="lineNum">      18 </span>            :   Widget build(BuildContext context) {
+<span class="lineNum">      19 </span><span class="lineNoCov">          0 :     return MultiBlocProvider(</span>
+<span class="lineNum">      20 </span><span class="lineNoCov">          0 :       providers: [</span>
+<span class="lineNum">      21 </span><span class="lineNoCov">          0 :         BlocProvider(create: (_) =&gt; getIt&lt;LocationBloc&gt;()),</span>
+<span class="lineNum">      22 </span><span class="lineNoCov">          0 :         BlocProvider(</span>
+<span class="lineNum">      23 </span><span class="lineNoCov">          0 :           create: (_) =&gt;</span>
+<span class="lineNum">      24 </span><span class="lineNoCov">          0 :               getIt&lt;SettingsBloc&gt;()..add(const SettingsEvent.initialized()),</span>
+<span class="lineNum">      25 </span>            :         ),
+<span class="lineNum">      26 </span>            :       ],
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 :       child: BlocBuilder&lt;SettingsBloc, SettingsState&gt;(</span>
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :         builder: (context, state) {</span>
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 :           return MaterialApp.router(</span>
+<span class="lineNum">      30 </span>            :             title: 'Stolby',
+<span class="lineNum">      31 </span><span class="lineNoCov">          0 :             theme: lightTheme,</span>
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 :             darkTheme: darkTheme,</span>
+<span class="lineNum">      33 </span><span class="lineNoCov">          0 :             themeMode: state.autoThemeChange</span>
+<span class="lineNum">      34 </span>            :                 ? ThemeMode.system
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :                 : state.darkTheme</span>
+<span class="lineNum">      36 </span>            :                     ? ThemeMode.dark
+<span class="lineNum">      37 </span>            :                     : ThemeMode.light,
+<span class="lineNum">      38 </span>            :             localizationsDelegates: const [
+<span class="lineNum">      39 </span>            :               AppLocalizations.delegate,
+<span class="lineNum">      40 </span>            :               GlobalMaterialLocalizations.delegate,
+<span class="lineNum">      41 </span>            :               GlobalWidgetsLocalizations.delegate,
+<span class="lineNum">      42 </span>            :               GlobalCupertinoLocalizations.delegate,
+<span class="lineNum">      43 </span>            :             ],
+<span class="lineNum">      44 </span>            :             debugShowCheckedModeBanner: false,
+<span class="lineNum">      45 </span>            :             supportedLocales: const [
+<span class="lineNum">      46 </span>            :               Locale('en', ''),
+<span class="lineNum">      47 </span>            :               Locale('ru', ''),
+<span class="lineNum">      48 </span>            :             ],
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 :             routeInformationParser: _router.defaultRouteParser(),</span>
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :             routerDelegate: _router.delegate(),</span>
+<span class="lineNum">      51 </span>            :           );
+<span class="lineNum">      52 </span>            :         },
+<span class="lineNum">      53 </span>            :       ),
+<span class="lineNum">      54 </span>            :     );
+<span class="lineNum">      55 </span>            :   }
+<span class="lineNum">      56 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
