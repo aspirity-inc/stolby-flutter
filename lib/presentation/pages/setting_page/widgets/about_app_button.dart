@@ -15,6 +15,7 @@ class AboutAppButton extends StatelessWidget {
       onTap: () => showDialog(
         context: context,
         builder: (context) => AlertDialog(
+          key: const ValueKey("about_app_pop_up"),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(24)),
           ),
@@ -31,7 +32,7 @@ class AboutAppButton extends StatelessWidget {
             ),
           ),
           content: Text(
-            "${localization.about_app} 1.0.0dev. ${localization.about_app_2}",
+            "${localization.about_app} $version${localization.about_app_2}",
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,

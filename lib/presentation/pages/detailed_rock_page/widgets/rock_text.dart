@@ -36,6 +36,7 @@ class _RockTextState extends State<RockText> {
           height: 8.0,
         ),
         InkWell(
+          key: const ValueKey('rock_text_button'),
           onTap: () => setState(() => expanded = !expanded),
           child: Container(
             padding: const EdgeInsets.symmetric(
