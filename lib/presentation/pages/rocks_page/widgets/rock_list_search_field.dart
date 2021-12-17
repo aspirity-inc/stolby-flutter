@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -23,7 +22,7 @@ class RockListSearchField extends StatelessWidget {
           height: 48,
           decoration: BoxDecoration(
             color: theme.cardColor,
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
           ),
           child: TextFormField(
             onChanged: (value) => context.read<RockListBloc>().add(

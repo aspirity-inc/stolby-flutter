@@ -225,9 +225,15 @@ class MockAppDatabase extends _i1.Mock implements _i2.AppDatabase {
   @override
   _i3.JoinedSelectStatement<T, R> selectOnly<T extends _i3.HasResultSet, R>(
           _i3.ResultSetImplementation<T, R>? table,
-          {bool? distinct = false}) =>
+          {bool? distinct = false,
+          bool? includeJoinedTableColumns = true}) =>
       (super.noSuchMethod(
-              Invocation.method(#selectOnly, [table], {#distinct: distinct}),
+              Invocation.method(#selectOnly, [
+                table
+              ], {
+                #distinct: distinct,
+                #includeJoinedTableColumns: includeJoinedTableColumns
+              }),
               returnValue: _FakeJoinedSelectStatement_15<T, R>())
           as _i3.JoinedSelectStatement<T, R>);
   @override
@@ -310,18 +316,24 @@ class MockAppDatabase extends _i1.Mock implements _i2.AppDatabase {
           returnValueForMissingStub: Future<void>.value()) as _i6.Future<void>);
   @override
   _i3.GenerationContext $write(_i3.Component? component,
-          {bool? hasMultipleTables}) =>
+          {bool? hasMultipleTables, int? startIndex}) =>
       (super.noSuchMethod(
-          Invocation.method(
-              #$write, [component], {#hasMultipleTables: hasMultipleTables}),
+          Invocation.method(#$write, [component],
+              {#hasMultipleTables: hasMultipleTables, #startIndex: startIndex}),
           returnValue: _FakeGenerationContext_18()) as _i3.GenerationContext);
   @override
   _i3.GenerationContext $writeInsertable(
           _i3.TableInfo<_i3.Table, dynamic>? table,
-          _i3.Insertable<dynamic>? insertable) =>
+          _i3.Insertable<dynamic>? insertable,
+          {int? startIndex}) =>
       (super.noSuchMethod(
-          Invocation.method(#$writeInsertable, [table, insertable]),
+          Invocation.method(#$writeInsertable, [table, insertable],
+              {#startIndex: startIndex}),
           returnValue: _FakeGenerationContext_18()) as _i3.GenerationContext);
+  @override
+  String $expandVar(int? start, int? amount) =>
+      (super.noSuchMethod(Invocation.method(#$expandVar, [start, amount]),
+          returnValue: '') as String);
   @override
   String toString() => super.toString();
 }

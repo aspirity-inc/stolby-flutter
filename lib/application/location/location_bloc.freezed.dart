@@ -600,19 +600,23 @@ class _$_LocationState implements _LocationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LocationState &&
-            (identical(other.hasPermission, hasPermission) ||
-                other.hasPermission == hasPermission) &&
-            (identical(other.permissionAsked, permissionAsked) ||
-                other.permissionAsked == permissionAsked) &&
-            (identical(other.failureOption, failureOption) ||
-                other.failureOption == failureOption) &&
-            (identical(other.userLocation, userLocation) ||
-                other.userLocation == userLocation));
+            const DeepCollectionEquality()
+                .equals(other.hasPermission, hasPermission) &&
+            const DeepCollectionEquality()
+                .equals(other.permissionAsked, permissionAsked) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality()
+                .equals(other.userLocation, userLocation));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, hasPermission, permissionAsked, failureOption, userLocation);
+      runtimeType,
+      const DeepCollectionEquality().hash(hasPermission),
+      const DeepCollectionEquality().hash(permissionAsked),
+      const DeepCollectionEquality().hash(failureOption),
+      const DeepCollectionEquality().hash(userLocation));
 
   @JsonKey(ignore: true)
   @override

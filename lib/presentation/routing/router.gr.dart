@@ -118,25 +118,28 @@ class AppRouter extends _i9.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.SplashPage]
+/// generated route for
+/// [_i1.SplashPage]
 class SplashRoute extends _i9.PageRouteInfo<void> {
-  const SplashRoute() : super(name, path: '/');
+  const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
 }
 
-/// generated route for [_i2.MainPage]
+/// generated route for
+/// [_i2.MainPage]
 class MainRoute extends _i9.PageRouteInfo<void> {
   const MainRoute({List<_i9.PageRouteInfo>? children})
-      : super(name, path: '/main-page', initialChildren: children);
+      : super(MainRoute.name, path: '/main-page', initialChildren: children);
 
   static const String name = 'MainRoute';
 }
 
-/// generated route for [_i3.DetailedRockPage]
+/// generated route for
+/// [_i3.DetailedRockPage]
 class DetailedRockRoute extends _i9.PageRouteInfo<DetailedRockRouteArgs> {
   DetailedRockRoute({_i10.Key? key, required int rockId})
-      : super(name,
+      : super(DetailedRockRoute.name,
             path: '/detailed-rock-page',
             args: DetailedRockRouteArgs(key: key, rockId: rockId));
 
@@ -149,12 +152,18 @@ class DetailedRockRouteArgs {
   final _i10.Key? key;
 
   final int rockId;
+
+  @override
+  String toString() {
+    return 'DetailedRockRouteArgs{key: $key, rockId: $rockId}';
+  }
 }
 
-/// generated route for [_i4.RockViewImagePage]
+/// generated route for
+/// [_i4.RockViewImagePage]
 class RockViewImageRoute extends _i9.PageRouteInfo<RockViewImageRouteArgs> {
   RockViewImageRoute({_i10.Key? key, required String picturePath})
-      : super(name,
+      : super(RockViewImageRoute.name,
             path: '/rock-view-image-page',
             args: RockViewImageRouteArgs(key: key, picturePath: picturePath));
 
@@ -167,12 +176,19 @@ class RockViewImageRouteArgs {
   final _i10.Key? key;
 
   final String picturePath;
+
+  @override
+  String toString() {
+    return 'RockViewImageRouteArgs{key: $key, picturePath: $picturePath}';
+  }
 }
 
-/// generated route for [_i5.FeedbackPage]
+/// generated route for
+/// [_i5.FeedbackPage]
 class FeedbackRoute extends _i9.PageRouteInfo<FeedbackRouteArgs> {
   FeedbackRoute({_i10.Key? key})
-      : super(name, path: '/feedback-page', args: FeedbackRouteArgs(key: key));
+      : super(FeedbackRoute.name,
+            path: '/feedback-page', args: FeedbackRouteArgs(key: key));
 
   static const String name = 'FeedbackRoute';
 }
@@ -181,25 +197,33 @@ class FeedbackRouteArgs {
   const FeedbackRouteArgs({this.key});
 
   final _i10.Key? key;
+
+  @override
+  String toString() {
+    return 'FeedbackRouteArgs{key: $key}';
+  }
 }
 
-/// generated route for [_i6.MapPage]
+/// generated route for
+/// [_i6.MapPage]
 class MapRoute extends _i9.PageRouteInfo<void> {
-  const MapRoute() : super(name, path: '');
+  const MapRoute() : super(MapRoute.name, path: '');
 
   static const String name = 'MapRoute';
 }
 
-/// generated route for [_i7.RocksPage]
+/// generated route for
+/// [_i7.RocksPage]
 class RocksRoute extends _i9.PageRouteInfo<void> {
-  const RocksRoute() : super(name, path: 'rocks-page');
+  const RocksRoute() : super(RocksRoute.name, path: 'rocks-page');
 
   static const String name = 'RocksRoute';
 }
 
-/// generated route for [_i8.SettingsPage]
+/// generated route for
+/// [_i8.SettingsPage]
 class SettingsRoute extends _i9.PageRouteInfo<void> {
-  const SettingsRoute() : super(name, path: 'settings-page');
+  const SettingsRoute() : super(SettingsRoute.name, path: 'settings-page');
 
   static const String name = 'SettingsRoute';
 }
