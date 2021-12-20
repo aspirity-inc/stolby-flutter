@@ -20,7 +20,7 @@ class OnboardingPageWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/icons/$assetName.png"),
+          Image.asset(assetName),
           const SizedBox(
             height: 16,
           ),

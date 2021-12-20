@@ -3,6 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
+import 'package:stolby_flutter/presentation/core/app_assets.dart';
 import 'package:stolby_flutter/presentation/pages/onboarding_page/widgets/onboarding_bottom_bar.dart';
 import 'package:stolby_flutter/presentation/pages/onboarding_page/widgets/onboarding_page_widget.dart';
 
@@ -65,18 +66,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
               },
               children: [
                 OnboardingPageWidget(
-                  assetName: "pic_map",
+                  assetName: AppIcons.mapPicture,
                   title: localization.activity_tutorial_discover_title,
                   description:
                       localization.activity_tutorial_discover_description,
                 ),
                 OnboardingPageWidget(
-                  assetName: "pic_rock",
+                  assetName: AppIcons.rockPicture,
                   title: localization.activity_tutorial_find_title,
                   description: localization.activity_tutorial_find_description,
                 ),
                 OnboardingPageWidget(
-                  assetName: "pic_phone",
+                  assetName: AppIcons.phonePicture,
                   title: localization.activity_tutorial_help_title,
                   description: localization.activity_tutorial_help_description,
                 ),
