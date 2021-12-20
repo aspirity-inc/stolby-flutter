@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:stolby_flutter/application/settings/settings_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:stolby_flutter/presentation/pages/main_page/widgets/main_page_navigation_bar.dart';
 
 class MainPage extends StatelessWidget {
@@ -7,6 +10,10 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<SettingsBloc>().state.onboardingVisited
+        ? null
+        : context.router.push(const OnboardingRoute());
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,

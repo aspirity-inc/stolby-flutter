@@ -72,5 +72,6 @@
   "settings_auto_theme": "Такая же тема, как и на устройстве",
   "settings_dark_theme": "Темная тема",
   "settings_user_map_centering": "Следовать за мной",
-  "settings_reverse_map": "Развернуть карту"
+  "settings_reverse_map": "Развернуть карту",
+  "onboarding_skip": "Пропустить"
 }

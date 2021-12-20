@@ -72,5 +72,6 @@
   "settings_auto_theme": "Theme same as in device",
   "settings_dark_theme": "Dark theme",
   "settings_user_map_centering": "Map following",
-  "settings_reverse_map": "Reverse map"
+  "settings_reverse_map": "Reverse map",
+  "onboarding_skip": "Skip"
 }
