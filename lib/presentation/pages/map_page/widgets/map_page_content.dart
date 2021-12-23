@@ -14,7 +14,7 @@ class MapPageContent extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          MapWidget(),
+          const MapWidget(),
           Positioned(
             top: 0,
             bottom: 0,

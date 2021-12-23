@@ -185,6 +185,6 @@ class _MapWidgetState extends State<MapWidget> {
 }
 // TODOS
 // TODO: Add location marker
-// TODO: Add downloaded area
+// TODO: Add downloaded area, located in maps.db
 // TODO: Add Reaction to user not in stolby
 // TODO: Add some card(?) on user reaction on tap on marker maybe small rock item card;
