@@ -14,19 +14,7 @@ class MapPageContent extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          MapWidget(
-            initialPosition:
-                context.read<SettingsBloc>().state.geolocationEnabled
-                    ? const LatLng(
-                        // TODO: Change to current user location
-                        56.009,
-                        92.8151,
-                      )
-                    : const LatLng(
-                        55.8551,
-                        92.8333,
-                      ),
-          ),
+          MapWidget(),
           Positioned(
             top: 0,
             bottom: 0,

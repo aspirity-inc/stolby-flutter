@@ -95,6 +95,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 onLeftPressed: () {
                   setState(() {
                     currentIndex--;
+                    controller.animateToPage(
+                      currentIndex,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
                   });
                 },
                 onRightPressed: () {
@@ -106,6 +111,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       context.router.pop();
                     } else {
                       currentIndex++;
+                      controller.animateToPage(
+                        currentIndex,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
                     }
                   });
                 },

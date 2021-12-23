@@ -19,8 +19,6 @@ class MapGeolocationIconButton extends StatelessWidget {
                     .read<LocationBloc>()
                     .add(const LocationEvent.checkedPermission())
                 : null;
-
-            print(context.read<LocationBloc>().state);
             context
                 .read<SettingsBloc>()
                 .add(const SettingsEvent.toggledGeolocation());
