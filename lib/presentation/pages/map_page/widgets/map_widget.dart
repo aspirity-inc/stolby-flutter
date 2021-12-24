@@ -1,18 +1,19 @@
 import 'dart:io';
 import 'dart:math';
-import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
 
 class MapWidget extends StatefulWidget {
+  final Function(String) onMarkerPressed;
+
   const MapWidget({
     Key? key,
+    required this.onMarkerPressed,
   }) : super(key: key);
 
   @override
@@ -34,6 +35,7 @@ class _MapWidgetState extends State<MapWidget> {
           _getCurrentTheme(context),
           symbol.id,
         );
+        widget.onMarkerPressed(symbol.id);
         mapController.animateCamera(
           CameraUpdate.newLatLng(
             symbol.options.geometry ??
