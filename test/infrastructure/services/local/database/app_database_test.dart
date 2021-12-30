@@ -53,7 +53,7 @@ void main() {
     expect(result[0], expected);
   });
 
-  test('Should read one rock details by ID', () async {
+  test('Should read one detailed rock by ID', () async {
     const expected = SingleRockView(
       id: 0,
       difficulty: 1,
