@@ -31,9 +31,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             );
           },
           searchStringChanged: (e) async {
-            e.searchString.length >= 3
-                ? add(const RockListEvent.filtered())
-                : null;
+            _searchStringChanged(e.searchString);
             emit(state.copyWith(searchString: e.searchString));
           },
           sorted: (e) {
@@ -94,7 +92,9 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
   ) =>
       list
           .where(
-            (element) => element.localizedName.contains(filter),
+            (element) => element.localizedName
+                .toLowerCase()
+                .contains(filter.toLowerCase()),
           )
           .toList();
 
@@ -105,5 +105,10 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
         const RockListEvent.sorted(),
       ),
     );
+  }
+
+  void _searchStringChanged(String str) {
+    str.length >= 3 ? add(const RockListEvent.filtered()) : null;
+    str == '' ? add(const RockListEvent.searchLineCleared()) : null;
   }
 }

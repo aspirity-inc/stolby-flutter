@@ -27,9 +27,9 @@ class RateAppButton extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const Icon(
+            Icon(
               Icons.thumb_up_outlined,
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
           ],
         ),
