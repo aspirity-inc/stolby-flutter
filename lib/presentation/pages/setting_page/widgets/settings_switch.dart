@@ -24,6 +24,7 @@ class SettingsSwitch extends StatelessWidget {
           ),
         ),
         CupertinoSwitch(
+          key: const ValueKey('settings_switch_switch'),
           value: value,
           onChanged: onPressed,
         ),

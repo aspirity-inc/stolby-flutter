@@ -43,6 +43,7 @@ class FeedbackPage extends StatelessWidget {
                 ),
               ),
               child: TextField(
+                key: const ValueKey("feedback_page_device_text_field"),
                 controller: _deviceController,
                 maxLines: 1,
                 decoration: InputDecoration(
@@ -72,6 +73,7 @@ class FeedbackPage extends StatelessWidget {
                 ),
               ),
               child: TextField(
+                key: const ValueKey("feedback_page_feedback_text_field"),
                 controller: _controller,
                 maxLength: 500,
                 maxLines: 5,
