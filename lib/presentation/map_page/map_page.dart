@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
-import 'package:stolby_flutter/presentation/map_page/widgets/map_geolocation_icon_button.dart';
-import 'package:stolby_flutter/presentation/map_page/widgets/map_zoom_icon_button.dart';
+import 'package:stolby_flutter/injection.dart';
+import 'package:stolby_flutter/presentation/map_page/widgets/map_page_content.dart';
 
 class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -12,48 +12,9 @@ class MapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, state) {
-        return BlocBuilder<MapBloc, MapState>(
-          builder: (context, state) {
-            return Scaffold(
-              body: Stack(
-                children: [
-                  Positioned(
-                    top: 0,
-                    bottom: 0,
-                    right: 0,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        MapZoomIconButton(
-                          onPressed: () => context
-                              .read<MapBloc>()
-                              .add(MapEvent.zoomChanged(state.zoom + 0.5)),
-                          icon: Icons.add,
-                        ),
-                        MapZoomIconButton(
-                          icon: Icons.remove,
-                          onPressed: () => context
-                              .read<MapBloc>()
-                              .add(MapEvent.zoomChanged(state.zoom - 0.5)),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: MapGeolocationIconButton(
-                      enabled:
-                          context.read<SettingsBloc>().state.geolocationEnabled,
-                      onPressed: () => context
-                          .read<SettingsBloc>()
-                          .add(const SettingsEvent.toggledGeolocation()),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
+        return BlocProvider(
+          create: (_) => getIt<MapBloc>()..add(const MapEvent.initialized()),
+          child: const MapPageContent(),
         );
       },
     );

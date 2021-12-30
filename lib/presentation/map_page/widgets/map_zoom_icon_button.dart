@@ -13,6 +13,7 @@ class MapZoomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      customBorder: const CircleBorder(),
       onTap: onPressed,
       child: Container(
         margin: const EdgeInsets.symmetric(

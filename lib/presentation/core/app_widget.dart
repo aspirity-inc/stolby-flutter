@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:stolby_flutter/application/location/location_bloc.dart';
-import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/injection.dart';
 import 'package:stolby_flutter/presentation/core/themes/light_theme.dart';
@@ -24,9 +23,6 @@ class StolbyApp extends StatelessWidget {
         BlocProvider(
           create: (_) =>
               getIt<SettingsBloc>()..add(const SettingsEvent.initialized()),
-        ),
-        BlocProvider(
-          create: (_) => getIt<MapBloc>()..add(const MapEvent.initialized()),
         ),
       ],
       child: MaterialApp.router(
