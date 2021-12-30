@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:intl/intl.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';

@@ -196,19 +196,22 @@ class _$_RocksCoordinatesListView extends _RocksCoordinatesListView {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _RocksCoordinatesListView &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.picName, picName) || other.picName == picName) &&
-            (identical(other.localizedName, localizedName) ||
-                other.localizedName == localizedName));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            const DeepCollectionEquality().equals(other.picName, picName) &&
+            const DeepCollectionEquality()
+                .equals(other.localizedName, localizedName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, latitude, longitude, picName, localizedName);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(longitude),
+      const DeepCollectionEquality().hash(picName),
+      const DeepCollectionEquality().hash(localizedName));
 
   @JsonKey(ignore: true)
   @override

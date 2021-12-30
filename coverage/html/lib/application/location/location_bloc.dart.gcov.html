@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/application/location/location_bloc.dart</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">lib/application/location</a> - location_bloc.dart<span style="font-size: 80%;"> (source / <a href="location_bloc.dart.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntryLo">46.2 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-12-17 12:49:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : import 'dart:async';</a>
+<span class="lineNum">       2 </span>            : 
+<span class="lineNum">       3 </span>            : import 'package:bloc/bloc.dart';
+<span class="lineNum">       4 </span>            : import 'package:dartz/dartz.dart';
+<span class="lineNum">       5 </span>            : import 'package:freezed_annotation/freezed_annotation.dart';
+<span class="lineNum">       6 </span>            : import 'package:injectable/injectable.dart';
+<span class="lineNum">       7 </span>            : import 'package:stolby_flutter/domain/core/failures.dart';
+<span class="lineNum">       8 </span>            : import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
+<span class="lineNum">       9 </span>            : import 'package:stolby_flutter/domain/feature/location/i_location_repository.dart';
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span>            : part 'location_bloc.freezed.dart';
+<span class="lineNum">      12 </span>            : part 'location_event.dart';
+<span class="lineNum">      13 </span>            : part 'location_state.dart';
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span>            : @injectable
+<span class="lineNum">      16 </span>            : class LocationBloc extends Bloc&lt;LocationEvent, LocationState&gt; {
+<span class="lineNum">      17 </span>            :   final ILocationRepository _repository;
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            :   StreamSubscription&lt;Either&lt;LocationFailure, UserLocationEntity&gt;&gt;?
+<span class="lineNum">      20 </span>            :       _locationSubscription;
+<span class="lineNum">      21 </span>            : 
+<span class="lineNum">      22 </span><span class="lineCov">          3 :   LocationBloc(this._repository) : super(LocationState.initial()) {</span>
+<span class="lineNum">      23 </span><span class="lineCov">          2 :     on&lt;LocationEvent&gt;((event, emit) async {</span>
+<span class="lineNum">      24 </span><span class="lineCov">          2 :       await event.map(</span>
+<span class="lineNum">      25 </span><span class="lineCov">          1 :         checkedPermission: (e) async {</span>
+<span class="lineNum">      26 </span><span class="lineCov">          3 :           final permissionResult = await _repository.getLocationPermissions();</span>
+<span class="lineNum">      27 </span><span class="lineCov">          1 :           permissionResult.fold(</span>
+<span class="lineNum">      28 </span><span class="lineCov">          5 :             (l) =&gt; emit(state.copyWith(</span>
+<span class="lineNum">      29 </span><span class="lineCov">          1 :               failureOption: some(l),</span>
+<span class="lineNum">      30 </span>            :               hasPermission: false,
+<span class="lineNum">      31 </span>            :               permissionAsked: false,
+<span class="lineNum">      32 </span>            :             )),
+<span class="lineNum">      33 </span><span class="lineCov">          5 :             (r) =&gt; emit(state.copyWith(</span>
+<span class="lineNum">      34 </span>            :               hasPermission: true,
+<span class="lineNum">      35 </span>            :               permissionAsked: true,
+<span class="lineNum">      36 </span>            :             )),
+<span class="lineNum">      37 </span>            :           );
+<span class="lineNum">      38 </span>            :         },
+<span class="lineNum">      39 </span><span class="lineNoCov">          0 :         startWatchingLocation: (e) async {</span>
+<span class="lineNum">      40 </span><span class="lineNoCov">          0 :           _locationSubscription =</span>
+<span class="lineNum">      41 </span><span class="lineNoCov">          0 :               _repository.startWatchingLocation().listen((failureOrLocation) {</span>
+<span class="lineNum">      42 </span><span class="lineNoCov">          0 :             failureOrLocation.fold(</span>
+<span class="lineNum">      43 </span><span class="lineNoCov">          0 :               (l) =&gt; emit(</span>
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :                 state.copyWith(</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :                   failureOption: some(l),</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :                   userLocation: none(),</span>
+<span class="lineNum">      47 </span>            :                 ),
+<span class="lineNum">      48 </span>            :               ),
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 :               (r) =&gt; emit(</span>
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :                 state.copyWith(</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :                   failureOption: none(),</span>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :                   userLocation: some(r),</span>
+<span class="lineNum">      53 </span>            :                 ),
+<span class="lineNum">      54 </span>            :               ),
+<span class="lineNum">      55 </span>            :             );
+<span class="lineNum">      56 </span>            :           });
+<span class="lineNum">      57 </span>            :         },
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 :         stopWatchingLocation: (e) async {</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 :           _locationSubscription?.cancel();</span>
+<span class="lineNum">      60 </span>            :         },
+<span class="lineNum">      61 </span>            :       );
+<span class="lineNum">      62 </span>            :     });
+<span class="lineNum">      63 </span>            :   }
+<span class="lineNum">      64 </span>            : 
+<span class="lineNum">      65 </span><span class="lineCov">          1 :   @override</span>
+<span class="lineNum">      66 </span>            :   Future&lt;void&gt; close() {
+<span class="lineNum">      67 </span><span class="lineCov">          1 :     _locationSubscription?.cancel();</span>
+<span class="lineNum">      68 </span>            : 
+<span class="lineNum">      69 </span><span class="lineCov">          1 :     return super.close();</span>
+<span class="lineNum">      70 </span>            :   }
+<span class="lineNum">      71 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

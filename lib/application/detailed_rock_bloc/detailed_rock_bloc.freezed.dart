@@ -142,11 +142,12 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initialized &&
-            (identical(other.id, id) || other.id == id));
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -275,12 +276,12 @@ class _$_LocationChanged implements _LocationChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LocationChanged &&
-            (identical(other.location, location) ||
-                other.location == location));
+            const DeepCollectionEquality().equals(other.location, location));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
 
   @JsonKey(ignore: true)
   @override
@@ -481,13 +482,15 @@ class _$_DetailedRockState implements _DetailedRockState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DetailedRockState &&
-            (identical(other.rock, rock) || other.rock == rock) &&
-            (identical(other.distance, distance) ||
-                other.distance == distance));
+            const DeepCollectionEquality().equals(other.rock, rock) &&
+            const DeepCollectionEquality().equals(other.distance, distance));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rock, distance);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(rock),
+      const DeepCollectionEquality().hash(distance));
 
   @JsonKey(ignore: true)
   @override

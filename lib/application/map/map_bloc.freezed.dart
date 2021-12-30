@@ -259,11 +259,12 @@ class _$_ZoomChanged implements _ZoomChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ZoomChanged &&
-            (identical(other.zoom, zoom) || other.zoom == zoom));
+            const DeepCollectionEquality().equals(other.zoom, zoom));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, zoom);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(zoom));
 
   @JsonKey(ignore: true)
   @override
@@ -397,11 +398,12 @@ class _$_AngleChanged implements _AngleChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AngleChanged &&
-            (identical(other.angle, angle) || other.angle == angle));
+            const DeepCollectionEquality().equals(other.angle, angle));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, angle);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(angle));
 
   @JsonKey(ignore: true)
   @override
@@ -638,14 +640,18 @@ class _$_MapState implements _MapState {
         (other.runtimeType == runtimeType &&
             other is _MapState &&
             const DeepCollectionEquality().equals(other.rocks, rocks) &&
-            (identical(other.loading, loading) || other.loading == loading) &&
-            (identical(other.zoom, zoom) || other.zoom == zoom) &&
-            (identical(other.angle, angle) || other.angle == angle));
+            const DeepCollectionEquality().equals(other.loading, loading) &&
+            const DeepCollectionEquality().equals(other.zoom, zoom) &&
+            const DeepCollectionEquality().equals(other.angle, angle));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(rocks), loading, zoom, angle);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(rocks),
+      const DeepCollectionEquality().hash(loading),
+      const DeepCollectionEquality().hash(zoom),
+      const DeepCollectionEquality().hash(angle));
 
   @JsonKey(ignore: true)
   @override

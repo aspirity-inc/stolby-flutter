@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:meta/meta.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 

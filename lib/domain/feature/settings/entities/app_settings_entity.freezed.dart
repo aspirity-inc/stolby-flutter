@@ -212,23 +212,28 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AppSettingsEntity &&
-            (identical(other.geolocationEnabled, geolocationEnabled) ||
-                other.geolocationEnabled == geolocationEnabled) &&
-            (identical(other.reversedMap, reversedMap) ||
-                other.reversedMap == reversedMap) &&
-            (identical(other.mapUserCentering, mapUserCentering) ||
-                other.mapUserCentering == mapUserCentering) &&
-            (identical(other.autoThemeChange, autoThemeChange) ||
-                other.autoThemeChange == autoThemeChange) &&
-            (identical(other.darkTheme, darkTheme) ||
-                other.darkTheme == darkTheme) &&
-            (identical(other.onboardingVisited, onboardingVisited) ||
-                other.onboardingVisited == onboardingVisited));
+            const DeepCollectionEquality()
+                .equals(other.geolocationEnabled, geolocationEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other.reversedMap, reversedMap) &&
+            const DeepCollectionEquality()
+                .equals(other.mapUserCentering, mapUserCentering) &&
+            const DeepCollectionEquality()
+                .equals(other.autoThemeChange, autoThemeChange) &&
+            const DeepCollectionEquality().equals(other.darkTheme, darkTheme) &&
+            const DeepCollectionEquality()
+                .equals(other.onboardingVisited, onboardingVisited));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, geolocationEnabled, reversedMap,
-      mapUserCentering, autoThemeChange, darkTheme, onboardingVisited);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(geolocationEnabled),
+      const DeepCollectionEquality().hash(reversedMap),
+      const DeepCollectionEquality().hash(mapUserCentering),
+      const DeepCollectionEquality().hash(autoThemeChange),
+      const DeepCollectionEquality().hash(darkTheme),
+      const DeepCollectionEquality().hash(onboardingVisited));
 
   @JsonKey(ignore: true)
   @override

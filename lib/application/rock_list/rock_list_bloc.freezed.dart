@@ -310,12 +310,13 @@ class _$_SearchStringChanged implements _SearchStringChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SearchStringChanged &&
-            (identical(other.searchString, searchString) ||
-                other.searchString == searchString));
+            const DeepCollectionEquality()
+                .equals(other.searchString, searchString));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, searchString);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(searchString));
 
   @JsonKey(ignore: true)
   @override
@@ -722,12 +723,12 @@ class _$_LocationChanged implements _LocationChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LocationChanged &&
-            (identical(other.location, location) ||
-                other.location == location));
+            const DeepCollectionEquality().equals(other.location, location));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, location);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
 
   @JsonKey(ignore: true)
   @override
@@ -1145,11 +1146,11 @@ class _$_RockListState implements _RockListState {
             const DeepCollectionEquality().equals(other.allRocks, allRocks) &&
             const DeepCollectionEquality()
                 .equals(other.rocksToShow, rocksToShow) &&
-            (identical(other.searchString, searchString) ||
-                other.searchString == searchString) &&
-            (identical(other.userLocation, userLocation) ||
-                other.userLocation == userLocation) &&
-            (identical(other.loading, loading) || other.loading == loading));
+            const DeepCollectionEquality()
+                .equals(other.searchString, searchString) &&
+            const DeepCollectionEquality()
+                .equals(other.userLocation, userLocation) &&
+            const DeepCollectionEquality().equals(other.loading, loading));
   }
 
   @override
@@ -1157,9 +1158,9 @@ class _$_RockListState implements _RockListState {
       runtimeType,
       const DeepCollectionEquality().hash(allRocks),
       const DeepCollectionEquality().hash(rocksToShow),
-      searchString,
-      userLocation,
-      loading);
+      const DeepCollectionEquality().hash(searchString),
+      const DeepCollectionEquality().hash(userLocation),
+      const DeepCollectionEquality().hash(loading));
 
   @JsonKey(ignore: true)
   @override

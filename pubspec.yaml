@@ -16,7 +16,7 @@ dependencies:
   intl: ^0.17.0
 
   # Annotations
-  freezed_annotation: ^0.15.0
+  freezed_annotation: ^1.1.0
 
   # Routing
   auto_route: ^3.2.0
@@ -27,25 +27,25 @@ dependencies:
   injectable: ^1.5.0
 
   # Bloc
-  flutter_bloc: ^7.3.3
+  flutter_bloc: ^8.0.0
 
   # Core packages
-  dartz: ^0.10.0
+  dartz: ^0.10.1
   uuid: ^3.0.5
-  rxdart: ^0.27.2
+  rxdart: ^0.27.3
   kt_dart: ^0.10.0
   path: ^1.8.0
-  path_provider: ^2.0.6
+  path_provider: ^2.0.8
 
   # Local storage
-  shared_preferences: ^2.0.8
+  shared_preferences: ^2.0.11
 
   # DB
-  drift: ^1.0.1
-  sqlite3_flutter_libs: ^0.5.1
+  drift: ^1.1.0
+  sqlite3_flutter_libs: ^0.5.2
 
   # Permissions
-  permission_handler: ^8.2.6
+  permission_handler: ^8.3.0
 
   # Map & Geolocation
   # mapbox_gl: ^0.13.0
@@ -54,7 +54,7 @@ dependencies:
   maps_launcher: ^2.0.1
 
   # UI Widgets
-  flutter_svg: ^0.23.0+1
+  flutter_svg: ^1.0.0
   smooth_page_indicator: ^1.0.0+2
   fluttertoast: ^8.0.8
   animations: ^2.0.2
@@ -71,19 +71,19 @@ dev_dependencies:
   # Tests
   flutter_test:
     sdk: flutter
-  bloc_test: ^8.5.0
+  bloc_test: ^9.0.1
   mockito: ^5.0.16
 
   # Code generation
-  build_runner: ^2.1.4
-  freezed: ^0.15.0+1
-  auto_route_generator: ^3.0.1
+  build_runner: ^2.1.5
+  freezed: ^1.1.0
+  auto_route_generator: ^3.2.0
   injectable_generator: ^1.5.2
-  drift_dev: ^1.0.2
+  drift_dev: ^1.1.0
 
   # Static analysis
   flutter_lints: ^1.0.4
-  dart_code_metrics: ^4.6.0
+  dart_code_metrics: ^4.8.1
 
 flutter:
   uses-material-design: true

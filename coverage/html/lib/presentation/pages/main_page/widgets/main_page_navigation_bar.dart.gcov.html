@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/presentation/pages/main_page/widgets/main_page_navigation_bar.dart</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../index.html">top level</a> - <a href="index.html">lib/presentation/pages/main_page/widgets</a> - main_page_navigation_bar.dart<span style="font-size: 80%;"> (source / <a href="main_page_navigation_bar.dart.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntryLo">3.8 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-12-17 12:49:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : import 'package:flutter/material.dart';</a>
+<span class="lineNum">       2 </span>            : import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+<span class="lineNum">       3 </span>            : import 'package:stolby_flutter/presentation/pages/main_page/widgets/app_bottom_navigation_bar_item.dart';
+<span class="lineNum">       4 </span>            : import 'package:stolby_flutter/presentation/routing/router.gr.dart';
+<span class="lineNum">       5 </span>            : import 'package:community_material_icon/community_material_icon.dart';
+<span class="lineNum">       6 </span>            : import 'package:auto_route/auto_route.dart';
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : class MainPageNavigationBar extends StatefulWidget implements AutoRouteWrapper {
+<span class="lineNum">       9 </span><span class="lineCov">          3 :   const MainPageNavigationBar({Key? key}) : super(key: key);</span>
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span><span class="lineNoCov">          0 :   @override</span>
+<span class="lineNum">      12 </span><span class="lineNoCov">          0 :   State&lt;MainPageNavigationBar&gt; createState() =&gt; _MainPageNavigationBarState();</span>
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span><span class="lineNoCov">          0 :   @override</span>
+<span class="lineNum">      15 </span>            :   Widget wrappedRoute(BuildContext context) {
+<span class="lineNum">      16 </span>            :     return this;
+<span class="lineNum">      17 </span>            :   }
+<span class="lineNum">      18 </span>            : }
+<span class="lineNum">      19 </span>            : 
+<span class="lineNum">      20 </span>            : class _MainPageNavigationBarState extends State&lt;MainPageNavigationBar&gt; {
+<span class="lineNum">      21 </span>            :   int currentIndex = 0;
+<span class="lineNum">      22 </span>            :   final List&lt;PageRouteInfo&gt; routes = const [
+<span class="lineNum">      23 </span>            :     MapRoute(),
+<span class="lineNum">      24 </span>            :     RocksRoute(),
+<span class="lineNum">      25 </span>            :     SettingsRoute(),
+<span class="lineNum">      26 </span>            :   ];
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :   @override</span>
+<span class="lineNum">      29 </span>            :   Widget build(BuildContext context) {
+<span class="lineNum">      30 </span><span class="lineNoCov">          0 :     final localization = AppLocalizations.of(context)!;</span>
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 :     return SafeArea(</span>
+<span class="lineNum">      33 </span><span class="lineNoCov">          0 :       child: BottomNavigationBar(</span>
+<span class="lineNum">      34 </span>            :         backgroundColor: Colors.transparent,
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :         currentIndex: currentIndex,</span>
+<span class="lineNum">      36 </span>            :         elevation: 0,
+<span class="lineNum">      37 </span>            :         selectedItemColor: Colors.white,
+<span class="lineNum">      38 </span>            :         showUnselectedLabels: false,
+<span class="lineNum">      39 </span>            :         selectedLabelStyle: const TextStyle(
+<span class="lineNum">      40 </span>            :           fontSize: 12,
+<span class="lineNum">      41 </span>            :           fontWeight: FontWeight.w700,
+<span class="lineNum">      42 </span>            :         ),
+<span class="lineNum">      43 </span><span class="lineNoCov">          0 :         items: [</span>
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :           BottomNavigationBarItem(</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :             label: localization.appbar_title_map,</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :             icon: AppBottomNavigationBarItem(</span>
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :               selected: currentIndex == 0,</span>
+<span class="lineNum">      48 </span>            :               icon: Icons.map,
+<span class="lineNum">      49 </span>            :             ),
+<span class="lineNum">      50 </span>            :           ),
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :           BottomNavigationBarItem(</span>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :             label: localization.appbar_title_rocks,</span>
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :             icon: AppBottomNavigationBarItem(</span>
+<span class="lineNum">      54 </span><span class="lineNoCov">          0 :               selected: currentIndex == 1,</span>
+<span class="lineNum">      55 </span>            :               icon: CommunityMaterialIcons.image_filter_hdr,
+<span class="lineNum">      56 </span>            :             ),
+<span class="lineNum">      57 </span>            :           ),
+<span class="lineNum">      58 </span><span class="lineNoCov">          0 :           BottomNavigationBarItem(</span>
+<span class="lineNum">      59 </span><span class="lineNoCov">          0 :             label: localization.appbar_title_settings,</span>
+<span class="lineNum">      60 </span><span class="lineNoCov">          0 :             icon: AppBottomNavigationBarItem(</span>
+<span class="lineNum">      61 </span><span class="lineNoCov">          0 :               selected: currentIndex == 2,</span>
+<span class="lineNum">      62 </span>            :               icon: Icons.settings,
+<span class="lineNum">      63 </span>            :             ),
+<span class="lineNum">      64 </span>            :           ),
+<span class="lineNum">      65 </span>            :         ],
+<span class="lineNum">      66 </span><span class="lineNoCov">          0 :         onTap: (index) =&gt; setState(</span>
+<span class="lineNum">      67 </span><span class="lineNoCov">          0 :           () {</span>
+<span class="lineNum">      68 </span><span class="lineNoCov">          0 :             currentIndex = index;</span>
+<span class="lineNum">      69 </span><span class="lineNoCov">          0 :             context.navigateTo(routes[index]);</span>
+<span class="lineNum">      70 </span>            :           },
+<span class="lineNum">      71 </span>            :         ),
+<span class="lineNum">      72 </span>            :       ),
+<span class="lineNum">      73 </span>            :     );
+<span class="lineNum">      74 </span>            :   }
+<span class="lineNum">      75 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -230,22 +230,27 @@ class _$_RockListItemEntity implements _RockListItemEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _RockListItemEntity &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.difficulty, difficulty) ||
-                other.difficulty == difficulty) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.picName, picName) || other.picName == picName) &&
-            (identical(other.localizedName, localizedName) ||
-                other.localizedName == localizedName));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            const DeepCollectionEquality()
+                .equals(other.difficulty, difficulty) &&
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.picName, picName) &&
+            const DeepCollectionEquality()
+                .equals(other.localizedName, localizedName));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
-      difficulty, height, picName, localizedName);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(longitude),
+      const DeepCollectionEquality().hash(difficulty),
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(picName),
+      const DeepCollectionEquality().hash(localizedName));
 
   @JsonKey(ignore: true)
   @override

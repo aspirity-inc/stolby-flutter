@@ -161,15 +161,17 @@ class _$_UserLocationDto extends _UserLocationDto with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _UserLocationDto &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.heading, heading) || other.heading == heading));
+            const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            const DeepCollectionEquality().equals(other.heading, heading));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, heading);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(longitude),
+      const DeepCollectionEquality().hash(heading));
 
   @JsonKey(ignore: true)
   @override

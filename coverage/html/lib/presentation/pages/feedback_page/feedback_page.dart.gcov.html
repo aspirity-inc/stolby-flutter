@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/presentation/pages/feedback_page/feedback_page.dart</title>
+  <link rel="stylesheet" type="text/css" href="../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">lib/presentation/pages/feedback_page</a> - feedback_page.dart<span style="font-size: 80%;"> (source / <a href="feedback_page.dart.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntryHi">96.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-12-17 12:49:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
+          </tr>
+          <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : import 'package:flutter/material.dart';</a>
+<span class="lineNum">       2 </span>            : import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
+<span class="lineNum">       3 </span>            : import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+<span class="lineNum">       4 </span>            : 
+<span class="lineNum">       5 </span>            : class FeedbackPage extends StatelessWidget {
+<span class="lineNum">       6 </span>            :   final _deviceController = TextEditingController();
+<span class="lineNum">       7 </span>            :   final _controller = TextEditingController();
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span><span class="lineCov">          2 :   FeedbackPage({Key? key}) : super(key: key);</span>
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span><span class="lineCov">          1 :   @override</span>
+<span class="lineNum">      12 </span>            :   Widget build(BuildContext context) {
+<span class="lineNum">      13 </span><span class="lineCov">          1 :     final localization = AppLocalizations.of(context)!;</span>
+<span class="lineNum">      14 </span><span class="lineCov">          3 :     final color = Theme.of(context).colorScheme.secondary;</span>
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span><span class="lineCov">          1 :     return Scaffold(</span>
+<span class="lineNum">      17 </span>            :       appBar: const DetailedRockAppbar(
+<span class="lineNum">      18 </span>            :         difficulty: null,
+<span class="lineNum">      19 </span>            :       ),
+<span class="lineNum">      20 </span><span class="lineCov">          1 :       body: Padding(</span>
+<span class="lineNum">      21 </span>            :         padding: const EdgeInsets.all(16.0),
+<span class="lineNum">      22 </span><span class="lineCov">          1 :         child: Column(</span>
+<span class="lineNum">      23 </span><span class="lineCov">          1 :           children: [</span>
+<span class="lineNum">      24 </span>            :             const SizedBox(
+<span class="lineNum">      25 </span>            :               height: 8,
+<span class="lineNum">      26 </span>            :             ),
+<span class="lineNum">      27 </span><span class="lineCov">          1 :             Text(</span>
+<span class="lineNum">      28 </span><span class="lineCov">          1 :               localization.feedback_device,</span>
+<span class="lineNum">      29 </span>            :               style: const TextStyle(
+<span class="lineNum">      30 </span>            :                 fontSize: 16,
+<span class="lineNum">      31 </span>            :                 fontWeight: FontWeight.w700,
+<span class="lineNum">      32 </span>            :               ),
+<span class="lineNum">      33 </span>            :             ),
+<span class="lineNum">      34 </span>            :             const SizedBox(
+<span class="lineNum">      35 </span>            :               height: 16,
+<span class="lineNum">      36 </span>            :             ),
+<span class="lineNum">      37 </span><span class="lineCov">          1 :             Container(</span>
+<span class="lineNum">      38 </span><span class="lineCov">          1 :               decoration: BoxDecoration(</span>
+<span class="lineNum">      39 </span>            :                 borderRadius: const BorderRadius.all(Radius.circular(24)),
+<span class="lineNum">      40 </span><span class="lineCov">          1 :                 border: Border.all(</span>
+<span class="lineNum">      41 </span>            :                   width: 2,
+<span class="lineNum">      42 </span>            :                   color: color,
+<span class="lineNum">      43 </span>            :                 ),
+<span class="lineNum">      44 </span>            :               ),
+<span class="lineNum">      45 </span><span class="lineCov">          1 :               child: TextField(</span>
+<span class="lineNum">      46 </span>            :                 key: const ValueKey(&quot;feedback_page_device_text_field&quot;),
+<span class="lineNum">      47 </span><span class="lineCov">          1 :                 controller: _deviceController,</span>
+<span class="lineNum">      48 </span>            :                 maxLines: 1,
+<span class="lineNum">      49 </span><span class="lineCov">          1 :                 decoration: InputDecoration(</span>
+<span class="lineNum">      50 </span>            :                   contentPadding: const EdgeInsets.symmetric(
+<span class="lineNum">      51 </span>            :                     horizontal: 16,
+<span class="lineNum">      52 </span>            :                   ),
+<span class="lineNum">      53 </span>            :                   focusedBorder: InputBorder.none,
+<span class="lineNum">      54 </span>            :                   disabledBorder: InputBorder.none,
+<span class="lineNum">      55 </span>            :                   enabledBorder: InputBorder.none,
+<span class="lineNum">      56 </span><span class="lineCov">          1 :                   hintText: localization.feedback_device_model,</span>
+<span class="lineNum">      57 </span>            :                   hintStyle: const TextStyle(
+<span class="lineNum">      58 </span>            :                     fontSize: 16,
+<span class="lineNum">      59 </span>            :                     fontWeight: FontWeight.w400,
+<span class="lineNum">      60 </span>            :                   ),
+<span class="lineNum">      61 </span>            :                 ),
+<span class="lineNum">      62 </span>            :               ),
+<span class="lineNum">      63 </span>            :             ),
+<span class="lineNum">      64 </span>            :             const SizedBox(
+<span class="lineNum">      65 </span>            :               height: 16,
+<span class="lineNum">      66 </span>            :             ),
+<span class="lineNum">      67 </span><span class="lineCov">          1 :             Container(</span>
+<span class="lineNum">      68 </span><span class="lineCov">          1 :               decoration: BoxDecoration(</span>
+<span class="lineNum">      69 </span>            :                 borderRadius: const BorderRadius.all(Radius.circular(24)),
+<span class="lineNum">      70 </span><span class="lineCov">          1 :                 border: Border.all(</span>
+<span class="lineNum">      71 </span>            :                   width: 2,
+<span class="lineNum">      72 </span>            :                   color: color,
+<span class="lineNum">      73 </span>            :                 ),
+<span class="lineNum">      74 </span>            :               ),
+<span class="lineNum">      75 </span><span class="lineCov">          1 :               child: TextField(</span>
+<span class="lineNum">      76 </span>            :                 key: const ValueKey(&quot;feedback_page_feedback_text_field&quot;),
+<span class="lineNum">      77 </span><span class="lineCov">          1 :                 controller: _controller,</span>
+<span class="lineNum">      78 </span>            :                 maxLength: 500,
+<span class="lineNum">      79 </span>            :                 maxLines: 5,
+<span class="lineNum">      80 </span><span class="lineCov">          1 :                 decoration: InputDecoration(</span>
+<span class="lineNum">      81 </span>            :                   contentPadding: const EdgeInsets.symmetric(
+<span class="lineNum">      82 </span>            :                     horizontal: 16,
+<span class="lineNum">      83 </span>            :                     vertical: 8,
+<span class="lineNum">      84 </span>            :                   ),
+<span class="lineNum">      85 </span>            :                   focusedBorder: InputBorder.none,
+<span class="lineNum">      86 </span>            :                   disabledBorder: InputBorder.none,
+<span class="lineNum">      87 </span>            :                   enabledBorder: InputBorder.none,
+<span class="lineNum">      88 </span><span class="lineCov">          1 :                   hintText: localization.drawer_head_title_help,</span>
+<span class="lineNum">      89 </span>            :                   hintStyle: const TextStyle(
+<span class="lineNum">      90 </span>            :                     fontSize: 16,
+<span class="lineNum">      91 </span>            :                     fontWeight: FontWeight.w400,
+<span class="lineNum">      92 </span>            :                   ),
+<span class="lineNum">      93 </span>            :                 ),
+<span class="lineNum">      94 </span>            :               ),
+<span class="lineNum">      95 </span>            :             ),
+<span class="lineNum">      96 </span>            :             const SizedBox(
+<span class="lineNum">      97 </span>            :               height: 16,
+<span class="lineNum">      98 </span>            :             ),
+<span class="lineNum">      99 </span><span class="lineCov">          1 :             InkWell(</span>
+<span class="lineNum">     100 </span>            :               borderRadius: const BorderRadius.all(Radius.circular(24)),
+<span class="lineNum">     101 </span><span class="lineNoCov">          0 :               onTap: () {}, // TODO: SEND FEEDBACK</span>
+<span class="lineNum">     102 </span><span class="lineCov">          1 :               child: Container(</span>
+<span class="lineNum">     103 </span>            :                 margin: const EdgeInsets.symmetric(
+<span class="lineNum">     104 </span>            :                   horizontal: 16,
+<span class="lineNum">     105 </span>            :                   vertical: 8,
+<span class="lineNum">     106 </span>            :                 ),
+<span class="lineNum">     107 </span>            :                 padding:
+<span class="lineNum">     108 </span>            :                     const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+<span class="lineNum">     109 </span><span class="lineCov">          1 :                 decoration: BoxDecoration(</span>
+<span class="lineNum">     110 </span>            :                   borderRadius: const BorderRadius.all(Radius.circular(24)),
+<span class="lineNum">     111 </span>            :                   color: color,
+<span class="lineNum">     112 </span>            :                 ),
+<span class="lineNum">     113 </span><span class="lineCov">          1 :                 child: Text(</span>
+<span class="lineNum">     114 </span><span class="lineCov">          1 :                   localization.feedback_action,</span>
+<span class="lineNum">     115 </span>            :                   style: const TextStyle(
+<span class="lineNum">     116 </span>            :                     fontSize: 16,
+<span class="lineNum">     117 </span>            :                     fontWeight: FontWeight.w700,
+<span class="lineNum">     118 </span>            :                     color: Colors.white,
+<span class="lineNum">     119 </span>            :                   ),
+<span class="lineNum">     120 </span>            :                 ),
+<span class="lineNum">     121 </span>            :               ),
+<span class="lineNum">     122 </span>            :             ),
+<span class="lineNum">     123 </span>            :           ],
+<span class="lineNum">     124 </span>            :         ),
+<span class="lineNum">     125 </span>            :       ),
+<span class="lineNum">     126 </span>            :     );
+<span class="lineNum">     127 </span>            :   }
+<span class="lineNum">     128 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

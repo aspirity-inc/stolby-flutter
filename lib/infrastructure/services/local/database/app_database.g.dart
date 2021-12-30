@@ -234,29 +234,35 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
   final String? _alias;
   $RocksTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
   late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
       'id', aliasedName, false,
-      typeName: 'INTEGER', requiredDuringInsert: false);
+      type: const IntType(), requiredDuringInsert: false);
   final VerificationMeta _latitudeMeta = const VerificationMeta('latitude');
+  @override
   late final GeneratedColumn<double?> latitude = GeneratedColumn<double?>(
       'latitude', aliasedName, false,
-      typeName: 'REAL', requiredDuringInsert: true);
+      type: const RealType(), requiredDuringInsert: true);
   final VerificationMeta _longitudeMeta = const VerificationMeta('longitude');
+  @override
   late final GeneratedColumn<double?> longitude = GeneratedColumn<double?>(
       'longitude', aliasedName, false,
-      typeName: 'REAL', requiredDuringInsert: true);
+      type: const RealType(), requiredDuringInsert: true);
   final VerificationMeta _heightMeta = const VerificationMeta('height');
+  @override
   late final GeneratedColumn<int?> height = GeneratedColumn<int?>(
       'height', aliasedName, false,
-      typeName: 'INTEGER', requiredDuringInsert: true);
+      type: const IntType(), requiredDuringInsert: true);
   final VerificationMeta _difficultyMeta = const VerificationMeta('difficulty');
+  @override
   late final GeneratedColumn<int?> difficulty = GeneratedColumn<int?>(
       'difficulty', aliasedName, false,
-      typeName: 'INTEGER', requiredDuringInsert: true);
+      type: const IntType(), requiredDuringInsert: true);
   final VerificationMeta _picNameMeta = const VerificationMeta('picName');
+  @override
   late final GeneratedColumn<String?> picName = GeneratedColumn<String?>(
       'pic_name', aliasedName, false,
-      typeName: 'TEXT', requiredDuringInsert: true);
+      type: const StringType(), requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
       [id, latitude, longitude, height, difficulty, picName];
@@ -551,31 +557,37 @@ class $RocksLocalizedTable extends RocksLocalized
   final String? _alias;
   $RocksLocalizedTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
   late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
       'id', aliasedName, false,
-      typeName: 'INTEGER', requiredDuringInsert: false);
+      type: const IntType(), requiredDuringInsert: false);
   final VerificationMeta _rockIdMeta = const VerificationMeta('rockId');
+  @override
   late final GeneratedColumn<int?> rockId = GeneratedColumn<int?>(
       'rock_id', aliasedName, false,
-      typeName: 'INTEGER',
+      type: const IntType(),
       requiredDuringInsert: true,
       $customConstraints: 'NOT NULL REFERENCES rocks(id)');
   final VerificationMeta _languageMeta = const VerificationMeta('language');
+  @override
   late final GeneratedColumn<String?> language = GeneratedColumn<String?>(
       'language', aliasedName, false,
-      typeName: 'TEXT', requiredDuringInsert: true);
+      type: const StringType(), requiredDuringInsert: true);
   final VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
   late final GeneratedColumn<String?> name = GeneratedColumn<String?>(
       'name', aliasedName, false,
-      typeName: 'TEXT', requiredDuringInsert: true);
+      type: const StringType(), requiredDuringInsert: true);
   final VerificationMeta _shortInfoMeta = const VerificationMeta('shortInfo');
+  @override
   late final GeneratedColumn<String?> shortInfo = GeneratedColumn<String?>(
       'short_info', aliasedName, false,
-      typeName: 'TEXT', requiredDuringInsert: true);
+      type: const StringType(), requiredDuringInsert: true);
   final VerificationMeta _fullInfoMeta = const VerificationMeta('fullInfo');
+  @override
   late final GeneratedColumn<String?> fullInfo = GeneratedColumn<String?>(
       'full_info', aliasedName, false,
-      typeName: 'TEXT', requiredDuringInsert: true);
+      type: const StringType(), requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
       [id, rockId, language, name, shortInfo, fullInfo];
