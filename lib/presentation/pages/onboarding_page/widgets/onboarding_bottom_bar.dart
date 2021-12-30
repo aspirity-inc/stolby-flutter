@@ -25,16 +25,20 @@ class OnboardingBottomBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Visibility(
-          visible: currentIndex != 0,
-          child: IconButton(
-            onPressed: onLeftPressed,
-            icon: Icon(
-              Icons.arrow_back_ios_rounded,
-              color: selectedColor,
-            ),
-          ),
-        ),
+        currentIndex == 0
+            ? const SizedBox(
+                width: 50,
+              )
+            : SizedBox(
+                width: 50,
+                child: IconButton(
+                  onPressed: onLeftPressed,
+                  icon: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    color: selectedColor,
+                  ),
+                ),
+              ),
         SmoothPageIndicator(
           controller: controller,
           count: 3,
@@ -47,11 +51,14 @@ class OnboardingBottomBar extends StatelessWidget {
             activeDotColor: selectedColor,
           ),
         ),
-        IconButton(
-          onPressed: onRightPressed,
-          icon: Icon(
-            currentIndex == 2 ? Icons.close : Icons.arrow_forward_ios,
-            color: selectedColor,
+        SizedBox(
+          width: 50,
+          child: IconButton(
+            onPressed: onRightPressed,
+            icon: Icon(
+              currentIndex == 2 ? Icons.close : Icons.arrow_forward_ios,
+              color: selectedColor,
+            ),
           ),
         ),
       ],

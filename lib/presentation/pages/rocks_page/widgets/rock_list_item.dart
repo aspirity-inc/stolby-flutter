@@ -1,16 +1,17 @@
-import 'dart:ui';
 import 'dart:math' as math;
+import 'dart:ui';
+
+import 'package:auto_route/auto_route.dart';
 import 'package:community_material_icon/community_material_icon.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:stolby_flutter/presentation/routing/router.gr.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 
 class RockListItem extends StatelessWidget {
   final int index;

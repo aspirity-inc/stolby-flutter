@@ -39,24 +39,27 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
         startWatchingLocation: (e) async {
           _locationSubscription =
               _repository.startWatchingLocation().listen((failureOrLocation) {
-            failureOrLocation.fold(
-              (l) => emit(
-                state.copyWith(
-                  failureOption: some(l),
-                  userLocation: none(),
-                ),
-              ),
-              (r) => emit(
-                state.copyWith(
-                  failureOption: none(),
-                  userLocation: some(r),
-                ),
-              ),
-            );
+            add(LocationEvent.locationReceived(location: failureOrLocation));
           });
         },
         stopWatchingLocation: (e) async {
           _locationSubscription?.cancel();
+        },
+        locationReceived: (e) async {
+          e.location.fold(
+            (l) => emit(
+              state.copyWith(
+                failureOption: some(l),
+                userLocation: none(),
+              ),
+            ),
+            (r) => emit(
+              state.copyWith(
+                failureOption: none(),
+                userLocation: some(r),
+              ),
+            ),
+          );
         },
       );
     });

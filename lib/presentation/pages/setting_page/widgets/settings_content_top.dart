@@ -7,6 +7,9 @@ import 'package:stolby_flutter/presentation/pages/setting_page/widgets/settings_
 class SettingsContentTop extends StatelessWidget {
   const SettingsContentTop({Key? key}) : super(key: key);
 
+  bool _getCurrentTheme(BuildContext context) =>
+      Theme.of(context).colorScheme.onBackground == Colors.white;
+
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
@@ -31,19 +34,30 @@ class SettingsContentTop extends StatelessWidget {
               SettingsSwitch(
                 text: localization.settings_auto_theme,
                 value: state.autoThemeChange,
-                onPressed: (_) => context.read<SettingsBloc>().add(
-                      const SettingsEvent.toggledAutoTheme(),
-                    ),
+                onPressed: (_) {
+                  context.read<SettingsBloc>().add(
+                        const SettingsEvent.toggledAutoTheme(),
+                      );
+                  state.autoThemeChange
+                      ? _getCurrentTheme(context) == state.darkTheme
+                          ? null
+                          : context.read<SettingsBloc>().add(
+                                const SettingsEvent.toggledDarkTheme(),
+                              )
+                      : null;
+                  print("$state, getTheme ${_getCurrentTheme(context)}");
+                },
               ),
               const SizedBox(
                 height: 8,
               ),
               SettingsSwitch(
                 text: localization.settings_dark_theme,
-                value: state.darkTheme,
+                value: _getCurrentTheme(context),
                 onPressed: (_) => context.read<SettingsBloc>().add(
                       const SettingsEvent.toggledDarkTheme(),
                     ),
+                disabled: state.autoThemeChange,
               ),
               const SizedBox(
                 height: 8,

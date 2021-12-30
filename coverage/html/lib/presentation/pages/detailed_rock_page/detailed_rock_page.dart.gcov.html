@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-17 12:49:21</td>
+            <td class="headerValue">2021-12-24 12:22:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -61,30 +61,30 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : import 'package:flutter/material.dart';</a>
-<span class="lineNum">       2 </span>            : import 'package:flutter_bloc/flutter_bloc.dart';
-<span class="lineNum">       3 </span>            : import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';
-<span class="lineNum">       4 </span>            : import 'package:stolby_flutter/injection.dart';
-<span class="lineNum">       5 </span>            : import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/detailed_rock_page_content.dart';
-<span class="lineNum">       6 </span>            : 
-<span class="lineNum">       7 </span>            : class DetailedRockPage extends StatelessWidget {
-<span class="lineNum">       8 </span>            :   final int rockId;
-<span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineNoCov">          0 :   const DetailedRockPage({</span>
-<span class="lineNum">      11 </span>            :     Key? key,
-<span class="lineNum">      12 </span>            :     required this.rockId,
-<span class="lineNum">      13 </span><span class="lineNoCov">          0 :   }) : super(key: key);</span>
-<span class="lineNum">      14 </span>            : 
-<span class="lineNum">      15 </span><span class="lineNoCov">          0 :   @override</span>
-<span class="lineNum">      16 </span>            :   Widget build(BuildContext context) {
-<span class="lineNum">      17 </span><span class="lineNoCov">          0 :     return BlocProvider(</span>
-<span class="lineNum">      18 </span><span class="lineNoCov">          0 :       create: (context) =&gt; getIt&lt;DetailedRockBloc&gt;()</span>
-<span class="lineNum">      19 </span><span class="lineNoCov">          0 :         ..add(</span>
-<span class="lineNum">      20 </span><span class="lineNoCov">          0 :           DetailedRockEvent.initialized(id: rockId),</span>
-<span class="lineNum">      21 </span>            :         ),
-<span class="lineNum">      22 </span>            :       child: const DetailedRockPageContent(),
-<span class="lineNum">      23 </span>            :     );
-<span class="lineNum">      24 </span>            :   }
-<span class="lineNum">      25 </span>            : }
+<a name="2"><span class="lineNum">       2 </span>            : import 'package:flutter_bloc/flutter_bloc.dart';</a>
+<a name="3"><span class="lineNum">       3 </span>            : import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';</a>
+<a name="4"><span class="lineNum">       4 </span>            : import 'package:stolby_flutter/injection.dart';</a>
+<a name="5"><span class="lineNum">       5 </span>            : import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/detailed_rock_page_content.dart';</a>
+<a name="6"><span class="lineNum">       6 </span>            : </a>
+<a name="7"><span class="lineNum">       7 </span>            : class DetailedRockPage extends StatelessWidget {</a>
+<a name="8"><span class="lineNum">       8 </span>            :   final int rockId;</a>
+<a name="9"><span class="lineNum">       9 </span>            : </a>
+<a name="10"><span class="lineNum">      10 </span><span class="lineNoCov">          0 :   const DetailedRockPage({</span></a>
+<a name="11"><span class="lineNum">      11 </span>            :     Key? key,</a>
+<a name="12"><span class="lineNum">      12 </span>            :     required this.rockId,</a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineNoCov">          0 :   }) : super(key: key);</span></a>
+<a name="14"><span class="lineNum">      14 </span>            : </a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineNoCov">          0 :   @override</span></a>
+<a name="16"><span class="lineNum">      16 </span>            :   Widget build(BuildContext context) {</a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineNoCov">          0 :     return BlocProvider(</span></a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineNoCov">          0 :       create: (context) =&gt; getIt&lt;DetailedRockBloc&gt;()</span></a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineNoCov">          0 :         ..add(</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineNoCov">          0 :           DetailedRockEvent.initialized(id: rockId),</span></a>
+<a name="21"><span class="lineNum">      21 </span>            :         ),</a>
+<a name="22"><span class="lineNum">      22 </span>            :       child: const DetailedRockPageContent(),</a>
+<a name="23"><span class="lineNum">      23 </span>            :     );</a>
+<a name="24"><span class="lineNum">      24 </span>            :   }</a>
+<a name="25"><span class="lineNum">      25 </span>            : }</a>
 </pre>
       </td>
     </tr>
@@ -93,7 +93,7 @@
 
   <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
-    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.15</a></td></tr>
   </table>
   <br>
 

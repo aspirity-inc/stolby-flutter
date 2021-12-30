@@ -13,8 +13,11 @@ import 'package:stolby_flutter/presentation/routing/app_router_transaction_build
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: SplashPage, initial: true),
-    AutoRoute(
+    CustomRoute(
+      page: SplashPage,
+      initial: true,
+    ),
+    CustomRoute(
       page: MainPage,
       children: [
         CustomRoute(

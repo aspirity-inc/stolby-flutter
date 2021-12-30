@@ -33,8 +33,11 @@ class AppImages {
   static const String vtorojStolb2Image =
       "assets/images/pic_pic_vtorojstolb_2.jpg";
   static const String zhabaicypaImage = "assets/images/pic_zhabaicypa.jpg";
+
+  static String getRockImage(String picName) => "assets/images/$picName.jpg";
 }
 
 class AppDatabase {
   static const String dataBasePath = "assets/rocks.db";
+  static const String mapPath = "assets/maps.db";
 }
