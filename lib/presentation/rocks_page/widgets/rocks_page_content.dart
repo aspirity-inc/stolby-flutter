@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stolby_flutter/application/location/location_bloc.dart';
 import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/presentation/rocks_page/widgets/rock_list_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:stolby_flutter/presentation/rocks_page/widgets/rock_list_search_field.dart';
 
 class RocksPageContent extends StatelessWidget {
@@ -42,16 +44,27 @@ class RocksPageContent extends StatelessWidget {
                     ],
                   ),
                 ),
-                SliverGrid(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 0.87,
-                  ),
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return RockListItem(index: index);
-                    },
-                    childCount: 20,
+                AnimationLimiter(
+                  child: SliverGrid(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.87,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return RockListItem(
+                          index: index,
+                          location: context
+                              .read<LocationBloc>()
+                              .state
+                              .userLocation
+                              .fold(() => null, (a) => a),
+                        );
+                      },
+                      // TODO: add real data
+                      childCount: 20,
+                    ),
                   ),
                 ),
               ],

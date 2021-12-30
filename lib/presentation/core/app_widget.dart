@@ -17,9 +17,7 @@ class StolbyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (_) => getIt<LocationBloc>(),
-        ),
+        BlocProvider(create: (_) => getIt<LocationBloc>()),
         BlocProvider(
           create: (_) =>
               getIt<SettingsBloc>()..add(const SettingsEvent.initialized()),

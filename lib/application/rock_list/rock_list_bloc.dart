@@ -30,7 +30,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
               ),
             );
           },
-          searchStringChanged: (e) {
+          searchStringChanged: (e) async {
             e.searchString.length >= 3
                 ? add(const RockListEvent.filtered())
                 : null;
@@ -44,7 +44,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
               )),
             );
           },
-          filtered: (e) {
+          filtered: (e) async {
             state.searchString.length >= 3
                 ? emit(state.copyWith(
                     rocksToShow:
@@ -52,13 +52,13 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
                   ))
                 : null;
           },
-          locationChanged: (e) {
+          locationChanged: (e) async {
             _sortListByLocation(some(e.location));
             emit(
               state.copyWith(userLocation: some(e.location)),
             );
           },
-          searchLineCleared: (e) {
+          searchLineCleared: (e) async {
             _sortListByLocation(state.userLocation);
             emit(state.copyWith(rocksToShow: state.allRocks, searchString: ''));
           },

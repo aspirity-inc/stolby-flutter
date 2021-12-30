@@ -57,7 +57,7 @@ void main() {
     );
 
     test(
-      'Should return unit if permission denied initally and after request granted',
+      'Should return unit if permission denied initially and after request granted',
       () async {
         //arrange
         when(_locationService.checkPermission()).thenAnswer(
@@ -73,7 +73,7 @@ void main() {
     );
 
     test(
-      'Should return unit if permission denied initally and after request grantedLimited',
+      'Should return unit if permission denied initially and after request grantedLimited',
       () async {
         //arrange
         when(_locationService.checkPermission()).thenAnswer(
@@ -89,7 +89,7 @@ void main() {
     );
 
     test(
-      'Should return LocationFailure if permission denied initally and after request denied',
+      'Should return LocationFailure if permission denied initially and after request denied',
       () async {
         //arrange
         when(_locationService.checkPermission()).thenAnswer(
@@ -105,7 +105,7 @@ void main() {
     );
 
     test(
-      'Should return unit if permission denied initally and after request deniedForever',
+      'Should return unit if permission denied initially and after request deniedForever',
       () async {
         //arrange
         when(_locationService.checkPermission()).thenAnswer(
