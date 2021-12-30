@@ -28,6 +28,13 @@ class _$LocationEventTearOff {
   _StopWatchingLocation stopWatchingLocation() {
     return const _StopWatchingLocation();
   }
+
+  _LocationReceived locationReceived(
+      {required Either<LocationFailure, UserLocationEntity> location}) {
+    return _LocationReceived(
+      location: location,
+    );
+  }
 }
 
 /// @nodoc
@@ -40,6 +47,9 @@ mixin _$LocationEvent {
     required TResult Function() checkedPermission,
     required TResult Function() startWatchingLocation,
     required TResult Function() stopWatchingLocation,
+    required TResult Function(
+            Either<LocationFailure, UserLocationEntity> location)
+        locationReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +57,8 @@ mixin _$LocationEvent {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +66,8 @@ mixin _$LocationEvent {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +77,7 @@ mixin _$LocationEvent {
     required TResult Function(_StartWatchingLocation value)
         startWatchingLocation,
     required TResult Function(_StopWatchingLocation value) stopWatchingLocation,
+    required TResult Function(_LocationReceived value) locationReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +85,7 @@ mixin _$LocationEvent {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +93,7 @@ mixin _$LocationEvent {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,6 +160,9 @@ class _$_CheckedPermission implements _CheckedPermission {
     required TResult Function() checkedPermission,
     required TResult Function() startWatchingLocation,
     required TResult Function() stopWatchingLocation,
+    required TResult Function(
+            Either<LocationFailure, UserLocationEntity> location)
+        locationReceived,
   }) {
     return checkedPermission();
   }
@@ -153,6 +173,8 @@ class _$_CheckedPermission implements _CheckedPermission {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
   }) {
     return checkedPermission?.call();
   }
@@ -163,6 +185,8 @@ class _$_CheckedPermission implements _CheckedPermission {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
     required TResult orElse(),
   }) {
     if (checkedPermission != null) {
@@ -178,6 +202,7 @@ class _$_CheckedPermission implements _CheckedPermission {
     required TResult Function(_StartWatchingLocation value)
         startWatchingLocation,
     required TResult Function(_StopWatchingLocation value) stopWatchingLocation,
+    required TResult Function(_LocationReceived value) locationReceived,
   }) {
     return checkedPermission(this);
   }
@@ -188,6 +213,7 @@ class _$_CheckedPermission implements _CheckedPermission {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
   }) {
     return checkedPermission?.call(this);
   }
@@ -198,6 +224,7 @@ class _$_CheckedPermission implements _CheckedPermission {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
     required TResult orElse(),
   }) {
     if (checkedPermission != null) {
@@ -255,6 +282,9 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
     required TResult Function() checkedPermission,
     required TResult Function() startWatchingLocation,
     required TResult Function() stopWatchingLocation,
+    required TResult Function(
+            Either<LocationFailure, UserLocationEntity> location)
+        locationReceived,
   }) {
     return startWatchingLocation();
   }
@@ -265,6 +295,8 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
   }) {
     return startWatchingLocation?.call();
   }
@@ -275,6 +307,8 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
     required TResult orElse(),
   }) {
     if (startWatchingLocation != null) {
@@ -290,6 +324,7 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
     required TResult Function(_StartWatchingLocation value)
         startWatchingLocation,
     required TResult Function(_StopWatchingLocation value) stopWatchingLocation,
+    required TResult Function(_LocationReceived value) locationReceived,
   }) {
     return startWatchingLocation(this);
   }
@@ -300,6 +335,7 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
   }) {
     return startWatchingLocation?.call(this);
   }
@@ -310,6 +346,7 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
     required TResult orElse(),
   }) {
     if (startWatchingLocation != null) {
@@ -367,6 +404,9 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
     required TResult Function() checkedPermission,
     required TResult Function() startWatchingLocation,
     required TResult Function() stopWatchingLocation,
+    required TResult Function(
+            Either<LocationFailure, UserLocationEntity> location)
+        locationReceived,
   }) {
     return stopWatchingLocation();
   }
@@ -377,6 +417,8 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
   }) {
     return stopWatchingLocation?.call();
   }
@@ -387,6 +429,8 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
     TResult Function()? checkedPermission,
     TResult Function()? startWatchingLocation,
     TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
     required TResult orElse(),
   }) {
     if (stopWatchingLocation != null) {
@@ -402,6 +446,7 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
     required TResult Function(_StartWatchingLocation value)
         startWatchingLocation,
     required TResult Function(_StopWatchingLocation value) stopWatchingLocation,
+    required TResult Function(_LocationReceived value) locationReceived,
   }) {
     return stopWatchingLocation(this);
   }
@@ -412,6 +457,7 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
   }) {
     return stopWatchingLocation?.call(this);
   }
@@ -422,6 +468,7 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
     TResult Function(_CheckedPermission value)? checkedPermission,
     TResult Function(_StartWatchingLocation value)? startWatchingLocation,
     TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
     required TResult orElse(),
   }) {
     if (stopWatchingLocation != null) {
@@ -433,6 +480,159 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
 
 abstract class _StopWatchingLocation implements LocationEvent {
   const factory _StopWatchingLocation() = _$_StopWatchingLocation;
+}
+
+/// @nodoc
+abstract class _$LocationReceivedCopyWith<$Res> {
+  factory _$LocationReceivedCopyWith(
+          _LocationReceived value, $Res Function(_LocationReceived) then) =
+      __$LocationReceivedCopyWithImpl<$Res>;
+  $Res call({Either<LocationFailure, UserLocationEntity> location});
+}
+
+/// @nodoc
+class __$LocationReceivedCopyWithImpl<$Res>
+    extends _$LocationEventCopyWithImpl<$Res>
+    implements _$LocationReceivedCopyWith<$Res> {
+  __$LocationReceivedCopyWithImpl(
+      _LocationReceived _value, $Res Function(_LocationReceived) _then)
+      : super(_value, (v) => _then(v as _LocationReceived));
+
+  @override
+  _LocationReceived get _value => super._value as _LocationReceived;
+
+  @override
+  $Res call({
+    Object? location = freezed,
+  }) {
+    return _then(_LocationReceived(
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Either<LocationFailure, UserLocationEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LocationReceived implements _LocationReceived {
+  const _$_LocationReceived({required this.location});
+
+  @override
+  final Either<LocationFailure, UserLocationEntity> location;
+
+  @override
+  String toString() {
+    return 'LocationEvent.locationReceived(location: $location)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _LocationReceived &&
+            const DeepCollectionEquality().equals(other.location, location));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
+
+  @JsonKey(ignore: true)
+  @override
+  _$LocationReceivedCopyWith<_LocationReceived> get copyWith =>
+      __$LocationReceivedCopyWithImpl<_LocationReceived>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() checkedPermission,
+    required TResult Function() startWatchingLocation,
+    required TResult Function() stopWatchingLocation,
+    required TResult Function(
+            Either<LocationFailure, UserLocationEntity> location)
+        locationReceived,
+  }) {
+    return locationReceived(location);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? checkedPermission,
+    TResult Function()? startWatchingLocation,
+    TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
+  }) {
+    return locationReceived?.call(location);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? checkedPermission,
+    TResult Function()? startWatchingLocation,
+    TResult Function()? stopWatchingLocation,
+    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+        locationReceived,
+    required TResult orElse(),
+  }) {
+    if (locationReceived != null) {
+      return locationReceived(location);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CheckedPermission value) checkedPermission,
+    required TResult Function(_StartWatchingLocation value)
+        startWatchingLocation,
+    required TResult Function(_StopWatchingLocation value) stopWatchingLocation,
+    required TResult Function(_LocationReceived value) locationReceived,
+  }) {
+    return locationReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CheckedPermission value)? checkedPermission,
+    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
+  }) {
+    return locationReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CheckedPermission value)? checkedPermission,
+    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult Function(_LocationReceived value)? locationReceived,
+    required TResult orElse(),
+  }) {
+    if (locationReceived != null) {
+      return locationReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LocationReceived implements LocationEvent {
+  const factory _LocationReceived(
+          {required Either<LocationFailure, UserLocationEntity> location}) =
+      _$_LocationReceived;
+
+  Either<LocationFailure, UserLocationEntity> get location;
+  @JsonKey(ignore: true)
+  _$LocationReceivedCopyWith<_LocationReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

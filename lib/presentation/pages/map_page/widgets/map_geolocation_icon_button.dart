@@ -14,11 +14,11 @@ class MapGeolocationIconButton extends StatelessWidget {
         return InkWell(
           customBorder: const CircleBorder(),
           onTap: () {
-            state.geolocationEnabled
-                ? context
-                    .read<LocationBloc>()
-                    .add(const LocationEvent.checkedPermission())
-                : null;
+            context.read<LocationBloc>().add(
+                  state.geolocationEnabled
+                      ? const LocationEvent.stopWatchingLocation()
+                      : const LocationEvent.startWatchingLocation(),
+                );
             context
                 .read<SettingsBloc>()
                 .add(const SettingsEvent.toggledGeolocation());

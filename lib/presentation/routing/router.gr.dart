@@ -29,12 +29,18 @@ class AppRouter extends _i10.RootStackRouter {
   @override
   final Map<String, _i10.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i10.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.SplashPage());
+      return _i10.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i1.SplashPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     MainRoute.name: (routeData) {
-      return _i10.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.MainPage());
+      return _i10.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i2.MainPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     DetailedRockRoute.name: (routeData) {
       final args = routeData.argsAs<DetailedRockRouteArgs>();
