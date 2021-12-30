@@ -12,14 +12,16 @@ part 'map_state.dart';
 @injectable
 class MapBloc extends Bloc<MapEvent, MapState> {
   final IMapRepository _mapRepository;
+
   MapBloc(this._mapRepository) : super(MapState.initial()) {
     on<MapEvent>((event, emit) async {
-      event.map(
+      await event.map(
         initialized: (e) async {
           emit(
             state.copyWith(loading: true),
           );
           final rocksOrError = await _mapRepository.getRocksCoordinatesList();
+
           rocksOrError.fold(
             (f) => emit(
               state.copyWith(loading: false),
@@ -32,10 +34,10 @@ class MapBloc extends Bloc<MapEvent, MapState> {
             ),
           );
         },
-        zoomChanged: (e) => emit(
+        zoomChanged: (e) async => emit(
           state.copyWith(zoom: e.zoom),
         ),
-        angleChanged: (e) => emit(
+        angleChanged: (e) async => emit(
           state.copyWith(angle: e.angle),
         ),
       );
