@@ -1,6 +1,7 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:intl/intl.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
 import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_map/i_map_repository.dart';
@@ -16,7 +17,7 @@ class MapRepository implements IMapRepository {
   Future<Either<DatabaseFailure, List<RockMapEntity>>>
       getRocksCoordinatesList() async {
     try {
-      final language = Intl.getCurrentLocale().split('_')[0];
+      final language = Platform.localeName.split('_')[0];
       final result = await db.getRocksCoordinatesList(
         language == 'ru' ? 'ru' : 'en',
       );
@@ -33,6 +34,3 @@ class MapRepository implements IMapRepository {
     }
   }
 }
-/*
-
- */

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:stolby_flutter/presentation/pages/main_page/widgets/curved_container_paint.dart';
 
 class AppBottomNavigationBarItem extends StatelessWidget {
   final IconData icon;
   final bool selected;
+
   const AppBottomNavigationBarItem({
     Key? key,
     required this.selected,
@@ -11,6 +13,8 @@ class AppBottomNavigationBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).colorScheme.secondaryVariant;
+
     return SizedBox(
       height: 80,
       child: AnimatedContainer(
@@ -20,14 +24,22 @@ class AppBottomNavigationBarItem extends StatelessWidget {
                 top: 48,
               ),
         height: selected ? 64 : 24,
-        width: selected ? 64 : 24,
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondaryVariant,
-          shape: BoxShape.circle,
-        ),
-        duration: const Duration(milliseconds: 64),
+        width: 128,
+        duration: const Duration(milliseconds: 300),
         child: Stack(
           children: [
+            Center(
+              child: AnimatedContainer(
+                height: selected ? 64 : 32,
+                width: 128,
+                duration: const Duration(milliseconds: 300),
+                child: CustomPaint(
+                  painter: CurvedContainerPaint(
+                    color: color,
+                  ),
+                ),
+              ),
+            ),
             Center(
               child: AnimatedContainer(
                 height: selected ? 48 : 0,

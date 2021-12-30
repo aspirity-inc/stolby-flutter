@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:maps_launcher/maps_launcher.dart';
 
 class RockCoordinates extends StatelessWidget {
   final double latitude;
@@ -19,11 +18,7 @@ class RockCoordinates extends StatelessWidget {
     final color = Theme.of(context).colorScheme.secondary;
 
     return InkWell(
-      onTap: () async => MapsLauncher.launchCoordinates(
-        latitude,
-        longitude,
-        localizedName,
-      ),
+      onTap: () {},
       child: Column(
         children: [
           Icon(

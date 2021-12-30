@@ -99,6 +99,56 @@ void main() {
           ),
         ],
       );
+
+      blocTest(
+        'Should emit state with maximum zoom of 18',
+        build: () => _bloc,
+        seed: () => MapState.initial().copyWith(
+          rocks: [
+            testItem,
+            testItem,
+          ],
+        ),
+        act: (MapBloc bloc) => bloc.add(
+          const MapEvent.zoomChanged(
+            20,
+          ),
+        ),
+        expect: () => [
+          MapState.initial().copyWith(
+            rocks: [
+              testItem,
+              testItem,
+            ],
+            zoom: 18,
+          ),
+        ],
+      );
+
+      blocTest(
+        'Should emit state with minimum zoom of 9',
+        build: () => _bloc,
+        seed: () => MapState.initial().copyWith(
+          rocks: [
+            testItem,
+            testItem,
+          ],
+        ),
+        act: (MapBloc bloc) => bloc.add(
+          const MapEvent.zoomChanged(
+            7,
+          ),
+        ),
+        expect: () => [
+          MapState.initial().copyWith(
+            rocks: [
+              testItem,
+              testItem,
+            ],
+            zoom: 9,
+          ),
+        ],
+      );
     },
   );
   group(

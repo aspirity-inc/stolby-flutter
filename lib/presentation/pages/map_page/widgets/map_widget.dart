@@ -4,16 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
+import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_alert_dialog.dart';
 
 class MapWidget extends StatefulWidget {
-  final Function(String) onMarkerPressed;
-
   const MapWidget({
     Key? key,
-    required this.onMarkerPressed,
   }) : super(key: key);
 
   @override
@@ -31,11 +30,15 @@ class _MapWidgetState extends State<MapWidget> {
     mapController.setSymbolIconIgnorePlacement(true);
     mapController.onSymbolTapped.add(
       (symbol) {
-        _handleSelected(
-          _getCurrentTheme(context),
-          symbol.id,
-        );
-        widget.onMarkerPressed(symbol.id);
+        try {
+          final rockId = int.parse(symbol.id);
+          _handleMarkerTapped(
+            rockId,
+            (symbol.options.iconImage == 'dark_marker') ||
+                (symbol.options.iconImage == 'light_marker'),
+          );
+        } on FormatException {}
+
         mapController.animateCamera(
           CameraUpdate.newLatLng(
             symbol.options.geometry ??
@@ -46,6 +49,26 @@ class _MapWidgetState extends State<MapWidget> {
           ),
         );
       },
+    );
+  }
+
+  void _handleMarkerTapped(int rockId, bool selected) {
+    final rock =
+        context.read<MapBloc>().state.rocks.firstWhere((e) => e.id == rockId);
+    showDialog(
+      context: context,
+      builder: (context) => MapAlertDialog(
+        rock: rock,
+        selected: selected,
+        onMarkButtonPressed: () {
+          _handleSelected(
+            _getCurrentTheme(context),
+            rockId.toString(),
+            selected,
+          );
+          context.router.pop();
+        },
+      ),
     );
   }
 
@@ -83,29 +106,31 @@ class _MapWidgetState extends State<MapWidget> {
     ]);
   }
 
-  Future<void> _handleSelected(
+  void _handleSelected(
     bool darkTheme,
     String selectedId,
+    bool selected,
   ) async {
     Future.wait(
       mapController.symbols.map(
-        (e) async => e.id == selectedId
-            ? await mapController.updateSymbol(
-                e,
-                SymbolOptions(
-                  iconImage: _getCurrentTheme(context)
-                      ? 'dark_marker'
-                      : 'light_marker',
-                ),
-              )
-            : await mapController.updateSymbol(
-                e,
-                SymbolOptions(
-                  iconImage: _getCurrentTheme(context)
-                      ? 'dark_object'
-                      : 'light_object',
-                ),
-              ),
+        (e) async {
+          await mapController.updateSymbol(
+            e,
+            e.id == selectedId
+                ? SymbolOptions(
+                    iconImage: selected
+                        ? darkTheme
+                            ? 'dark_object'
+                            : 'light_object'
+                        : darkTheme
+                            ? 'dark_marker'
+                            : 'light_marker',
+                  )
+                : SymbolOptions(
+                    iconImage: darkTheme ? 'dark_object' : 'light_object',
+                  ),
+          );
+        },
       ),
     );
   }
