@@ -5,4 +5,8 @@ class MapEvent with _$MapEvent {
   const factory MapEvent.initialized() = _Initialized;
   const factory MapEvent.zoomChanged(double zoom) = _ZoomChanged;
   const factory MapEvent.angleChanged(double angle) = _AngleChanged;
+  const factory MapEvent.rockMarkerPut(int id) = _RockMarkerPut;
+  const factory MapEvent.rockMarkerRemoved() = _RockMarkerRemoved;
+  const factory MapEvent.rockClicked(int id) = _RockClicked;
+  const factory MapEvent.clickedRockRemoved() = _ClickedRockRemoved;
 }

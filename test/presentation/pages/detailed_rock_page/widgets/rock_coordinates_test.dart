@@ -14,6 +14,7 @@ void main() {
           home: Scaffold(
             body: RockCoordinates(
               key: ValueKey("rock_coordinates"),
+              id: 1,
               latitude: 90.1,
               longitude: 89.1,
               localizedName: "test",

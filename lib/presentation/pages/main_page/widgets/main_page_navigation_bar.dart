@@ -19,10 +19,10 @@ class MainPageNavigationBar extends StatefulWidget implements AutoRouteWrapper {
 
 class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
   int currentIndex = 0;
-  final List<PageRouteInfo> routes = const [
+  final List<PageRouteInfo> routes = [
     MapRoute(),
-    RocksRoute(),
-    SettingsRoute(),
+    const RocksRoute(),
+    const SettingsRoute(),
   ];
 
   @override

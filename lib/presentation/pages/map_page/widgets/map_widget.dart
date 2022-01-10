@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:auto_route/auto_route.dart';
+import 'package:latlong2/latlong.dart' as latlong;
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
-import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_alert_dialog.dart';
 
 class MapWidget extends StatefulWidget {
+  final latlong.LatLng? initialCoordinates;
+
   const MapWidget({
     Key? key,
+    this.initialCoordinates,
   }) : super(key: key);
 
   @override
@@ -32,11 +34,10 @@ class _MapWidgetState extends State<MapWidget> {
       (symbol) {
         try {
           final rockId = int.parse(symbol.id);
-          _handleMarkerTapped(
-            rockId,
-            (symbol.options.iconImage == 'dark_marker') ||
-                (symbol.options.iconImage == 'light_marker'),
-          );
+          context.read<MapBloc>().add(
+                MapEvent.rockClicked(rockId),
+              );
+          _handleSelected(_getCurrentTheme(context));
         } on FormatException {}
 
         mapController.animateCamera(
@@ -52,25 +53,8 @@ class _MapWidgetState extends State<MapWidget> {
     );
   }
 
-  void _handleMarkerTapped(int rockId, bool selected) {
-    final rock =
-        context.read<MapBloc>().state.rocks.firstWhere((e) => e.id == rockId);
-    showDialog(
-      context: context,
-      builder: (context) => MapAlertDialog(
-        rock: rock,
-        selected: selected,
-        onMarkButtonPressed: () {
-          _handleSelected(
-            _getCurrentTheme(context),
-            rockId.toString(),
-            selected,
-          );
-          context.router.pop();
-        },
-      ),
-    );
-  }
+  LatLng _latlongTransformer(latlong.LatLng coordinates) =>
+      LatLng(coordinates.latitude, coordinates.longitude);
 
   Future<void> _addImage({
     required String assetName,
@@ -108,23 +92,20 @@ class _MapWidgetState extends State<MapWidget> {
 
   void _handleSelected(
     bool darkTheme,
-    String selectedId,
-    bool selected,
   ) async {
+    final selectedRock = context
+        .read<MapBloc>()
+        .state
+        .setMarkerRock
+        .fold(() => null, (a) => a.id);
     Future.wait(
       mapController.symbols.map(
-        (e) async {
+        (symbol) async {
           await mapController.updateSymbol(
-            e,
-            e.id == selectedId
+            symbol,
+            symbol.id == selectedRock.toString()
                 ? SymbolOptions(
-                    iconImage: selected
-                        ? darkTheme
-                            ? 'dark_object'
-                            : 'light_object'
-                        : darkTheme
-                            ? 'dark_marker'
-                            : 'light_marker',
+                    iconImage: darkTheme ? 'dark_marker' : 'light_marker',
                   )
                 : SymbolOptions(
                     iconImage: darkTheme ? 'dark_object' : 'light_object',
@@ -170,11 +151,13 @@ class _MapWidgetState extends State<MapWidget> {
       builder: (context, settingsState) {
         return BlocConsumer<MapBloc, MapState>(
           listener: (context, state) {
-            mapController.animateCamera(
+            mapController.moveCamera(
               CameraUpdate.zoomTo(state.zoom),
             );
+            _handleSelected(_getCurrentTheme(context));
           },
-          listenWhen: (p, c) => p.zoom != c.zoom,
+          listenWhen: (p, c) =>
+              p.zoom != c.zoom || p.setMarkerRock != c.setMarkerRock,
           builder: (context, state) {
             return state.rocks.isEmpty
                 ? const SizedBox()
@@ -183,10 +166,12 @@ class _MapWidgetState extends State<MapWidget> {
                         'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkcWo2eGJsaGxtYyJ9.NQCPk2eMLJmnuO0yh5LYpg',
                     initialCameraPosition: CameraPosition(
                       bearing: settingsState.reversedMap ? 180 : 0,
-                      target: const LatLng(
-                        55.915964,
-                        92.738896,
-                      ),
+                      target: widget.initialCoordinates != null
+                          ? _latlongTransformer(widget.initialCoordinates!)
+                          : const LatLng(
+                              55.915964,
+                              92.738896,
+                            ),
                       zoom: state.zoom,
                     ),
                     minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
@@ -210,8 +195,6 @@ class _MapWidgetState extends State<MapWidget> {
     );
   }
 }
-// TODOS
 // TODO: Add location marker
 // TODO: Add downloaded area, located in maps.db
 // TODO: Add Reaction to user not in stolby
-// TODO: Add some card(?) on user reaction on tap on marker maybe small rock item card;
