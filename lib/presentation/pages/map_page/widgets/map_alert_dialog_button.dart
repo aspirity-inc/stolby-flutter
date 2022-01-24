@@ -4,26 +4,24 @@ class MapAlertDialogButton extends StatelessWidget {
   final VoidCallback onPressed;
   final IconData icon;
   final String text;
-
   const MapAlertDialogButton({
     Key? key,
     required this.onPressed,
     required this.icon,
     required this.text,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
     return InkWell(
+      customBorder: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+      ),
       onTap: onPressed,
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 16,
-          vertical: 8,
-        ),
-        margin: const EdgeInsets.symmetric(
           vertical: 8,
         ),
         decoration: BoxDecoration(

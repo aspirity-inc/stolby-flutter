@@ -20,7 +20,6 @@ class RocksPageContent extends StatelessWidget {
           body: SafeArea(
             child: BlocBuilder<LocationBloc, LocationState>(
               builder: (context, locationState) {
-                print(locationState.userLocation.isSome());
                 return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [

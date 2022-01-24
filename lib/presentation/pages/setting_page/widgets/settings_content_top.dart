@@ -45,7 +45,6 @@ class SettingsContentTop extends StatelessWidget {
                                 const SettingsEvent.toggledDarkTheme(),
                               )
                       : null;
-                  print("$state, getTheme ${_getCurrentTheme(context)}");
                 },
               ),
               const SizedBox(

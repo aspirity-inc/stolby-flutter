@@ -13,6 +13,7 @@ class MainPage extends StatelessWidget {
     context.read<SettingsBloc>().state.onboardingVisited
         ? null
         : context.router.push(const OnboardingRoute());
+    final color = Theme.of(context).colorScheme.secondaryVariant;
 
     return Scaffold(
       body: Stack(
@@ -29,7 +30,40 @@ class MainPage extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: Container(
-              color: Theme.of(context).colorScheme.secondaryVariant,
+              decoration: BoxDecoration(
+                color: color,
+                boxShadow: [
+                  BoxShadow(
+                    color: color.withAlpha(4),
+                    blurRadius: 1,
+                  ),
+                  BoxShadow(
+                    color: color.withAlpha(5),
+                    blurRadius: 2,
+                    offset: const Offset(0, -2),
+                  ),
+                  BoxShadow(
+                    color: color.withAlpha(6),
+                    blurRadius: 4,
+                    offset: const Offset(0, -5),
+                  ),
+                  BoxShadow(
+                    color: color.withAlpha(8),
+                    blurRadius: 9,
+                    offset: const Offset(0, -10),
+                  ),
+                  BoxShadow(
+                    color: color.withAlpha(10),
+                    blurRadius: 16,
+                    offset: const Offset(0, -16),
+                  ),
+                  BoxShadow(
+                    color: color.withAlpha(13),
+                    blurRadius: 27,
+                    offset: const Offset(0, -24),
+                  ),
+                ],
+              ),
               child: const SafeArea(
                 top: false,
                 child: SizedBox(

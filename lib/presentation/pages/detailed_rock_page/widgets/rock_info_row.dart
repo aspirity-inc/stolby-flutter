@@ -25,6 +25,7 @@ class RockInfoRow extends StatelessWidget {
         ),
         RockElevation(height: rock.height),
         RockCoordinates(
+          id: rock.id,
           latitude: rock.latitude,
           longitude: rock.longitude,
           localizedName: rock.localizedName,

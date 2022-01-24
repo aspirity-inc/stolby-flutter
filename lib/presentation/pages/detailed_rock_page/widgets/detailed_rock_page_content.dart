@@ -104,7 +104,7 @@ class DetailedRockPageContent extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: AddMarkerButton(
-                    onPressed: () {}, // TODO: ADD MARKER TO THE MAP
+                    rock: rock,
                   ),
                 ),
               ],

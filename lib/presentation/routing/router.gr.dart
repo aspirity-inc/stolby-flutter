@@ -10,6 +10,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i10;
 import 'package:flutter/material.dart' as _i11;
+import 'package:latlong2/latlong.dart' as _i13;
 
 import '../pages/detailed_rock_page/detailed_rock_page.dart' as _i3;
 import '../pages/feedback_page/feedback_page.dart' as _i5;
@@ -88,9 +89,12 @@ class AppRouter extends _i10.RootStackRouter {
           barrierDismissible: false);
     },
     MapRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<MapRouteArgs>(orElse: () => const MapRouteArgs());
       return _i10.CustomPage<dynamic>(
           routeData: routeData,
-          child: const _i7.MapPage(),
+          child: _i7.MapPage(
+              key: args.key, initialCoordinates: args.initialCoordinates),
           transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
@@ -234,10 +238,27 @@ class OnboardingRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.MapPage]
-class MapRoute extends _i10.PageRouteInfo<void> {
-  const MapRoute() : super(MapRoute.name, path: '');
+class MapRoute extends _i10.PageRouteInfo<MapRouteArgs> {
+  MapRoute({_i11.Key? key, _i13.LatLng? initialCoordinates})
+      : super(MapRoute.name,
+            path: '',
+            args:
+                MapRouteArgs(key: key, initialCoordinates: initialCoordinates));
 
   static const String name = 'MapRoute';
+}
+
+class MapRouteArgs {
+  const MapRouteArgs({this.key, this.initialCoordinates});
+
+  final _i11.Key? key;
+
+  final _i13.LatLng? initialCoordinates;
+
+  @override
+  String toString() {
+    return 'MapRouteArgs{key: $key, initialCoordinates: $initialCoordinates}';
+  }
 }
 
 /// generated route for

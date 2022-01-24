@@ -51,7 +51,6 @@ import 'package:stolby_flutter/presentation/pages/main_page/widgets/app_bottom_n
 import 'package:stolby_flutter/presentation/pages/map_page/map_page.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_zoom_icon_button.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_geolocation_icon_button.dart';
-import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_page_content.dart';
 import 'package:stolby_flutter/presentation/pages/splash_page/splash_page.dart';
 import 'package:stolby_flutter/presentation/pages/rocks_page/rocks_page.dart';
 import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rock_list_search_field.dart';
@@ -68,4 +67,5 @@ import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/det
 import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
 import 'package:stolby_flutter/presentation/routing/app_router_transaction_builders.dart';
 import 'package:stolby_flutter/presentation/routing/router.dart';
-void main(){}
+
+void main() {}
