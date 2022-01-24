@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
+import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
+import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +28,10 @@ class RockCoordinates extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        context.read<MapBloc>().add(MapEvent.rockClicked(id));
+        RockMapEntity rock = context.read<MapBloc>().state.rocks.firstWhere(
+              (r) => r.id == id,
+            );
+        context.read<MapControlBloc>().add(MapControlEvent.rockClicked(rock));
         context.replaceRoute(
           MainRoute(
             children: [

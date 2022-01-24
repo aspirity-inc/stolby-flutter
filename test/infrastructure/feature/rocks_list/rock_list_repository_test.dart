@@ -15,8 +15,15 @@ void main() {}
 /*
 import 'rock_list_repository_test.mocks.dart';
 
-
-@GenerateMocks([AppDatabase])
+@GenerateMocks(
+  [],
+  customMocks: [
+    MockSpec<AppDatabase>(
+      as: Symbol('MockAppDatabase'),
+      returnNullOnMissingStub: true,
+    ),
+  ],
+)
 void main() {
   late MockAppDatabase _db;
   late RockListRepository _repository;

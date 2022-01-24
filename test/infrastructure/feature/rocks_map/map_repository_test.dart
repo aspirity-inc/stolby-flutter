@@ -13,7 +13,15 @@ void main() {}
 /*
 import 'map_repository_test.mocks.dart';
 
-@GenerateMocks([AppDatabase])
+@GenerateMocks(
+  [],
+  customMocks: [
+    MockSpec<AppDatabase>(
+      as: Symbol('MockAppDatabase'),
+      returnNullOnMissingStub: true,
+    ),
+  ],
+)
 void main() {
   late MockAppDatabase _db;
   late MapRepository _repository;

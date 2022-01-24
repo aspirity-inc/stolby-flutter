@@ -5,7 +5,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/add_marker_button.dart';
 
-void main() {
+void
+    main() {} /*
   const testItem = DetailedRockEntity(
     id: 0,
     latitude: 55.9174,
@@ -53,3 +54,4 @@ void main() {
     },
   );
 }
+*/

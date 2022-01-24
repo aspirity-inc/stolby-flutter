@@ -8,6 +8,9 @@ import 'package:latlong2/latlong.dart' as latlong;
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
+import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
+
+import 'map_alert_dialog.dart';
 
 class MapWidget extends StatefulWidget {
   final latlong.LatLng? initialCoordinates;
@@ -34,11 +37,30 @@ class _MapWidgetState extends State<MapWidget> {
       (symbol) {
         try {
           final rockId = int.parse(symbol.id);
-          context.read<MapBloc>().add(
-                MapEvent.rockClicked(rockId),
+          final rock = context
+              .read<MapBloc>()
+              .state
+              .rocks
+              .firstWhere((r) => r.id == rockId);
+
+          context.read<MapControlBloc>().add(
+                MapControlEvent.rockClicked(rock),
               );
+          showDialog(
+            context: context,
+            builder: (context) => MapAlertDialog(
+              rock: rock,
+              onMarkButtonPressed: () {
+                context.read<MapControlBloc>().add(
+                      MapControlEvent.handleMarkerSelection(rock),
+                    );
+              },
+            ),
+          );
           _handleSelected(_getCurrentTheme(context));
-        } on FormatException {}
+        } on FormatException {
+          return;
+        }
 
         mapController.animateCamera(
           CameraUpdate.newLatLng(
@@ -94,7 +116,7 @@ class _MapWidgetState extends State<MapWidget> {
     bool darkTheme,
   ) async {
     final selectedRock = context
-        .read<MapBloc>()
+        .read<MapControlBloc>()
         .state
         .setMarkerRock
         .fold(() => null, (a) => a.id);
@@ -149,52 +171,55 @@ class _MapWidgetState extends State<MapWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, settingsState) {
-        return BlocConsumer<MapBloc, MapState>(
-          listener: (context, state) {
-            mapController.moveCamera(
-              CameraUpdate.zoomTo(state.zoom),
-            );
+        return BlocConsumer<MapControlBloc, MapControlState>(
+          listener: (context, mapControlState) {
             _handleSelected(_getCurrentTheme(context));
           },
-          listenWhen: (p, c) =>
-              p.zoom != c.zoom || p.setMarkerRock != c.setMarkerRock,
-          builder: (context, state) {
-            return state.rocks.isEmpty
-                ? const SizedBox()
-                : MapboxMap(
-                    accessToken:
-                        'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkcWo2eGJsaGxtYyJ9.NQCPk2eMLJmnuO0yh5LYpg',
-                    initialCameraPosition: CameraPosition(
-                      bearing: settingsState.reversedMap ? 180 : 0,
-                      target: widget.initialCoordinates != null
-                          ? _latlongTransformer(widget.initialCoordinates!)
-                          : const LatLng(
-                              55.915964,
-                              92.738896,
-                            ),
-                      zoom: state.zoom,
-                    ),
-                    minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
-                    styleString: _getCurrentTheme(context)
-                        ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
-                        : 'mapbox://styles/aspirity/cke81mk9r4mhk19o83lermlpt',
-                    compassEnabled: false, //CHANGE TO LOCATION ICON
-                    myLocationTrackingMode: settingsState.mapUserCentering
-                        ? MyLocationTrackingMode.Tracking
-                        : MyLocationTrackingMode.None,
-                    myLocationEnabled: settingsState.geolocationEnabled,
-                    logoViewMargins: const Point(16, 32),
-                    attributionButtonMargins: const Point(106, 32),
-                    onMapCreated: _handleMapCreated,
-                    onStyleLoadedCallback: () =>
-                        _onStyleLoadedCallback(context),
-                  );
+          builder: (context, mapControlState) {
+            return BlocConsumer<MapBloc, MapState>(
+              listener: (context, state) {
+                mapController.animateCamera(
+                  CameraUpdate.zoomTo(state.zoom),
+                );
+                _handleSelected(_getCurrentTheme(context));
+              },
+              listenWhen: (p, c) => p.zoom != c.zoom,
+              builder: (context, state) {
+                return state.rocks.isEmpty
+                    ? const SizedBox()
+                    : MapboxMap(
+                        accessToken:
+                            'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkcWo2eGJsaGxtYyJ9.NQCPk2eMLJmnuO0yh5LYpg',
+                        initialCameraPosition: CameraPosition(
+                          bearing: settingsState.reversedMap ? 180 : 0,
+                          target: widget.initialCoordinates != null
+                              ? _latlongTransformer(widget.initialCoordinates!)
+                              : const LatLng(
+                                  55.915964,
+                                  92.738896,
+                                ),
+                          zoom: state.zoom,
+                        ),
+                        minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
+                        styleString: _getCurrentTheme(context)
+                            ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
+                            : 'mapbox://styles/aspirity/cke81mk9r4mhk19o83lermlpt',
+                        compassEnabled: false,
+                        myLocationTrackingMode: settingsState.mapUserCentering
+                            ? MyLocationTrackingMode.Tracking
+                            : MyLocationTrackingMode.None,
+                        myLocationEnabled: settingsState.geolocationEnabled,
+                        logoViewMargins: const Point(16, 32),
+                        attributionButtonMargins: const Point(106, 32),
+                        onMapCreated: _handleMapCreated,
+                        onStyleLoadedCallback: () =>
+                            _onStyleLoadedCallback(context),
+                      );
+              },
+            );
           },
         );
       },
     );
   }
 }
-// TODO: Add location marker
-// TODO: Add downloaded area, located in maps.db
-// TODO: Add Reaction to user not in stolby

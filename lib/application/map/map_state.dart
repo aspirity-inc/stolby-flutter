@@ -7,15 +7,11 @@ class MapState with _$MapState {
     required bool loading,
     required double zoom,
     required double angle,
-    required Option<RockMapEntity> setMarkerRock,
-    required Option<RockMapEntity> clickedRock,
   }) = _MapState;
-  factory MapState.initial() => MapState(
+  factory MapState.initial() => const MapState(
         rocks: [],
         loading: false,
         zoom: 13,
         angle: 0,
-        setMarkerRock: none(),
-        clickedRock: none(),
       );
 }

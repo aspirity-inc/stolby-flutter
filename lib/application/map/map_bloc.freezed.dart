@@ -32,26 +32,6 @@ class _$MapEventTearOff {
       angle,
     );
   }
-
-  _RockMarkerPut rockMarkerPut(int id) {
-    return _RockMarkerPut(
-      id,
-    );
-  }
-
-  _RockMarkerRemoved rockMarkerRemoved() {
-    return const _RockMarkerRemoved();
-  }
-
-  _RockClicked rockClicked(int id) {
-    return _RockClicked(
-      id,
-    );
-  }
-
-  _ClickedRockRemoved clickedRockRemoved() {
-    return const _ClickedRockRemoved();
-  }
 }
 
 /// @nodoc
@@ -64,10 +44,6 @@ mixin _$MapEvent {
     required TResult Function() initialized,
     required TResult Function(double zoom) zoomChanged,
     required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,10 +51,6 @@ mixin _$MapEvent {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,10 +58,6 @@ mixin _$MapEvent {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -98,10 +66,6 @@ mixin _$MapEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ZoomChanged value) zoomChanged,
     required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,10 +73,6 @@ mixin _$MapEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,10 +80,6 @@ mixin _$MapEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -187,10 +143,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function() initialized,
     required TResult Function(double zoom) zoomChanged,
     required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
   }) {
     return initialized();
   }
@@ -201,10 +153,6 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
   }) {
     return initialized?.call();
   }
@@ -215,10 +163,6 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -233,10 +177,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ZoomChanged value) zoomChanged,
     required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
   }) {
     return initialized(this);
   }
@@ -247,10 +187,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
   }) {
     return initialized?.call(this);
   }
@@ -261,10 +197,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -345,10 +277,6 @@ class _$_ZoomChanged implements _ZoomChanged {
     required TResult Function() initialized,
     required TResult Function(double zoom) zoomChanged,
     required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
   }) {
     return zoomChanged(zoom);
   }
@@ -359,10 +287,6 @@ class _$_ZoomChanged implements _ZoomChanged {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
   }) {
     return zoomChanged?.call(zoom);
   }
@@ -373,10 +297,6 @@ class _$_ZoomChanged implements _ZoomChanged {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
     required TResult orElse(),
   }) {
     if (zoomChanged != null) {
@@ -391,10 +311,6 @@ class _$_ZoomChanged implements _ZoomChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ZoomChanged value) zoomChanged,
     required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
   }) {
     return zoomChanged(this);
   }
@@ -405,10 +321,6 @@ class _$_ZoomChanged implements _ZoomChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
   }) {
     return zoomChanged?.call(this);
   }
@@ -419,10 +331,6 @@ class _$_ZoomChanged implements _ZoomChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
     required TResult orElse(),
   }) {
     if (zoomChanged != null) {
@@ -508,10 +416,6 @@ class _$_AngleChanged implements _AngleChanged {
     required TResult Function() initialized,
     required TResult Function(double zoom) zoomChanged,
     required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
   }) {
     return angleChanged(angle);
   }
@@ -522,10 +426,6 @@ class _$_AngleChanged implements _AngleChanged {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
   }) {
     return angleChanged?.call(angle);
   }
@@ -536,10 +436,6 @@ class _$_AngleChanged implements _AngleChanged {
     TResult Function()? initialized,
     TResult Function(double zoom)? zoomChanged,
     TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
     required TResult orElse(),
   }) {
     if (angleChanged != null) {
@@ -554,10 +450,6 @@ class _$_AngleChanged implements _AngleChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_ZoomChanged value) zoomChanged,
     required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
   }) {
     return angleChanged(this);
   }
@@ -568,10 +460,6 @@ class _$_AngleChanged implements _AngleChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
   }) {
     return angleChanged?.call(this);
   }
@@ -582,10 +470,6 @@ class _$_AngleChanged implements _AngleChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ZoomChanged value)? zoomChanged,
     TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
     required TResult orElse(),
   }) {
     if (angleChanged != null) {
@@ -605,602 +489,6 @@ abstract class _AngleChanged implements MapEvent {
 }
 
 /// @nodoc
-abstract class _$RockMarkerPutCopyWith<$Res> {
-  factory _$RockMarkerPutCopyWith(
-          _RockMarkerPut value, $Res Function(_RockMarkerPut) then) =
-      __$RockMarkerPutCopyWithImpl<$Res>;
-  $Res call({int id});
-}
-
-/// @nodoc
-class __$RockMarkerPutCopyWithImpl<$Res> extends _$MapEventCopyWithImpl<$Res>
-    implements _$RockMarkerPutCopyWith<$Res> {
-  __$RockMarkerPutCopyWithImpl(
-      _RockMarkerPut _value, $Res Function(_RockMarkerPut) _then)
-      : super(_value, (v) => _then(v as _RockMarkerPut));
-
-  @override
-  _RockMarkerPut get _value => super._value as _RockMarkerPut;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-  }) {
-    return _then(_RockMarkerPut(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_RockMarkerPut implements _RockMarkerPut {
-  const _$_RockMarkerPut(this.id);
-
-  @override
-  final int id;
-
-  @override
-  String toString() {
-    return 'MapEvent.rockMarkerPut(id: $id)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RockMarkerPut &&
-            const DeepCollectionEquality().equals(other.id, id));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
-
-  @JsonKey(ignore: true)
-  @override
-  _$RockMarkerPutCopyWith<_RockMarkerPut> get copyWith =>
-      __$RockMarkerPutCopyWithImpl<_RockMarkerPut>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
-    required TResult Function(double zoom) zoomChanged,
-    required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
-  }) {
-    return rockMarkerPut(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-  }) {
-    return rockMarkerPut?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (rockMarkerPut != null) {
-      return rockMarkerPut(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ZoomChanged value) zoomChanged,
-    required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
-  }) {
-    return rockMarkerPut(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-  }) {
-    return rockMarkerPut?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (rockMarkerPut != null) {
-      return rockMarkerPut(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RockMarkerPut implements MapEvent {
-  const factory _RockMarkerPut(int id) = _$_RockMarkerPut;
-
-  int get id;
-  @JsonKey(ignore: true)
-  _$RockMarkerPutCopyWith<_RockMarkerPut> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$RockMarkerRemovedCopyWith<$Res> {
-  factory _$RockMarkerRemovedCopyWith(
-          _RockMarkerRemoved value, $Res Function(_RockMarkerRemoved) then) =
-      __$RockMarkerRemovedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$RockMarkerRemovedCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res>
-    implements _$RockMarkerRemovedCopyWith<$Res> {
-  __$RockMarkerRemovedCopyWithImpl(
-      _RockMarkerRemoved _value, $Res Function(_RockMarkerRemoved) _then)
-      : super(_value, (v) => _then(v as _RockMarkerRemoved));
-
-  @override
-  _RockMarkerRemoved get _value => super._value as _RockMarkerRemoved;
-}
-
-/// @nodoc
-
-class _$_RockMarkerRemoved implements _RockMarkerRemoved {
-  const _$_RockMarkerRemoved();
-
-  @override
-  String toString() {
-    return 'MapEvent.rockMarkerRemoved()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RockMarkerRemoved);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
-    required TResult Function(double zoom) zoomChanged,
-    required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
-  }) {
-    return rockMarkerRemoved();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-  }) {
-    return rockMarkerRemoved?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (rockMarkerRemoved != null) {
-      return rockMarkerRemoved();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ZoomChanged value) zoomChanged,
-    required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
-  }) {
-    return rockMarkerRemoved(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-  }) {
-    return rockMarkerRemoved?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (rockMarkerRemoved != null) {
-      return rockMarkerRemoved(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RockMarkerRemoved implements MapEvent {
-  const factory _RockMarkerRemoved() = _$_RockMarkerRemoved;
-}
-
-/// @nodoc
-abstract class _$RockClickedCopyWith<$Res> {
-  factory _$RockClickedCopyWith(
-          _RockClicked value, $Res Function(_RockClicked) then) =
-      __$RockClickedCopyWithImpl<$Res>;
-  $Res call({int id});
-}
-
-/// @nodoc
-class __$RockClickedCopyWithImpl<$Res> extends _$MapEventCopyWithImpl<$Res>
-    implements _$RockClickedCopyWith<$Res> {
-  __$RockClickedCopyWithImpl(
-      _RockClicked _value, $Res Function(_RockClicked) _then)
-      : super(_value, (v) => _then(v as _RockClicked));
-
-  @override
-  _RockClicked get _value => super._value as _RockClicked;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-  }) {
-    return _then(_RockClicked(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_RockClicked implements _RockClicked {
-  const _$_RockClicked(this.id);
-
-  @override
-  final int id;
-
-  @override
-  String toString() {
-    return 'MapEvent.rockClicked(id: $id)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RockClicked &&
-            const DeepCollectionEquality().equals(other.id, id));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
-
-  @JsonKey(ignore: true)
-  @override
-  _$RockClickedCopyWith<_RockClicked> get copyWith =>
-      __$RockClickedCopyWithImpl<_RockClicked>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
-    required TResult Function(double zoom) zoomChanged,
-    required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
-  }) {
-    return rockClicked(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-  }) {
-    return rockClicked?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (rockClicked != null) {
-      return rockClicked(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ZoomChanged value) zoomChanged,
-    required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
-  }) {
-    return rockClicked(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-  }) {
-    return rockClicked?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (rockClicked != null) {
-      return rockClicked(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RockClicked implements MapEvent {
-  const factory _RockClicked(int id) = _$_RockClicked;
-
-  int get id;
-  @JsonKey(ignore: true)
-  _$RockClickedCopyWith<_RockClicked> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$ClickedRockRemovedCopyWith<$Res> {
-  factory _$ClickedRockRemovedCopyWith(
-          _ClickedRockRemoved value, $Res Function(_ClickedRockRemoved) then) =
-      __$ClickedRockRemovedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ClickedRockRemovedCopyWithImpl<$Res>
-    extends _$MapEventCopyWithImpl<$Res>
-    implements _$ClickedRockRemovedCopyWith<$Res> {
-  __$ClickedRockRemovedCopyWithImpl(
-      _ClickedRockRemoved _value, $Res Function(_ClickedRockRemoved) _then)
-      : super(_value, (v) => _then(v as _ClickedRockRemoved));
-
-  @override
-  _ClickedRockRemoved get _value => super._value as _ClickedRockRemoved;
-}
-
-/// @nodoc
-
-class _$_ClickedRockRemoved implements _ClickedRockRemoved {
-  const _$_ClickedRockRemoved();
-
-  @override
-  String toString() {
-    return 'MapEvent.clickedRockRemoved()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ClickedRockRemoved);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
-    required TResult Function(double zoom) zoomChanged,
-    required TResult Function(double angle) angleChanged,
-    required TResult Function(int id) rockMarkerPut,
-    required TResult Function() rockMarkerRemoved,
-    required TResult Function(int id) rockClicked,
-    required TResult Function() clickedRockRemoved,
-  }) {
-    return clickedRockRemoved();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-  }) {
-    return clickedRockRemoved?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
-    TResult Function(int id)? rockMarkerPut,
-    TResult Function()? rockMarkerRemoved,
-    TResult Function(int id)? rockClicked,
-    TResult Function()? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (clickedRockRemoved != null) {
-      return clickedRockRemoved();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ZoomChanged value) zoomChanged,
-    required TResult Function(_AngleChanged value) angleChanged,
-    required TResult Function(_RockMarkerPut value) rockMarkerPut,
-    required TResult Function(_RockMarkerRemoved value) rockMarkerRemoved,
-    required TResult Function(_RockClicked value) rockClicked,
-    required TResult Function(_ClickedRockRemoved value) clickedRockRemoved,
-  }) {
-    return clickedRockRemoved(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-  }) {
-    return clickedRockRemoved?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
-    TResult Function(_RockMarkerPut value)? rockMarkerPut,
-    TResult Function(_RockMarkerRemoved value)? rockMarkerRemoved,
-    TResult Function(_RockClicked value)? rockClicked,
-    TResult Function(_ClickedRockRemoved value)? clickedRockRemoved,
-    required TResult orElse(),
-  }) {
-    if (clickedRockRemoved != null) {
-      return clickedRockRemoved(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ClickedRockRemoved implements MapEvent {
-  const factory _ClickedRockRemoved() = _$_ClickedRockRemoved;
-}
-
-/// @nodoc
 class _$MapStateTearOff {
   const _$MapStateTearOff();
 
@@ -1208,16 +496,12 @@ class _$MapStateTearOff {
       {required List<RockMapEntity> rocks,
       required bool loading,
       required double zoom,
-      required double angle,
-      required Option<RockMapEntity> setMarkerRock,
-      required Option<RockMapEntity> clickedRock}) {
+      required double angle}) {
     return _MapState(
       rocks: rocks,
       loading: loading,
       zoom: zoom,
       angle: angle,
-      setMarkerRock: setMarkerRock,
-      clickedRock: clickedRock,
     );
   }
 }
@@ -1231,8 +515,6 @@ mixin _$MapState {
   bool get loading => throw _privateConstructorUsedError;
   double get zoom => throw _privateConstructorUsedError;
   double get angle => throw _privateConstructorUsedError;
-  Option<RockMapEntity> get setMarkerRock => throw _privateConstructorUsedError;
-  Option<RockMapEntity> get clickedRock => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MapStateCopyWith<MapState> get copyWith =>
@@ -1244,12 +526,7 @@ abstract class $MapStateCopyWith<$Res> {
   factory $MapStateCopyWith(MapState value, $Res Function(MapState) then) =
       _$MapStateCopyWithImpl<$Res>;
   $Res call(
-      {List<RockMapEntity> rocks,
-      bool loading,
-      double zoom,
-      double angle,
-      Option<RockMapEntity> setMarkerRock,
-      Option<RockMapEntity> clickedRock});
+      {List<RockMapEntity> rocks, bool loading, double zoom, double angle});
 }
 
 /// @nodoc
@@ -1266,8 +543,6 @@ class _$MapStateCopyWithImpl<$Res> implements $MapStateCopyWith<$Res> {
     Object? loading = freezed,
     Object? zoom = freezed,
     Object? angle = freezed,
-    Object? setMarkerRock = freezed,
-    Object? clickedRock = freezed,
   }) {
     return _then(_value.copyWith(
       rocks: rocks == freezed
@@ -1286,14 +561,6 @@ class _$MapStateCopyWithImpl<$Res> implements $MapStateCopyWith<$Res> {
           ? _value.angle
           : angle // ignore: cast_nullable_to_non_nullable
               as double,
-      setMarkerRock: setMarkerRock == freezed
-          ? _value.setMarkerRock
-          : setMarkerRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
-      clickedRock: clickedRock == freezed
-          ? _value.clickedRock
-          : clickedRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
     ));
   }
 }
@@ -1304,12 +571,7 @@ abstract class _$MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
       __$MapStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<RockMapEntity> rocks,
-      bool loading,
-      double zoom,
-      double angle,
-      Option<RockMapEntity> setMarkerRock,
-      Option<RockMapEntity> clickedRock});
+      {List<RockMapEntity> rocks, bool loading, double zoom, double angle});
 }
 
 /// @nodoc
@@ -1327,8 +589,6 @@ class __$MapStateCopyWithImpl<$Res> extends _$MapStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? zoom = freezed,
     Object? angle = freezed,
-    Object? setMarkerRock = freezed,
-    Object? clickedRock = freezed,
   }) {
     return _then(_MapState(
       rocks: rocks == freezed
@@ -1347,14 +607,6 @@ class __$MapStateCopyWithImpl<$Res> extends _$MapStateCopyWithImpl<$Res>
           ? _value.angle
           : angle // ignore: cast_nullable_to_non_nullable
               as double,
-      setMarkerRock: setMarkerRock == freezed
-          ? _value.setMarkerRock
-          : setMarkerRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
-      clickedRock: clickedRock == freezed
-          ? _value.clickedRock
-          : clickedRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
     ));
   }
 }
@@ -1366,9 +618,7 @@ class _$_MapState implements _MapState {
       {required this.rocks,
       required this.loading,
       required this.zoom,
-      required this.angle,
-      required this.setMarkerRock,
-      required this.clickedRock});
+      required this.angle});
 
   @override
   final List<RockMapEntity> rocks;
@@ -1378,14 +628,10 @@ class _$_MapState implements _MapState {
   final double zoom;
   @override
   final double angle;
-  @override
-  final Option<RockMapEntity> setMarkerRock;
-  @override
-  final Option<RockMapEntity> clickedRock;
 
   @override
   String toString() {
-    return 'MapState(rocks: $rocks, loading: $loading, zoom: $zoom, angle: $angle, setMarkerRock: $setMarkerRock, clickedRock: $clickedRock)';
+    return 'MapState(rocks: $rocks, loading: $loading, zoom: $zoom, angle: $angle)';
   }
 
   @override
@@ -1396,11 +642,7 @@ class _$_MapState implements _MapState {
             const DeepCollectionEquality().equals(other.rocks, rocks) &&
             const DeepCollectionEquality().equals(other.loading, loading) &&
             const DeepCollectionEquality().equals(other.zoom, zoom) &&
-            const DeepCollectionEquality().equals(other.angle, angle) &&
-            const DeepCollectionEquality()
-                .equals(other.setMarkerRock, setMarkerRock) &&
-            const DeepCollectionEquality()
-                .equals(other.clickedRock, clickedRock));
+            const DeepCollectionEquality().equals(other.angle, angle));
   }
 
   @override
@@ -1409,9 +651,7 @@ class _$_MapState implements _MapState {
       const DeepCollectionEquality().hash(rocks),
       const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(zoom),
-      const DeepCollectionEquality().hash(angle),
-      const DeepCollectionEquality().hash(setMarkerRock),
-      const DeepCollectionEquality().hash(clickedRock));
+      const DeepCollectionEquality().hash(angle));
 
   @JsonKey(ignore: true)
   @override
@@ -1424,9 +664,7 @@ abstract class _MapState implements MapState {
       {required List<RockMapEntity> rocks,
       required bool loading,
       required double zoom,
-      required double angle,
-      required Option<RockMapEntity> setMarkerRock,
-      required Option<RockMapEntity> clickedRock}) = _$_MapState;
+      required double angle}) = _$_MapState;
 
   @override
   List<RockMapEntity> get rocks;
@@ -1436,10 +674,6 @@ abstract class _MapState implements MapState {
   double get zoom;
   @override
   double get angle;
-  @override
-  Option<RockMapEntity> get setMarkerRock;
-  @override
-  Option<RockMapEntity> get clickedRock;
   @override
   @JsonKey(ignore: true)
   _$MapStateCopyWith<_MapState> get copyWith =>

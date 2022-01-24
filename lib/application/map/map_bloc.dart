@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
@@ -47,41 +44,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
         angleChanged: (e) async => emit(
           state.copyWith(angle: e.angle),
         ),
-        rockMarkerPut: (e) async => _selectedRockChanged(e, emit),
-        rockMarkerRemoved: (e) async => emit(
-          state.copyWith(setMarkerRock: none()),
-        ),
-        rockClicked: (e) async => _onRockTapped(e, emit),
-        clickedRockRemoved: (e) async => emit(
-          state.copyWith(clickedRock: none()),
-        ),
       );
     });
-  }
-
-  FutureOr<void> _selectedRockChanged(
-    _RockMarkerPut event,
-    Emitter<MapState> emit,
-  ) async {
-    final rock =
-        state.rocks.firstWhereOrNull((element) => element.id == event.id);
-    emit(
-      state.copyWith(
-        setMarkerRock: rock != null ? some(rock) : none(),
-      ),
-    );
-  }
-
-  FutureOr<void> _onRockTapped(
-    _RockClicked event,
-    Emitter<MapState> emit,
-  ) async {
-    final rock =
-        state.rocks.firstWhereOrNull((element) => element.id == event.id);
-    emit(
-      state.copyWith(
-        clickedRock: rock != null ? some(rock) : none(),
-      ),
-    );
   }
 }
