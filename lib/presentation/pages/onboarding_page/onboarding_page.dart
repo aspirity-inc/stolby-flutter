@@ -35,8 +35,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: TextButton(
                 onPressed: () {
                   context
-                      .read<SettingsBloc>()
-                      .add(const SettingsEvent.onboardingVisited());
+                        .read<SettingsBloc>()
+                        .add(const SettingsEvent.onboardingVisited());
                   context.router.pop();
                 },
                 child: Text(
