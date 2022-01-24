@@ -48,14 +48,7 @@ class _MapWidgetState extends State<MapWidget> {
               );
           showDialog(
             context: context,
-            builder: (context) => MapAlertDialog(
-              rock: rock,
-              onMarkButtonPressed: () {
-                context.read<MapControlBloc>().add(
-                      MapControlEvent.handleMarkerSelection(rock),
-                    );
-              },
-            ),
+            builder: (context) => const MapAlertDialog(),
           );
           _handleSelected(_getCurrentTheme(context));
         } on FormatException {
