@@ -8,9 +8,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rock_list_item_painter.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 
 class RockListItem extends StatelessWidget {
@@ -86,105 +88,101 @@ class RockListItem extends StatelessWidget {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    child: Image.asset(
-                      "assets/images/" + item.picName + ".jpg",
-                      fit: BoxFit.cover,
-                    ),
+                  BlocBuilder<RockListBloc, RockListState>(
+                    buildWhen: (p, c) => p.rockPhotos != c.rockPhotos,
+                    builder: (context, state) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: CustomPaint(
+                          painter: RockListItemPainter(
+                            state.rockPhotos
+                                .firstWhere((element) =>
+                                    element.imageName == item.picName)
+                                .image,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0,
+                              vertical: 16.0,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  item.localizedName,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                ),
+                                Row(
+                                  children: [
+                                    Transform.rotate(
+                                      angle: 3 * math.pi / 12,
+                                      child: const Icon(
+                                        CommunityMaterialIcons.navigation,
+                                        color: Colors.black,
+                                        size: 16,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 8.0,
+                                    ),
+                                    BlocBuilder<SettingsBloc, SettingsState>(
+                                      buildWhen: (p, c) =>
+                                          p.geolocationEnabled !=
+                                          c.geolocationEnabled,
+                                      builder: (context, settingsState) {
+                                        return Text(
+                                          settingsState.geolocationEnabled
+                                              ? location != null
+                                                  ? _getDistance(
+                                                      location!,
+                                                      item,
+                                                      localization,
+                                                    )
+                                                  : localization
+                                                      .distance_not_defined
+                                              : localization
+                                                  .distance_not_defined,
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   Positioned(
                     top: 8,
                     right: 8,
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(16)),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: 5.0,
-                          sigmaY: 5.0,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8.0,
+                          horizontal: 16.0,
                         ),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 8.0,
-                            horizontal: 16.0,
-                          ),
-                          color: Colors.white54,
-                          child: Text(
-                            _difficultyToString(item.difficulty, localization),
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 8,
-                    left: 8,
-                    right: 8,
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(16)),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: 5.0,
-                          sigmaY: 5.0,
-                        ),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16.0,
-                            vertical: 8.0,
-                          ),
-                          color: Colors.white54,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                item.localizedName,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
-                              ),
-                              Row(
-                                children: [
-                                  Transform.rotate(
-                                    angle: 3 * math.pi / 12,
-                                    child: const Icon(
-                                      CommunityMaterialIcons.navigation,
-                                      color: Colors.black,
-                                      size: 16,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  Text(
-                                    context
-                                            .read<SettingsBloc>()
-                                            .state
-                                            .geolocationEnabled
-                                        ? location != null
-                                            ? _getDistance(
-                                                location!,
-                                                item,
-                                                localization,
-                                              )
-                                            : localization.distance_not_defined
-                                        : localization.distance_not_defined,
-                                    style: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                        color: Colors.white70,
+                        child: Text(
+                          _difficultyToString(item.difficulty, localization),
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
                           ),
                         ),
                       ),
@@ -199,6 +197,3 @@ class RockListItem extends StatelessWidget {
     );
   }
 }
-/*
-
- */

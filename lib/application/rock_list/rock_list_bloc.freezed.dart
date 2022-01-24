@@ -968,12 +968,14 @@ class _$RockListStateTearOff {
   _RockListState call(
       {required List<RockListItemEntity> allRocks,
       required List<RockListItemEntity> rocksToShow,
+      required List<RockPhoto> rockPhotos,
       required String searchString,
       required Option<LatLng> userLocation,
       required bool loading}) {
     return _RockListState(
       allRocks: allRocks,
       rocksToShow: rocksToShow,
+      rockPhotos: rockPhotos,
       searchString: searchString,
       userLocation: userLocation,
       loading: loading,
@@ -989,6 +991,7 @@ mixin _$RockListState {
   List<RockListItemEntity> get allRocks => throw _privateConstructorUsedError;
   List<RockListItemEntity> get rocksToShow =>
       throw _privateConstructorUsedError;
+  List<RockPhoto> get rockPhotos => throw _privateConstructorUsedError;
   String get searchString => throw _privateConstructorUsedError;
   Option<LatLng> get userLocation => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
@@ -1006,6 +1009,7 @@ abstract class $RockListStateCopyWith<$Res> {
   $Res call(
       {List<RockListItemEntity> allRocks,
       List<RockListItemEntity> rocksToShow,
+      List<RockPhoto> rockPhotos,
       String searchString,
       Option<LatLng> userLocation,
       bool loading});
@@ -1024,6 +1028,7 @@ class _$RockListStateCopyWithImpl<$Res>
   $Res call({
     Object? allRocks = freezed,
     Object? rocksToShow = freezed,
+    Object? rockPhotos = freezed,
     Object? searchString = freezed,
     Object? userLocation = freezed,
     Object? loading = freezed,
@@ -1037,6 +1042,10 @@ class _$RockListStateCopyWithImpl<$Res>
           ? _value.rocksToShow
           : rocksToShow // ignore: cast_nullable_to_non_nullable
               as List<RockListItemEntity>,
+      rockPhotos: rockPhotos == freezed
+          ? _value.rockPhotos
+          : rockPhotos // ignore: cast_nullable_to_non_nullable
+              as List<RockPhoto>,
       searchString: searchString == freezed
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
@@ -1063,6 +1072,7 @@ abstract class _$RockListStateCopyWith<$Res>
   $Res call(
       {List<RockListItemEntity> allRocks,
       List<RockListItemEntity> rocksToShow,
+      List<RockPhoto> rockPhotos,
       String searchString,
       Option<LatLng> userLocation,
       bool loading});
@@ -1083,6 +1093,7 @@ class __$RockListStateCopyWithImpl<$Res>
   $Res call({
     Object? allRocks = freezed,
     Object? rocksToShow = freezed,
+    Object? rockPhotos = freezed,
     Object? searchString = freezed,
     Object? userLocation = freezed,
     Object? loading = freezed,
@@ -1096,6 +1107,10 @@ class __$RockListStateCopyWithImpl<$Res>
           ? _value.rocksToShow
           : rocksToShow // ignore: cast_nullable_to_non_nullable
               as List<RockListItemEntity>,
+      rockPhotos: rockPhotos == freezed
+          ? _value.rockPhotos
+          : rockPhotos // ignore: cast_nullable_to_non_nullable
+              as List<RockPhoto>,
       searchString: searchString == freezed
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
@@ -1118,6 +1133,7 @@ class _$_RockListState implements _RockListState {
   const _$_RockListState(
       {required this.allRocks,
       required this.rocksToShow,
+      required this.rockPhotos,
       required this.searchString,
       required this.userLocation,
       required this.loading});
@@ -1127,6 +1143,8 @@ class _$_RockListState implements _RockListState {
   @override
   final List<RockListItemEntity> rocksToShow;
   @override
+  final List<RockPhoto> rockPhotos;
+  @override
   final String searchString;
   @override
   final Option<LatLng> userLocation;
@@ -1135,7 +1153,7 @@ class _$_RockListState implements _RockListState {
 
   @override
   String toString() {
-    return 'RockListState(allRocks: $allRocks, rocksToShow: $rocksToShow, searchString: $searchString, userLocation: $userLocation, loading: $loading)';
+    return 'RockListState(allRocks: $allRocks, rocksToShow: $rocksToShow, rockPhotos: $rockPhotos, searchString: $searchString, userLocation: $userLocation, loading: $loading)';
   }
 
   @override
@@ -1146,6 +1164,8 @@ class _$_RockListState implements _RockListState {
             const DeepCollectionEquality().equals(other.allRocks, allRocks) &&
             const DeepCollectionEquality()
                 .equals(other.rocksToShow, rocksToShow) &&
+            const DeepCollectionEquality()
+                .equals(other.rockPhotos, rockPhotos) &&
             const DeepCollectionEquality()
                 .equals(other.searchString, searchString) &&
             const DeepCollectionEquality()
@@ -1158,6 +1178,7 @@ class _$_RockListState implements _RockListState {
       runtimeType,
       const DeepCollectionEquality().hash(allRocks),
       const DeepCollectionEquality().hash(rocksToShow),
+      const DeepCollectionEquality().hash(rockPhotos),
       const DeepCollectionEquality().hash(searchString),
       const DeepCollectionEquality().hash(userLocation),
       const DeepCollectionEquality().hash(loading));
@@ -1172,6 +1193,7 @@ abstract class _RockListState implements RockListState {
   const factory _RockListState(
       {required List<RockListItemEntity> allRocks,
       required List<RockListItemEntity> rocksToShow,
+      required List<RockPhoto> rockPhotos,
       required String searchString,
       required Option<LatLng> userLocation,
       required bool loading}) = _$_RockListState;
@@ -1180,6 +1202,8 @@ abstract class _RockListState implements RockListState {
   List<RockListItemEntity> get allRocks;
   @override
   List<RockListItemEntity> get rocksToShow;
+  @override
+  List<RockPhoto> get rockPhotos;
   @override
   String get searchString;
   @override

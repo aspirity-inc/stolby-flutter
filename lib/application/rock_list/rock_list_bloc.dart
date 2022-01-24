@@ -1,9 +1,16 @@
+import 'dart:async';
+import 'dart:ui' as ui;
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:drift/drift.dart' hide JsonKey;
+import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image/image.dart' as img;
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_photo.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 
 part 'rock_list_bloc.freezed.dart';
@@ -18,18 +25,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     on<RockListEvent>(
       (event, emit) async {
         await event.map(
-          initialized: (e) async {
-            emit(state.copyWith(loading: true));
-            final rocksOrError = await _rockListRepository.getRocksList();
-            rocksOrError.fold(
-              (f) => emit(state.copyWith(
-                loading: false,
-              )),
-              (r) => emit(
-                state.copyWith(loading: false, rocksToShow: r, allRocks: r),
-              ),
-            );
-          },
+          initialized: (e) => _initialized(emit),
           searchStringChanged: (e) async {
             _searchStringChanged(e.searchString);
             emit(state.copyWith(searchString: e.searchString));
@@ -83,6 +79,51 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
               latLng,
             ),
           ),
+    );
+  }
+
+  FutureOr<void> _initialized(Emitter<RockListState> emit) async {
+    emit(state.copyWith(loading: true));
+    final rocksOrError = await _rockListRepository.getRocksList();
+    await rocksOrError.fold(
+      (f) async => emit(state.copyWith(
+        loading: false,
+      )),
+      (r) async {
+        final photos = await Future.wait(
+          r.map(
+            (e) => _loadImage(
+              picName: e.picName,
+            ),
+          ),
+        );
+        emit(
+          state.copyWith(
+            loading: false,
+            rocksToShow: r,
+            allRocks: r,
+            rockPhotos: photos,
+          ),
+        );
+      },
+    );
+  }
+
+  Future<RockPhoto> _loadImage({required String picName}) async {
+    final imageFromBundle = await rootBundle.load('assets/images/$picName.jpg');
+    final Uint8List lst = Uint8List.view(imageFromBundle.buffer);
+    final img.Image? imageI = img.decodeImage(lst.toList());
+    final img.Image resized = img.copyResize(imageI!, height: 200);
+    final List<int> resizedBytes = img.encodePng(resized);
+    final codec = await ui.instantiateImageCodec(
+      Uint8List.fromList(resizedBytes),
+    );
+    final frame = await codec.getNextFrame();
+    final image = frame.image;
+
+    return RockPhoto(
+      image: image,
+      imageName: picName,
     );
   }
 
