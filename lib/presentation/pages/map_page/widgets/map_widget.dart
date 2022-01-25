@@ -162,7 +162,15 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SettingsBloc, SettingsState>(
+    return BlocConsumer<SettingsBloc, SettingsState>(
+      listener: (context, settingsState) {
+        settingsState.reversedMap
+            ? mapController.moveCamera(
+                CameraUpdate.bearingTo(180),
+              )
+            : null;
+      },
+      listenWhen: (p, c) => p.mapUserCentering != c.mapUserCentering,
       builder: (context, settingsState) {
         return BlocConsumer<MapControlBloc, MapControlState>(
           listener: (context, mapControlState) {
@@ -198,8 +206,9 @@ class _MapWidgetState extends State<MapWidget> {
                             ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
                             : 'mapbox://styles/aspirity/cke81mk9r4mhk19o83lermlpt',
                         compassEnabled: false,
+                        trackCameraPosition: settingsState.mapUserCentering,
                         myLocationTrackingMode: settingsState.mapUserCentering
-                            ? MyLocationTrackingMode.Tracking
+                            ? MyLocationTrackingMode.TrackingGPS
                             : MyLocationTrackingMode.None,
                         myLocationEnabled: settingsState.geolocationEnabled,
                         logoViewMargins: const Point(16, 32),
