@@ -6,7 +6,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 
 import 'rock_list_bloc_test.mocks.dart';
@@ -16,7 +16,7 @@ void main() {
   late MockIRockListRepository _repository;
   late RockListBloc _bloc;
 
-  const testItem = RockListItemEntity(
+  const testItem = RockEntity(
     id: 0,
     latitude: 55.9174,
     longitude: 92.73843,

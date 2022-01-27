@@ -8,14 +8,14 @@ import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/application/location/location_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_button.dart';
 
 class MapRockCard extends StatelessWidget {
-  final RockMapEntity rock;
+  final RockEntity rock;
   final bool selected;
   final VoidCallback onMarkerPressed;
 
@@ -28,7 +28,7 @@ class MapRockCard extends StatelessWidget {
 
   String _getDistance(
     UserLocationEntity user,
-    RockMapEntity item,
+    RockEntity item,
     AppLocalizations localization,
   ) {
     const distance = Distance();

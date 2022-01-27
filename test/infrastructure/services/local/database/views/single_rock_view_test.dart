@@ -6,7 +6,7 @@ void main() {
   group('toDomain()', () {
     test('Should return correct entity', () {
       // arrange
-      const initial = SingleRockView(
+      const initial = DetailedRockView(
         id: 0,
         difficulty: 1,
         localizedName: 'The Granny and the Granddaughter',

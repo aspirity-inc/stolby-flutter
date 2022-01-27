@@ -9,7 +9,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:stolby_flutter/domain/core/failures.dart' as _i5;
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart'
     as _i7;
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart'
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart'
     as _i6;
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart'
     as _i3;
@@ -35,13 +35,13 @@ class MockIRockListRepository extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.DatabaseFailure, List<_i6.RockListItemEntity>>>
-      getRocksList() => (super.noSuchMethod(Invocation.method(#getRocksList, []),
-          returnValue:
-              Future<_i2.Either<_i5.DatabaseFailure, List<_i6.RockListItemEntity>>>.value(
-                  _FakeEither_0<_i5.DatabaseFailure,
-                      List<_i6.RockListItemEntity>>())) as _i4.Future<
-          _i2.Either<_i5.DatabaseFailure, List<_i6.RockListItemEntity>>>);
+  _i4.Future<_i2.Either<_i5.DatabaseFailure, List<_i6.RockEntity>>>
+      getRocksList() => (super.noSuchMethod(
+          Invocation.method(#getRocksList, []),
+          returnValue: Future<
+                  _i2.Either<_i5.DatabaseFailure, List<_i6.RockEntity>>>.value(
+              _FakeEither_0<_i5.DatabaseFailure, List<_i6.RockEntity>>())) as _i4
+          .Future<_i2.Either<_i5.DatabaseFailure, List<_i6.RockEntity>>>);
   @override
   _i4.Future<_i2.Either<_i5.DatabaseFailure, _i7.DetailedRockEntity>>
       getSingleRock(int? id) => (super.noSuchMethod(

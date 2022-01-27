@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_list_view.dart';
 
 void main() {
@@ -15,7 +15,7 @@ void main() {
         height: 40,
         picName: 'pic_babkaivnuchka',
       );
-      const expected = RockListItemEntity(
+      const expected = RockEntity(
         id: 0,
         difficulty: 1,
         localizedName: 'The Granny and the Granddaughter',

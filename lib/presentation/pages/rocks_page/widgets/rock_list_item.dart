@@ -1,6 +1,4 @@
 import 'dart:math' as math;
-import 'dart:ui';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +9,13 @@ import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rock_list_item_painter.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 
 class RockListItem extends StatelessWidget {
   final int index;
-  final RockListItemEntity item;
+  final RockEntity item;
   final UserLocationEntity? location;
 
   const RockListItem({
@@ -44,7 +42,7 @@ class RockListItem extends StatelessWidget {
 
   String _getDistance(
     UserLocationEntity user,
-    RockListItemEntity item,
+    RockEntity item,
     AppLocalizations localization,
   ) {
     const distance = Distance();
