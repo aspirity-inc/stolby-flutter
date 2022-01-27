@@ -12,29 +12,36 @@ class RockElevation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
+    final color = Theme.of(context).colorScheme.secondary;
 
     return Column(
       children: [
         Icon(
           Icons.trending_up,
           size: 36,
-          color: Theme.of(context).colorScheme.onBackground,
+          color: color,
         ),
         const SizedBox(
           height: 8,
         ),
-        Text(
-          '$height',
-          style: const TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          localization.rock_screen_text_height_meters,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
+        RichText(
+          text: TextSpan(
+            text: '$height ',
+            style: TextStyle(
+              fontSize: 24,
+              color: color.withOpacity(0.6),
+              fontWeight: FontWeight.w600,
+            ),
+            children: <TextSpan>[
+              TextSpan(
+                text: localization.distance_meters,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: color.withOpacity(0.6),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
         ),
       ],

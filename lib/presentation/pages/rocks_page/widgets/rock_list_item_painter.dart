@@ -25,36 +25,28 @@ class RockListItemPainter extends CustomPainter {
     canvas.drawImageRect(
       image,
       Rect.fromPoints(
-        Offset((image.width - size.width) / 2 + 8, size.height - 8 - 40),
-        Offset(
-          image.width - (image.width - size.width) / 2 - 8,
-          size.height - 8,
-        ),
+        Offset((image.width - size.width) / 2, size.height - 48),
+        Offset(image.width - (image.width - size.width) / 2, size.height - 16),
       ),
       Rect.fromPoints(
-        Offset(8, size.height - 8 - 40),
-        Offset(
-          size.width - 8,
-          size.height - 8,
-        ),
+        Offset(0, size.height - 56),
+        Offset(size.width, size.height),
       ),
       Paint()..imageFilter = ui.ImageFilter.blur(sigmaY: 5, sigmaX: 5),
     );
 
     var paint = Paint()
-      ..color = Colors.white54
+      ..color = Colors.white24
       ..style = PaintingStyle.fill;
 
     canvas.drawRRect(
-      RRect.fromRectAndRadius(
+      RRect.fromRectAndCorners(
         Rect.fromPoints(
-          Offset(8, size.height - 8 - 56),
-          Offset(
-            size.width - 8,
-            size.height - 8,
-          ),
+          Offset(0, size.height - 56),
+          Offset(size.width, size.height),
         ),
-        const Radius.circular(12),
+        bottomLeft: const Radius.circular(12),
+        bottomRight: const Radius.circular(12),
       ),
       paint,
     );

@@ -1,4 +1,4 @@
-import 'package:community_material_icon/community_material_icon.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -13,44 +13,51 @@ class DistanceToRock extends StatelessWidget {
   String _distanceToRock(double? distance, AppLocalizations localization) {
     return distance != null
         ? distance >= 1000
-            ? (distance / 1000).toStringAsFixed(2).replaceAll('.', ',')
-            : distance.toStringAsFixed(0)
+            ? (distance / 1000).toStringAsFixed(2).replaceAll('.', ',') + " "
+            : distance.toStringAsFixed(0) + " "
         : localization.distance_not_defined;
   }
 
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
+    final color = Theme.of(context).colorScheme.secondary;
 
     return Column(
       children: [
         Icon(
-          CommunityMaterialIcons.map_marker_distance,
-          size: 36,
-          color: Theme.of(context).colorScheme.onBackground,
+          CupertinoIcons.location_fill,
+          size: 24,
+          color: color,
         ),
-        SizedBox(
-          height: distance != null ? 8 : 16,
+        const SizedBox(
+          height: 16,
         ),
-        Text(
-          _distanceToRock(
-            distance,
-            localization,
-          ),
-          style: const TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        Text(
-          distance != null
-              ? distance! >= 1000
-                  ? localization.distance_kilometers
-                  : localization.distance_meters
-              : '',
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
+        RichText(
+          text: TextSpan(
+            text: _distanceToRock(
+              distance,
+              localization,
+            ),
+            style: TextStyle(
+              fontSize: 24,
+              color: color.withOpacity(0.6),
+              fontWeight: FontWeight.w600,
+            ),
+            children: <TextSpan>[
+              TextSpan(
+                text: distance != null
+                    ? distance! >= 1000
+                        ? localization.distance_kilometers
+                        : localization.distance_meters
+                    : '',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: color.withOpacity(0.6),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
         ),
       ],

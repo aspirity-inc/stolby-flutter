@@ -8,4 +8,6 @@ class AppColors {
   static const Color backgroundDark = Color(0xFF262626);
   static const Color greyLight = Color(0xFFEAEAEA);
   static const Color greyDark = Color(0xFF686868);
+  static const Color mediumDifficulty = Color(0xFFFFB800);
+  static const Color hardDifficulty = Color(0xFFD91313);
 }

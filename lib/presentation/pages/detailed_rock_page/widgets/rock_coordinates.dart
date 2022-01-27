@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:latlong2/latlong.dart';
@@ -48,19 +47,19 @@ class RockCoordinates extends StatelessWidget {
       child: Column(
         children: [
           Icon(
-            CupertinoIcons.location,
+            Icons.location_pin,
             size: 36,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: color,
           ),
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
           Text(
             '$latitude,',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,
-              color: color,
+              color: color.withOpacity(0.6),
               decoration: TextDecoration.underline,
             ),
           ),
@@ -69,7 +68,7 @@ class RockCoordinates extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,
-              color: color,
+              color: color.withOpacity(0.6),
               decoration: TextDecoration.underline,
             ),
           ),

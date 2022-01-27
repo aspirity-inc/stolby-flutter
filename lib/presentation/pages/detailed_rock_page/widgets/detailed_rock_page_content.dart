@@ -1,117 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';
+import 'package:stolby_flutter/application/location/location_bloc.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/add_marker_button.dart';
+import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_image.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_info_row.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_text.dart';
-import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
-import 'package:auto_route/auto_route.dart';
 
 class DetailedRockPageContent extends StatelessWidget {
   const DetailedRockPageContent({Key? key}) : super(key: key);
 
-  String _difficultyToString(int difficulty, AppLocalizations localization) {
-    switch (difficulty) {
-      case 0:
-        return localization.difficulty_short_0;
-      case 1:
-        return localization.difficulty_short_1;
-      case 2:
-        return localization.difficulty_short_2;
-      case 3:
-        return localization.difficulty_short_3;
-      default:
-        return "difficulty name not found";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
-
-    return BlocBuilder<DetailedRockBloc, DetailedRockState>(
-      builder: (context, state) {
-        return Scaffold(
-          appBar: DetailedRockAppbar(
-            difficulty: state.rock.fold(
-              () => null,
-              (r) => _difficultyToString(
-                r.difficulty,
-                localization,
+    return BlocListener<LocationBloc, LocationState>(
+      listener: (context, locationState) {
+        if (locationState.userLocation.isSome()) {
+          locationState.userLocation.fold(
+            () => null,
+            (l) => context.read<DetailedRockBloc>().add(
+                  DetailedRockEvent.locationChanged(
+                    location: LatLng(
+                      l.latitude,
+                      l.longitude,
+                    ),
+                  ),
+                ),
+          );
+        }
+      },
+      child: BlocBuilder<DetailedRockBloc, DetailedRockState>(
+        builder: (context, state) {
+          return Scaffold(
+            appBar: DetailedRockAppbar(
+              localizedName: state.rock.fold(
+                () => null,
+                (a) => a.localizedName,
               ),
             ),
-          ),
-          body: state.rock.fold(
-            () => const SizedBox(),
-            (rock) => Stack(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                  ),
-                  child: ListView(
-                    physics: const BouncingScrollPhysics(),
-                    children: [
-                      Text(
-                        rock.localizedName,
-                        style: const TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      InkWell(
-                        onTap: () => context.router.push(
-                          RockViewImageRoute(
-                            picturePath: rock.picName,
-                          ),
-                        ),
-                        child: ClipRRect(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(16)),
-                          child: Image.asset(
-                            "assets/images/" + rock.picName + ".jpg",
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      RockInfoRow(
-                        rock: rock,
-                        distance: state.distance.fold(() => null, (a) => a),
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      RockText(
-                        shortInfo: rock.shortInfo,
-                        fullInfo: rock.fullInfo,
-                      ),
-                      const SizedBox(
-                        height: 64,
-                      ),
-                    ],
-                  ),
+            body: state.rock.fold(
+              () => const SizedBox(),
+              (rock) => Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 16.0,
                 ),
-                Positioned(
-                  bottom: 16,
-                  left: 0,
-                  right: 0,
-                  child: AddMarkerButton(
-                    rock: rock,
-                  ),
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  children: [
+                    RockImage(
+                      rock: rock,
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    RockInfoRow(
+                      rock: rock,
+                      distance: state.distance.fold(() => null, (a) => a),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    RockText(
+                      shortInfo: rock.shortInfo,
+                      fullInfo: rock.fullInfo,
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    AddMarkerButton(
+                      rock: rock,
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
