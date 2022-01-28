@@ -17,4 +17,6 @@ final ThemeData lightTheme = ThemeData(
   textTheme: const TextTheme(
     bodyText1: TextStyle(color: Colors.white),
   ),
+  primaryColorLight: AppColors.greyDark,
+  primaryColorDark: AppColors.primary,
 );

@@ -12,7 +12,7 @@ class RockElevation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
-    final color = Theme.of(context).colorScheme.secondary;
+    final color = Theme.of(context).primaryColorDark;
 
     return Column(
       children: [

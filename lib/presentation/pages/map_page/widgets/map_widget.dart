@@ -10,8 +10,6 @@ import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
 import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
 
-import 'map_alert_dialog.dart';
-
 class MapWidget extends StatefulWidget {
   final latlong.LatLng? initialCoordinates;
 
@@ -46,10 +44,6 @@ class _MapWidgetState extends State<MapWidget> {
           context.read<MapControlBloc>().add(
                 MapControlEvent.rockClicked(rock),
               );
-          showDialog(
-            context: context,
-            builder: (context) => const MapAlertDialog(),
-          );
           _handleSelected(_getCurrentTheme(context));
         } on FormatException {
           return;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_geolocation_icon_button.dart';
+import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_rock_card_content.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_widget.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_zoom_icon_button.dart';
 
@@ -40,6 +41,12 @@ class MapPage extends StatelessWidget {
             top: 0,
             right: 0,
             child: MapGeolocationIconButton(),
+          ),
+          const Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: MapRockCardContent(),
           ),
         ],
       ),

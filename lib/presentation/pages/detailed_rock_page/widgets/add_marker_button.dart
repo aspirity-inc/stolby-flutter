@@ -25,16 +25,11 @@ class AddMarkerButton extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                if (state.clickedRock.isSome()) {
-                  context.read<MapControlBloc>().add(
-                        MapControlEvent.handleMarkerSelection(
-                          state.clickedRock.fold(
-                            () => throw (Exception('unexpected')),
-                            (a) => a,
-                          ),
-                        ),
-                      );
-                }
+                context.read<MapControlBloc>().add(
+                      MapControlEvent.handleMarkerSelection(
+                        rock.toRockEntity(),
+                      ),
+                    );
               },
               borderRadius: const BorderRadius.all(Radius.circular(24)),
               child: Container(

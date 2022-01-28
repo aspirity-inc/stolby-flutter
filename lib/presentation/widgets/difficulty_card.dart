@@ -46,20 +46,20 @@ class DifficultyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
 
-    return ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(16)),
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 8.0,
-          horizontal: 16.0,
-        ),
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 8.0,
+        horizontal: 16.0,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(24)),
         color: _difficultyToColor(difficulty),
-        child: Text(
-          _difficultyToString(difficulty, localization),
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: textSize,
-          ),
+      ),
+      child: Text(
+        _difficultyToString(difficulty, localization),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: textSize,
         ),
       ),
     );

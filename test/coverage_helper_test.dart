@@ -55,7 +55,6 @@ import 'package:stolby_flutter/presentation/pages/detailed_rock_page/detailed_ro
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_elevation.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_text.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/distance_to_rock.dart';
-import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/add_marker_button.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_info_row.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_coordinates.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/detailed_rock_page_content.dart';

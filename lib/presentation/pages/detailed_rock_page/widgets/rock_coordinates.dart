@@ -23,7 +23,7 @@ class RockCoordinates extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.secondary;
+    final color = Theme.of(context).primaryColorDark;
 
     return InkWell(
       onTap: () {

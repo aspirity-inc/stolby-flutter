@@ -21,10 +21,7 @@ class DetailedRockPageContent extends StatelessWidget {
             () => null,
             (l) => context.read<DetailedRockBloc>().add(
                   DetailedRockEvent.locationChanged(
-                    location: LatLng(
-                      l.latitude,
-                      l.longitude,
-                    ),
+                    location: LatLng(l.latitude, l.longitude),
                   ),
                 ),
           );
