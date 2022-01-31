@@ -34,14 +34,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
               child: TextButton(
                 onPressed: () {
-                  if (currentIndex == 2) {
-                    context
-                        .read<SettingsBloc>()
-                        .add(const SettingsEvent.onboardingVisited());
-                    context.router.pop();
-                  } else {
-                    currentIndex++;
-                  }
+                  context
+                      .read<SettingsBloc>()
+                      .add(const SettingsEvent.onboardingVisited());
+                  context.router.pop();
                 },
                 child: Text(
                   currentIndex == 2
