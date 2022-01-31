@@ -38,77 +38,80 @@ class MapCardInfo extends StatelessWidget {
     final localization = AppLocalizations.of(context)!;
     final ThemeData theme = Theme.of(context);
 
-    return SizedBox(
-      height: 128,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            rock.localizedName,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 24,
-              color: theme.colorScheme.onBackground,
-            ),
-          ),
-          const Expanded(
-            child: SizedBox(),
-          ),
-          DifficultyAndElevationRow(
-            elevation: rock.height,
-            difficulty: rock.difficulty,
-          ),
-          const Expanded(
-            child: SizedBox(),
-          ),
-          SizedBox(
-            width: 96,
-            child: Text(
-              _difficultyToStringLong(
-                rock.difficulty,
-                localization,
-              ),
-              maxLines: 5,
+    return Expanded(
+      child: SizedBox(
+        height: 136,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              rock.localizedName,
               overflow: TextOverflow.ellipsis,
-              softWrap: false,
+              maxLines: 1,
               style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: theme.primaryColorLight,
+                fontWeight: FontWeight.w600,
+                fontSize: 24,
+                color: theme.colorScheme.onBackground,
               ),
             ),
-          ),
-          const Expanded(
-            child: SizedBox(),
-          ),
-          GestureDetector(
-            onTap: () => context.router.push(
-              DetailedRockRoute(
-                rockId: rock.id,
+            const Expanded(
+              child: SizedBox(),
+            ),
+            DifficultyAndElevationRow(
+              elevation: rock.height,
+              difficulty: rock.difficulty,
+            ),
+            const Expanded(
+              child: SizedBox(),
+            ),
+            SizedBox(
+              width: 96,
+              child: Text(
+                _difficultyToStringLong(
+                  rock.difficulty,
+                  localization,
+                ),
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  color: theme.primaryColorLight,
+                ),
               ),
             ),
-            child: Row(
-              children: [
-                Icon(
-                  CommunityMaterialIcons.image_filter_hdr,
-                  size: 20,
-                  color: theme.colorScheme.secondary,
+            const Expanded(
+              child: SizedBox(),
+            ),
+            GestureDetector(
+              onTap: () => context.router.push(
+                DetailedRockRoute(
+                  rockId: rock.id,
                 ),
-                const SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  localization.action_settings,
-                  style: TextStyle(
-                    fontSize: 14,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    CommunityMaterialIcons.image_filter_hdr,
+                    size: 20,
                     color: theme.colorScheme.secondary,
                   ),
-                ),
-              ],
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    localization.action_settings,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: theme.colorScheme.secondary,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

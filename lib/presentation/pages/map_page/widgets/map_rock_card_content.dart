@@ -39,6 +39,7 @@ class MapRockCardContent extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         ClipRRect(
                           borderRadius:
@@ -53,7 +54,9 @@ class MapRockCardContent extends StatelessWidget {
                         const SizedBox(
                           width: 16,
                         ),
-                        MapCardInfo(rock: rock),
+                        MapCardInfo(
+                          rock: rock,
+                        ),
                       ],
                     ),
                     const SizedBox(

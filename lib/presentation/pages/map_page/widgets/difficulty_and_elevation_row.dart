@@ -49,7 +49,7 @@ class DifficultyAndElevationRow extends StatelessWidget {
 
     return SizedBox(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Container(
             padding: const EdgeInsets.symmetric(
@@ -73,8 +73,8 @@ class DifficultyAndElevationRow extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            width: 46,
+          const Expanded(
+            child: SizedBox(),
           ),
           Icon(
             Icons.trending_up,
