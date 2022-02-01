@@ -96,4 +96,3 @@ class DifficultyAndElevationRow extends StatelessWidget {
     );
   }
 }
-

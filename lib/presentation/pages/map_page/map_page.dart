@@ -43,7 +43,7 @@ class MapPage extends StatelessWidget {
             child: MapGeolocationIconButton(),
           ),
           const Positioned(
-            bottom: 0,
+            bottom: 16,
             left: 0,
             right: 0,
             child: MapRockCardContent(),
