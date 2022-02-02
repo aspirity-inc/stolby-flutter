@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/app_database.dart';
 
@@ -15,8 +15,7 @@ class RockListRepository implements IRockListRepository {
   RockListRepository(this.db);
 
   @override
-  Future<Either<DatabaseFailure, List<RockListItemEntity>>>
-      getRocksList() async {
+  Future<Either<DatabaseFailure, List<RockEntity>>> getRocksList() async {
     try {
       final language = Platform.localeName.split('_')[0];
       final result = await db.getRocksList(

@@ -966,8 +966,8 @@ class _$RockListStateTearOff {
   const _$RockListStateTearOff();
 
   _RockListState call(
-      {required List<RockListItemEntity> allRocks,
-      required List<RockListItemEntity> rocksToShow,
+      {required List<RockEntity> allRocks,
+      required List<RockEntity> rocksToShow,
       required List<RockPhoto> rockPhotos,
       required String searchString,
       required Option<LatLng> userLocation,
@@ -988,9 +988,8 @@ const $RockListState = _$RockListStateTearOff();
 
 /// @nodoc
 mixin _$RockListState {
-  List<RockListItemEntity> get allRocks => throw _privateConstructorUsedError;
-  List<RockListItemEntity> get rocksToShow =>
-      throw _privateConstructorUsedError;
+  List<RockEntity> get allRocks => throw _privateConstructorUsedError;
+  List<RockEntity> get rocksToShow => throw _privateConstructorUsedError;
   List<RockPhoto> get rockPhotos => throw _privateConstructorUsedError;
   String get searchString => throw _privateConstructorUsedError;
   Option<LatLng> get userLocation => throw _privateConstructorUsedError;
@@ -1007,8 +1006,8 @@ abstract class $RockListStateCopyWith<$Res> {
           RockListState value, $Res Function(RockListState) then) =
       _$RockListStateCopyWithImpl<$Res>;
   $Res call(
-      {List<RockListItemEntity> allRocks,
-      List<RockListItemEntity> rocksToShow,
+      {List<RockEntity> allRocks,
+      List<RockEntity> rocksToShow,
       List<RockPhoto> rockPhotos,
       String searchString,
       Option<LatLng> userLocation,
@@ -1037,11 +1036,11 @@ class _$RockListStateCopyWithImpl<$Res>
       allRocks: allRocks == freezed
           ? _value.allRocks
           : allRocks // ignore: cast_nullable_to_non_nullable
-              as List<RockListItemEntity>,
+              as List<RockEntity>,
       rocksToShow: rocksToShow == freezed
           ? _value.rocksToShow
           : rocksToShow // ignore: cast_nullable_to_non_nullable
-              as List<RockListItemEntity>,
+              as List<RockEntity>,
       rockPhotos: rockPhotos == freezed
           ? _value.rockPhotos
           : rockPhotos // ignore: cast_nullable_to_non_nullable
@@ -1070,8 +1069,8 @@ abstract class _$RockListStateCopyWith<$Res>
       __$RockListStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<RockListItemEntity> allRocks,
-      List<RockListItemEntity> rocksToShow,
+      {List<RockEntity> allRocks,
+      List<RockEntity> rocksToShow,
       List<RockPhoto> rockPhotos,
       String searchString,
       Option<LatLng> userLocation,
@@ -1102,11 +1101,11 @@ class __$RockListStateCopyWithImpl<$Res>
       allRocks: allRocks == freezed
           ? _value.allRocks
           : allRocks // ignore: cast_nullable_to_non_nullable
-              as List<RockListItemEntity>,
+              as List<RockEntity>,
       rocksToShow: rocksToShow == freezed
           ? _value.rocksToShow
           : rocksToShow // ignore: cast_nullable_to_non_nullable
-              as List<RockListItemEntity>,
+              as List<RockEntity>,
       rockPhotos: rockPhotos == freezed
           ? _value.rockPhotos
           : rockPhotos // ignore: cast_nullable_to_non_nullable
@@ -1139,9 +1138,9 @@ class _$_RockListState implements _RockListState {
       required this.loading});
 
   @override
-  final List<RockListItemEntity> allRocks;
+  final List<RockEntity> allRocks;
   @override
-  final List<RockListItemEntity> rocksToShow;
+  final List<RockEntity> rocksToShow;
   @override
   final List<RockPhoto> rockPhotos;
   @override
@@ -1191,17 +1190,17 @@ class _$_RockListState implements _RockListState {
 
 abstract class _RockListState implements RockListState {
   const factory _RockListState(
-      {required List<RockListItemEntity> allRocks,
-      required List<RockListItemEntity> rocksToShow,
+      {required List<RockEntity> allRocks,
+      required List<RockEntity> rocksToShow,
       required List<RockPhoto> rockPhotos,
       required String searchString,
       required Option<LatLng> userLocation,
       required bool loading}) = _$_RockListState;
 
   @override
-  List<RockListItemEntity> get allRocks;
+  List<RockEntity> get allRocks;
   @override
-  List<RockListItemEntity> get rocksToShow;
+  List<RockEntity> get rocksToShow;
   @override
   List<RockPhoto> get rockPhotos;
   @override

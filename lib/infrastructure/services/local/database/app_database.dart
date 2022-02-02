@@ -8,7 +8,6 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks_localized.dart';
-import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_coordinates_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/single_rock_view.dart';
 
@@ -67,35 +66,7 @@ class AppDatabase extends _$AppDatabase {
         .toList();
   }
 
-  Future<List<RocksCoordinatesListView>> getRocksCoordinatesList(
-    String language,
-  ) async {
-    final query = select(rocks).join(
-      [
-        leftOuterJoin(
-          rocksLocalized,
-          rocksLocalized.rockId.equalsExp(rocks.id),
-        ),
-      ],
-    )..where(
-        rocksLocalized.language.equals(language),
-      );
-    final result = await query.get();
-
-    return result
-        .map(
-          (row) => RocksCoordinatesListView(
-            id: row.readTable(rocks).id,
-            latitude: row.readTable(rocks).latitude,
-            longitude: row.readTable(rocks).longitude,
-            picName: row.readTable(rocks).picName,
-            localizedName: row.readTable(rocksLocalized).name,
-          ),
-        )
-        .toList();
-  }
-
-  Future<SingleRockView> getSingleRock(
+  Future<DetailedRockView> getSingleRock(
     String language,
     int id,
   ) async {
@@ -111,7 +82,7 @@ class AppDatabase extends _$AppDatabase {
       );
     final result = await query.getSingle();
 
-    return SingleRockView(
+    return DetailedRockView(
       id: result.readTable(rocks).id,
       latitude: result.readTable(rocks).latitude,
       longitude: result.readTable(rocks).longitude,

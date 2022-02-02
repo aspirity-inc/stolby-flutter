@@ -13,7 +13,7 @@ class RockViewImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const DetailedRockAppbar(
-        difficulty: null,
+        localizedName: null,
       ),
       body: Center(
         child: InteractiveViewer(

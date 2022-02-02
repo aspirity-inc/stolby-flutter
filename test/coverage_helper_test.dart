@@ -2,7 +2,6 @@
 import 'package:stolby_flutter/infrastructure/features/settings/settings_repository.dart';
 import 'package:stolby_flutter/infrastructure/features/rocks_list/rock_list_repository.dart';
 import 'package:stolby_flutter/infrastructure/features/location/location_repository.dart';
-import 'package:stolby_flutter/infrastructure/features/rocks_map/map_repository.dart';
 import 'package:stolby_flutter/infrastructure/core/services_injectable_module.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/location_service.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_location_dto.dart';
@@ -12,7 +11,6 @@ import 'package:stolby_flutter/infrastructure/services/local/database/app_databa
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks_localized.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/tables/rocks.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_list_view.dart';
-import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_coordinates_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/single_rock_view.dart';
 import 'package:stolby_flutter/main.dart';
 import 'package:stolby_flutter/injection.dart';
@@ -24,12 +22,9 @@ import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/domain/feature/settings/entities/app_settings_entity.dart';
 import 'package:stolby_flutter/domain/feature/settings/i_settings_repository.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/location/i_location_repository.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/i_map_repository.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
 import 'package:stolby_flutter/presentation/core/themes/light_theme.dart';
@@ -60,7 +55,6 @@ import 'package:stolby_flutter/presentation/pages/detailed_rock_page/detailed_ro
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_elevation.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_text.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/distance_to_rock.dart';
-import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/add_marker_button.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_info_row.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/rock_coordinates.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/detailed_rock_page_content.dart';

@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -24,11 +23,11 @@ class RockCoordinates extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.secondary;
+    final color = Theme.of(context).primaryColorDark;
 
     return InkWell(
       onTap: () {
-        RockMapEntity rock = context.read<MapBloc>().state.rocks.firstWhere(
+        RockEntity rock = context.read<MapBloc>().state.rocks.firstWhere(
               (r) => r.id == id,
             );
         context.read<MapControlBloc>().add(MapControlEvent.rockClicked(rock));
@@ -48,19 +47,19 @@ class RockCoordinates extends StatelessWidget {
       child: Column(
         children: [
           Icon(
-            CupertinoIcons.location,
+            Icons.location_pin,
             size: 36,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: color,
           ),
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
           Text(
             '$latitude,',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,
-              color: color,
+              color: color.withOpacity(0.6),
               decoration: TextDecoration.underline,
             ),
           ),
@@ -69,7 +68,7 @@ class RockCoordinates extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,
-              color: color,
+              color: color.withOpacity(0.6),
               decoration: TextDecoration.underline,
             ),
           ),

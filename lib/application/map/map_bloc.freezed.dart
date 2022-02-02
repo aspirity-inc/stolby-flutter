@@ -493,7 +493,7 @@ class _$MapStateTearOff {
   const _$MapStateTearOff();
 
   _MapState call(
-      {required List<RockMapEntity> rocks,
+      {required List<RockEntity> rocks,
       required bool loading,
       required double zoom,
       required double angle}) {
@@ -511,7 +511,7 @@ const $MapState = _$MapStateTearOff();
 
 /// @nodoc
 mixin _$MapState {
-  List<RockMapEntity> get rocks => throw _privateConstructorUsedError;
+  List<RockEntity> get rocks => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   double get zoom => throw _privateConstructorUsedError;
   double get angle => throw _privateConstructorUsedError;
@@ -525,8 +525,7 @@ mixin _$MapState {
 abstract class $MapStateCopyWith<$Res> {
   factory $MapStateCopyWith(MapState value, $Res Function(MapState) then) =
       _$MapStateCopyWithImpl<$Res>;
-  $Res call(
-      {List<RockMapEntity> rocks, bool loading, double zoom, double angle});
+  $Res call({List<RockEntity> rocks, bool loading, double zoom, double angle});
 }
 
 /// @nodoc
@@ -548,7 +547,7 @@ class _$MapStateCopyWithImpl<$Res> implements $MapStateCopyWith<$Res> {
       rocks: rocks == freezed
           ? _value.rocks
           : rocks // ignore: cast_nullable_to_non_nullable
-              as List<RockMapEntity>,
+              as List<RockEntity>,
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -570,8 +569,7 @@ abstract class _$MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
   factory _$MapStateCopyWith(_MapState value, $Res Function(_MapState) then) =
       __$MapStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {List<RockMapEntity> rocks, bool loading, double zoom, double angle});
+  $Res call({List<RockEntity> rocks, bool loading, double zoom, double angle});
 }
 
 /// @nodoc
@@ -594,7 +592,7 @@ class __$MapStateCopyWithImpl<$Res> extends _$MapStateCopyWithImpl<$Res>
       rocks: rocks == freezed
           ? _value.rocks
           : rocks // ignore: cast_nullable_to_non_nullable
-              as List<RockMapEntity>,
+              as List<RockEntity>,
       loading: loading == freezed
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -621,7 +619,7 @@ class _$_MapState implements _MapState {
       required this.angle});
 
   @override
-  final List<RockMapEntity> rocks;
+  final List<RockEntity> rocks;
   @override
   final bool loading;
   @override
@@ -661,13 +659,13 @@ class _$_MapState implements _MapState {
 
 abstract class _MapState implements MapState {
   const factory _MapState(
-      {required List<RockMapEntity> rocks,
+      {required List<RockEntity> rocks,
       required bool loading,
       required double zoom,
       required double angle}) = _$_MapState;
 
   @override
-  List<RockMapEntity> get rocks;
+  List<RockEntity> get rocks;
   @override
   bool get loading;
   @override

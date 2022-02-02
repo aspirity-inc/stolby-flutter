@@ -4,10 +4,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'single_rock_view.freezed.dart';
 
 @freezed
-class SingleRockView with _$SingleRockView {
-  const SingleRockView._();
+class DetailedRockView with _$DetailedRockView {
+  const DetailedRockView._();
 
-  const factory SingleRockView({
+  const factory DetailedRockView({
     required int id,
     required double latitude,
     required double longitude,
@@ -17,7 +17,7 @@ class SingleRockView with _$SingleRockView {
     required String localizedName,
     required String shortInfo,
     required String fullInfo,
-  }) = _SingleRockView;
+  }) = _DetailedRockView;
 
   DetailedRockEntity toDomain() => DetailedRockEntity(
         id: id,

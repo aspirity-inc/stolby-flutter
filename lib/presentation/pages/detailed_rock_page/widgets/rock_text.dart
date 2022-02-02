@@ -38,24 +38,14 @@ class _RockTextState extends State<RockText> {
         InkWell(
           key: const ValueKey('rock_text_button'),
           onTap: () => setState(() => expanded = !expanded),
-          child: Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24.0,
-              vertical: 8.0,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(24)),
-              border: Border.all(color: color),
-            ),
-            child: Text(
-              expanded
-                  ? localization.rock_screen_button_hide
-                  : localization.rock_screen_button_more,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
-                color: color,
-              ),
+          child: Text(
+            expanded
+                ? localization.rock_screen_button_hide
+                : localization.rock_screen_button_more,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+              color: color,
             ),
           ),
         ),
