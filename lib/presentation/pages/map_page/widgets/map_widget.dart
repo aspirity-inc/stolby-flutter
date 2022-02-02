@@ -29,6 +29,7 @@ class _MapWidgetState extends State<MapWidget> {
     setState(() {
       mapController = controller;
     });
+    mapController.matchMapLanguageWithDeviceDefault();
     mapController.setSymbolIconAllowOverlap(true);
     mapController.setSymbolIconIgnorePlacement(true);
     mapController.onSymbolTapped.add(
@@ -156,66 +157,69 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SettingsBloc, SettingsState>(
-      listener: (context, settingsState) {
-        settingsState.reversedMap
-            ? mapController.moveCamera(
-                CameraUpdate.bearingTo(180),
-              )
-            : null;
+    return BlocListener<MapControlBloc, MapControlState>(
+      listener: (context, mapControlState) {
+        _handleSelected(_getCurrentTheme(context));
       },
-      listenWhen: (p, c) => p.mapUserCentering != c.mapUserCentering,
-      builder: (context, settingsState) {
-        return BlocConsumer<MapControlBloc, MapControlState>(
-          listener: (context, mapControlState) {
-            _handleSelected(_getCurrentTheme(context));
-          },
-          builder: (context, mapControlState) {
-            return BlocConsumer<MapBloc, MapState>(
-              listener: (context, state) {
-                mapController.animateCamera(
-                  CameraUpdate.zoomTo(state.zoom),
-                );
-                _handleSelected(_getCurrentTheme(context));
-              },
-              listenWhen: (p, c) => p.zoom != c.zoom,
-              builder: (context, state) {
-                return state.rocks.isEmpty
-                    ? const SizedBox()
-                    : MapboxMap(
-                        accessToken:
-                            'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkcWo2eGJsaGxtYyJ9.NQCPk2eMLJmnuO0yh5LYpg',
-                        initialCameraPosition: CameraPosition(
-                          bearing: settingsState.reversedMap ? 180 : 0,
-                          target: widget.initialCoordinates != null
-                              ? _latlongTransformer(widget.initialCoordinates!)
-                              : const LatLng(
-                                  55.915964,
-                                  92.738896,
-                                ),
-                          zoom: state.zoom,
-                        ),
-                        minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
-                        styleString: _getCurrentTheme(context)
-                            ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
-                            : 'mapbox://styles/aspirity/cke81mk9r4mhk19o83lermlpt',
-                        compassEnabled: false,
-                        trackCameraPosition: settingsState.mapUserCentering,
-                        myLocationTrackingMode: settingsState.mapUserCentering
-                            ? MyLocationTrackingMode.TrackingGPS
-                            : MyLocationTrackingMode.None,
-                        myLocationEnabled: settingsState.geolocationEnabled,
-                        logoViewMargins: const Point(16, 32),
-                        attributionButtonMargins: const Point(106, 32),
-                        onMapCreated: _handleMapCreated,
-                        onStyleLoadedCallback: () =>
-                            _onStyleLoadedCallback(context),
-                      );
-              },
-            );
-          },
-        );
-      },
+      child: BlocConsumer<SettingsBloc, SettingsState>(
+        listener: (context, settingsState) async {
+          settingsState.reversedMap
+              ? mapController.moveCamera(
+                  CameraUpdate.bearingTo(180),
+                )
+              : null;
+          await Future.delayed(
+            const Duration(milliseconds: 300),
+          );
+          _handleSelected(_getCurrentTheme(context));
+        },
+        listenWhen: (p, c) => p != c,
+        builder: (context, settingsState) {
+          return BlocConsumer<MapBloc, MapState>(
+            listener: (context, state) {
+              mapController.animateCamera(
+                CameraUpdate.zoomTo(state.zoom),
+              );
+            },
+            listenWhen: (p, c) => p.zoom != c.zoom,
+            builder: (context, state) {
+              return state.rocks.isEmpty
+                  ? const SizedBox()
+                  : MapboxMap(
+                      accessToken:
+                          'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkcWo2eGJsaGxtYyJ9.NQCPk2eMLJmnuO0yh5LYpg',
+                      initialCameraPosition: CameraPosition(
+                        bearing: settingsState.reversedMap ? 180 : 0,
+                        target: widget.initialCoordinates != null
+                            ? _latlongTransformer(widget.initialCoordinates!)
+                            : const LatLng(
+                                55.915964,
+                                92.738896,
+                              ),
+                        zoom: state.zoom,
+                      ),
+                      minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
+                      styleString: _getCurrentTheme(context)
+                          ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
+                          : 'mapbox://styles/aspirity/cke81mk9r4mhk19o83lermlpt',
+                      //'mapbox://styles/aspirity/cke81mk9r4mhk19o83lermlpt',
+
+                      compassEnabled: false,
+                      trackCameraPosition: settingsState.mapUserCentering,
+                      myLocationTrackingMode: settingsState.mapUserCentering
+                          ? MyLocationTrackingMode.TrackingGPS
+                          : MyLocationTrackingMode.None,
+                      myLocationEnabled: settingsState.geolocationEnabled,
+                      logoViewMargins: const Point(16, 32),
+                      attributionButtonMargins: const Point(106, 32),
+                      onMapCreated: _handleMapCreated,
+                      onStyleLoadedCallback: () =>
+                          _onStyleLoadedCallback(context),
+                    );
+            },
+          );
+        },
+      ),
     );
   }
 }
