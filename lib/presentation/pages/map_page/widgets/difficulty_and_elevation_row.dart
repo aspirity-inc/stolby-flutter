@@ -47,52 +47,50 @@ class DifficultyAndElevationRow extends StatelessWidget {
     final localization = AppLocalizations.of(context)!;
     final ThemeData theme = Theme.of(context);
 
-    return SizedBox(
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 4.0,
-              horizontal: 8.0,
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(
+            vertical: 4.0,
+            horizontal: 8.0,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(24),
             ),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(24),
-              ),
-              color: _difficultyToColor(difficulty),
+            color: _difficultyToColor(difficulty),
+          ),
+          child: Text(
+            _difficultyToString(
+              difficulty,
+              localization,
             ),
-            child: Text(
-              _difficultyToString(
-                difficulty,
-                localization,
-              ),
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-              ),
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 14,
             ),
           ),
-          const Expanded(
-            child: SizedBox(),
+        ),
+        const Expanded(
+          child: SizedBox(),
+        ),
+        Icon(
+          Icons.trending_up,
+          color: theme.primaryColorDark,
+        ),
+        const SizedBox(
+          width: 4,
+        ),
+        Text(
+          '$elevation ${localization.distance_meters}',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: theme.primaryColorLight,
           ),
-          Icon(
-            Icons.trending_up,
-            color: theme.primaryColorDark,
-          ),
-          const SizedBox(
-            width: 4,
-          ),
-          Text(
-            '$elevation ${localization.distance_meters}',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              color: theme.primaryColorLight,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
