@@ -9,7 +9,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image/image.dart' as img;
 import 'package:injectable/injectable.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_photo.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 
@@ -61,8 +61,8 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     );
   }
 
-  List<RockListItemEntity> _sortRocksList(
-    List<RockListItemEntity> list,
+  List<RockEntity> _sortRocksList(
+    List<RockEntity> list,
     LatLng latLng,
   ) {
     const distance = Distance();
@@ -127,8 +127,8 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     );
   }
 
-  List<RockListItemEntity> _filterRocksList(
-    List<RockListItemEntity> list,
+  List<RockEntity> _filterRocksList(
+    List<RockEntity> list,
     String filter,
   ) =>
       list

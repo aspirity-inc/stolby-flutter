@@ -2,8 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
-
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 part 'map_control_event.dart';
 part 'map_control_bloc.freezed.dart';
 part 'map_control_state.dart';

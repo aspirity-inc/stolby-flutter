@@ -14,10 +14,10 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$SingleRockViewTearOff {
-  const _$SingleRockViewTearOff();
+class _$DetailedRockViewTearOff {
+  const _$DetailedRockViewTearOff();
 
-  _SingleRockView call(
+  _DetailedRockView call(
       {required int id,
       required double latitude,
       required double longitude,
@@ -27,7 +27,7 @@ class _$SingleRockViewTearOff {
       required String localizedName,
       required String shortInfo,
       required String fullInfo}) {
-    return _SingleRockView(
+    return _DetailedRockView(
       id: id,
       latitude: latitude,
       longitude: longitude,
@@ -42,10 +42,10 @@ class _$SingleRockViewTearOff {
 }
 
 /// @nodoc
-const $SingleRockView = _$SingleRockViewTearOff();
+const $DetailedRockView = _$DetailedRockViewTearOff();
 
 /// @nodoc
-mixin _$SingleRockView {
+mixin _$DetailedRockView {
   int get id => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
@@ -57,15 +57,15 @@ mixin _$SingleRockView {
   String get fullInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SingleRockViewCopyWith<SingleRockView> get copyWith =>
+  $DetailedRockViewCopyWith<DetailedRockView> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SingleRockViewCopyWith<$Res> {
-  factory $SingleRockViewCopyWith(
-          SingleRockView value, $Res Function(SingleRockView) then) =
-      _$SingleRockViewCopyWithImpl<$Res>;
+abstract class $DetailedRockViewCopyWith<$Res> {
+  factory $DetailedRockViewCopyWith(
+          DetailedRockView value, $Res Function(DetailedRockView) then) =
+      _$DetailedRockViewCopyWithImpl<$Res>;
   $Res call(
       {int id,
       double latitude,
@@ -79,13 +79,13 @@ abstract class $SingleRockViewCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SingleRockViewCopyWithImpl<$Res>
-    implements $SingleRockViewCopyWith<$Res> {
-  _$SingleRockViewCopyWithImpl(this._value, this._then);
+class _$DetailedRockViewCopyWithImpl<$Res>
+    implements $DetailedRockViewCopyWith<$Res> {
+  _$DetailedRockViewCopyWithImpl(this._value, this._then);
 
-  final SingleRockView _value;
+  final DetailedRockView _value;
   // ignore: unused_field
-  final $Res Function(SingleRockView) _then;
+  final $Res Function(DetailedRockView) _then;
 
   @override
   $Res call({
@@ -141,11 +141,11 @@ class _$SingleRockViewCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SingleRockViewCopyWith<$Res>
-    implements $SingleRockViewCopyWith<$Res> {
-  factory _$SingleRockViewCopyWith(
-          _SingleRockView value, $Res Function(_SingleRockView) then) =
-      __$SingleRockViewCopyWithImpl<$Res>;
+abstract class _$DetailedRockViewCopyWith<$Res>
+    implements $DetailedRockViewCopyWith<$Res> {
+  factory _$DetailedRockViewCopyWith(
+          _DetailedRockView value, $Res Function(_DetailedRockView) then) =
+      __$DetailedRockViewCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -160,15 +160,15 @@ abstract class _$SingleRockViewCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SingleRockViewCopyWithImpl<$Res>
-    extends _$SingleRockViewCopyWithImpl<$Res>
-    implements _$SingleRockViewCopyWith<$Res> {
-  __$SingleRockViewCopyWithImpl(
-      _SingleRockView _value, $Res Function(_SingleRockView) _then)
-      : super(_value, (v) => _then(v as _SingleRockView));
+class __$DetailedRockViewCopyWithImpl<$Res>
+    extends _$DetailedRockViewCopyWithImpl<$Res>
+    implements _$DetailedRockViewCopyWith<$Res> {
+  __$DetailedRockViewCopyWithImpl(
+      _DetailedRockView _value, $Res Function(_DetailedRockView) _then)
+      : super(_value, (v) => _then(v as _DetailedRockView));
 
   @override
-  _SingleRockView get _value => super._value as _SingleRockView;
+  _DetailedRockView get _value => super._value as _DetailedRockView;
 
   @override
   $Res call({
@@ -182,7 +182,7 @@ class __$SingleRockViewCopyWithImpl<$Res>
     Object? shortInfo = freezed,
     Object? fullInfo = freezed,
   }) {
-    return _then(_SingleRockView(
+    return _then(_DetailedRockView(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -225,8 +225,8 @@ class __$SingleRockViewCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SingleRockView extends _SingleRockView {
-  const _$_SingleRockView(
+class _$_DetailedRockView extends _DetailedRockView {
+  const _$_DetailedRockView(
       {required this.id,
       required this.latitude,
       required this.longitude,
@@ -259,14 +259,14 @@ class _$_SingleRockView extends _SingleRockView {
 
   @override
   String toString() {
-    return 'SingleRockView(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName, shortInfo: $shortInfo, fullInfo: $fullInfo)';
+    return 'DetailedRockView(id: $id, latitude: $latitude, longitude: $longitude, difficulty: $difficulty, height: $height, picName: $picName, localizedName: $localizedName, shortInfo: $shortInfo, fullInfo: $fullInfo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SingleRockView &&
+            other is _DetailedRockView &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.latitude, latitude) &&
             const DeepCollectionEquality().equals(other.longitude, longitude) &&
@@ -295,12 +295,12 @@ class _$_SingleRockView extends _SingleRockView {
 
   @JsonKey(ignore: true)
   @override
-  _$SingleRockViewCopyWith<_SingleRockView> get copyWith =>
-      __$SingleRockViewCopyWithImpl<_SingleRockView>(this, _$identity);
+  _$DetailedRockViewCopyWith<_DetailedRockView> get copyWith =>
+      __$DetailedRockViewCopyWithImpl<_DetailedRockView>(this, _$identity);
 }
 
-abstract class _SingleRockView extends SingleRockView {
-  const factory _SingleRockView(
+abstract class _DetailedRockView extends DetailedRockView {
+  const factory _DetailedRockView(
       {required int id,
       required double latitude,
       required double longitude,
@@ -309,8 +309,8 @@ abstract class _SingleRockView extends SingleRockView {
       required String picName,
       required String localizedName,
       required String shortInfo,
-      required String fullInfo}) = _$_SingleRockView;
-  const _SingleRockView._() : super._();
+      required String fullInfo}) = _$_DetailedRockView;
+  const _DetailedRockView._() : super._();
 
   @override
   int get id;
@@ -332,6 +332,6 @@ abstract class _SingleRockView extends SingleRockView {
   String get fullInfo;
   @override
   @JsonKey(ignore: true)
-  _$SingleRockViewCopyWith<_SingleRockView> get copyWith =>
+  _$DetailedRockViewCopyWith<_DetailedRockView> get copyWith =>
       throw _privateConstructorUsedError;
 }

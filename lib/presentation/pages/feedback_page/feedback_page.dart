@@ -15,7 +15,7 @@ class FeedbackPage extends StatelessWidget {
 
     return Scaffold(
       appBar: const DetailedRockAppbar(
-        difficulty: null,
+        localizedName: null,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

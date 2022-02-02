@@ -1,6 +1,4 @@
 import 'dart:math' as math;
-import 'dart:ui';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +9,14 @@ import 'package:latlong2/latlong.dart';
 import 'package:stolby_flutter/application/rock_list/rock_list_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rock_list_item_painter.dart';
 import 'package:stolby_flutter/presentation/routing/router.gr.dart';
+import 'package:stolby_flutter/presentation/widgets/difficulty_card.dart';
 
 class RockListItem extends StatelessWidget {
   final int index;
-  final RockListItemEntity item;
+  final RockEntity item;
   final UserLocationEntity? location;
 
   const RockListItem({
@@ -27,24 +26,9 @@ class RockListItem extends StatelessWidget {
     required this.index,
   }) : super(key: key);
 
-  String _difficultyToString(int difficulty, AppLocalizations localization) {
-    switch (difficulty) {
-      case 0:
-        return localization.difficulty_short_0;
-      case 1:
-        return localization.difficulty_short_1;
-      case 2:
-        return localization.difficulty_short_2;
-      case 3:
-        return localization.difficulty_short_3;
-      default:
-        return "difficulty name not found";
-    }
-  }
-
   String _getDistance(
     UserLocationEntity user,
-    RockListItemEntity item,
+    RockEntity item,
     AppLocalizations localization,
   ) {
     const distance = Distance();
@@ -102,8 +86,8 @@ class RockListItem extends StatelessWidget {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0,
-                              vertical: 16.0,
+                              horizontal: 8.0,
+                              vertical: 8.0,
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -119,6 +103,9 @@ class RockListItem extends StatelessWidget {
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
+                                ),
+                                const SizedBox(
+                                  height: 4,
                                 ),
                                 Row(
                                   children: [
@@ -170,22 +157,9 @@ class RockListItem extends StatelessWidget {
                   Positioned(
                     top: 8,
                     right: 8,
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(16)),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8.0,
-                          horizontal: 16.0,
-                        ),
-                        color: Colors.white70,
-                        child: Text(
-                          _difficultyToString(item.difficulty, localization),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
+                    child: DifficultyCard(
+                      difficulty: item.difficulty,
+                      textSize: 12,
                     ),
                   ),
                 ],

@@ -1,29 +1,28 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/i_map_repository.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 
-import 'map_bloc_test.mocks.dart';
+import '../rock_list/rock_list_bloc_test.mocks.dart';
 
-@GenerateMocks([IMapRepository])
 void main() {
-  late MockIMapRepository _repository;
+  late MockIRockListRepository _repository;
   late MapBloc _bloc;
-  const testItem = RockMapEntity(
+  const testItem = RockEntity(
     id: 0,
     latitude: 55.9174,
     longitude: 92.73843,
     picName: 'pic_babkaivnuchka',
     localizedName: 'The Granny and the Granddaughter',
+    difficulty: 1,
+    height: 0,
   );
 
   setUp(() {
-    _repository = MockIMapRepository();
+    _repository = MockIRockListRepository();
     _bloc = MapBloc(_repository);
   });
 
@@ -35,7 +34,7 @@ void main() {
       blocTest(
         'Should emit rocks from DB',
         build: () {
-          when(_repository.getRocksCoordinatesList()).thenAnswer(
+          when(_repository.getRocksList()).thenAnswer(
             (_) async => right(
               [testItem],
             ),
@@ -57,7 +56,7 @@ void main() {
       blocTest(
         'Should emit nothing on error',
         build: () {
-          when(_repository.getRocksCoordinatesList()).thenAnswer(
+          when(_repository.getRocksList()).thenAnswer(
             (_) async => left(const DatabaseFailure.notFound()),
           );
 

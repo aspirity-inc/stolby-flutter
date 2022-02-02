@@ -4,7 +4,6 @@ import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/app_database.dart';
-import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_coordinates_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/rocks_list_view.dart';
 import 'package:stolby_flutter/infrastructure/services/local/database/views/single_rock_view.dart';
 
@@ -40,21 +39,8 @@ void main() {
     expect(result[0], expected);
   });
 
-  test('Should read all items for map', () async {
-    const expected = RocksCoordinatesListView(
-      id: 0,
-      localizedName: 'The Granny and the Granddaughter',
-      longitude: 92.73843,
-      latitude: 55.9174,
-      picName: 'pic_babkaivnuchka',
-    );
-    final result = await _database.getRocksCoordinatesList('en');
-    expect(result.length, 17);
-    expect(result[0], expected);
-  });
-
   test('Should read one detailed rock by ID', () async {
-    const expected = SingleRockView(
+    const expected = DetailedRockView(
       id: 0,
       difficulty: 1,
       localizedName: 'The Granny and the Granddaughter',

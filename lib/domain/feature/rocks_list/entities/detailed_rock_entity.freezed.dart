@@ -225,7 +225,7 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DetailedRockEntity implements _DetailedRockEntity {
+class _$_DetailedRockEntity extends _DetailedRockEntity {
   const _$_DetailedRockEntity(
       {required this.id,
       required this.latitude,
@@ -235,7 +235,8 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
       required this.picName,
       required this.localizedName,
       required this.shortInfo,
-      required this.fullInfo});
+      required this.fullInfo})
+      : super._();
 
   @override
   final int id;
@@ -298,7 +299,7 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
       __$DetailedRockEntityCopyWithImpl<_DetailedRockEntity>(this, _$identity);
 }
 
-abstract class _DetailedRockEntity implements DetailedRockEntity {
+abstract class _DetailedRockEntity extends DetailedRockEntity {
   const factory _DetailedRockEntity(
       {required int id,
       required double latitude,
@@ -309,6 +310,7 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
       required String localizedName,
       required String shortInfo,
       required String fullInfo}) = _$_DetailedRockEntity;
+  const _DetailedRockEntity._() : super._();
 
   @override
   int get id;

@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
-import 'package:stolby_flutter/domain/feature/rocks_map/entities/rock_map_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 
 main() {
   late MapControlBloc _bloc;
@@ -13,12 +13,14 @@ main() {
 
   tearDown(() => _bloc.close());
 
-  const testItem = RockMapEntity(
+  const testItem = RockEntity(
     id: 0,
     latitude: 55.9174,
     longitude: 92.73843,
     picName: 'pic_babkaivnuchka',
     localizedName: 'The Granny and the Granddaughter',
+    height: 0,
+    difficulty: 1,
   );
 
   group(

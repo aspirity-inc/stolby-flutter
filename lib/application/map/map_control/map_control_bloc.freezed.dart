@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MapControlEventTearOff {
   const _$MapControlEventTearOff();
 
-  _RockMarkerPut rockMarkerPut(RockMapEntity rock) {
+  _RockMarkerPut rockMarkerPut(RockEntity rock) {
     return _RockMarkerPut(
       rock,
     );
@@ -27,7 +27,7 @@ class _$MapControlEventTearOff {
     return const _RockMarkerRemoved();
   }
 
-  _RockClicked rockClicked(RockMapEntity rock) {
+  _RockClicked rockClicked(RockEntity rock) {
     return _RockClicked(
       rock,
     );
@@ -37,7 +37,7 @@ class _$MapControlEventTearOff {
     return const _ClickedRockRemoved();
   }
 
-  _HandleMarkerSelection handleMarkerSelection(RockMapEntity rock) {
+  _HandleMarkerSelection handleMarkerSelection(RockEntity rock) {
     return _HandleMarkerSelection(
       rock,
     );
@@ -51,29 +51,29 @@ const $MapControlEvent = _$MapControlEventTearOff();
 mixin _$MapControlEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RockMapEntity rock) rockMarkerPut,
+    required TResult Function(RockEntity rock) rockMarkerPut,
     required TResult Function() rockMarkerRemoved,
-    required TResult Function(RockMapEntity rock) rockClicked,
+    required TResult Function(RockEntity rock) rockClicked,
     required TResult Function() clickedRockRemoved,
-    required TResult Function(RockMapEntity rock) handleMarkerSelection,
+    required TResult Function(RockEntity rock) handleMarkerSelection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,9 +130,9 @@ abstract class _$RockMarkerPutCopyWith<$Res> {
   factory _$RockMarkerPutCopyWith(
           _RockMarkerPut value, $Res Function(_RockMarkerPut) then) =
       __$RockMarkerPutCopyWithImpl<$Res>;
-  $Res call({RockMapEntity rock});
+  $Res call({RockEntity rock});
 
-  $RockMapEntityCopyWith<$Res> get rock;
+  $RockEntityCopyWith<$Res> get rock;
 }
 
 /// @nodoc
@@ -154,13 +154,13 @@ class __$RockMarkerPutCopyWithImpl<$Res>
       rock == freezed
           ? _value.rock
           : rock // ignore: cast_nullable_to_non_nullable
-              as RockMapEntity,
+              as RockEntity,
     ));
   }
 
   @override
-  $RockMapEntityCopyWith<$Res> get rock {
-    return $RockMapEntityCopyWith<$Res>(_value.rock, (value) {
+  $RockEntityCopyWith<$Res> get rock {
+    return $RockEntityCopyWith<$Res>(_value.rock, (value) {
       return _then(_value.copyWith(rock: value));
     });
   }
@@ -172,7 +172,7 @@ class _$_RockMarkerPut implements _RockMarkerPut {
   const _$_RockMarkerPut(this.rock);
 
   @override
-  final RockMapEntity rock;
+  final RockEntity rock;
 
   @override
   String toString() {
@@ -199,11 +199,11 @@ class _$_RockMarkerPut implements _RockMarkerPut {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RockMapEntity rock) rockMarkerPut,
+    required TResult Function(RockEntity rock) rockMarkerPut,
     required TResult Function() rockMarkerRemoved,
-    required TResult Function(RockMapEntity rock) rockClicked,
+    required TResult Function(RockEntity rock) rockClicked,
     required TResult Function() clickedRockRemoved,
-    required TResult Function(RockMapEntity rock) handleMarkerSelection,
+    required TResult Function(RockEntity rock) handleMarkerSelection,
   }) {
     return rockMarkerPut(rock);
   }
@@ -211,11 +211,11 @@ class _$_RockMarkerPut implements _RockMarkerPut {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
   }) {
     return rockMarkerPut?.call(rock);
   }
@@ -223,11 +223,11 @@ class _$_RockMarkerPut implements _RockMarkerPut {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
     required TResult orElse(),
   }) {
     if (rockMarkerPut != null) {
@@ -279,9 +279,9 @@ class _$_RockMarkerPut implements _RockMarkerPut {
 }
 
 abstract class _RockMarkerPut implements MapControlEvent {
-  const factory _RockMarkerPut(RockMapEntity rock) = _$_RockMarkerPut;
+  const factory _RockMarkerPut(RockEntity rock) = _$_RockMarkerPut;
 
-  RockMapEntity get rock;
+  RockEntity get rock;
   @JsonKey(ignore: true)
   _$RockMarkerPutCopyWith<_RockMarkerPut> get copyWith =>
       throw _privateConstructorUsedError;
@@ -328,11 +328,11 @@ class _$_RockMarkerRemoved implements _RockMarkerRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RockMapEntity rock) rockMarkerPut,
+    required TResult Function(RockEntity rock) rockMarkerPut,
     required TResult Function() rockMarkerRemoved,
-    required TResult Function(RockMapEntity rock) rockClicked,
+    required TResult Function(RockEntity rock) rockClicked,
     required TResult Function() clickedRockRemoved,
-    required TResult Function(RockMapEntity rock) handleMarkerSelection,
+    required TResult Function(RockEntity rock) handleMarkerSelection,
   }) {
     return rockMarkerRemoved();
   }
@@ -340,11 +340,11 @@ class _$_RockMarkerRemoved implements _RockMarkerRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
   }) {
     return rockMarkerRemoved?.call();
   }
@@ -352,11 +352,11 @@ class _$_RockMarkerRemoved implements _RockMarkerRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
     required TResult orElse(),
   }) {
     if (rockMarkerRemoved != null) {
@@ -416,9 +416,9 @@ abstract class _$RockClickedCopyWith<$Res> {
   factory _$RockClickedCopyWith(
           _RockClicked value, $Res Function(_RockClicked) then) =
       __$RockClickedCopyWithImpl<$Res>;
-  $Res call({RockMapEntity rock});
+  $Res call({RockEntity rock});
 
-  $RockMapEntityCopyWith<$Res> get rock;
+  $RockEntityCopyWith<$Res> get rock;
 }
 
 /// @nodoc
@@ -440,13 +440,13 @@ class __$RockClickedCopyWithImpl<$Res>
       rock == freezed
           ? _value.rock
           : rock // ignore: cast_nullable_to_non_nullable
-              as RockMapEntity,
+              as RockEntity,
     ));
   }
 
   @override
-  $RockMapEntityCopyWith<$Res> get rock {
-    return $RockMapEntityCopyWith<$Res>(_value.rock, (value) {
+  $RockEntityCopyWith<$Res> get rock {
+    return $RockEntityCopyWith<$Res>(_value.rock, (value) {
       return _then(_value.copyWith(rock: value));
     });
   }
@@ -458,7 +458,7 @@ class _$_RockClicked implements _RockClicked {
   const _$_RockClicked(this.rock);
 
   @override
-  final RockMapEntity rock;
+  final RockEntity rock;
 
   @override
   String toString() {
@@ -485,11 +485,11 @@ class _$_RockClicked implements _RockClicked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RockMapEntity rock) rockMarkerPut,
+    required TResult Function(RockEntity rock) rockMarkerPut,
     required TResult Function() rockMarkerRemoved,
-    required TResult Function(RockMapEntity rock) rockClicked,
+    required TResult Function(RockEntity rock) rockClicked,
     required TResult Function() clickedRockRemoved,
-    required TResult Function(RockMapEntity rock) handleMarkerSelection,
+    required TResult Function(RockEntity rock) handleMarkerSelection,
   }) {
     return rockClicked(rock);
   }
@@ -497,11 +497,11 @@ class _$_RockClicked implements _RockClicked {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
   }) {
     return rockClicked?.call(rock);
   }
@@ -509,11 +509,11 @@ class _$_RockClicked implements _RockClicked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
     required TResult orElse(),
   }) {
     if (rockClicked != null) {
@@ -565,9 +565,9 @@ class _$_RockClicked implements _RockClicked {
 }
 
 abstract class _RockClicked implements MapControlEvent {
-  const factory _RockClicked(RockMapEntity rock) = _$_RockClicked;
+  const factory _RockClicked(RockEntity rock) = _$_RockClicked;
 
-  RockMapEntity get rock;
+  RockEntity get rock;
   @JsonKey(ignore: true)
   _$RockClickedCopyWith<_RockClicked> get copyWith =>
       throw _privateConstructorUsedError;
@@ -614,11 +614,11 @@ class _$_ClickedRockRemoved implements _ClickedRockRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RockMapEntity rock) rockMarkerPut,
+    required TResult Function(RockEntity rock) rockMarkerPut,
     required TResult Function() rockMarkerRemoved,
-    required TResult Function(RockMapEntity rock) rockClicked,
+    required TResult Function(RockEntity rock) rockClicked,
     required TResult Function() clickedRockRemoved,
-    required TResult Function(RockMapEntity rock) handleMarkerSelection,
+    required TResult Function(RockEntity rock) handleMarkerSelection,
   }) {
     return clickedRockRemoved();
   }
@@ -626,11 +626,11 @@ class _$_ClickedRockRemoved implements _ClickedRockRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
   }) {
     return clickedRockRemoved?.call();
   }
@@ -638,11 +638,11 @@ class _$_ClickedRockRemoved implements _ClickedRockRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
     required TResult orElse(),
   }) {
     if (clickedRockRemoved != null) {
@@ -702,9 +702,9 @@ abstract class _$HandleMarkerSelectionCopyWith<$Res> {
   factory _$HandleMarkerSelectionCopyWith(_HandleMarkerSelection value,
           $Res Function(_HandleMarkerSelection) then) =
       __$HandleMarkerSelectionCopyWithImpl<$Res>;
-  $Res call({RockMapEntity rock});
+  $Res call({RockEntity rock});
 
-  $RockMapEntityCopyWith<$Res> get rock;
+  $RockEntityCopyWith<$Res> get rock;
 }
 
 /// @nodoc
@@ -726,13 +726,13 @@ class __$HandleMarkerSelectionCopyWithImpl<$Res>
       rock == freezed
           ? _value.rock
           : rock // ignore: cast_nullable_to_non_nullable
-              as RockMapEntity,
+              as RockEntity,
     ));
   }
 
   @override
-  $RockMapEntityCopyWith<$Res> get rock {
-    return $RockMapEntityCopyWith<$Res>(_value.rock, (value) {
+  $RockEntityCopyWith<$Res> get rock {
+    return $RockEntityCopyWith<$Res>(_value.rock, (value) {
       return _then(_value.copyWith(rock: value));
     });
   }
@@ -744,7 +744,7 @@ class _$_HandleMarkerSelection implements _HandleMarkerSelection {
   const _$_HandleMarkerSelection(this.rock);
 
   @override
-  final RockMapEntity rock;
+  final RockEntity rock;
 
   @override
   String toString() {
@@ -772,11 +772,11 @@ class _$_HandleMarkerSelection implements _HandleMarkerSelection {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RockMapEntity rock) rockMarkerPut,
+    required TResult Function(RockEntity rock) rockMarkerPut,
     required TResult Function() rockMarkerRemoved,
-    required TResult Function(RockMapEntity rock) rockClicked,
+    required TResult Function(RockEntity rock) rockClicked,
     required TResult Function() clickedRockRemoved,
-    required TResult Function(RockMapEntity rock) handleMarkerSelection,
+    required TResult Function(RockEntity rock) handleMarkerSelection,
   }) {
     return handleMarkerSelection(rock);
   }
@@ -784,11 +784,11 @@ class _$_HandleMarkerSelection implements _HandleMarkerSelection {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
   }) {
     return handleMarkerSelection?.call(rock);
   }
@@ -796,11 +796,11 @@ class _$_HandleMarkerSelection implements _HandleMarkerSelection {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RockMapEntity rock)? rockMarkerPut,
+    TResult Function(RockEntity rock)? rockMarkerPut,
     TResult Function()? rockMarkerRemoved,
-    TResult Function(RockMapEntity rock)? rockClicked,
+    TResult Function(RockEntity rock)? rockClicked,
     TResult Function()? clickedRockRemoved,
-    TResult Function(RockMapEntity rock)? handleMarkerSelection,
+    TResult Function(RockEntity rock)? handleMarkerSelection,
     required TResult orElse(),
   }) {
     if (handleMarkerSelection != null) {
@@ -852,10 +852,10 @@ class _$_HandleMarkerSelection implements _HandleMarkerSelection {
 }
 
 abstract class _HandleMarkerSelection implements MapControlEvent {
-  const factory _HandleMarkerSelection(RockMapEntity rock) =
+  const factory _HandleMarkerSelection(RockEntity rock) =
       _$_HandleMarkerSelection;
 
-  RockMapEntity get rock;
+  RockEntity get rock;
   @JsonKey(ignore: true)
   _$HandleMarkerSelectionCopyWith<_HandleMarkerSelection> get copyWith =>
       throw _privateConstructorUsedError;
@@ -866,8 +866,8 @@ class _$MapControlStateTearOff {
   const _$MapControlStateTearOff();
 
   _MapControlState call(
-      {required Option<RockMapEntity> setMarkerRock,
-      required Option<RockMapEntity> clickedRock}) {
+      {required Option<RockEntity> setMarkerRock,
+      required Option<RockEntity> clickedRock}) {
     return _MapControlState(
       setMarkerRock: setMarkerRock,
       clickedRock: clickedRock,
@@ -880,8 +880,8 @@ const $MapControlState = _$MapControlStateTearOff();
 
 /// @nodoc
 mixin _$MapControlState {
-  Option<RockMapEntity> get setMarkerRock => throw _privateConstructorUsedError;
-  Option<RockMapEntity> get clickedRock => throw _privateConstructorUsedError;
+  Option<RockEntity> get setMarkerRock => throw _privateConstructorUsedError;
+  Option<RockEntity> get clickedRock => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MapControlStateCopyWith<MapControlState> get copyWith =>
@@ -893,8 +893,7 @@ abstract class $MapControlStateCopyWith<$Res> {
   factory $MapControlStateCopyWith(
           MapControlState value, $Res Function(MapControlState) then) =
       _$MapControlStateCopyWithImpl<$Res>;
-  $Res call(
-      {Option<RockMapEntity> setMarkerRock, Option<RockMapEntity> clickedRock});
+  $Res call({Option<RockEntity> setMarkerRock, Option<RockEntity> clickedRock});
 }
 
 /// @nodoc
@@ -915,11 +914,11 @@ class _$MapControlStateCopyWithImpl<$Res>
       setMarkerRock: setMarkerRock == freezed
           ? _value.setMarkerRock
           : setMarkerRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
+              as Option<RockEntity>,
       clickedRock: clickedRock == freezed
           ? _value.clickedRock
           : clickedRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
+              as Option<RockEntity>,
     ));
   }
 }
@@ -931,8 +930,7 @@ abstract class _$MapControlStateCopyWith<$Res>
           _MapControlState value, $Res Function(_MapControlState) then) =
       __$MapControlStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {Option<RockMapEntity> setMarkerRock, Option<RockMapEntity> clickedRock});
+  $Res call({Option<RockEntity> setMarkerRock, Option<RockEntity> clickedRock});
 }
 
 /// @nodoc
@@ -955,11 +953,11 @@ class __$MapControlStateCopyWithImpl<$Res>
       setMarkerRock: setMarkerRock == freezed
           ? _value.setMarkerRock
           : setMarkerRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
+              as Option<RockEntity>,
       clickedRock: clickedRock == freezed
           ? _value.clickedRock
           : clickedRock // ignore: cast_nullable_to_non_nullable
-              as Option<RockMapEntity>,
+              as Option<RockEntity>,
     ));
   }
 }
@@ -971,9 +969,9 @@ class _$_MapControlState implements _MapControlState {
       {required this.setMarkerRock, required this.clickedRock});
 
   @override
-  final Option<RockMapEntity> setMarkerRock;
+  final Option<RockEntity> setMarkerRock;
   @override
-  final Option<RockMapEntity> clickedRock;
+  final Option<RockEntity> clickedRock;
 
   @override
   String toString() {
@@ -1005,13 +1003,13 @@ class _$_MapControlState implements _MapControlState {
 
 abstract class _MapControlState implements MapControlState {
   const factory _MapControlState(
-      {required Option<RockMapEntity> setMarkerRock,
-      required Option<RockMapEntity> clickedRock}) = _$_MapControlState;
+      {required Option<RockEntity> setMarkerRock,
+      required Option<RockEntity> clickedRock}) = _$_MapControlState;
 
   @override
-  Option<RockMapEntity> get setMarkerRock;
+  Option<RockEntity> get setMarkerRock;
   @override
-  Option<RockMapEntity> get clickedRock;
+  Option<RockEntity> get clickedRock;
   @override
   @JsonKey(ignore: true)
   _$MapControlStateCopyWith<_MapControlState> get copyWith =>

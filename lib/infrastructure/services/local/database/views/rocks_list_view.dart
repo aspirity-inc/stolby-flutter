@@ -1,5 +1,5 @@
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_list_item_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 
 part 'rocks_list_view.freezed.dart';
 
@@ -17,7 +17,7 @@ class RocksListView with _$RocksListView {
     required String localizedName,
   }) = _RocksListView;
 
-  RockListItemEntity toDomain() => RockListItemEntity(
+  RockEntity toDomain() => RockEntity(
         id: id,
         latitude: latitude,
         longitude: longitude,

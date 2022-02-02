@@ -1,56 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:stolby_flutter/presentation/core/themes/app_colors.dart';
 
 class DetailedRockAppbar extends StatelessWidget
     implements PreferredSizeWidget {
-  final String? difficulty;
+  final String? localizedName;
 
   const DetailedRockAppbar({
     Key? key,
-    required this.difficulty,
+    required this.localizedName,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).colorScheme.onBackground;
+
     return AppBar(
       leading: IconButton(
         onPressed: () => context.router.pop(),
         icon: Icon(
           Icons.arrow_back_sharp,
           size: 24,
-          color: Theme.of(context).colorScheme.onBackground,
+          color: color,
         ),
       ),
       backgroundColor: Colors.transparent,
       elevation: 0,
-      actions: [
-        difficulty != null
-            ? Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                  vertical: 8.0,
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24.0,
-                ),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(24)),
-                  color: AppColors.primary,
-                ),
-                child: Center(
-                  child: Text(
-                    difficulty!.toUpperCase(),
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )
-            : const SizedBox(),
-      ],
+      title: Text(
+        localizedName ?? '',
+        style: TextStyle(
+          color: color,
+          fontSize: 24,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      centerTitle: true,
     );
   }
 
