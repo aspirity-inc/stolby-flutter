@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_geolocation_icon_button.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_widget.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_zoom_icon_button.dart';
+import 'package:stolby_flutter/presentation/pages/map_page/widgets/swipable_card.dart';
 
 class MapPage extends StatelessWidget {
   final LatLng? initialCoordinates;
@@ -34,6 +37,40 @@ class MapPage extends StatelessWidget {
                   action: ZoomIconButtonAction.lessZoom,
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            bottom: 32,
+            left: 0,
+            right: 0,
+            child: BlocBuilder<MapControlBloc, MapControlState>(
+              builder: (context, state) {
+                return state.clickedRock.fold(
+                  () => const SizedBox(),
+                  (a) => SwipableCard(
+                    id: a.id,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/${a.picName}.jpg',
+                              width: 128,
+                              height: 128,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
           ),
           const Positioned(

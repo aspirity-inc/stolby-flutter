@@ -1,16 +1,15 @@
 import 'dart:io';
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:latlong2/latlong.dart' as latlong;
+import 'package:mapbox_gl/mapbox_gl.dart';
 import 'package:stolby_flutter/application/map/map_bloc.dart';
+import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
-import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
-
-import 'map_alert_dialog.dart';
 
 class MapWidget extends StatefulWidget {
   final latlong.LatLng? initialCoordinates;
@@ -36,7 +35,7 @@ class _MapWidgetState extends State<MapWidget> {
     mapController.onSymbolTapped.add(
       (symbol) {
         try {
-          final rockId = int.parse(symbol.id);
+          final rockId = symbol.data?['id'];
           final rock = context
               .read<MapBloc>()
               .state
@@ -46,10 +45,6 @@ class _MapWidgetState extends State<MapWidget> {
           context.read<MapControlBloc>().add(
                 MapControlEvent.rockClicked(rock),
               );
-          showDialog(
-            context: context,
-            builder: (context) => const MapAlertDialog(),
-          );
           _handleSelected(_getCurrentTheme(context));
         } on FormatException {
           return;
