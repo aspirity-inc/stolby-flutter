@@ -6,7 +6,7 @@ import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_geolocati
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_rock_card_content.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_widget.dart';
 import 'package:stolby_flutter/presentation/pages/map_page/widgets/map_zoom_icon_button.dart';
-import 'package:stolby_flutter/presentation/pages/map_page/widgets/swipable_card.dart';
+import 'package:stolby_flutter/presentation/pages/map_page/widgets/swipeable_card.dart';
 
 class MapPage extends StatelessWidget {
   final LatLng? initialCoordinates;
@@ -48,26 +48,10 @@ class MapPage extends StatelessWidget {
               builder: (context, state) {
                 return state.clickedRock.fold(
                   () => const SizedBox(),
-                  (a) => SwipableCard(
-                    id: a.id,
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/${a.picName}.jpg',
-                              width: 128,
-                              height: 128,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                      ],
+                  (rock) => SwipeableCard(
+                    id: rock.id,
+                    child: MapRockCardContent(
+                      rock: rock,
                     ),
                   ),
                 );
@@ -78,12 +62,6 @@ class MapPage extends StatelessWidget {
             top: 0,
             right: 0,
             child: MapGeolocationIconButton(),
-          ),
-          const Positioned(
-            bottom: 16,
-            left: 0,
-            right: 0,
-            child: MapRockCardContent(),
           ),
         ],
       ),

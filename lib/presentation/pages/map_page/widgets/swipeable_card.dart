@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
 
-class SwipableCard extends StatefulWidget {
+class SwipeableCard extends StatefulWidget {
   final Widget child;
   final int id;
 
-  const SwipableCard({
+  const SwipeableCard({
     Key? key,
     required this.child,
     required this.id,
   }) : super(key: key);
 
   @override
-  _SwipableCardState createState() => _SwipableCardState();
+  _SwipeableCardState createState() => _SwipeableCardState();
 }
 
-class _SwipableCardState extends State<SwipableCard>
+class _SwipeableCardState extends State<SwipeableCard>
     with TickerProviderStateMixin {
   late AnimationController _swipeDownController;
 
@@ -46,7 +46,7 @@ class _SwipableCardState extends State<SwipableCard>
   }
 
   @override
-  void didUpdateWidget(covariant SwipableCard oldWidget) {
+  void didUpdateWidget(covariant SwipeableCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     _swipeDownController.forward();
     _swipeDownController.reverse();
