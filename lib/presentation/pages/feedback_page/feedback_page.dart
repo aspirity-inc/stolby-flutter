@@ -114,7 +114,7 @@ class FeedbackPage extends StatelessWidget {
             InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(24)),
               onTap: () => _sendEmail(
-                _deviceController.value.text + _controller.value.text,
+                _deviceController.value.text + ' ' + _controller.value.text,
               ),
               child: Container(
                 margin: const EdgeInsets.symmetric(
