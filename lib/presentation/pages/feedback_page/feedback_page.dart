@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FeedbackPage extends StatelessWidget {
   final _deviceController = TextEditingController();
   final _controller = TextEditingController();
 
   FeedbackPage({Key? key}) : super(key: key);
+
+  void _sendEmail(
+    String body,
+  ) async {
+    final _emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: "mobile@aspirity.com",
+      queryParameters: {
+        "subject": "Feedback%20from%20Stolby",
+        "body": body.replaceAll(" ", "%20"),
+      },
+    );
+    await launch(_emailLaunchUri.toString().replaceAll("%2520", " "));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +113,9 @@ class FeedbackPage extends StatelessWidget {
             ),
             InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(24)),
-              onTap: () {}, // TODO: SEND FEEDBACK
+              onTap: () => _sendEmail(
+                _deviceController.value.text + _controller.value.text,
+              ),
               child: Container(
                 margin: const EdgeInsets.symmetric(
                   horizontal: 16,

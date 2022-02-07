@@ -49,7 +49,7 @@ dependencies:
   permission_handler: ^8.3.0
 
   # Map & Geolocation
-  mapbox_gl: ^0.14.0
+  mapbox_gl: ^0.15.0
   location: ^4.3.0
   latlong2: ^0.8.1
   maps_launcher: ^2.0.1
