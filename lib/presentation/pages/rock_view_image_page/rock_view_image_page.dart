@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stolby_flutter/injection.dart';
+import 'package:stolby_flutter/application/images_viewer/images_viewer_bloc.dart';
+import 'package:stolby_flutter/presentation/pages/rock_view_image_page/widgets/rock_view_image_content.dart';
 
 class RockViewImagePage extends StatelessWidget {
   final String picturePath;
@@ -11,18 +14,12 @@ class RockViewImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const DetailedRockAppbar(
-        localizedName: null,
-      ),
-      body: Center(
-        child: InteractiveViewer(
-          clipBehavior: Clip.none,
-          child: Image.asset(
-            "assets/images/" + picturePath + ".jpg",
-          ),
+    return BlocProvider(
+      create: (_) => getIt<ImagesViewerBloc>()
+        ..add(
+          ImagesViewerEvent.initialized(pic_name: picturePath),
         ),
-      ),
+      child: const RockViewImageContent(),
     );
   }
 }
