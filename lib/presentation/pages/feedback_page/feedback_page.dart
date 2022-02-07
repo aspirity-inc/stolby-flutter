@@ -16,11 +16,11 @@ class FeedbackPage extends StatelessWidget {
       scheme: 'mailto',
       path: "mobile@aspirity.com",
       queryParameters: {
-        "subject": "Feedback%20from%20Stolby",
-        "body": body.replaceAll(" ", "%20"),
+        "subject": "Feedback from Stolby",
+        "body": body,
       },
     );
-    await launch(_emailLaunchUri.toString().replaceAll("%2520", " "));
+    await launch(_emailLaunchUri.toString().replaceAll("+", " "));
   }
 
   @override
