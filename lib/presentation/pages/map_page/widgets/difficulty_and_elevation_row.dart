@@ -45,7 +45,6 @@ class DifficultyAndElevationRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
-    final ThemeData theme = Theme.of(context);
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -77,7 +76,7 @@ class DifficultyAndElevationRow extends StatelessWidget {
         ),
         Icon(
           Icons.trending_up,
-          color: theme.primaryColorDark,
+          color: _difficultyToColor(difficulty),
         ),
         const SizedBox(
           width: 4,
@@ -87,7 +86,7 @@ class DifficultyAndElevationRow extends StatelessWidget {
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: theme.primaryColorLight,
+            color: Theme.of(context).primaryColorLight,
           ),
         ),
       ],
