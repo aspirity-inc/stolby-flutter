@@ -531,7 +531,7 @@ packages:
       name: mapbox_gl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.0"
+    version: "0.15.0"
   mapbox_gl_dart:
     dependency: transitive
     description:
@@ -545,14 +545,14 @@ packages:
       name: mapbox_gl_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.0"
+    version: "0.15.0"
   mapbox_gl_web:
     dependency: transitive
     description:
       name: mapbox_gl_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.0"
+    version: "0.15.0"
   maps_launcher:
     dependency: "direct main"
     description:

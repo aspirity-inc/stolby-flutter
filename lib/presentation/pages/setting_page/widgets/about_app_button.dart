@@ -32,7 +32,7 @@ class AboutAppButton extends StatelessWidget {
             ),
           ),
           content: Text(
-            "${localization.about_app} $version${localization.about_app_2}",
+            "${localization.about_app} $version ${localization.about_app_2}",
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
