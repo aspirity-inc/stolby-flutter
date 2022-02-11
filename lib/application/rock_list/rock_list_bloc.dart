@@ -18,22 +18,6 @@ part 'rock_list_bloc.freezed.dart';
 part 'rock_list_event.dart';
 part 'rock_list_state.dart';
 
-EventTransformer<Event> restartable<Event>() {
-  return (events, mapper) => events.switchMap(mapper).debounceTime(
-        const Duration(
-          milliseconds: 300,
-        ),
-      );
-}
-
-EventTransformer<Event> sequential<Event>({int? debounceTime}) {
-  return (events, mapper) => events.asyncExpand(mapper).debounceTime(
-        Duration(
-          milliseconds: debounceTime ?? 0,
-        ),
-      );
-}
-
 @injectable
 class RockListBloc extends Bloc<RockListEvent, RockListState> {
   final IRockListRepository _rockListRepository;
@@ -199,5 +183,21 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
             ),
           ),
     );
+  }
+
+  EventTransformer<Event> restartable<Event>() {
+    return (events, mapper) => events.switchMap(mapper).debounceTime(
+          const Duration(
+            milliseconds: 300,
+          ),
+        );
+  }
+
+  EventTransformer<Event> sequential<Event>({int? debounceTime}) {
+    return (events, mapper) => events.asyncExpand(mapper).debounceTime(
+          Duration(
+            milliseconds: debounceTime ?? 0,
+          ),
+        );
   }
 }
