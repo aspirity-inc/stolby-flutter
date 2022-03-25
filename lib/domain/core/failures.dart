@@ -6,3 +6,10 @@ part 'failures.freezed.dart';
 class DatabaseFailure with _$DatabaseFailure {
   const factory DatabaseFailure.notFound() = NotFound;
 }
+
+@freezed
+class LocationFailure with _$LocationFailure {
+  const factory LocationFailure.notGranted() = NotGranted;
+  const factory LocationFailure.disabledService() = DisabledService;
+  const factory LocationFailure.unexpected() = Unexpected;
+}

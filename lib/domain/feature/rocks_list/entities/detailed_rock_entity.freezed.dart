@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'detailed_rock_entity.dart';
@@ -225,7 +226,7 @@ class __$DetailedRockEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DetailedRockEntity implements _DetailedRockEntity {
+class _$_DetailedRockEntity extends _DetailedRockEntity {
   const _$_DetailedRockEntity(
       {required this.id,
       required this.latitude,
@@ -235,7 +236,8 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
       required this.picName,
       required this.localizedName,
       required this.shortInfo,
-      required this.fullInfo});
+      required this.fullInfo})
+      : super._();
 
   @override
   final int id;
@@ -266,26 +268,31 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DetailedRockEntity &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.difficulty, difficulty) ||
-                other.difficulty == difficulty) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.picName, picName) || other.picName == picName) &&
-            (identical(other.localizedName, localizedName) ||
-                other.localizedName == localizedName) &&
-            (identical(other.shortInfo, shortInfo) ||
-                other.shortInfo == shortInfo) &&
-            (identical(other.fullInfo, fullInfo) ||
-                other.fullInfo == fullInfo));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.longitude, longitude) &&
+            const DeepCollectionEquality()
+                .equals(other.difficulty, difficulty) &&
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.picName, picName) &&
+            const DeepCollectionEquality()
+                .equals(other.localizedName, localizedName) &&
+            const DeepCollectionEquality().equals(other.shortInfo, shortInfo) &&
+            const DeepCollectionEquality().equals(other.fullInfo, fullInfo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
-      difficulty, height, picName, localizedName, shortInfo, fullInfo);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(longitude),
+      const DeepCollectionEquality().hash(difficulty),
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(picName),
+      const DeepCollectionEquality().hash(localizedName),
+      const DeepCollectionEquality().hash(shortInfo),
+      const DeepCollectionEquality().hash(fullInfo));
 
   @JsonKey(ignore: true)
   @override
@@ -293,7 +300,7 @@ class _$_DetailedRockEntity implements _DetailedRockEntity {
       __$DetailedRockEntityCopyWithImpl<_DetailedRockEntity>(this, _$identity);
 }
 
-abstract class _DetailedRockEntity implements DetailedRockEntity {
+abstract class _DetailedRockEntity extends DetailedRockEntity {
   const factory _DetailedRockEntity(
       {required int id,
       required double latitude,
@@ -304,6 +311,7 @@ abstract class _DetailedRockEntity implements DetailedRockEntity {
       required String localizedName,
       required String shortInfo,
       required String fullInfo}) = _$_DetailedRockEntity;
+  const _DetailedRockEntity._() : super._();
 
   @override
   int get id;
