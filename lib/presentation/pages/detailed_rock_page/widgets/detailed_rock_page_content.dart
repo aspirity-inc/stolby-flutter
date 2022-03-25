@@ -13,23 +13,11 @@ class DetailedRockPageContent extends StatelessWidget {
   const DetailedRockPageContent({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocListener<LocationBloc, LocationState>(
-      listener: (context, locationState) {
-        if (locationState.userLocation.isSome()) {
-          locationState.userLocation.fold(
-            () => null,
-            (l) => context.read<DetailedRockBloc>().add(
-                  DetailedRockEvent.locationChanged(
-                    location: LatLng(l.latitude, l.longitude),
-                  ),
-                ),
-          );
-        }
-      },
-      child: BlocBuilder<DetailedRockBloc, DetailedRockState>(
-        builder: (context, state) {
-          return Scaffold(
+  Widget build(BuildContext context) =>
+      BlocListener<LocationBloc, LocationState>(
+        listener: _handleStateChange,
+        child: BlocBuilder<DetailedRockBloc, DetailedRockState>(
+          builder: (context, state) => Scaffold(
             appBar: DetailedRockAppbar(
               localizedName: state.rock.fold(
                 () => null,
@@ -39,10 +27,7 @@ class DetailedRockPageContent extends StatelessWidget {
             body: state.rock.fold(
               () => const SizedBox(),
               (rock) => Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                  vertical: 16.0,
-                ),
+                padding: const EdgeInsets.all(16),
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
                   children: [
@@ -73,9 +58,23 @@ class DetailedRockPageContent extends StatelessWidget {
                 ),
               ),
             ),
-          );
-        },
-      ),
-    );
+          ),
+        ),
+      );
+
+  void _handleStateChange(
+    BuildContext context,
+    LocationState locationState,
+  ) {
+    if (locationState.userLocation.isSome()) {
+      locationState.userLocation.fold(
+        () => null,
+        (l) => context.read<DetailedRockBloc>().add(
+              DetailedRockEvent.locationChanged(
+                location: LatLng(l.latitude, l.longitude),
+              ),
+            ),
+      );
+    }
   }
 }

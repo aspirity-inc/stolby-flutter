@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'images_viewer_bloc.dart';
@@ -17,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ImagesViewerEventTearOff {
   const _$ImagesViewerEventTearOff();
 
-  _Initialized initialized({required String pic_name}) {
+  _Initialized initialized({required String picName}) {
     return _Initialized(
-      pic_name: pic_name,
+      picName: picName,
     );
   }
 }
@@ -29,21 +30,21 @@ const $ImagesViewerEvent = _$ImagesViewerEventTearOff();
 
 /// @nodoc
 mixin _$ImagesViewerEvent {
-  String get pic_name => throw _privateConstructorUsedError;
+  String get picName => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pic_name) initialized,
+    required TResult Function(String picName) initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pic_name)? initialized,
+    TResult Function(String picName)? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pic_name)? initialized,
+    TResult Function(String picName)? initialized,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,7 +75,7 @@ abstract class $ImagesViewerEventCopyWith<$Res> {
   factory $ImagesViewerEventCopyWith(
           ImagesViewerEvent value, $Res Function(ImagesViewerEvent) then) =
       _$ImagesViewerEventCopyWithImpl<$Res>;
-  $Res call({String pic_name});
+  $Res call({String picName});
 }
 
 /// @nodoc
@@ -88,12 +89,12 @@ class _$ImagesViewerEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? pic_name = freezed,
+    Object? picName = freezed,
   }) {
     return _then(_value.copyWith(
-      pic_name: pic_name == freezed
-          ? _value.pic_name
-          : pic_name // ignore: cast_nullable_to_non_nullable
+      picName: picName == freezed
+          ? _value.picName
+          : picName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -106,7 +107,7 @@ abstract class _$InitializedCopyWith<$Res>
           _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
   @override
-  $Res call({String pic_name});
+  $Res call({String picName});
 }
 
 /// @nodoc
@@ -122,12 +123,12 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? pic_name = freezed,
+    Object? picName = freezed,
   }) {
     return _then(_Initialized(
-      pic_name: pic_name == freezed
-          ? _value.pic_name
-          : pic_name // ignore: cast_nullable_to_non_nullable
+      picName: picName == freezed
+          ? _value.picName
+          : picName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -136,14 +137,14 @@ class __$InitializedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized({required this.pic_name});
+  const _$_Initialized({required this.picName});
 
   @override
-  final String pic_name;
+  final String picName;
 
   @override
   String toString() {
-    return 'ImagesViewerEvent.initialized(pic_name: $pic_name)';
+    return 'ImagesViewerEvent.initialized(picName: $picName)';
   }
 
   @override
@@ -151,12 +152,12 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initialized &&
-            const DeepCollectionEquality().equals(other.pic_name, pic_name));
+            const DeepCollectionEquality().equals(other.picName, picName));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pic_name));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(picName));
 
   @JsonKey(ignore: true)
   @override
@@ -166,27 +167,27 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pic_name) initialized,
+    required TResult Function(String picName) initialized,
   }) {
-    return initialized(pic_name);
+    return initialized(picName);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pic_name)? initialized,
+    TResult Function(String picName)? initialized,
   }) {
-    return initialized?.call(pic_name);
+    return initialized?.call(picName);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pic_name)? initialized,
+    TResult Function(String picName)? initialized,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(pic_name);
+      return initialized(picName);
     }
     return orElse();
   }
@@ -221,10 +222,10 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ImagesViewerEvent {
-  const factory _Initialized({required String pic_name}) = _$_Initialized;
+  const factory _Initialized({required String picName}) = _$_Initialized;
 
   @override
-  String get pic_name;
+  String get picName;
   @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>

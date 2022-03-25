@@ -9,8 +9,8 @@ import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.da
 import '../rock_list/rock_list_bloc_test.mocks.dart';
 
 void main() {
-  late MockIRockListRepository _repository;
-  late MapBloc _bloc;
+  late MockIRockListRepository repository;
+  late MapBloc bloc;
   const testItem = RockEntity(
     id: 0,
     latitude: 55.9174,
@@ -22,28 +22,28 @@ void main() {
   );
 
   setUp(() {
-    _repository = MockIRockListRepository();
-    _bloc = MapBloc(_repository);
+    repository = MockIRockListRepository();
+    bloc = MapBloc(repository);
   });
 
-  tearDown(() => _bloc.close());
+  tearDown(() => bloc.close());
 
   group(
     'initialized()',
     () {
-      blocTest(
+      blocTest<MapBloc, MapState>(
         'Should emit rocks from DB',
         build: () {
-          when(_repository.getRocksList()).thenAnswer(
+          when(repository.getRocksList()).thenAnswer(
             (_) async => right(
               [testItem],
             ),
           );
 
-          return _bloc;
+          return bloc;
         },
         seed: () => MapState.initial(),
-        act: (MapBloc bloc) => bloc.add(const MapEvent.initialized()),
+        act: (bloc) => bloc.add(const MapEvent.initialized()),
         expect: () => [
           MapState.initial().copyWith(loading: true),
           MapState.initial().copyWith(
@@ -53,17 +53,17 @@ void main() {
         ],
       );
 
-      blocTest(
+      blocTest<MapBloc, MapState>(
         'Should emit nothing on error',
         build: () {
-          when(_repository.getRocksList()).thenAnswer(
+          when(repository.getRocksList()).thenAnswer(
             (_) async => left(const DatabaseFailure.notFound()),
           );
 
-          return _bloc;
+          return bloc;
         },
         seed: () => MapState.initial(),
-        act: (MapBloc bloc) => bloc.add(const MapEvent.initialized()),
+        act: (bloc) => bloc.add(const MapEvent.initialized()),
         expect: () => [
           MapState.initial().copyWith(loading: true),
           MapState.initial().copyWith(loading: false),
@@ -74,16 +74,16 @@ void main() {
   group(
     'zoomChanged()',
     () {
-      blocTest(
+      blocTest<MapBloc, MapState>(
         'Should emit state with changed angle on angle change',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapState.initial().copyWith(
           rocks: [
             testItem,
             testItem,
           ],
         ),
-        act: (MapBloc bloc) => bloc.add(
+        act: (bloc) => bloc.add(
           const MapEvent.zoomChanged(
             15,
           ),
@@ -99,16 +99,16 @@ void main() {
         ],
       );
 
-      blocTest(
+      blocTest<MapBloc, MapState>(
         'Should emit state with maximum zoom of 18',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapState.initial().copyWith(
           rocks: [
             testItem,
             testItem,
           ],
         ),
-        act: (MapBloc bloc) => bloc.add(
+        act: (bloc) => bloc.add(
           const MapEvent.zoomChanged(
             20,
           ),
@@ -124,16 +124,16 @@ void main() {
         ],
       );
 
-      blocTest(
+      blocTest<MapBloc, MapState>(
         'Should emit state with minimum zoom of 9',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapState.initial().copyWith(
           rocks: [
             testItem,
             testItem,
           ],
         ),
-        act: (MapBloc bloc) => bloc.add(
+        act: (bloc) => bloc.add(
           const MapEvent.zoomChanged(
             7,
           ),
@@ -153,16 +153,16 @@ void main() {
   group(
     'angleChanged()',
     () {
-      blocTest(
+      blocTest<MapBloc, MapState>(
         'Should emit state with changed angle on angle change',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapState.initial().copyWith(
           rocks: [
             testItem,
             testItem,
           ],
         ),
-        act: (MapBloc bloc) => bloc.add(
+        act: (bloc) => bloc.add(
           const MapEvent.angleChanged(
             90,
           ),

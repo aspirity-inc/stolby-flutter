@@ -6,21 +6,13 @@ class DistanceToRock extends StatelessWidget {
   final double? distance;
 
   const DistanceToRock({
-    Key? key,
     required this.distance,
+    Key? key,
   }) : super(key: key);
-
-  String _distanceToRock(double? distance, AppLocalizations localization) {
-    return distance != null
-        ? distance >= 1000
-            ? (distance / 1000).toStringAsFixed(2).replaceAll('.', ',') + " "
-            : distance.toStringAsFixed(0) + " "
-        : localization.distance_not_defined;
-  }
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
     final color = Theme.of(context).primaryColorDark;
 
     return Column(
@@ -47,9 +39,9 @@ class DistanceToRock extends StatelessWidget {
             children: <TextSpan>[
               TextSpan(
                 text: distance != null
-                    ? distance! >= 1000
-                        ? localization.distance_kilometers
-                        : localization.distance_meters
+                    ? (distance ?? 0) >= 1000
+                        ? localization?.distance_kilometers
+                        : localization?.distance_meters
                     : '',
                 style: TextStyle(
                   fontSize: 20,
@@ -63,4 +55,11 @@ class DistanceToRock extends StatelessWidget {
       ],
     );
   }
+
+  String _distanceToRock(double? distance, AppLocalizations? localization) =>
+      distance != null
+          ? distance >= 1000
+              ? '${(distance / 1000).toStringAsFixed(2).replaceAll('.', ',')} '
+              : '${distance.toStringAsFixed(0)} '
+          : localization?.distance_not_defined ?? '';
 }

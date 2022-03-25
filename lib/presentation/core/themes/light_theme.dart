@@ -6,7 +6,7 @@ final ThemeData lightTheme = ThemeData(
   colorScheme: const ColorScheme.light().copyWith(
     primary: AppColors.primary,
     secondary: AppColors.secondaryLight,
-    secondaryVariant: AppColors.primary,
+    secondaryContainer: AppColors.primary,
     onSurface: AppColors.secondaryLight,
   ),
   cardColor: AppColors.greyLight,

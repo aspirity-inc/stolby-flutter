@@ -8,26 +8,13 @@ class MapGeolocationIconButton extends StatelessWidget {
   const MapGeolocationIconButton({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SettingsBloc, SettingsState>(
-      builder: (context, state) {
-        return InkWell(
+  Widget build(BuildContext context) =>
+      BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) => InkWell(
           customBorder: const CircleBorder(),
-          onTap: () {
-            context.read<LocationBloc>().add(
-                  state.geolocationEnabled
-                      ? const LocationEvent.stopWatchingLocation()
-                      : const LocationEvent.startWatchingLocation(),
-                );
-            context
-                .read<SettingsBloc>()
-                .add(const SettingsEvent.toggledGeolocation());
-          },
+          onTap: () => _handleTap(context, state),
           child: Container(
-            margin: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 16.0,
-            ),
+            margin: const EdgeInsets.all(16),
             height: 56,
             width: 56,
             decoration: BoxDecoration(
@@ -42,8 +29,15 @@ class MapGeolocationIconButton extends StatelessWidget {
               color: Colors.white,
             ),
           ),
+        ),
+      );
+
+  void _handleTap(BuildContext context, SettingsState state) {
+    context.read<LocationBloc>().add(
+          state.geolocationEnabled
+              ? const LocationEvent.stopWatchingLocation()
+              : const LocationEvent.startWatchingLocation(),
         );
-      },
-    );
+    context.read<SettingsBloc>().add(const SettingsEvent.toggledGeolocation());
   }
 }

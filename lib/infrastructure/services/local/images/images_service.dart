@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 class ImagesService {
   Future<List<String>> getAllImages() async {
     final manifestContent = await rootBundle.loadString('AssetManifest.json');
-    final Map<String, dynamic> assetsJson = json.decode(manifestContent);
+    final assetsJson = json.decode(manifestContent) as Map<String, dynamic>;
 
     final assetsPaths = assetsJson.keys
         .where(

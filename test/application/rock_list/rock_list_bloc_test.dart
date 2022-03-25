@@ -13,8 +13,8 @@ import 'rock_list_bloc_test.mocks.dart';
 
 @GenerateMocks([IRockListRepository])
 void main() {
-  late MockIRockListRepository _repository;
-  late RockListBloc _bloc;
+  late MockIRockListRepository repository;
+  late RockListBloc bloc;
 
   const testItem = RockEntity(
     id: 0,
@@ -27,54 +27,31 @@ void main() {
   );
 
   setUp(() {
-    _repository = MockIRockListRepository();
-    _bloc = RockListBloc(_repository);
+    repository = MockIRockListRepository();
+    bloc = RockListBloc(repository);
   });
 
-  tearDown(() => _bloc.close());
+  tearDown(() => bloc.close());
 
   group('Initial state', () {
     test('Should be initialized with correct state', () {
-      final result = _bloc.state;
+      final result = bloc.state;
       expect(result, RockListState.initial());
     });
   });
 
   group('initialized()', () {
     blocTest(
-      'Should emit rocks from DB',
-      build: () {
-        when(_repository.getRocksList()).thenAnswer(
-          (_) async => right(
-            [testItem],
-          ),
-        );
-
-        return _bloc;
-      },
-      seed: () => RockListState.initial(),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.initialized()),
-      expect: () => [
-        RockListState.initial().copyWith(loading: true),
-        RockListState.initial().copyWith(
-          loading: false,
-          rocksToShow: [testItem],
-          allRocks: [testItem],
-        ),
-      ],
-    );
-
-    blocTest(
       'Should emit nothing on error',
       build: () {
-        when(_repository.getRocksList()).thenAnswer(
+        when(repository.getRocksList()).thenAnswer(
           (_) async => left(const DatabaseFailure.notFound()),
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => RockListState.initial(),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.initialized()),
+      act: (_) => bloc.add(const RockListEvent.initialized()),
       expect: () => [
         RockListState.initial().copyWith(loading: true),
         RockListState.initial().copyWith(loading: false),
@@ -85,25 +62,25 @@ void main() {
   group('filtered()', () {
     blocTest(
       'Should emit nothing if search string is empty',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [testItem, testItem],
         rocksToShow: [testItem, testItem],
         searchString: '',
       ),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.filtered()),
-      expect: () => [],
+      act: (_) => bloc.add(const RockListEvent.filtered()),
+      expect: () => <RockListState>[],
     );
 
     blocTest(
       'Should emit one rock if search string is Granny',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [testItem, testItem.copyWith(localizedName: 'Test name')],
         rocksToShow: [testItem, testItem.copyWith(localizedName: 'Test name')],
         searchString: 'Granny',
       ),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.filtered()),
+      act: (_) => bloc.add(const RockListEvent.filtered()),
       expect: () => [
         RockListState.initial().copyWith(
           allRocks: [testItem, testItem.copyWith(localizedName: 'Test name')],
@@ -117,7 +94,7 @@ void main() {
   group('sorted()', () {
     blocTest(
       'Should emit nothing if no user location',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [
           testItem.copyWith(
@@ -141,12 +118,12 @@ void main() {
         ],
         searchString: '',
       ),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.sorted()),
-      expect: () => [],
+      act: (_) => bloc.add(const RockListEvent.sorted()),
+      expect: () => <RockListState>[],
     );
     blocTest(
       'Should emit sorted list if user location is OK',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [
           testItem.copyWith(
@@ -171,7 +148,7 @@ void main() {
         searchString: '',
         userLocation: some(LatLng(55.9174, 92.73843)),
       ),
-      act: (RockListBloc bloc) => bloc.add(const RockListEvent.sorted()),
+      act: (_) => bloc.add(const RockListEvent.sorted()),
       expect: () => [
         RockListState.initial().copyWith(
           allRocks: [
@@ -204,27 +181,27 @@ void main() {
   group('searchStringChanged()', () {
     blocTest(
       'Should emit nothing if search string is empty',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [testItem, testItem],
         rocksToShow: [testItem, testItem],
       ),
-      act: (RockListBloc bloc) => bloc.add(
+      act: (_) => bloc.add(
         const RockListEvent.searchStringChanged(
           searchString: '',
         ),
       ),
-      expect: () => [],
+      expect: () => <RockListState>[],
     );
 
     blocTest(
       'Should emit one rock if search string is Granny',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [testItem, testItem.copyWith(localizedName: 'Test name')],
         rocksToShow: [testItem, testItem.copyWith(localizedName: 'Test name')],
       ),
-      act: (RockListBloc bloc) => bloc.add(
+      act: (_) => bloc.add(
         const RockListEvent.searchStringChanged(
           searchString: 'Granny',
         ),
@@ -253,7 +230,7 @@ void main() {
   group('locationChanged', () {
     blocTest(
       'Should emit sorted list on user location',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [
           testItem.copyWith(
@@ -276,7 +253,7 @@ void main() {
           ),
         ],
       ),
-      act: (RockListBloc bloc) => bloc.add(
+      act: (_) => bloc.add(
         RockListEvent.locationChanged(
           location: LatLng(55.9174, 92.73843),
         ),
@@ -337,13 +314,13 @@ void main() {
   group('searchStringCleared()', () {
     blocTest(
       'Should emit all rocks if search string is Granny',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => RockListState.initial().copyWith(
         allRocks: [testItem, testItem.copyWith(localizedName: 'Test name')],
         rocksToShow: [testItem, testItem.copyWith(localizedName: 'Test name')],
         searchString: 'Granny',
       ),
-      act: (RockListBloc bloc) => bloc.add(
+      act: (_) => bloc.add(
         const RockListEvent.searchLineCleared(),
       ),
       expect: () => [

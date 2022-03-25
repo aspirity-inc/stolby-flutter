@@ -13,19 +13,18 @@ import 'package:stolby_flutter/infrastructure/services/local/database/views/sing
 
 part 'app_database.g.dart';
 
-LazyDatabase _openConnection() {
-  return LazyDatabase(() async {
-    final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(p.join(dbFolder.path, 'rocks.db'));
+LazyDatabase _openConnection() => LazyDatabase(() async {
+      final dbFolder = await getApplicationDocumentsDirectory();
+      final file = File(p.join(dbFolder.path, 'rocks.db'));
 
-    final dbBytes = await rootBundle.load("assets/rocks.db");
-    await file.writeAsBytes(
-      dbBytes.buffer.asUint8List(dbBytes.offsetInBytes, dbBytes.lengthInBytes),
-    );
+      final dbBytes = await rootBundle.load('assets/rocks.db');
+      await file.writeAsBytes(
+        dbBytes.buffer
+            .asUint8List(dbBytes.offsetInBytes, dbBytes.lengthInBytes),
+      );
 
-    return NativeDatabase(file);
-  });
-}
+      return NativeDatabase(file);
+    });
 
 @lazySingleton
 @DriftDatabase(tables: [Rocks, RocksLocalized])

@@ -230,9 +230,10 @@ class RocksCompanion extends UpdateCompanion<Rock> {
 }
 
 class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
-  final GeneratedDatabase _db;
+  @override
+  final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $RocksTable(this._db, [this._alias]);
+  $RocksTable(this.attachedDatabase, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   @override
   late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
@@ -323,7 +324,7 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
 
   @override
   $RocksTable createAlias(String alias) {
-    return $RocksTable(_db, alias);
+    return $RocksTable(attachedDatabase, alias);
   }
 }
 
@@ -553,9 +554,10 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
 
 class $RocksLocalizedTable extends RocksLocalized
     with TableInfo<$RocksLocalizedTable, RocksLocalizedData> {
-  final GeneratedDatabase _db;
+  @override
+  final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $RocksLocalizedTable(this._db, [this._alias]);
+  $RocksLocalizedTable(this.attachedDatabase, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   @override
   late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
@@ -646,7 +648,7 @@ class $RocksLocalizedTable extends RocksLocalized
 
   @override
   $RocksLocalizedTable createAlias(String alias) {
-    return $RocksLocalizedTable(_db, alias);
+    return $RocksLocalizedTable(attachedDatabase, alias);
   }
 }
 

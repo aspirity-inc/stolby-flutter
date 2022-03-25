@@ -6,14 +6,14 @@ class AppBottomNavigationBarItem extends StatelessWidget {
   final bool selected;
 
   const AppBottomNavigationBarItem({
-    Key? key,
     required this.selected,
     required this.icon,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.secondaryVariant;
+    final color = Theme.of(context).colorScheme.secondaryContainer;
 
     return SizedBox(
       height: 80,

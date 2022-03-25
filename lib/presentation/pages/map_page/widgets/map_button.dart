@@ -6,15 +6,15 @@ class MapButton extends StatelessWidget {
   final String text;
 
   const MapButton({
-    Key? key,
     required this.onPressed,
     required this.icon,
     required this.text,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
+    final theme = Theme.of(context);
 
     return InkWell(
       onTap: onPressed,

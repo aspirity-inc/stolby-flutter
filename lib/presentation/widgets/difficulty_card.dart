@@ -7,23 +7,46 @@ class DifficultyCard extends StatelessWidget {
   final double textSize;
 
   const DifficultyCard({
-    Key? key,
     required this.difficulty,
     required this.textSize,
+    Key? key,
   }) : super(key: key);
 
-  String _difficultyToString(int difficulty, AppLocalizations localization) {
+  @override
+  Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context);
+
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 16,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(24)),
+        color: _difficultyToColor(difficulty),
+      ),
+      child: Text(
+        _difficultyToString(difficulty, localization) ?? '',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: textSize,
+        ),
+      ),
+    );
+  }
+
+  String? _difficultyToString(int difficulty, AppLocalizations? localization) {
     switch (difficulty) {
       case 0:
-        return localization.difficulty_short_0;
+        return localization?.difficulty_short_0;
       case 1:
-        return localization.difficulty_short_1;
+        return localization?.difficulty_short_1;
       case 2:
-        return localization.difficulty_short_2;
+        return localization?.difficulty_short_2;
       case 3:
-        return localization.difficulty_short_3;
+        return localization?.difficulty_short_3;
       default:
-        return "difficulty name not found";
+        return 'difficulty name not found';
     }
   }
 
@@ -40,28 +63,5 @@ class DifficultyCard extends StatelessWidget {
       default:
         return AppColors.primary;
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
-
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 8.0,
-        horizontal: 16.0,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(24)),
-        color: _difficultyToColor(difficulty),
-      ),
-      child: Text(
-        _difficultyToString(difficulty, localization),
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: textSize,
-        ),
-      ),
-    );
   }
 }

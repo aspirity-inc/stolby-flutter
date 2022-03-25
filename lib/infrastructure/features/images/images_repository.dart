@@ -16,8 +16,9 @@ class ImagesRepository implements IImagesRepository {
 
     final picNames = filteredImages
         .map((e) => e.split('/images/')[1])
-        .map((e) => e.split('.')[0])
+        .map((e) => e.split('.').first)
         .toList();
+
     return picNames;
   }
 }

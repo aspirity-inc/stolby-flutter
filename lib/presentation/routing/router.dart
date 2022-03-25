@@ -13,55 +13,55 @@ import 'package:stolby_flutter/presentation/routing/app_router_transaction_build
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    CustomRoute(
+    CustomRoute<void>(
       page: SplashPage,
       initial: true,
     ),
-    CustomRoute(
+    CustomRoute<void>(
       page: MainPage,
       children: [
-        CustomRoute(
+        CustomRoute<void>(
           page: MapPage,
           initial: true,
-          transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: AppTransactionsBuilders.zoomIn,
           reverseDurationInMilliseconds: 500,
           durationInMilliseconds: 500,
         ),
-        CustomRoute(
+        CustomRoute<void>(
           page: RocksPage,
-          transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: AppTransactionsBuilders.zoomIn,
           reverseDurationInMilliseconds: 500,
           durationInMilliseconds: 500,
         ),
-        CustomRoute(
+        CustomRoute<void>(
           page: SettingsPage,
-          transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: AppTransactionsBuilders.zoomIn,
           reverseDurationInMilliseconds: 500,
           durationInMilliseconds: 500,
         ),
       ],
     ),
-    CustomRoute(
+    CustomRoute<void>(
       page: DetailedRockPage,
-      transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+      transitionsBuilder: AppTransactionsBuilders.zoomIn,
       reverseDurationInMilliseconds: 500,
       durationInMilliseconds: 500,
     ),
-    CustomRoute(
+    CustomRoute<void>(
       page: RockViewImagePage,
-      transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+      transitionsBuilder: AppTransactionsBuilders.zoomIn,
       reverseDurationInMilliseconds: 500,
       durationInMilliseconds: 500,
     ),
-    CustomRoute(
+    CustomRoute<void>(
       page: FeedbackPage,
-      transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+      transitionsBuilder: AppTransactionsBuilders.zoomIn,
       reverseDurationInMilliseconds: 500,
       durationInMilliseconds: 500,
     ),
-    CustomRoute(
+    CustomRoute<void>(
       page: OnboardingPage,
-      transitionsBuilder: AppRouteTransitionsBuilders.zoomIn,
+      transitionsBuilder: AppTransactionsBuilders.zoomIn,
       reverseDurationInMilliseconds: 500,
       durationInMilliseconds: 500,
     ),

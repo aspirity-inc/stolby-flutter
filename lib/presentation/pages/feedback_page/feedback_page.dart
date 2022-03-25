@@ -1,6 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:stolby_flutter/presentation/widgets/detailed_rock_appbar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FeedbackPage extends StatelessWidget {
@@ -9,23 +11,9 @@ class FeedbackPage extends StatelessWidget {
 
   FeedbackPage({Key? key}) : super(key: key);
 
-  void _sendEmail(
-    String body,
-  ) async {
-    final _emailLaunchUri = Uri(
-      scheme: 'mailto',
-      path: "mobile@aspirity.com",
-      queryParameters: {
-        "subject": "Feedback from Stolby",
-        "body": body,
-      },
-    );
-    await launch(_emailLaunchUri.toString().replaceAll("+", " "));
-  }
-
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
     final color = Theme.of(context).colorScheme.secondary;
 
     return Scaffold(
@@ -33,14 +21,14 @@ class FeedbackPage extends StatelessWidget {
         localizedName: null,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             const SizedBox(
               height: 8,
             ),
             Text(
-              localization.feedback_device,
+              localization?.feedback_device ?? '',
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
@@ -49,16 +37,18 @@ class FeedbackPage extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Container(
+            DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(24)),
-                border: Border.all(
-                  width: 2,
-                  color: color,
+                border: Border.fromBorderSide(
+                  BorderSide(
+                    width: 2,
+                    color: color,
+                  ),
                 ),
               ),
               child: TextField(
-                key: const ValueKey("feedback_page_device_text_field"),
+                key: const ValueKey('feedback_page_device_text_field'),
                 controller: _deviceController,
                 maxLines: 1,
                 decoration: InputDecoration(
@@ -68,7 +58,7 @@ class FeedbackPage extends StatelessWidget {
                   focusedBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
-                  hintText: localization.feedback_device_model,
+                  hintText: localization?.feedback_device_model ?? '',
                   hintStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
@@ -79,16 +69,18 @@ class FeedbackPage extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Container(
+            DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(24)),
-                border: Border.all(
-                  width: 2,
-                  color: color,
+                border: Border.fromBorderSide(
+                  BorderSide(
+                    width: 2,
+                    color: color,
+                  ),
                 ),
               ),
               child: TextField(
-                key: const ValueKey("feedback_page_feedback_text_field"),
+                key: const ValueKey('feedback_page_feedback_text_field'),
                 controller: _controller,
                 maxLength: 500,
                 maxLines: 5,
@@ -100,7 +92,7 @@ class FeedbackPage extends StatelessWidget {
                   focusedBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
-                  hintText: localization.drawer_head_title_help,
+                  hintText: localization?.drawer_head_title_help,
                   hintStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
@@ -114,7 +106,7 @@ class FeedbackPage extends StatelessWidget {
             InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(24)),
               onTap: () => _sendEmail(
-                _deviceController.value.text + ' ' + _controller.value.text,
+                '${_deviceController.value.text} ${_controller.value.text}',
               ),
               child: Container(
                 margin: const EdgeInsets.symmetric(
@@ -128,7 +120,7 @@ class FeedbackPage extends StatelessWidget {
                   color: color,
                 ),
                 child: Text(
-                  localization.feedback_action,
+                  localization?.feedback_action ?? '',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
@@ -141,5 +133,19 @@ class FeedbackPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  FutureOr<void> _sendEmail(
+    String body,
+  ) async {
+    final emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: 'mobile@aspirity.com',
+      queryParameters: <String, String>{
+        'subject': 'Feedback from Stolby',
+        'body': body,
+      },
+    );
+    await launch(emailLaunchUri.toString().replaceAll('+', ' '));
   }
 }

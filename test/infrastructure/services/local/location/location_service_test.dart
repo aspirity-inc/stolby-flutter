@@ -1,5 +1,5 @@
-import 'package:location/location.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:location/location.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/location_service.dart';
@@ -8,44 +8,44 @@ import 'location_service_test.mocks.dart';
 
 @GenerateMocks([Location])
 void main() {
-  late Location _location;
-  late LocationService _locationService;
+  late Location location;
+  late LocationService locationService;
 
   setUp(() {
-    _location = MockLocation();
-    _locationService = LocationService(_location);
+    location = MockLocation();
+    locationService = LocationService(location);
   });
 
   group('checkPermission()', () {
     test('Should return PermissionStatus.granted', () async {
       //arrange
-      when(_location.hasPermission()).thenAnswer(
+      when(location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.granted,
       );
       //act
-      final result = await _locationService.checkPermission();
+      final result = await locationService.checkPermission();
       //assert
       expect(result, PermissionStatus.granted);
     });
 
     test('Should return PermissionStatus.grantedLimited', () async {
       //arrange
-      when(_location.hasPermission()).thenAnswer(
+      when(location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.grantedLimited,
       );
       //act
-      final result = await _locationService.checkPermission();
+      final result = await locationService.checkPermission();
       //assert
       expect(result, PermissionStatus.grantedLimited);
     });
 
     test('Should return PermissionStatus.denied ', () async {
       //arrange
-      when(_location.hasPermission()).thenAnswer(
+      when(location.hasPermission()).thenAnswer(
         (_) async => PermissionStatus.denied,
       );
       //act
-      final result = await _locationService.checkPermission();
+      final result = await locationService.checkPermission();
       //assert
       expect(result, PermissionStatus.denied);
     });
@@ -54,11 +54,11 @@ void main() {
       'Should return PermissionStatus.deniedForever',
       () async {
         //arrange
-        when(_location.hasPermission()).thenAnswer(
+        when(location.hasPermission()).thenAnswer(
           (_) async => PermissionStatus.deniedForever,
         );
         //act
-        final result = await _locationService.checkPermission();
+        final result = await locationService.checkPermission();
         //assert
         expect(result, PermissionStatus.deniedForever);
       },
@@ -68,30 +68,30 @@ void main() {
   group('requestLocationPermission()', () {
     test('Should return PermissionStatus.granted', () async {
       //arrange
-      when(_location.requestPermission())
+      when(location.requestPermission())
           .thenAnswer((_) async => PermissionStatus.granted);
       //act
-      final result = await _locationService.requestLocationPermission();
+      final result = await locationService.requestLocationPermission();
       //assert
       expect(result, PermissionStatus.granted);
     });
 
     test('Should return PermissionStatus.grantedLimited', () async {
       //arrange
-      when(_location.requestPermission())
+      when(location.requestPermission())
           .thenAnswer((_) async => PermissionStatus.grantedLimited);
       //act
-      final result = await _locationService.requestLocationPermission();
+      final result = await locationService.requestLocationPermission();
       //assert
       expect(result, PermissionStatus.grantedLimited);
     });
 
     test('Should return PermissionStatus.denied', () async {
       //arrange
-      when(_location.requestPermission())
+      when(location.requestPermission())
           .thenAnswer((_) async => PermissionStatus.denied);
       //act
-      final result = await _locationService.requestLocationPermission();
+      final result = await locationService.requestLocationPermission();
       //assert
       expect(result, PermissionStatus.denied);
     });
@@ -100,10 +100,10 @@ void main() {
       'Should return PermissionStatus.deniedForever',
       () async {
         //arrange
-        when(_location.requestPermission())
+        when(location.requestPermission())
             .thenAnswer((_) async => PermissionStatus.deniedForever);
         //act
-        final result = await _locationService.requestLocationPermission();
+        final result = await locationService.requestLocationPermission();
         //assert
         expect(result, PermissionStatus.deniedForever);
       },
@@ -113,29 +113,29 @@ void main() {
   group('geolocationService()', () {
     test('Should return true if service enabled', () async {
       //arrange
-      when(_location.serviceEnabled()).thenAnswer((_) async => true);
+      when(location.serviceEnabled()).thenAnswer((_) async => true);
       //act
-      final result = await _locationService.geolocationService();
+      final result = await locationService.geolocationService();
       //assert
       expect(result, true);
     });
 
     test('Should return true on service turned on', () async {
       //arrange
-      when(_location.serviceEnabled()).thenAnswer((_) async => false);
-      when(_location.requestService()).thenAnswer((_) async => true);
+      when(location.serviceEnabled()).thenAnswer((_) async => false);
+      when(location.requestService()).thenAnswer((_) async => true);
       //act
-      final result = await _locationService.geolocationService();
+      final result = await locationService.geolocationService();
       //assert
       expect(result, true);
     });
 
     test('Should return false on service not turned on', () async {
       //arrange
-      when(_location.serviceEnabled()).thenAnswer((_) async => false);
-      when(_location.requestService()).thenAnswer((_) async => false);
+      when(location.serviceEnabled()).thenAnswer((_) async => false);
+      when(location.requestService()).thenAnswer((_) async => false);
       //act
-      final result = await _locationService.geolocationService();
+      final result = await locationService.geolocationService();
       //assert
       expect(result, false);
     });

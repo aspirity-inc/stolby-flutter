@@ -6,15 +6,15 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:stolby_flutter/application/detailed_rock_bloc/detailed_rock_bloc.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
-import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
 
 import 'detailed_rock_bloc_test.mocks.dart';
 
 @GenerateMocks([IRockListRepository])
 void main() {
-  late MockIRockListRepository _repository;
-  late DetailedRockBloc _bloc;
+  late MockIRockListRepository repository;
+  late DetailedRockBloc bloc;
   const testItem = DetailedRockEntity(
     id: 0,
     latitude: 55.9174,
@@ -28,28 +28,28 @@ void main() {
   );
 
   setUp(() {
-    _repository = MockIRockListRepository();
-    _bloc = DetailedRockBloc(_repository);
+    repository = MockIRockListRepository();
+    bloc = DetailedRockBloc(repository);
   });
 
-  tearDown(() => _bloc.close());
+  tearDown(() => bloc.close());
 
   group(
     'initialized()',
     () {
-      blocTest(
+      blocTest<DetailedRockBloc, DetailedRockState>(
         'Should emit detailed rock info from DB',
         build: () {
-          when(_repository.getSingleRock(0)).thenAnswer(
+          when(repository.getSingleRock(any)).thenAnswer(
             (_) async => right(
               testItem,
             ),
           );
 
-          return _bloc;
+          return bloc;
         },
         seed: () => DetailedRockState.initial(),
-        act: (DetailedRockBloc bloc) => bloc.add(
+        act: (bloc) => bloc.add(
           const DetailedRockEvent.initialized(
             id: 0,
           ),
@@ -61,31 +61,31 @@ void main() {
         ],
       );
 
-      blocTest(
+      blocTest<DetailedRockBloc, DetailedRockState>(
         'Should emit nothing on error',
         build: () {
-          when(_repository.getSingleRock(0)).thenAnswer(
+          when(repository.getSingleRock(0)).thenAnswer(
             (_) async => left(const DatabaseFailure.notFound()),
           );
 
-          return _bloc;
+          return bloc;
         },
         seed: () => DetailedRockState.initial(),
-        act: (DetailedRockBloc bloc) => bloc.add(
+        act: (bloc) => bloc.add(
           const DetailedRockEvent.initialized(
             id: 0,
           ),
         ),
-        expect: () => [],
+        expect: () => <DetailedRockState>[],
       );
     },
   );
   group('locationChanged()', () {
-    blocTest(
+    blocTest<DetailedRockBloc, DetailedRockState>(
       'should emit distance in meters on user position',
-      build: () => _bloc,
+      build: () => bloc,
       seed: () => DetailedRockState(rock: some(testItem), distance: none()),
-      act: (DetailedRockBloc bloc) => bloc.add(
+      act: (bloc) => bloc.add(
         DetailedRockEvent.locationChanged(
           location: LatLng(55.9074, 92.73843),
         ),

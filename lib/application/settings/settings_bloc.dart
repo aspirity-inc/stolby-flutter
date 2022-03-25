@@ -29,31 +29,31 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         toggledGeolocation: (e) async {
           final value = !state.geolocationEnabled;
-          _settingsRepository.toggleGeolocation(value);
+          await _settingsRepository.toggleGeolocation(value: value);
           emit(state.copyWith(geolocationEnabled: value));
         },
         toggledMapReverse: (e) async {
           final value = !state.reversedMap;
-          _settingsRepository.toggleMapReverse(value);
+          await _settingsRepository.toggleMapReverse(value: value);
           emit(state.copyWith(reversedMap: value));
         },
         toggledUserMapCentering: (e) async {
           final value = !state.mapUserCentering;
-          _settingsRepository.toggleUserCentering(value);
+          await _settingsRepository.toggleUserCentering(value: value);
           emit(state.copyWith(mapUserCentering: value));
         },
         toggledAutoTheme: (e) async {
           final value = !state.autoThemeChange;
-          _settingsRepository.toggleAutoTheme(value);
+          await _settingsRepository.toggleAutoTheme(value: value);
           emit(state.copyWith(autoThemeChange: value));
         },
         toggledDarkTheme: (e) async {
           final value = !state.darkTheme;
-          _settingsRepository.toggleDarkTheme(value);
+          await _settingsRepository.toggleDarkTheme(value: value);
           emit(state.copyWith(darkTheme: value));
         },
         onboardingVisited: (e) async {
-          _settingsRepository.onBoardingVisited();
+          await _settingsRepository.onBoardingVisited();
           emit(state.copyWith(onboardingVisited: true));
         },
       );

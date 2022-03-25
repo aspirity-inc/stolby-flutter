@@ -11,8 +11,8 @@ import 'settings_bloc_test.mocks.dart';
 
 @GenerateMocks([ISettingsRepository])
 void main() {
-  late ISettingsRepository _repository;
-  late SettingsBloc _bloc;
+  late MockISettingsRepository repository;
+  late SettingsBloc bloc;
   const testItem = AppSettingsEntity(
     geolocationEnabled: false,
     reversedMap: false,
@@ -23,25 +23,25 @@ void main() {
   );
 
   setUp(() {
-    _repository = MockISettingsRepository();
-    _bloc = SettingsBloc(_repository);
+    repository = MockISettingsRepository();
+    bloc = SettingsBloc(repository);
   });
 
-  tearDown(() => _bloc.close());
+  tearDown(() => bloc.close());
 
   group('initialized()', () {
     blocTest(
       'Should emit nothing as initial state same as initial shared preferences',
       build: () {
-        when(_repository.fetchSettings()).thenAnswer(
+        when(repository.fetchSettings()).thenAnswer(
           (_) async => testItem,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) => bloc.add(const SettingsEvent.initialized()),
-      expect: () => [],
+      act: (_) => bloc.add(const SettingsEvent.initialized()),
+      expect: () => <SettingsState>[],
     );
   });
 
@@ -50,17 +50,17 @@ void main() {
       'Should toggle geolocation',
       build: () {
         when(
-          _repository
-              .toggleGeolocation(SettingsState.initial().geolocationEnabled),
+          repository.toggleGeolocation(
+            value: anyNamed('value'),
+          ),
         ).thenAnswer(
           (_) async => unit,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) =>
-          bloc.add(const SettingsEvent.toggledGeolocation()),
+      act: (_) => bloc.add(const SettingsEvent.toggledGeolocation()),
       expect: () => [
         SettingsState.initial().copyWith(geolocationEnabled: true),
       ],
@@ -72,16 +72,17 @@ void main() {
       'Should toggle MapReverse',
       build: () {
         when(
-          _repository.toggleMapReverse(SettingsState.initial().reversedMap),
+          repository.toggleMapReverse(
+            value: SettingsState.initial().reversedMap,
+          ),
         ).thenAnswer(
           (_) async => unit,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) =>
-          bloc.add(const SettingsEvent.toggledMapReverse()),
+      act: (_) => bloc.add(const SettingsEvent.toggledMapReverse()),
       expect: () => [
         SettingsState.initial().copyWith(reversedMap: true),
       ],
@@ -93,17 +94,17 @@ void main() {
       'Should toggle userCentering',
       build: () {
         when(
-          _repository
-              .toggleUserCentering(SettingsState.initial().mapUserCentering),
+          repository.toggleUserCentering(
+            value: SettingsState.initial().mapUserCentering,
+          ),
         ).thenAnswer(
           (_) async => unit,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) =>
-          bloc.add(const SettingsEvent.toggledUserMapCentering()),
+      act: (_) => bloc.add(const SettingsEvent.toggledUserMapCentering()),
       expect: () => [
         SettingsState.initial().copyWith(mapUserCentering: true),
       ],
@@ -115,16 +116,17 @@ void main() {
       'Should toggle autoTheme',
       build: () {
         when(
-          _repository.toggleAutoTheme(SettingsState.initial().autoThemeChange),
+          repository.toggleAutoTheme(
+            value: SettingsState.initial().autoThemeChange,
+          ),
         ).thenAnswer(
           (_) async => unit,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) =>
-          bloc.add(const SettingsEvent.toggledAutoTheme()),
+      act: (_) => bloc.add(const SettingsEvent.toggledAutoTheme()),
       expect: () => [
         SettingsState.initial().copyWith(autoThemeChange: false),
       ],
@@ -136,16 +138,17 @@ void main() {
       'Should toggle DarkTheme',
       build: () {
         when(
-          _repository.toggleDarkTheme(SettingsState.initial().darkTheme),
+          repository.toggleDarkTheme(
+            value: SettingsState.initial().darkTheme,
+          ),
         ).thenAnswer(
           (_) async => unit,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) =>
-          bloc.add(const SettingsEvent.toggledDarkTheme()),
+      act: (_) => bloc.add(const SettingsEvent.toggledDarkTheme()),
       expect: () => [
         SettingsState.initial().copyWith(darkTheme: true),
       ],
@@ -157,16 +160,15 @@ void main() {
       'Should toggle onBoardingVisited',
       build: () {
         when(
-          _repository.onBoardingVisited(),
+          repository.onBoardingVisited(),
         ).thenAnswer(
           (_) async => unit,
         );
 
-        return _bloc;
+        return bloc;
       },
       seed: () => SettingsState.initial(),
-      act: (SettingsBloc bloc) =>
-          bloc.add(const SettingsEvent.onboardingVisited()),
+      act: (_) => bloc.add(const SettingsEvent.onboardingVisited()),
       expect: () => [
         SettingsState.initial().copyWith(onboardingVisited: true),
       ],

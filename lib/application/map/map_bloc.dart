@@ -34,7 +34,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
           );
         },
         zoomChanged: (e) async {
-          double newZoom = e.zoom;
+          var newZoom = e.zoom;
           newZoom = newZoom > 18 ? 18 : newZoom;
           newZoom = newZoom < 9 ? 9 : newZoom;
           emit(

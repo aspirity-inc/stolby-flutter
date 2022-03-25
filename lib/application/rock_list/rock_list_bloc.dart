@@ -8,8 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image/image.dart' as img;
 import 'package:injectable/injectable.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_photo.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/i_rock_list_repository.dart';
@@ -25,29 +25,29 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
   RockListBloc(this._rockListRepository) : super(RockListState.initial()) {
     on<_Initialized>(
       (_, emit) async => _initialized(emit),
-      transformer: sequential(),
+      transformer: _sequential(),
     );
     on<_SearchStringChanged>(
       (event, emit) async => _searchStringChanged(event, emit),
-      transformer: restartable(),
+      transformer: _restartable(),
     );
     on<_Sorted>(
       (_, emit) async => _sorted(emit),
-      transformer: sequential(),
+      transformer: _sequential(),
     );
     on<_Filtered>(
       (_, emit) async => _filtered(emit),
-      transformer: sequential(),
+      transformer: _sequential(),
     );
     on<_LocationChanged>(
       (event, emit) async => _locationChanged(event, emit),
-      transformer: sequential(
+      transformer: _sequential(
         debounceTime: 300,
       ),
     );
     on<_SearchLineCleared>(
       (_, emit) async => _searchLineCleared(emit),
-      transformer: sequential(),
+      transformer: _sequential(),
     );
   }
 
@@ -68,7 +68,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
           loading: false,
           rocksToShow: rocks,
           allRocks: rocks,
-          rockPhotos: photos,
+          rockPhotos: photos.whereNotNull().toList(),
         ),
       );
     } else {
@@ -80,10 +80,12 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     _SearchStringChanged event,
     Emitter<RockListState> emit,
   ) async {
-    event.searchString.length >= 3 ? add(const RockListEvent.filtered()) : null;
-    event.searchString == ''
-        ? add(const RockListEvent.searchLineCleared())
-        : null;
+    if (event.searchString.length >= 3) {
+      add(const RockListEvent.filtered());
+    }
+    if (event.searchString == '') {
+      add(const RockListEvent.searchLineCleared());
+    }
     emit(state.copyWith(searchString: event.searchString));
   }
 
@@ -92,20 +94,24 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
   ) async {
     state.userLocation.fold(
       () => null,
-      (r) => emit(state.copyWith(
-        rocksToShow: _sortRocksList(state.rocksToShow, r),
-      )),
+      (r) => emit(
+        state.copyWith(
+          rocksToShow: _sortRocksList(state.rocksToShow, r),
+        ),
+      ),
     );
   }
 
   FutureOr<void> _filtered(
     Emitter<RockListState> emit,
   ) async {
-    state.searchString.length >= 3
-        ? emit(state.copyWith(
-            rocksToShow: _filterRocksList(state.allRocks, state.searchString),
-          ))
-        : null;
+    if (state.searchString.length >= 3) {
+      emit(
+        state.copyWith(
+          rocksToShow: _filterRocksList(state.allRocks, state.searchString),
+        ),
+      );
+    }
   }
 
   FutureOr<void> _locationChanged(
@@ -125,22 +131,26 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     emit(state.copyWith(rocksToShow: state.allRocks, searchString: ''));
   }
 
-  Future<RockPhoto> _loadImage({required String picName}) async {
+  Future<RockPhoto?> _loadImage({required String picName}) async {
     final imageFromBundle = await rootBundle.load('assets/images/$picName.jpg');
-    final Uint8List lst = Uint8List.view(imageFromBundle.buffer);
-    final img.Image? imageI = img.decodeImage(lst.toList());
-    final img.Image resized = img.copyResize(imageI!, height: 200);
-    final List<int> resizedBytes = img.encodePng(resized);
-    final codec = await ui.instantiateImageCodec(
-      Uint8List.fromList(resizedBytes),
-    );
-    final frame = await codec.getNextFrame();
-    final image = frame.image;
+    final lst = Uint8List.view(imageFromBundle.buffer);
+    final imageI = img.decodeImage(lst.toList());
+    if (imageI != null) {
+      final resized = img.copyResize(imageI, height: 200);
+      final resizedBytes = img.encodePng(resized);
+      final codec = await ui.instantiateImageCodec(
+        Uint8List.fromList(resizedBytes),
+      );
+      final frame = await codec.getNextFrame();
+      final image = frame.image;
 
-    return RockPhoto(
-      image: image,
-      imageName: picName,
-    );
+      return RockPhoto(
+        image: image,
+        imageName: picName,
+      );
+    }
+
+    return null;
   }
 
   List<RockEntity> _filterRocksList(
@@ -185,19 +195,17 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
     );
   }
 
-  EventTransformer<Event> restartable<Event>() {
-    return (events, mapper) => events.switchMap(mapper).debounceTime(
-          const Duration(
-            milliseconds: 300,
-          ),
-        );
-  }
+  EventTransformer<Event> _restartable<Event>() =>
+      (events, mapper) => events.switchMap(mapper).debounceTime(
+            const Duration(
+              milliseconds: 300,
+            ),
+          );
 
-  EventTransformer<Event> sequential<Event>({int? debounceTime}) {
-    return (events, mapper) => events.asyncExpand(mapper).debounceTime(
-          Duration(
-            milliseconds: debounceTime ?? 0,
-          ),
-        );
-  }
+  EventTransformer<Event> _sequential<Event>({int? debounceTime}) =>
+      (events, mapper) => events.asyncExpand(mapper).debounceTime(
+            Duration(
+              milliseconds: debounceTime ?? 0,
+            ),
+          );
 }

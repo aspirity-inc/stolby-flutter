@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:injectable/injectable.dart';
 import 'package:location/location.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/dtos/user_location_dto.dart';
@@ -9,24 +10,18 @@ class LocationService {
 
   LocationService(this._location);
 
-  Future<PermissionStatus> checkPermission() =>
-      _location.hasPermission().catchError((error) => PermissionStatus.denied);
+  Future<PermissionStatus> checkPermission() => _location.hasPermission();
 
-  Future<PermissionStatus> requestLocationPermission() => _location
-      .requestPermission()
-      .catchError((error) => PermissionStatus.denied);
+  Future<PermissionStatus> requestLocationPermission() =>
+      _location.requestPermission();
 
   Future<bool> geolocationService() async {
-    bool serviceEnabled =
-        await _location.serviceEnabled().catchError((error) => false);
+    final serviceEnabled = await _location.serviceEnabled();
     if (Platform.isIOS) {
       return serviceEnabled;
     } else {
       if (!serviceEnabled) {
-        serviceEnabled =
-            await _location.requestService().catchError((error) => false);
-
-        return serviceEnabled;
+        return _location.requestService();
       }
     }
 

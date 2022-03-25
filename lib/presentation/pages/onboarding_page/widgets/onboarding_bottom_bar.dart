@@ -9,12 +9,12 @@ class OnboardingBottomBar extends StatelessWidget {
   final VoidCallback onRightPressed;
 
   const OnboardingBottomBar({
-    Key? key,
     required this.currentIndex,
     required this.length,
     required this.controller,
     required this.onLeftPressed,
     required this.onRightPressed,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -25,26 +25,27 @@ class OnboardingBottomBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        currentIndex == 0
-            ? const SizedBox(
-                width: 50,
-              )
-            : SizedBox(
-                width: 50,
-                child: IconButton(
-                  onPressed: onLeftPressed,
-                  icon: Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: selectedColor,
-                  ),
-                ),
+        if (currentIndex == 0)
+          const SizedBox(
+            width: 50,
+          )
+        else
+          SizedBox(
+            width: 50,
+            child: IconButton(
+              onPressed: onLeftPressed,
+              icon: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: selectedColor,
               ),
+            ),
+          ),
         SmoothPageIndicator(
           controller: controller,
           count: 3,
           effect: SlideEffect(
             spacing: 8,
-            radius: 4.0,
+            radius: 4,
             dotWidth: 8,
             dotHeight: 8,
             dotColor: unselectedColor,

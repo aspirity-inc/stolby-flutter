@@ -6,11 +6,10 @@ class RateAppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
 
     return InkWell(
-      onTap: () {},
-      // TODO: Add rate app pop-up
+      // Todo: Add rate app pop-up.
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 16,
@@ -21,7 +20,7 @@ class RateAppButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              localization.drawer_item_title_rate,
+              localization?.drawer_item_title_rate ?? '',
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
