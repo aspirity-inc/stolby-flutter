@@ -6,7 +6,7 @@ final ThemeData darkTheme = ThemeData(
   colorScheme: const ColorScheme.dark().copyWith(
     primary: AppColors.primary,
     secondary: AppColors.secondaryDark,
-    secondaryVariant: AppColors.appbarDark,
+    secondaryContainer: AppColors.appbarDark,
     onSurface: AppColors.secondaryDark,
   ),
   cardColor: AppColors.greyDark,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/presentation/pages/setting_page/widgets/rate_app_button.dart';
 
 void main() {
   testWidgets(
-    "Given rate app button when initialized then text correct",
+    'Given rate app button when initialized then text correct',
     (tester) async {
       //arrange
       await tester.pumpWidget(
@@ -19,7 +19,7 @@ void main() {
           ],
           home: Scaffold(
             body: RateAppButton(
-              key: ValueKey("rate_app_button"),
+              key: ValueKey('rate_app_button'),
             ),
           ),
         ),
@@ -32,7 +32,7 @@ void main() {
         ),
         findsOneWidget,
       );
-      expect(find.text("Rate"), findsOneWidget);
+      expect(find.text('Rate'), findsOneWidget);
     },
   );
 }

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-24 12:22:27</td>
+            <td class="headerValue">2022-03-25 16:55:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -63,11 +63,11 @@
 <a name="1"><span class="lineNum">       1 </span>            : import 'package:dartz/dartz.dart';</a>
 <a name="2"><span class="lineNum">       2 </span>            : import 'package:injectable/injectable.dart';</a>
 <a name="3"><span class="lineNum">       3 </span>            : import 'package:location/location.dart';</a>
-<a name="4"><span class="lineNum">       4 </span>            : import 'package:stolby_flutter/domain/core/failures.dart';</a>
-<a name="5"><span class="lineNum">       5 </span>            : import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';</a>
-<a name="6"><span class="lineNum">       6 </span>            : import 'package:stolby_flutter/domain/feature/location/i_location_repository.dart';</a>
-<a name="7"><span class="lineNum">       7 </span>            : import 'package:stolby_flutter/infrastructure/services/local/location/location_service.dart';</a>
-<a name="8"><span class="lineNum">       8 </span>            : import 'package:rxdart/rxdart.dart';</a>
+<a name="4"><span class="lineNum">       4 </span>            : import 'package:rxdart/rxdart.dart';</a>
+<a name="5"><span class="lineNum">       5 </span>            : import 'package:stolby_flutter/domain/core/failures.dart';</a>
+<a name="6"><span class="lineNum">       6 </span>            : import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';</a>
+<a name="7"><span class="lineNum">       7 </span>            : import 'package:stolby_flutter/domain/feature/location/i_location_repository.dart';</a>
+<a name="8"><span class="lineNum">       8 </span>            : import 'package:stolby_flutter/infrastructure/services/local/location/location_service.dart';</a>
 <a name="9"><span class="lineNum">       9 </span>            : </a>
 <a name="10"><span class="lineNum">      10 </span>            : @LazySingleton(as: ILocationRepository)</a>
 <a name="11"><span class="lineNum">      11 </span>            : class LocationRepository implements ILocationRepository {</a>
@@ -114,7 +114,7 @@
 <a name="52"><span class="lineNum">      52 </span>            :     }</a>
 <a name="53"><span class="lineNum">      53 </span><span class="lineNoCov">          0 :     final permissions = await getLocationPermissions();</span></a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineNoCov">          0 :     if (permissions.isLeft()) {</span></a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineNoCov">          0 :       yield permissions.fold((l) =&gt; left(l), (r) =&gt; throw Error());</span></a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineNoCov">          0 :       yield permissions.fold(left, (r) =&gt; throw Error());</span></a>
 <a name="56"><span class="lineNum">      56 </span>            :     }</a>
 <a name="57"><span class="lineNum">      57 </span>            : </a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineNoCov">          0 :     yield* _service</span></a>

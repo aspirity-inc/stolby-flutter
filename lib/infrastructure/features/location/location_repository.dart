@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:location/location.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:stolby_flutter/domain/core/failures.dart';
 import 'package:stolby_flutter/domain/feature/location/entities/user_location_entity.dart';
 import 'package:stolby_flutter/domain/feature/location/i_location_repository.dart';
 import 'package:stolby_flutter/infrastructure/services/local/location/location_service.dart';
-import 'package:rxdart/rxdart.dart';
 
 @LazySingleton(as: ILocationRepository)
 class LocationRepository implements ILocationRepository {
@@ -52,7 +52,7 @@ class LocationRepository implements ILocationRepository {
     }
     final permissions = await getLocationPermissions();
     if (permissions.isLeft()) {
-      yield permissions.fold((l) => left(l), (r) => throw Error());
+      yield permissions.fold(left, (r) => throw Error());
     }
 
     yield* _service

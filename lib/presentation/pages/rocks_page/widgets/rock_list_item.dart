@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+
 import 'package:auto_route/auto_route.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
@@ -20,31 +21,16 @@ class RockListItem extends StatelessWidget {
   final UserLocationEntity? location;
 
   const RockListItem({
-    Key? key,
-    this.location,
     required this.item,
     required this.index,
+    Key? key,
+    this.location,
   }) : super(key: key);
-
-  String _getDistance(
-    UserLocationEntity user,
-    RockEntity item,
-    AppLocalizations localization,
-  ) {
-    const distance = Distance();
-    final strDistance = distance.distance(
-      LatLng(user.latitude, user.longitude),
-      LatLng(item.latitude, item.longitude),
-    );
-
-    return strDistance >= 1000
-        ? "${(strDistance / 1000).toStringAsFixed(2)} ${localization.distance_kilometers}"
-        : "${strDistance.ceil()} ${localization.distance_meters}";
-  }
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
+    final locationObj = location;
 
     return AnimationConfiguration.staggeredGrid(
       position: index,
@@ -62,9 +48,9 @@ class RockListItem extends StatelessWidget {
             child: Container(
               height: 188,
               margin: EdgeInsets.only(
-                left: index % 2 == 0 ? 16 : 8,
-                right: index % 2 == 0 ? 8 : 16,
-                bottom: 16.0,
+                left: index.isEven ? 16 : 8,
+                right: index.isEven ? 8 : 16,
+                bottom: 16,
               ),
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -74,85 +60,81 @@ class RockListItem extends StatelessWidget {
                 children: [
                   BlocBuilder<RockListBloc, RockListState>(
                     buildWhen: (p, c) => p.rockPhotos != c.rockPhotos,
-                    builder: (context, state) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: CustomPaint(
-                          painter: RockListItemPainter(
-                            state.rockPhotos
-                                .firstWhere((element) =>
-                                    element.imageName == item.picName)
-                                .image,
+                    builder: (context, state) => ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(16)),
+                      child: CustomPaint(
+                        painter: RockListItemPainter(
+                          state.rockPhotos
+                              .firstWhere(
+                                (element) => element.imageName == item.picName,
+                              )
+                              .image,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 8,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8.0,
-                              vertical: 8.0,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  item.localizedName,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                item.localizedName,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                              ),
+                              const SizedBox(
+                                height: 4,
+                              ),
+                              Row(
+                                children: [
+                                  Transform.rotate(
+                                    angle: math.pi * 3 / 12,
+                                    child: const Icon(
+                                      CommunityMaterialIcons.navigation,
+                                      color: Colors.white,
+                                      size: 16,
+                                    ),
                                   ),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                                const SizedBox(
-                                  height: 4,
-                                ),
-                                Row(
-                                  children: [
-                                    Transform.rotate(
-                                      angle: 3 * math.pi / 12,
-                                      child: const Icon(
-                                        CommunityMaterialIcons.navigation,
-                                        color: Colors.black,
-                                        size: 16,
+                                  const SizedBox(
+                                    width: 8,
+                                  ),
+                                  BlocBuilder<SettingsBloc, SettingsState>(
+                                    buildWhen: (p, c) =>
+                                        p.geolocationEnabled !=
+                                        c.geolocationEnabled,
+                                    builder: (context, settingsState) => Text(
+                                      (settingsState.geolocationEnabled &&
+                                                  locationObj != null
+                                              ? _getDistance(
+                                                  locationObj,
+                                                  item,
+                                                  localization,
+                                                )
+                                              : localization
+                                                  ?.distance_not_defined) ??
+                                          '',
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400,
                                       ),
                                     ),
-                                    const SizedBox(
-                                      width: 8.0,
-                                    ),
-                                    BlocBuilder<SettingsBloc, SettingsState>(
-                                      buildWhen: (p, c) =>
-                                          p.geolocationEnabled !=
-                                          c.geolocationEnabled,
-                                      builder: (context, settingsState) {
-                                        return Text(
-                                          settingsState.geolocationEnabled
-                                              ? location != null
-                                                  ? _getDistance(
-                                                      location!,
-                                                      item,
-                                                      localization,
-                                                    )
-                                                  : localization
-                                                      .distance_not_defined
-                                              : localization
-                                                  .distance_not_defined,
-                                          style: const TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                    ),
                   ),
                   Positioned(
                     top: 8,
@@ -169,5 +151,22 @@ class RockListItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _getDistance(
+    UserLocationEntity user,
+    RockEntity item,
+    AppLocalizations? localization,
+  ) {
+    const distance = Distance();
+    final strDistance = distance.distance(
+      LatLng(user.latitude, user.longitude),
+      LatLng(item.latitude, item.longitude),
+    );
+
+    return strDistance >= 1000
+        ? '${(strDistance / 1000).toStringAsFixed(2)} '
+            '${localization?.distance_kilometers}'
+        : '${strDistance.ceil()} ${localization?.distance_meters}';
   }
 }

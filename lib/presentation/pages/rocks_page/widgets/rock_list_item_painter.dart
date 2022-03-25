@@ -9,47 +9,57 @@ class RockListItemPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawImageRect(
-      image,
-      Rect.fromPoints(
-        Offset((image.width - size.width) / 2, 0),
-        Offset(image.width - (image.width - size.width) / 2, image.height / 1),
-      ),
-      Rect.fromPoints(
-        const Offset(0, 0),
-        Offset(size.width, size.height),
-      ),
-      Paint(),
-    );
-
-    canvas.drawImageRect(
-      image,
-      Rect.fromPoints(
-        Offset((image.width - size.width) / 2, size.height - 48),
-        Offset(image.width - (image.width - size.width) / 2, size.height - 16),
-      ),
-      Rect.fromPoints(
-        Offset(0, size.height - 56),
-        Offset(size.width, size.height),
-      ),
-      Paint()..imageFilter = ui.ImageFilter.blur(sigmaY: 5, sigmaX: 5),
-    );
-
-    var paint = Paint()
+    final paint = Paint()
       ..color = Colors.white24
       ..style = PaintingStyle.fill;
 
-    canvas.drawRRect(
-      RRect.fromRectAndCorners(
+    canvas
+      ..drawImageRect(
+        image,
+        Rect.fromPoints(
+          Offset((image.width - size.width) / 2, 0),
+          Offset(
+            image.width - (image.width - size.width) / 2,
+            image.height / 1,
+          ),
+        ),
+        Rect.fromPoints(
+          Offset.zero,
+          Offset(size.width, size.height),
+        ),
+        Paint(),
+      )
+      ..drawImageRect(
+        image,
+        Rect.fromPoints(
+          Offset((image.width - size.width) / 2, size.height - 48),
+          Offset(
+            image.width - (image.width - size.width) / 2,
+            size.height - 16,
+          ),
+        ),
         Rect.fromPoints(
           Offset(0, size.height - 56),
           Offset(size.width, size.height),
         ),
-        bottomLeft: const Radius.circular(12),
-        bottomRight: const Radius.circular(12),
-      ),
-      paint,
-    );
+        Paint()
+          ..imageFilter = ui.ImageFilter.blur(
+            sigmaY: 4,
+            sigmaX: 4,
+            tileMode: TileMode.decal,
+          ),
+      )
+      ..drawRRect(
+        RRect.fromRectAndCorners(
+          Rect.fromPoints(
+            Offset(0, size.height - 56),
+            Offset(size.width, size.height),
+          ),
+          bottomLeft: const Radius.circular(12),
+          bottomRight: const Radius.circular(12),
+        ),
+        paint,
+      );
   }
 
   @override

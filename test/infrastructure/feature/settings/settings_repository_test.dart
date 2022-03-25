@@ -9,8 +9,8 @@ import 'settings_repository_test.mocks.dart';
 
 @GenerateMocks([SharedPreferencesService])
 void main() {
-  late MockSharedPreferencesService _prefs;
-  late SettingsRepository _repository;
+  late MockSharedPreferencesService prefs;
+  late SettingsRepository repository;
   const testItem = AppSettingsEntity(
     geolocationEnabled: false,
     reversedMap: false,
@@ -22,8 +22,8 @@ void main() {
 
   setUp(
     () {
-      _prefs = MockSharedPreferencesService();
-      _repository = SettingsRepository(_prefs);
+      prefs = MockSharedPreferencesService();
+      repository = SettingsRepository(prefs);
     },
   );
 
@@ -34,26 +34,26 @@ void main() {
         'Should get settings entity',
         () async {
           //arrange
-          when(_prefs.getGeolocationEnabled()).thenAnswer(
+          when(prefs.getGeolocationEnabled()).thenAnswer(
             (_) => false,
           );
-          when(_prefs.getReversedMap()).thenAnswer(
+          when(prefs.getReversedMap()).thenAnswer(
             (_) => false,
           );
-          when(_prefs.getMapUserCentering()).thenAnswer(
+          when(prefs.getMapUserCentering()).thenAnswer(
             (_) => false,
           );
-          when(_prefs.getAutoThemeChange(defaultValue: true)).thenAnswer(
+          when(prefs.getAutoThemeChange(defaultValue: true)).thenAnswer(
             (_) => true,
           );
-          when(_prefs.getLightTheme()).thenAnswer(
+          when(prefs.getLightTheme()).thenAnswer(
             (_) => false,
           );
-          when(_prefs.getOnboardingVisited()).thenAnswer(
+          when(prefs.getOnboardingVisited()).thenAnswer(
             (_) => false,
           );
           //act
-          final result = await _repository.fetchSettings();
+          final result = await repository.fetchSettings();
           //assert
           expect(
             testItem,

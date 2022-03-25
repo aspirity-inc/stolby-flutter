@@ -9,36 +9,38 @@ class CurvedContainerPaint extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()..color = color;
-    double x = 0;
-    bool startFromTop = false;
-    double increment = size.width / 2;
-    Path path = Path()..moveTo(0, 32);
+    final paint = Paint()..color = color;
+    var x = 0.0;
+    var startFromTop = false;
+    final increment = size.width / 2;
+    final path = Path()..moveTo(0, 32);
 
     while (x < size.width) {
       if (startFromTop) {
-        path.lineTo(x, 0);
-        path.cubicTo(
-          x + increment / 2,
-          0,
-          x + increment / 2,
-          size.height - 32,
-          x + increment,
-          size.height - 32,
-        );
+        path
+          ..lineTo(x, 0)
+          ..cubicTo(
+            x + increment / 2,
+            0,
+            x + increment / 2,
+            size.height - 32,
+            x + increment,
+            size.height - 32,
+          );
       } else {
-        path.lineTo(
-          x,
-          size.height - 32,
-        );
-        path.cubicTo(
-          x + increment / 2,
-          size.height - 32,
-          x + increment / 2,
-          0,
-          x + increment,
-          0,
-        );
+        path
+          ..lineTo(
+            x,
+            size.height - 32,
+          )
+          ..cubicTo(
+            x + increment / 2,
+            size.height - 32,
+            x + increment / 2,
+            0,
+            x + increment,
+            0,
+          );
       }
       x += increment;
       startFromTop = !startFromTop;

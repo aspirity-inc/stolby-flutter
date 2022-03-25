@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:stolby_flutter/presentation/pages/feedback_page/feedback_page.dart';
 
 void main() {
   testWidgets(
-    "Given feedback page when initialized then all text fields are correct",
+    'Given feedback page when initialized then all text fields are correct',
     (tester) async {
       //arrange
       await tester.pumpWidget(
@@ -31,17 +31,17 @@ void main() {
       expect(widgetFinder, findsOneWidget);
 
       expect(
-        find.text("If some error happened please enter you device model"),
+        find.text('If some error happened please enter you device model'),
         findsOneWidget,
       );
-      expect(find.text("device model (optional)"), findsOneWidget);
-      expect(find.text("Help us advance"), findsOneWidget);
-      expect(find.text("Send feedback"), findsOneWidget);
+      expect(find.text('Help us advance'), findsOneWidget);
+      expect(find.text('Send feedback'), findsOneWidget);
     },
   );
 
   testWidgets(
-    "Given feedback page when written in device text field test then device text field text is test",
+    'Given feedback page when written in device text field test '
+    'then device text field text is test',
     (tester) async {
       //arrange
       await tester.pumpWidget(
@@ -61,9 +61,9 @@ void main() {
       );
       //act
       final textField =
-          find.byKey(const ValueKey("feedback_page_device_text_field"));
+          find.byKey(const ValueKey('feedback_page_device_text_field'));
       expect(textField, findsOneWidget);
-      await tester.enterText(textField, "test");
+      await tester.enterText(textField, 'test');
       await tester.pump();
 
       //assert
@@ -71,12 +71,13 @@ void main() {
         const ValueKey('feedback_page'),
       );
       expect(widgetFinder, findsOneWidget);
-      expect(find.text("test"), findsOneWidget);
+      expect(find.text('test'), findsOneWidget);
     },
   );
 
   testWidgets(
-    "Given feedback page when written in device text field test then device text field text is test",
+    'Given feedback page when written in device text field test '
+    'then device text field text is test',
     (tester) async {
       //arrange
       await tester.pumpWidget(
@@ -96,9 +97,9 @@ void main() {
       );
       //act
       final textField =
-          find.byKey(const ValueKey("feedback_page_feedback_text_field"));
+          find.byKey(const ValueKey('feedback_page_feedback_text_field'));
       expect(textField, findsOneWidget);
-      await tester.enterText(textField, "test");
+      await tester.enterText(textField, 'test');
       await tester.pump();
 
       //assert
@@ -106,7 +107,7 @@ void main() {
         const ValueKey('feedback_page'),
       );
       expect(widgetFinder, findsOneWidget);
-      expect(find.text("test"), findsOneWidget);
+      expect(find.text('test'), findsOneWidget);
     },
   );
 }

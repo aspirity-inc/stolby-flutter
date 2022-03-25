@@ -7,27 +7,25 @@ class SettingsContentBottom extends StatelessWidget {
   const SettingsContentBottom({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        Divider(
-          height: 1,
-        ),
-        AboutAppButton(
-          version: "3.0.0",
-        ),
-        Divider(
-          height: 1,
-        ),
-        FeedbackButton(),
-        Divider(
-          height: 1,
-        ),
-        RateAppButton(),
-        Divider(
-          height: 1,
-        ),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Column(
+        children: const [
+          Divider(
+            height: 1,
+          ),
+          AboutAppButton(
+            version: '3.0.0',
+          ),
+          Divider(
+            height: 1,
+          ),
+          FeedbackButton(),
+          Divider(
+            height: 1,
+          ),
+          RateAppButton(),
+          Divider(
+            height: 1,
+          ),
+        ],
+      );
 }

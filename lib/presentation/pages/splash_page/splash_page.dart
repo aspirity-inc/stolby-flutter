@@ -28,7 +28,5 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return const SizedBox();
-  }
+  Widget build(BuildContext context) => const SizedBox();
 }

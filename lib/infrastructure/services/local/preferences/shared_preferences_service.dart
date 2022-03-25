@@ -13,7 +13,7 @@ class SharedPreferencesService {
       defaultValue ??
       false;
 
-  Future<void> setGeolocationEnabled(bool geolocationEnabled) =>
+  Future<void> setGeolocationEnabled({required bool geolocationEnabled}) =>
       _preferences.setBool(
         PrefNames.geolocationEnabled,
         geolocationEnabled,
@@ -22,7 +22,8 @@ class SharedPreferencesService {
   bool getReversedMap({bool? defaultValue}) =>
       _preferences.getBool(PrefNames.reversedMap) ?? defaultValue ?? false;
 
-  Future<void> setReversedMap(bool reversedMap) => _preferences.setBool(
+  Future<void> setReversedMap({required bool reversedMap}) =>
+      _preferences.setBool(
         PrefNames.reversedMap,
         reversedMap,
       );
@@ -30,7 +31,7 @@ class SharedPreferencesService {
   bool getMapUserCentering({bool? defaultValue}) =>
       _preferences.getBool(PrefNames.mapUserCentering) ?? defaultValue ?? false;
 
-  Future<void> setMapUserCentering(bool mapUserCentering) =>
+  Future<void> setMapUserCentering({required bool mapUserCentering}) =>
       _preferences.setBool(
         PrefNames.mapUserCentering,
         mapUserCentering,
@@ -39,7 +40,8 @@ class SharedPreferencesService {
   bool getAutoThemeChange({bool? defaultValue}) =>
       _preferences.getBool(PrefNames.autoThemeChange) ?? defaultValue ?? false;
 
-  Future<void> setAutoThemeChange(bool autoThemeChange) => _preferences.setBool(
+  Future<void> setAutoThemeChange({required bool autoThemeChange}) =>
+      _preferences.setBool(
         PrefNames.autoThemeChange,
         autoThemeChange,
       );
@@ -47,7 +49,8 @@ class SharedPreferencesService {
   bool getLightTheme({bool? defaultValue}) =>
       _preferences.getBool(PrefNames.lightTheme) ?? defaultValue ?? false;
 
-  Future<void> setLightTheme(bool lightTheme) => _preferences.setBool(
+  Future<void> setLightTheme({required bool lightTheme}) =>
+      _preferences.setBool(
         PrefNames.lightTheme,
         lightTheme,
       );

@@ -12,67 +12,61 @@ class RocksPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
 
     return BlocBuilder<RockListBloc, RockListState>(
-      builder: (context, state) {
-        return Scaffold(
-          body: SafeArea(
-            child: BlocBuilder<LocationBloc, LocationState>(
-              builder: (context, locationState) {
-                return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverList(
-                      delegate: SliverChildListDelegate(
-                        [
-                          const RockListSearchField(),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0,
-                            ),
-                            child: Text(
-                              localization.appbar_title_rocks,
-                              style: const TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                    AnimationLimiter(
-                      child: SliverGrid(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 0.87,
+      builder: (context, state) => Scaffold(
+        body: SafeArea(
+          child: BlocBuilder<LocationBloc, LocationState>(
+            builder: (context, locationState) => CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    [
+                      const RockListSearchField(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
                         ),
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            return RockListItem(
-                              index: index,
-                              item: state.rocksToShow[index],
-                              location: locationState.userLocation
-                                  .fold(() => null, (a) => a),
-                            );
-                          },
-                          childCount: state.rocksToShow.length,
+                        child: Text(
+                          localization?.appbar_title_rocks ?? '',
+                          style: const TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
                         ),
                       ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                    ],
+                  ),
+                ),
+                AnimationLimiter(
+                  child: SliverGrid(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.87,
                     ),
-                  ],
-                );
-              },
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) => RockListItem(
+                        index: index,
+                        item: state.rocksToShow[index],
+                        location: locationState.userLocation
+                            .fold(() => null, (a) => a),
+                      ),
+                      childCount: state.rocksToShow.length,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

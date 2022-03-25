@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-24 12:22:27</td>
+            <td class="headerValue">2022-03-25 16:55:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -63,7 +63,7 @@
 <a name="1"><span class="lineNum">       1 </span>            : import 'package:animations/animations.dart';</a>
 <a name="2"><span class="lineNum">       2 </span>            : import 'package:flutter/material.dart';</a>
 <a name="3"><span class="lineNum">       3 </span>            : </a>
-<a name="4"><span class="lineNum">       4 </span>            : class AppRouteTransitionsBuilders {</a>
+<a name="4"><span class="lineNum">       4 </span>            : class AppTransactionsBuilders {</a>
 <a name="5"><span class="lineNum">       5 </span>            :   static const RouteTransitionsBuilder zoomIn = _zoomIn;</a>
 <a name="6"><span class="lineNum">       6 </span>            : </a>
 <a name="7"><span class="lineNum">       7 </span><span class="lineNoCov">          0 :   static Widget _zoomIn(</span></a>
@@ -71,14 +71,13 @@
 <a name="9"><span class="lineNum">       9 </span>            :     Animation&lt;double&gt; animation,</a>
 <a name="10"><span class="lineNum">      10 </span>            :     Animation&lt;double&gt; secondaryAnimation,</a>
 <a name="11"><span class="lineNum">      11 </span>            :     Widget child,</a>
-<a name="12"><span class="lineNum">      12 </span>            :   ) {</a>
-<a name="13"><span class="lineNum">      13 </span><span class="lineNoCov">          0 :     return FadeThroughTransition(</span></a>
-<a name="14"><span class="lineNum">      14 </span>            :       animation: animation,</a>
-<a name="15"><span class="lineNum">      15 </span>            :       secondaryAnimation: secondaryAnimation,</a>
-<a name="16"><span class="lineNum">      16 </span>            :       child: child,</a>
-<a name="17"><span class="lineNum">      17 </span>            :     );</a>
-<a name="18"><span class="lineNum">      18 </span>            :   }</a>
-<a name="19"><span class="lineNum">      19 </span>            : }</a>
+<a name="12"><span class="lineNum">      12 </span>            :   ) =&gt;</a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineNoCov">          0 :       FadeThroughTransition(</span></a>
+<a name="14"><span class="lineNum">      14 </span>            :         animation: animation,</a>
+<a name="15"><span class="lineNum">      15 </span>            :         secondaryAnimation: secondaryAnimation,</a>
+<a name="16"><span class="lineNum">      16 </span>            :         child: child,</a>
+<a name="17"><span class="lineNum">      17 </span>            :       );</a>
+<a name="18"><span class="lineNum">      18 </span>            : }</a>
 </pre>
       </td>
     </tr>

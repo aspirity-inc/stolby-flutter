@@ -11,24 +11,24 @@ class MapZoomIconButton extends StatelessWidget {
   final ZoomIconButtonAction action;
 
   const MapZoomIconButton({
-    Key? key,
     required this.action,
+    Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<MapBloc, MapState>(
-      builder: (context, state) {
-        return InkWell(
+  Widget build(BuildContext context) => BlocBuilder<MapBloc, MapState>(
+        builder: (context, state) => InkWell(
           customBorder: const CircleBorder(),
-          onTap: () => context.read<MapBloc>().add(MapEvent.zoomChanged(
-                state.zoom +
-                    (action == ZoomIconButtonAction.moreZoom ? 0.5 : -0.5),
-              )),
+          onTap: () => context.read<MapBloc>().add(
+                MapEvent.zoomChanged(
+                  state.zoom +
+                      (action == ZoomIconButtonAction.moreZoom ? 0.5 : -0.5),
+                ),
+              ),
           child: Container(
             margin: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 8.0,
+              horizontal: 16,
+              vertical: 8,
             ),
             height: 40,
             width: 40,
@@ -44,8 +44,6 @@ class MapZoomIconButton extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-        );
-      },
-    );
-  }
+        ),
+      );
 }

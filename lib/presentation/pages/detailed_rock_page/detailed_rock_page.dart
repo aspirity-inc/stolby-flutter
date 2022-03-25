@@ -8,18 +8,16 @@ class DetailedRockPage extends StatelessWidget {
   final int rockId;
 
   const DetailedRockPage({
-    Key? key,
     required this.rockId,
+    Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<DetailedRockBloc>()
-        ..add(
-          DetailedRockEvent.initialized(id: rockId),
-        ),
-      child: const DetailedRockPageContent(),
-    );
-  }
+  Widget build(BuildContext context) => BlocProvider(
+        create: (context) => getIt<DetailedRockBloc>()
+          ..add(
+            DetailedRockEvent.initialized(id: rockId),
+          ),
+        child: const DetailedRockPageContent(),
+      );
 }

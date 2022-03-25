@@ -8,12 +8,12 @@ import 'images_repository_test.mocks.dart';
 
 @GenerateMocks([ImagesService])
 void main() {
-  late ImagesService _service;
-  late ImagesRepository _repository;
+  late ImagesService service;
+  late ImagesRepository repository;
 
   setUp(() {
-    _service = MockImagesService();
-    _repository = ImagesRepository(_service);
+    service = MockImagesService();
+    repository = ImagesRepository(service);
   });
   const tImageName = 'assets/images/pic_test.jpg';
   const tImageName2 = 'assets/images/pic_test_2.jpg';
@@ -28,17 +28,17 @@ void main() {
     tImageName3,
   ];
 
-  group("getLocationPermissions", () {
+  group('getLocationPermissions', () {
     test(
-        'When pic name passed in repository it should return all images that contains pic name',
-        () async {
+        'When pic name passed in repository it should return all images '
+        'that contains pic name', () async {
       //arrange
-      when(_service.getAllImages()).thenAnswer(
+      when(service.getAllImages()).thenAnswer(
         (_) async => tList,
       );
       //act
       final result =
-          await _repository.getImagesByPicName(picName: tCroppedImageName);
+          await repository.getImagesByPicName(picName: tCroppedImageName);
       //assert
       expect(
         result,
@@ -47,14 +47,14 @@ void main() {
     });
 
     test(
-        'When pic name passed in service and when there is only one image it should return it',
-        () async {
+        'When pic name passed in service and when there is only one image '
+        'it should return it', () async {
       //arrange
-      when(_service.getAllImages()).thenAnswer(
+      when(service.getAllImages()).thenAnswer(
         (_) async => [tImageName, tImageName3],
       );
       //act
-      final result = await _repository.getImagesByPicName(picName: tImageName);
+      final result = await repository.getImagesByPicName(picName: tImageName);
       //assert
       expect(
         result,

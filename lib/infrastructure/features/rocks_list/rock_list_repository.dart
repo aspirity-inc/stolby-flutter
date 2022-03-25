@@ -17,7 +17,7 @@ class RockListRepository implements IRockListRepository {
   @override
   Future<Either<DatabaseFailure, List<RockEntity>>> getRocksList() async {
     try {
-      final language = Platform.localeName.split('_')[0];
+      final language = Platform.localeName.split('_').first;
       final result = await db.getRocksList(
         language == 'ru' ? 'ru' : 'en',
       );
@@ -39,7 +39,7 @@ class RockListRepository implements IRockListRepository {
     int id,
   ) async {
     try {
-      final language = Platform.localeName.split('_')[0];
+      final language = Platform.localeName.split('_').first;
       final result = await db.getSingleRock(language == 'ru' ? 'ru' : 'en', id);
 
       return right(result.toDomain());

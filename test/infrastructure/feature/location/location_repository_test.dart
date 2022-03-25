@@ -11,114 +11,133 @@ import 'location_repository_test.mocks.dart';
 
 @GenerateMocks([LocationService])
 void main() {
-  late MockLocationService _locationService;
-  late LocationRepository _repository;
+  late MockLocationService locationService;
+  late LocationRepository repository;
 
   setUp(() {
-    _locationService = MockLocationService();
-    _repository = LocationRepository(_locationService);
+    locationService = MockLocationService();
+    repository = LocationRepository(locationService);
   });
 
-  group("getLocationPermissions", () {
+  group('getLocationPermissions', () {
     test('Should return unit if permission granted', () async {
       //arrange
-      when(_locationService.checkPermission()).thenAnswer(
+      when(locationService.checkPermission()).thenAnswer(
         (_) async => PermissionStatus.granted,
       );
       //act
-      final result = await _repository.getLocationPermissions();
+      final result = await repository.getLocationPermissions();
       //assert
-      expect(result, right(unit));
+      expect(result, right<LocationFailure, Unit>(unit));
     });
 
     test('Should return unit if permission grantedLimited', () async {
       //arrange
-      when(_locationService.checkPermission()).thenAnswer(
+      when(locationService.checkPermission()).thenAnswer(
         (_) async => PermissionStatus.grantedLimited,
       );
       //act
-      final result = await _repository.getLocationPermissions();
+      final result = await repository.getLocationPermissions();
       //assert
-      expect(result, right(unit));
+      expect(result, right<LocationFailure, Unit>(unit));
     });
 
     test(
       'Should return LocationFailure if permission deniedForever ',
       () async {
         //arrange
-        when(_locationService.checkPermission()).thenAnswer(
+        when(locationService.checkPermission()).thenAnswer(
           (_) async => PermissionStatus.deniedForever,
         );
         //act
-        final result = await _repository.getLocationPermissions();
+        final result = await repository.getLocationPermissions();
         //assert
-        expect(result, left(const LocationFailure.notGranted()));
+        expect(
+          result,
+          left<LocationFailure, Unit>(
+            const LocationFailure.notGranted(),
+          ),
+        );
       },
     );
 
     test(
-      'Should return unit if permission denied initially and after request granted',
+      'Should return unit if permission denied initially '
+      'and after request granted',
       () async {
         //arrange
-        when(_locationService.checkPermission()).thenAnswer(
+        when(locationService.checkPermission()).thenAnswer(
           (_) async => PermissionStatus.denied,
         );
-        when(_locationService.requestLocationPermission())
+        when(locationService.requestLocationPermission())
             .thenAnswer((_) async => PermissionStatus.granted);
         //act
-        final result = await _repository.getLocationPermissions();
+        final result = await repository.getLocationPermissions();
         //assert
-        expect(result, right(unit));
+        expect(result, right<LocationFailure, Unit>(unit));
       },
     );
 
     test(
-      'Should return unit if permission denied initially and after request grantedLimited',
+      'Should return unit if permission denied initially '
+      'and after request grantedLimited',
       () async {
         //arrange
-        when(_locationService.checkPermission()).thenAnswer(
+        when(locationService.checkPermission()).thenAnswer(
           (_) async => PermissionStatus.denied,
         );
-        when(_locationService.requestLocationPermission())
+        when(locationService.requestLocationPermission())
             .thenAnswer((_) async => PermissionStatus.grantedLimited);
         //act
-        final result = await _repository.getLocationPermissions();
+        final result = await repository.getLocationPermissions();
         //assert
-        expect(result, right(unit));
+        expect(result, right<LocationFailure, Unit>(unit));
       },
     );
 
     test(
-      'Should return LocationFailure if permission denied initially and after request denied',
+      'Should return LocationFailure if permission denied initially '
+      'and after request denied',
       () async {
         //arrange
-        when(_locationService.checkPermission()).thenAnswer(
+        when(locationService.checkPermission()).thenAnswer(
           (_) async => PermissionStatus.denied,
         );
-        when(_locationService.requestLocationPermission())
+        when(locationService.requestLocationPermission())
             .thenAnswer((_) async => PermissionStatus.denied);
         //act
-        final result = await _repository.getLocationPermissions();
+        final result = await repository.getLocationPermissions();
         //assert
-        expect(result, left(const LocationFailure.notGranted()));
+        expect(
+          result,
+          left<LocationFailure, Unit>(
+            const LocationFailure.notGranted(),
+          ),
+        );
       },
     );
 
     test(
-      'Should return unit if permission denied initially and after request deniedForever',
+      'Should return unit if permission denied initially '
+      'and after request deniedForever',
       () async {
         //arrange
-        when(_locationService.checkPermission()).thenAnswer(
+        when(locationService.checkPermission()).thenAnswer(
           (_) async => PermissionStatus.denied,
         );
-        when(_locationService.requestLocationPermission())
+        when(locationService.requestLocationPermission())
             .thenAnswer((_) async => PermissionStatus.deniedForever);
         //act
-        final result = await _repository.getLocationPermissions();
+        final result = await repository.getLocationPermissions();
         //assert
-        expect(result, left(const LocationFailure.notGranted()));
+        expect(
+          result,
+          left<LocationFailure, Unit>(
+            const LocationFailure.notGranted(),
+          ),
+        );
       },
     );
   });
-  group("startWatchingLocation", () {});
+  group('startWatchingLocation', () {});
 }

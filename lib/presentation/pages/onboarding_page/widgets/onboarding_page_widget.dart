@@ -6,52 +6,50 @@ class OnboardingPageWidget extends StatelessWidget {
   final String description;
 
   const OnboardingPageWidget({
-    Key? key,
     required this.assetName,
     required this.title,
     required this.description,
+    Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(assetName),
-          const SizedBox(
-            height: 16,
-          ),
-          Center(
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              textAlign: TextAlign.center,
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(assetName),
+            const SizedBox(
+              height: 16,
             ),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Center(
-            child: Text(
-              description,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
+            Center(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(
-            height: 64,
-          ),
-        ],
-      ),
-    );
-  }
+            const SizedBox(
+              height: 16,
+            ),
+            Center(
+              child: Text(
+                description,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(
+              height: 64,
+            ),
+          ],
+        ),
+      );
 }

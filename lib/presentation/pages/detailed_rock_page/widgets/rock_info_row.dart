@@ -9,28 +9,26 @@ class RockInfoRow extends StatelessWidget {
   final double? distance;
 
   const RockInfoRow({
-    Key? key,
     required this.rock,
     required this.distance,
+    Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        DistanceToRock(
-          distance: distance,
-        ),
-        RockElevation(height: rock.height),
-        RockCoordinates(
-          id: rock.id,
-          latitude: rock.latitude,
-          longitude: rock.longitude,
-          localizedName: rock.localizedName,
-        ),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          DistanceToRock(
+            distance: distance,
+          ),
+          RockElevation(height: rock.height),
+          RockCoordinates(
+            id: rock.id,
+            latitude: rock.latitude,
+            longitude: rock.longitude,
+            localizedName: rock.localizedName,
+          ),
+        ],
+      );
 }

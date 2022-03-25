@@ -5,13 +5,13 @@ class RockElevation extends StatelessWidget {
   final int height;
 
   const RockElevation({
-    Key? key,
     required this.height,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
     final color = Theme.of(context).primaryColorDark;
 
     return Column(
@@ -34,7 +34,7 @@ class RockElevation extends StatelessWidget {
             ),
             children: <TextSpan>[
               TextSpan(
-                text: localization.distance_meters,
+                text: localization?.distance_meters,
                 style: TextStyle(
                   fontSize: 20,
                   color: color.withOpacity(0.6),

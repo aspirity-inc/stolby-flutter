@@ -10,40 +10,38 @@ class SettingsRepository implements ISettingsRepository {
   SettingsRepository(this._preferencesService);
 
   @override
-  Future<AppSettingsEntity> fetchSettings() async {
-    return AppSettingsEntity(
-      geolocationEnabled: _preferencesService.getGeolocationEnabled(),
-      reversedMap: _preferencesService.getReversedMap(),
-      mapUserCentering: _preferencesService.getMapUserCentering(),
-      autoThemeChange:
-          _preferencesService.getAutoThemeChange(defaultValue: true),
-      darkTheme: _preferencesService.getLightTheme(),
-      onboardingVisited: _preferencesService.getOnboardingVisited(),
-    );
-  }
+  Future<AppSettingsEntity> fetchSettings() async => AppSettingsEntity(
+        geolocationEnabled: _preferencesService.getGeolocationEnabled(),
+        reversedMap: _preferencesService.getReversedMap(),
+        mapUserCentering: _preferencesService.getMapUserCentering(),
+        autoThemeChange:
+            _preferencesService.getAutoThemeChange(defaultValue: true),
+        darkTheme: _preferencesService.getLightTheme(),
+        onboardingVisited: _preferencesService.getOnboardingVisited(),
+      );
 
   @override
-  Future<void> toggleGeolocation(bool value) async =>
-      _preferencesService.setGeolocationEnabled(value);
+  Future<void> toggleGeolocation({required bool value}) async =>
+      _preferencesService.setGeolocationEnabled(geolocationEnabled: value);
 
   @override
-  Future<void> toggleMapReverse(bool value) async =>
-      _preferencesService.setReversedMap(value);
+  Future<void> toggleMapReverse({required bool value}) async =>
+      _preferencesService.setReversedMap(reversedMap: value);
 
   @override
-  Future<void> toggleUserCentering(bool value) async =>
-      _preferencesService.setMapUserCentering(value);
+  Future<void> toggleUserCentering({required bool value}) async =>
+      _preferencesService.setMapUserCentering(mapUserCentering: value);
 
   @override
-  Future<void> toggleAutoTheme(bool value) async =>
-      _preferencesService.setAutoThemeChange(value);
+  Future<void> toggleAutoTheme({required bool value}) async =>
+      _preferencesService.setAutoThemeChange(autoThemeChange: value);
 
   @override
-  Future<void> toggleDarkTheme(bool value) async =>
-      _preferencesService.setLightTheme(value);
+  Future<void> toggleDarkTheme({required bool value}) async =>
+      _preferencesService.setLightTheme(lightTheme: value);
 
   @override
   Future<void> onBoardingVisited() async {
-    _preferencesService.setOnboardingVisited();
+    await _preferencesService.setOnboardingVisited();
   }
 }

@@ -8,13 +8,11 @@ class RocksPage extends StatelessWidget {
   const RocksPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<RockListBloc>()
-        ..add(
-          const RockListEvent.initialized(),
-        ),
-      child: const RocksPageContent(),
-    );
-  }
+  Widget build(BuildContext context) => BlocProvider(
+        create: (_) => getIt<RockListBloc>()
+          ..add(
+            const RockListEvent.initialized(),
+          ),
+        child: const RocksPageContent(),
+      );
 }

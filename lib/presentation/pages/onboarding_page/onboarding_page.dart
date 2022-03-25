@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:stolby_flutter/application/settings/settings_bloc.dart';
@@ -16,9 +16,10 @@ class OnboardingPage extends StatefulWidget {
 
 class _OnboardingPageState extends State<OnboardingPage> {
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
     final controller = PageController();
 
     return SafeArea(
@@ -29,20 +30,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
           actions: [
             Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 8.0,
+                horizontal: 16,
+                vertical: 8,
               ),
               child: TextButton(
-                onPressed: () {
-                  context
-                      .read<SettingsBloc>()
-                      .add(const SettingsEvent.onboardingVisited());
-                  context.router.pop();
-                },
+                onPressed: () => _handleSkipTap(context),
                 child: Text(
-                  currentIndex == 2
-                      ? localization.activity_tutorial_button_close
-                      : localization.onboarding_skip,
+                  (currentIndex == 2
+                          ? localization?.activity_tutorial_button_close
+                          : localization?.onboarding_skip) ??
+                      '',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                     fontSize: 18,
@@ -57,28 +54,29 @@ class _OnboardingPageState extends State<OnboardingPage> {
           fit: StackFit.expand,
           children: [
             PageView(
-              onPageChanged: (page) {
-                setState(() => currentIndex = page);
-              },
+              onPageChanged: (page) => setState(() => currentIndex = page),
+              controller: controller,
               children: [
                 OnboardingPageWidget(
                   assetName: AppIcons.mapPicture,
-                  title: localization.activity_tutorial_discover_title,
+                  title: localization?.activity_tutorial_discover_title ?? '',
                   description:
-                      localization.activity_tutorial_discover_description,
+                      localization?.activity_tutorial_discover_description ??
+                          '',
                 ),
                 OnboardingPageWidget(
                   assetName: AppIcons.rockPicture,
-                  title: localization.activity_tutorial_find_title,
-                  description: localization.activity_tutorial_find_description,
+                  title: localization?.activity_tutorial_find_title ?? '',
+                  description:
+                      localization?.activity_tutorial_find_description ?? '',
                 ),
                 OnboardingPageWidget(
                   assetName: AppIcons.phonePicture,
-                  title: localization.activity_tutorial_help_title,
-                  description: localization.activity_tutorial_help_description,
+                  title: localization?.activity_tutorial_help_title ?? '',
+                  description:
+                      localization?.activity_tutorial_help_description ?? '',
                 ),
               ],
-              controller: controller,
             ),
             Positioned(
               bottom: 8,
@@ -88,38 +86,39 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 controller: controller,
                 currentIndex: currentIndex,
                 length: 3,
-                onLeftPressed: () {
-                  setState(() {
-                    currentIndex--;
+                onLeftPressed: () => setState(() {
+                  currentIndex--;
+                  controller.animateToPage(
+                    currentIndex,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                }),
+                onRightPressed: () => setState(() {
+                  if (currentIndex == 2) {
+                    context
+                        .read<SettingsBloc>()
+                        .add(const SettingsEvent.onboardingVisited());
+                    context.router.pop();
+                  } else {
+                    currentIndex++;
                     controller.animateToPage(
                       currentIndex,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
-                  });
-                },
-                onRightPressed: () {
-                  setState(() {
-                    if (currentIndex == 2) {
-                      context
-                          .read<SettingsBloc>()
-                          .add(const SettingsEvent.onboardingVisited());
-                      context.router.pop();
-                    } else {
-                      currentIndex++;
-                      controller.animateToPage(
-                        currentIndex,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    }
-                  });
-                },
+                  }
+                }),
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _handleSkipTap(BuildContext context) {
+    context.read<SettingsBloc>().add(const SettingsEvent.onboardingVisited());
+    context.router.pop();
   }
 }

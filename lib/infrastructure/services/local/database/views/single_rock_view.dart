@@ -1,5 +1,5 @@
-import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stolby_flutter/domain/feature/rocks_list/entities/detailed_rock_entity.dart';
 
 part 'single_rock_view.freezed.dart';
 

@@ -17,54 +17,54 @@ class MapPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          MapWidget(
-            initialCoordinates: initialCoordinates,
-          ),
-          Positioned(
-            top: 0,
-            bottom: 0,
-            right: 0,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                MapZoomIconButton(
-                  action: ZoomIconButtonAction.moreZoom,
-                ),
-                MapZoomIconButton(
-                  action: ZoomIconButtonAction.lessZoom,
-                ),
-              ],
+  Widget build(BuildContext context) => Scaffold(
+        body: Stack(
+          children: [
+            MapWidget(
+              initialCoordinates: initialCoordinates,
             ),
-          ),
-          Positioned(
-            bottom: 32,
-            left: 0,
-            right: 0,
-            child: BlocBuilder<MapControlBloc, MapControlState>(
-              builder: (context, state) {
-                return state.clickedRock.fold(
-                  () => const SizedBox(),
-                  (rock) => SwipeableCard(
-                    id: rock.id,
-                    child: MapRockCardContent(
-                      rock: rock,
+            Positioned(
+              top: 0,
+              bottom: 0,
+              right: 0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  MapZoomIconButton(
+                    action: ZoomIconButtonAction.moreZoom,
+                  ),
+                  MapZoomIconButton(
+                    action: ZoomIconButtonAction.lessZoom,
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 96,
+              left: 0,
+              right: 0,
+              child: SafeArea(
+                child: BlocBuilder<MapControlBloc, MapControlState>(
+                  builder: (context, state) => state.clickedRock.fold(
+                    () => const SizedBox(),
+                    (rock) => SwipeableCard(
+                      id: rock.id,
+                      child: MapRockCardContent(
+                        rock: rock,
+                      ),
                     ),
                   ),
-                );
-              },
+                ),
+              ),
             ),
-          ),
-          const Positioned(
-            top: 0,
-            right: 0,
-            child: MapGeolocationIconButton(),
-          ),
-        ],
-      ),
-    );
-  }
+            const Positioned(
+              top: 0,
+              right: 0,
+              child: SafeArea(
+                child: MapGeolocationIconButton(),
+              ),
+            ),
+          ],
+        ),
+      );
 }

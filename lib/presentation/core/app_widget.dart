@@ -17,24 +17,22 @@ class StolbyApp extends StatelessWidget {
   StolbyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => getIt<LocationBloc>()),
-        BlocProvider(
-          create: (_) =>
-              getIt<SettingsBloc>()..add(const SettingsEvent.initialized()),
-        ),
-        BlocProvider(
-          create: (_) => getIt<MapControlBloc>(),
-        ),
-        BlocProvider(
-          create: (_) => getIt<MapBloc>()..add(const MapEvent.initialized()),
-        ),
-      ],
-      child: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) {
-          return MaterialApp.router(
+  Widget build(BuildContext context) => MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => getIt<LocationBloc>()),
+          BlocProvider(
+            create: (_) =>
+                getIt<SettingsBloc>()..add(const SettingsEvent.initialized()),
+          ),
+          BlocProvider(
+            create: (_) => getIt<MapControlBloc>(),
+          ),
+          BlocProvider(
+            create: (_) => getIt<MapBloc>()..add(const MapEvent.initialized()),
+          ),
+        ],
+        child: BlocBuilder<SettingsBloc, SettingsState>(
+          builder: (context, state) => MaterialApp.router(
             title: 'Stolby',
             theme: lightTheme,
             darkTheme: darkTheme,
@@ -56,9 +54,7 @@ class StolbyApp extends StatelessWidget {
             ],
             routeInformationParser: _router.defaultRouteParser(),
             routerDelegate: _router.delegate(),
-          );
-        },
-      ),
-    );
-  }
+          ),
+        ),
+      );
 }

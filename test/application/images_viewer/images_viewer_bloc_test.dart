@@ -10,15 +10,15 @@ import 'images_viewer_bloc_test.mocks.dart';
 
 @GenerateMocks([IImagesRepository])
 void main() {
-  late MockIImagesRepository _repository;
-  late ImagesViewerBloc _bloc;
+  late MockIImagesRepository repository;
+  late ImagesViewerBloc bloc;
 
   setUp(() {
-    _repository = MockIImagesRepository();
-    _bloc = ImagesViewerBloc(_repository);
+    repository = MockIImagesRepository();
+    bloc = ImagesViewerBloc(repository);
   });
 
-  tearDown(() => _bloc.close());
+  tearDown(() => bloc.close());
 
   const tImageName = 'pic_test';
   const tImageName2 = 'pic_test_2';
@@ -31,21 +31,21 @@ void main() {
   group(
     'initialized()',
     () {
-      blocTest(
+      blocTest<ImagesViewerBloc, ImagesViewerState>(
         'Should emit state with images and main image',
         build: () {
           when(
-            _repository.getImagesByPicName(
+            repository.getImagesByPicName(
               picName: anyNamed('picName'),
             ),
           ).thenAnswer((_) async => tList);
-          return _bloc;
+          return bloc;
         },
         seed: () => ImagesViewerState.initial(),
-        act: (ImagesViewerBloc bloc) =>
-            bloc.add(const ImagesViewerEvent.initialized(pic_name: tImageName)),
+        act: (bloc) =>
+            bloc.add(const ImagesViewerEvent.initialized(picName: tImageName)),
         verify: (_) {
-          verify(_repository.getImagesByPicName(picName: tImageName));
+          verify(repository.getImagesByPicName(picName: tImageName));
         },
         expect: () => [
           ImagesViewerState.initial().copyWith(
@@ -55,21 +55,22 @@ void main() {
         ],
       );
 
-      blocTest(
-        'Should emit state with mainImage and mainImage in image names if where is only one image',
+      blocTest<ImagesViewerBloc, ImagesViewerState>(
+        'Should emit state with mainImage and mainImage in image names '
+        'where is only one image',
         build: () {
           when(
-            _repository.getImagesByPicName(
+            repository.getImagesByPicName(
               picName: anyNamed('picName'),
             ),
           ).thenAnswer((_) async => [tImageName]);
-          return _bloc;
+          return bloc;
         },
         seed: () => ImagesViewerState.initial(),
-        act: (ImagesViewerBloc bloc) =>
-            bloc.add(const ImagesViewerEvent.initialized(pic_name: tImageName)),
+        act: (bloc) =>
+            bloc.add(const ImagesViewerEvent.initialized(picName: tImageName)),
         verify: (_) {
-          verify(_repository.getImagesByPicName(picName: tImageName));
+          verify(repository.getImagesByPicName(picName: tImageName));
         },
         expect: () => [
           ImagesViewerState.initial().copyWith(

@@ -8,10 +8,10 @@ import 'package:stolby_flutter/infrastructure/services/local/database/views/rock
 import 'package:stolby_flutter/infrastructure/services/local/database/views/single_rock_view.dart';
 
 void main() {
-  late AppDatabase _database;
+  late AppDatabase database;
 
   setUp(() {
-    _database = AppDatabase(
+    database = AppDatabase(
       LazyDatabase(
         () => NativeDatabase(
           File('assets/rocks.db'),
@@ -21,7 +21,7 @@ void main() {
   });
 
   tearDown(() async {
-    await _database.close();
+    await database.close();
   });
 
   test('Should read all items for list', () async {
@@ -34,7 +34,7 @@ void main() {
       height: 40,
       picName: 'pic_babkaivnuchka',
     );
-    final result = await _database.getRocksList('en');
+    final result = await database.getRocksList('en');
     expect(result.length, 17);
     expect(result[0], expected);
   });
@@ -53,7 +53,7 @@ void main() {
       shortInfo:
           'The Granny and the Granddaughter (Russian: Бабка и Внучка, Babka i Vnuchka) are up to 40 meter high rocks in Aesthetic (Central) area of Stolby nature reserve. They are located above the Central (Circular) pathway, on a straight line (West-East) between the First Pillar (Russian: Первый Столб, Pervy Stolb) and the Granddad (Russian: Дед, Ded). The Granny and the Granddaughter together with the Granddad are one of the most photogenic sites of the reserve.',
     );
-    final result = await _database.getSingleRock('en', 0);
+    final result = await database.getSingleRock('en', 0);
     expect(result, expected);
   });
 }

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-24 12:22:27</td>
+            <td class="headerValue">2022-03-25 16:55:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -67,19 +67,17 @@
 <a name="5"><span class="lineNum">       5 </span>            : import 'package:stolby_flutter/presentation/pages/rocks_page/widgets/rocks_page_content.dart';</a>
 <a name="6"><span class="lineNum">       6 </span>            : </a>
 <a name="7"><span class="lineNum">       7 </span>            : class RocksPage extends StatelessWidget {</a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">         27 :   const RocksPage({Key? key}) : super(key: key);</span></a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineCov">         23 :   const RocksPage({Key? key}) : super(key: key);</span></a>
 <a name="9"><span class="lineNum">       9 </span>            : </a>
 <a name="10"><span class="lineNum">      10 </span><span class="lineNoCov">          0 :   @override</span></a>
-<a name="11"><span class="lineNum">      11 </span>            :   Widget build(BuildContext context) {</a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineNoCov">          0 :     return BlocProvider(</span></a>
-<a name="13"><span class="lineNum">      13 </span><span class="lineNoCov">          0 :       create: (_) =&gt; getIt&lt;RockListBloc&gt;()</span></a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineNoCov">          0 :         ..add(</span></a>
-<a name="15"><span class="lineNum">      15 </span>            :           const RockListEvent.initialized(),</a>
-<a name="16"><span class="lineNum">      16 </span>            :         ),</a>
-<a name="17"><span class="lineNum">      17 </span>            :       child: const RocksPageContent(),</a>
-<a name="18"><span class="lineNum">      18 </span>            :     );</a>
-<a name="19"><span class="lineNum">      19 </span>            :   }</a>
-<a name="20"><span class="lineNum">      20 </span>            : }</a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineNoCov">          0 :   Widget build(BuildContext context) =&gt; BlocProvider(</span></a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineNoCov">          0 :         create: (_) =&gt; getIt&lt;RockListBloc&gt;()</span></a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineNoCov">          0 :           ..add(</span></a>
+<a name="14"><span class="lineNum">      14 </span>            :             const RockListEvent.initialized(),</a>
+<a name="15"><span class="lineNum">      15 </span>            :           ),</a>
+<a name="16"><span class="lineNum">      16 </span>            :         child: const RocksPageContent(),</a>
+<a name="17"><span class="lineNum">      17 </span>            :       );</a>
+<a name="18"><span class="lineNum">      18 </span>            : }</a>
 </pre>
       </td>
     </tr>

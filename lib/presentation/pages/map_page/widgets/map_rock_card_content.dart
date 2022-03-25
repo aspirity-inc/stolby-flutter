@@ -9,40 +9,38 @@ class MapRockCardContent extends StatelessWidget {
   final RockEntity rock;
 
   const MapRockCardContent({
-    Key? key,
     required this.rock,
+    Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                AppImages.getRockImage(rock.picName),
-                height: 136,
-                width: 136,
-                fit: BoxFit.cover,
+  Widget build(BuildContext context) => Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(16)),
+                child: Image.asset(
+                  getRockImage(rock.picName),
+                  height: 136,
+                  width: 136,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 16,
-            ),
-            MapCardInfo(
-              rock: rock,
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        const MapMarkerButton(),
-      ],
-    );
-  }
+              const SizedBox(
+                width: 16,
+              ),
+              MapCardInfo(
+                rock: rock,
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const MapMarkerButton(),
+        ],
+      );
 }

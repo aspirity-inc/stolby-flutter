@@ -7,6 +7,8 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i10;
 import 'package:flutter/material.dart' as _i11;
@@ -30,14 +32,14 @@ class AppRouter extends _i10.RootStackRouter {
   @override
   final Map<String, _i10.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: const _i1.SplashPage(),
           opaque: true,
           barrierDismissible: false);
     },
     MainRoute.name: (routeData) {
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: const _i2.MainPage(),
           opaque: true,
@@ -45,10 +47,10 @@ class AppRouter extends _i10.RootStackRouter {
     },
     DetailedRockRoute.name: (routeData) {
       final args = routeData.argsAs<DetailedRockRouteArgs>();
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
-          child: _i3.DetailedRockPage(key: args.key, rockId: args.rockId),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+          child: _i3.DetailedRockPage(rockId: args.rockId, key: args.key),
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
@@ -56,11 +58,11 @@ class AppRouter extends _i10.RootStackRouter {
     },
     RockViewImageRoute.name: (routeData) {
       final args = routeData.argsAs<RockViewImageRouteArgs>();
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: _i4.RockViewImagePage(
-              key: args.key, picturePath: args.picturePath),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+              picturePath: args.picturePath, key: args.key),
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
@@ -69,20 +71,20 @@ class AppRouter extends _i10.RootStackRouter {
     FeedbackRoute.name: (routeData) {
       final args = routeData.argsAs<FeedbackRouteArgs>(
           orElse: () => const FeedbackRouteArgs());
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: _i5.FeedbackPage(key: args.key),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
           barrierDismissible: false);
     },
     OnboardingRoute.name: (routeData) {
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: const _i6.OnboardingPage(),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
@@ -91,31 +93,31 @@ class AppRouter extends _i10.RootStackRouter {
     MapRoute.name: (routeData) {
       final args =
           routeData.argsAs<MapRouteArgs>(orElse: () => const MapRouteArgs());
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: _i7.MapPage(
               key: args.key, initialCoordinates: args.initialCoordinates),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
           barrierDismissible: false);
     },
     RocksRoute.name: (routeData) {
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: const _i8.RocksPage(),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
           barrierDismissible: false);
     },
     SettingsRoute.name: (routeData) {
-      return _i10.CustomPage<dynamic>(
+      return _i10.CustomPage<void>(
           routeData: routeData,
           child: const _i9.SettingsPage(),
-          transitionsBuilder: _i12.AppRouteTransitionsBuilders.zoomIn,
+          transitionsBuilder: _i12.AppTransactionsBuilders.zoomIn,
           durationInMilliseconds: 500,
           reverseDurationInMilliseconds: 500,
           opaque: true,
@@ -161,48 +163,48 @@ class MainRoute extends _i10.PageRouteInfo<void> {
 /// generated route for
 /// [_i3.DetailedRockPage]
 class DetailedRockRoute extends _i10.PageRouteInfo<DetailedRockRouteArgs> {
-  DetailedRockRoute({_i11.Key? key, required int rockId})
+  DetailedRockRoute({required int rockId, _i11.Key? key})
       : super(DetailedRockRoute.name,
             path: '/detailed-rock-page',
-            args: DetailedRockRouteArgs(key: key, rockId: rockId));
+            args: DetailedRockRouteArgs(rockId: rockId, key: key));
 
   static const String name = 'DetailedRockRoute';
 }
 
 class DetailedRockRouteArgs {
-  const DetailedRockRouteArgs({this.key, required this.rockId});
-
-  final _i11.Key? key;
+  const DetailedRockRouteArgs({required this.rockId, this.key});
 
   final int rockId;
 
+  final _i11.Key? key;
+
   @override
   String toString() {
-    return 'DetailedRockRouteArgs{key: $key, rockId: $rockId}';
+    return 'DetailedRockRouteArgs{rockId: $rockId, key: $key}';
   }
 }
 
 /// generated route for
 /// [_i4.RockViewImagePage]
 class RockViewImageRoute extends _i10.PageRouteInfo<RockViewImageRouteArgs> {
-  RockViewImageRoute({_i11.Key? key, required String picturePath})
+  RockViewImageRoute({required String picturePath, _i11.Key? key})
       : super(RockViewImageRoute.name,
             path: '/rock-view-image-page',
-            args: RockViewImageRouteArgs(key: key, picturePath: picturePath));
+            args: RockViewImageRouteArgs(picturePath: picturePath, key: key));
 
   static const String name = 'RockViewImageRoute';
 }
 
 class RockViewImageRouteArgs {
-  const RockViewImageRouteArgs({this.key, required this.picturePath});
-
-  final _i11.Key? key;
+  const RockViewImageRouteArgs({required this.picturePath, this.key});
 
   final String picturePath;
 
+  final _i11.Key? key;
+
   @override
   String toString() {
-    return 'RockViewImageRouteArgs{key: $key, picturePath: $picturePath}';
+    return 'RockViewImageRouteArgs{picturePath: $picturePath, key: $key}';
   }
 }
 

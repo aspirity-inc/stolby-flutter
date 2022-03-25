@@ -4,14 +4,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:stolby_flutter/application/map/map_control/map_control_bloc.dart';
 import 'package:stolby_flutter/domain/feature/rocks_list/entities/rock_entity.dart';
 
-main() {
-  late MapControlBloc _bloc;
+void main() {
+  late MapControlBloc bloc;
 
   setUp(() {
-    _bloc = MapControlBloc();
+    bloc = MapControlBloc();
   });
 
-  tearDown(() => _bloc.close());
+  tearDown(() => bloc.close());
 
   const testItem = RockEntity(
     id: 0,
@@ -26,11 +26,11 @@ main() {
   group(
     'rockClicked()',
     () {
-      blocTest(
+      blocTest<MapControlBloc, MapControlState>(
         'Should emit state with clicked rock',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial(),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.rockClicked(testItem),
         ),
         expect: () => [
@@ -47,9 +47,9 @@ main() {
     () {
       blocTest(
         'Should emit state with tapped rock',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial(),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.rockMarkerPut(testItem),
         ),
         expect: () => [
@@ -65,12 +65,13 @@ main() {
     'rockMarkerRemoved()',
     () {
       blocTest(
-        'Should emit state without setMarkerRock if state had initial setMarkerRock',
-        build: () => _bloc,
+        'Should emit state without setMarkerRock '
+        'if state had initial setMarkerRock',
+        build: () => bloc,
         seed: () => MapControlState.initial().copyWith(
           setMarkerRock: some(testItem),
         ),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.rockMarkerRemoved(),
         ),
         expect: () => [
@@ -80,12 +81,12 @@ main() {
 
       blocTest(
         'Should emit nothing if rock was not selected',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial().copyWith(),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.rockMarkerRemoved(),
         ),
-        expect: () => [],
+        expect: () => <MapControlState>[],
       );
     },
   );
@@ -94,12 +95,13 @@ main() {
     'clickedRockRemoved()',
     () {
       blocTest(
-        'Should emit state without clickedRock if state had initial clickedRock',
-        build: () => _bloc,
+        'Should emit state without clickedRock '
+        'if state had initial clickedRock',
+        build: () => bloc,
         seed: () => MapControlState.initial().copyWith(
           clickedRock: some(testItem),
         ),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.clickedRockRemoved(),
         ),
         expect: () => [MapControlState.initial()],
@@ -107,12 +109,12 @@ main() {
 
       blocTest(
         'Should emit nothing if rock was not clicked',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial(),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.clickedRockRemoved(),
         ),
-        expect: () => [],
+        expect: () => <MapControlState>[],
       );
     },
   );
@@ -122,9 +124,9 @@ main() {
     () {
       blocTest(
         'Should emit state with rock if there is not initial rock',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial(),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.handleMarkerSelection(testItem),
         ),
         expect: () => [
@@ -135,11 +137,11 @@ main() {
       );
       blocTest(
         'Should emit state without rock if there is rock same as in event',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial().copyWith(
           setMarkerRock: some(testItem),
         ),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.handleMarkerSelection(testItem),
         ),
         expect: () => [
@@ -148,11 +150,11 @@ main() {
       );
       blocTest(
         'Should emit state with another rock',
-        build: () => _bloc,
+        build: () => bloc,
         seed: () => MapControlState.initial().copyWith(
           setMarkerRock: some(testItem.copyWith(id: 1)),
         ),
-        act: (MapControlBloc _bloc) => _bloc.add(
+        act: (_) => bloc.add(
           const MapControlEvent.handleMarkerSelection(testItem),
         ),
         expect: () => [

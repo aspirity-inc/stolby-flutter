@@ -12,9 +12,7 @@ class MainPageNavigationBar extends StatefulWidget implements AutoRouteWrapper {
   State<MainPageNavigationBar> createState() => _MainPageNavigationBarState();
 
   @override
-  Widget wrappedRoute(BuildContext context) {
-    return this;
-  }
+  Widget wrappedRoute(BuildContext context) => this;
 }
 
 class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
@@ -27,7 +25,7 @@ class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    final localization = AppLocalizations.of(context)!;
+    final localization = AppLocalizations.of(context);
 
     return SafeArea(
       child: Theme(
@@ -47,21 +45,21 @@ class _MainPageNavigationBarState extends State<MainPageNavigationBar> {
           ),
           items: [
             BottomNavigationBarItem(
-              label: localization.appbar_title_map,
+              label: localization?.appbar_title_map,
               icon: AppBottomNavigationBarItem(
                 selected: currentIndex == 0,
                 icon: Icons.map,
               ),
             ),
             BottomNavigationBarItem(
-              label: localization.appbar_title_rocks,
+              label: localization?.appbar_title_rocks,
               icon: AppBottomNavigationBarItem(
                 selected: currentIndex == 1,
                 icon: CommunityMaterialIcons.image_filter_hdr,
               ),
             ),
             BottomNavigationBarItem(
-              label: localization.appbar_title_settings,
+              label: localization?.appbar_title_settings,
               icon: AppBottomNavigationBarItem(
                 selected: currentIndex == 2,
                 icon: Icons.settings,

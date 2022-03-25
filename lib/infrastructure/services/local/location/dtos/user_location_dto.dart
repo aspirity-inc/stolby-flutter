@@ -8,13 +8,14 @@ part 'user_location_dto.freezed.dart';
 @freezed
 class UserLocationDto with _$UserLocationDto {
   const UserLocationDto._();
+
   const factory UserLocationDto({
     required double latitude,
     required double longitude,
     required double heading,
   }) = _UserLocationDto;
 
-  static UserLocationDto fromLocationData(LocationData locationData) =>
+  factory UserLocationDto.fromLocationData(LocationData locationData) =>
       UserLocationDto(
         latitude: locationData.latitude ?? 0,
         longitude: locationData.longitude ?? 0,
