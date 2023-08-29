@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!context.read<SettingsBloc>().state.onboardingVisited) {
-      context.router.push(const OnboardingRoute());
+      context.router.replace(const OnboardingRoute());
     }
     final color = Theme.of(context).colorScheme.secondaryContainer;
 
@@ -21,9 +21,7 @@ class MainPage extends StatelessWidget {
 
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, state) => AnnotatedRegion<SystemUiOverlayStyle>(
-        value: state.darkTheme
-            ? SystemUiOverlayStyle.light
-            : SystemUiOverlayStyle.dark,
+        value: state.darkTheme ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
         child: Builder(
           builder: (context) => Scaffold(
             body: Stack(
@@ -33,9 +31,7 @@ class MainPage extends StatelessWidget {
                   top: !isMapPage,
                   bottom: !isMapPage,
                   child: Padding(
-                    padding: isMapPage
-                        ? EdgeInsets.zero
-                        : const EdgeInsets.only(bottom: 64),
+                    padding: isMapPage ? EdgeInsets.zero : const EdgeInsets.only(bottom: 64),
                     child: const AutoRouter(),
                   ),
                 ),
