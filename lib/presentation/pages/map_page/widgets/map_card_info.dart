@@ -20,74 +20,78 @@ class MapCardInfo extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Expanded(
-      child: SizedBox(
-        height: 136,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 24),
-              child: Text(
-                rock.localizedName,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                softWrap: false,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20,
-                  color: theme.colorScheme.onBackground,
-                ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24),
+            child: Text(
+              rock.localizedName,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              softWrap: false,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                color: theme.colorScheme.onBackground,
               ),
             ),
-            DifficultyAndElevationRow(
-              elevation: rock.height,
-              difficulty: rock.difficulty,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          DifficultyAndElevationRow(
+            elevation: rock.height,
+            difficulty: rock.difficulty,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Text(
+            _difficultyToStringLong(
+              rock.difficulty,
+              localization,
             ),
-            SizedBox(
-              width: 96,
-              child: Text(
-                _difficultyToStringLong(
-                  rock.difficulty,
-                  localization,
-                ),
-                maxLines: 5,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: theme.primaryColorLight,
-                ),
+            maxLines: 5,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: theme.primaryColorLight,
+            ),
+          ),
+          const SizedBox(
+            height: 28,
+          ),
+          GestureDetector(
+            onTap: () => context.router.push(
+              DetailedRockRoute(
+                rockId: rock.id,
               ),
             ),
-            GestureDetector(
-              onTap: () => context.router.push(
-                DetailedRockRoute(
-                  rockId: rock.id,
+            child: Row(
+              children: [
+                Icon(
+                  CommunityMaterialIcons.image_filter_hdr,
+                  size: 20,
+                  color: theme.colorScheme.secondary,
                 ),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    CommunityMaterialIcons.image_filter_hdr,
-                    size: 20,
-                    color: theme.colorScheme.secondary,
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text(
+                const SizedBox(
+                  width: 8,
+                ),
+                Flexible(
+                  child: Text(
                     localization?.action_settings ?? '',
                     style: TextStyle(
                       fontSize: 14,
                       color: theme.colorScheme.secondary,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

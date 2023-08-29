@@ -15,6 +15,7 @@ class MapRockCardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
