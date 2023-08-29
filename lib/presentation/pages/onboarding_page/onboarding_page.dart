@@ -6,6 +6,7 @@ import 'package:stolby_flutter/application/settings/settings_bloc.dart';
 import 'package:stolby_flutter/presentation/core/app_assets.dart';
 import 'package:stolby_flutter/presentation/pages/onboarding_page/widgets/onboarding_bottom_bar.dart';
 import 'package:stolby_flutter/presentation/pages/onboarding_page/widgets/onboarding_page_widget.dart';
+import 'package:stolby_flutter/presentation/routing/router.gr.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -92,8 +93,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 }),
                 onRightPressed: () => setState(() {
                   if (currentIndex == 2) {
-                    context.read<SettingsBloc>().add(const SettingsEvent.onboardingVisited());
-                    context.router.pop();
+                    _handleSkipTap(context);
                   } else {
                     currentIndex++;
                     controller.animateToPage(
@@ -113,6 +113,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   void _handleSkipTap(BuildContext context) {
     context.read<SettingsBloc>().add(const SettingsEvent.onboardingVisited());
-    context.router.pop();
+    context.router.replace(const MainRoute());
   }
 }
