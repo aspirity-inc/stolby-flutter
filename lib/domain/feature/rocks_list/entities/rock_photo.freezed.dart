@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rock_photo.dart';
 
@@ -12,22 +12,7 @@ part of 'rock_photo.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RockPhotoTearOff {
-  const _$RockPhotoTearOff();
-
-  _RockPhoto call({required ui.Image image, required String imageName}) {
-    return _RockPhoto(
-      image: image,
-      imageName: imageName,
-    );
-  }
-}
-
-/// @nodoc
-const $RockPhoto = _$RockPhotoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RockPhoto {
@@ -42,65 +27,70 @@ mixin _$RockPhoto {
 /// @nodoc
 abstract class $RockPhotoCopyWith<$Res> {
   factory $RockPhotoCopyWith(RockPhoto value, $Res Function(RockPhoto) then) =
-      _$RockPhotoCopyWithImpl<$Res>;
+      _$RockPhotoCopyWithImpl<$Res, RockPhoto>;
+  @useResult
   $Res call({ui.Image image, String imageName});
 }
 
 /// @nodoc
-class _$RockPhotoCopyWithImpl<$Res> implements $RockPhotoCopyWith<$Res> {
+class _$RockPhotoCopyWithImpl<$Res, $Val extends RockPhoto>
+    implements $RockPhotoCopyWith<$Res> {
   _$RockPhotoCopyWithImpl(this._value, this._then);
 
-  final RockPhoto _value;
   // ignore: unused_field
-  final $Res Function(RockPhoto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image = freezed,
-    Object? imageName = freezed,
+    Object? image = null,
+    Object? imageName = null,
   }) {
     return _then(_value.copyWith(
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as ui.Image,
-      imageName: imageName == freezed
+      imageName: null == imageName
           ? _value.imageName
           : imageName // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RockPhotoCopyWith<$Res> implements $RockPhotoCopyWith<$Res> {
-  factory _$RockPhotoCopyWith(
-          _RockPhoto value, $Res Function(_RockPhoto) then) =
-      __$RockPhotoCopyWithImpl<$Res>;
+abstract class _$$_RockPhotoCopyWith<$Res> implements $RockPhotoCopyWith<$Res> {
+  factory _$$_RockPhotoCopyWith(
+          _$_RockPhoto value, $Res Function(_$_RockPhoto) then) =
+      __$$_RockPhotoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({ui.Image image, String imageName});
 }
 
 /// @nodoc
-class __$RockPhotoCopyWithImpl<$Res> extends _$RockPhotoCopyWithImpl<$Res>
-    implements _$RockPhotoCopyWith<$Res> {
-  __$RockPhotoCopyWithImpl(_RockPhoto _value, $Res Function(_RockPhoto) _then)
-      : super(_value, (v) => _then(v as _RockPhoto));
+class __$$_RockPhotoCopyWithImpl<$Res>
+    extends _$RockPhotoCopyWithImpl<$Res, _$_RockPhoto>
+    implements _$$_RockPhotoCopyWith<$Res> {
+  __$$_RockPhotoCopyWithImpl(
+      _$_RockPhoto _value, $Res Function(_$_RockPhoto) _then)
+      : super(_value, _then);
 
-  @override
-  _RockPhoto get _value => super._value as _RockPhoto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image = freezed,
-    Object? imageName = freezed,
+    Object? image = null,
+    Object? imageName = null,
   }) {
-    return _then(_RockPhoto(
-      image: image == freezed
+    return _then(_$_RockPhoto(
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as ui.Image,
-      imageName: imageName == freezed
+      imageName: null == imageName
           ? _value.imageName
           : imageName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -127,26 +117,26 @@ class _$_RockPhoto implements _RockPhoto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RockPhoto &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.imageName, imageName));
+            other is _$_RockPhoto &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.imageName, imageName) ||
+                other.imageName == imageName));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(imageName));
+  int get hashCode => Object.hash(runtimeType, image, imageName);
 
   @JsonKey(ignore: true)
   @override
-  _$RockPhotoCopyWith<_RockPhoto> get copyWith =>
-      __$RockPhotoCopyWithImpl<_RockPhoto>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_RockPhotoCopyWith<_$_RockPhoto> get copyWith =>
+      __$$_RockPhotoCopyWithImpl<_$_RockPhoto>(this, _$identity);
 }
 
 abstract class _RockPhoto implements RockPhoto {
   const factory _RockPhoto(
-      {required ui.Image image, required String imageName}) = _$_RockPhoto;
+      {required final ui.Image image,
+      required final String imageName}) = _$_RockPhoto;
 
   @override
   ui.Image get image;
@@ -154,6 +144,6 @@ abstract class _RockPhoto implements RockPhoto {
   String get imageName;
   @override
   @JsonKey(ignore: true)
-  _$RockPhotoCopyWith<_RockPhoto> get copyWith =>
+  _$$_RockPhotoCopyWith<_$_RockPhoto> get copyWith =>
       throw _privateConstructorUsedError;
 }

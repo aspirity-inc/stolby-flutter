@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rock_list_bloc.dart';
 
@@ -12,43 +12,7 @@ part of 'rock_list_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RockListEventTearOff {
-  const _$RockListEventTearOff();
-
-  _Initialized initialized() {
-    return const _Initialized();
-  }
-
-  _SearchStringChanged searchStringChanged({required String searchString}) {
-    return _SearchStringChanged(
-      searchString: searchString,
-    );
-  }
-
-  _Filtered filtered() {
-    return const _Filtered();
-  }
-
-  _Sorted sorted() {
-    return const _Sorted();
-  }
-
-  _LocationChanged locationChanged({required LatLng location}) {
-    return _LocationChanged(
-      location: location,
-    );
-  }
-
-  _SearchLineCleared searchLineCleared() {
-    return const _SearchLineCleared();
-  }
-}
-
-/// @nodoc
-const $RockListEvent = _$RockListEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RockListEvent {
@@ -64,12 +28,12 @@ mixin _$RockListEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,12 +59,12 @@ mixin _$RockListEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,35 +84,34 @@ mixin _$RockListEvent {
 abstract class $RockListEventCopyWith<$Res> {
   factory $RockListEventCopyWith(
           RockListEvent value, $Res Function(RockListEvent) then) =
-      _$RockListEventCopyWithImpl<$Res>;
+      _$RockListEventCopyWithImpl<$Res, RockListEvent>;
 }
 
 /// @nodoc
-class _$RockListEventCopyWithImpl<$Res>
+class _$RockListEventCopyWithImpl<$Res, $Val extends RockListEvent>
     implements $RockListEventCopyWith<$Res> {
   _$RockListEventCopyWithImpl(this._value, this._then);
 
-  final RockListEvent _value;
   // ignore: unused_field
-  final $Res Function(RockListEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
-
-  @override
-  _Initialized get _value => super._value as _Initialized;
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$RockListEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -164,7 +127,7 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initialized);
+        (other.runtimeType == runtimeType && other is _$_Initialized);
   }
 
   @override
@@ -186,12 +149,12 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) {
     return initialized?.call();
   }
@@ -229,12 +192,12 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) {
     return initialized?.call(this);
   }
@@ -262,30 +225,29 @@ abstract class _Initialized implements RockListEvent {
 }
 
 /// @nodoc
-abstract class _$SearchStringChangedCopyWith<$Res> {
-  factory _$SearchStringChangedCopyWith(_SearchStringChanged value,
-          $Res Function(_SearchStringChanged) then) =
-      __$SearchStringChangedCopyWithImpl<$Res>;
+abstract class _$$_SearchStringChangedCopyWith<$Res> {
+  factory _$$_SearchStringChangedCopyWith(_$_SearchStringChanged value,
+          $Res Function(_$_SearchStringChanged) then) =
+      __$$_SearchStringChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String searchString});
 }
 
 /// @nodoc
-class __$SearchStringChangedCopyWithImpl<$Res>
-    extends _$RockListEventCopyWithImpl<$Res>
-    implements _$SearchStringChangedCopyWith<$Res> {
-  __$SearchStringChangedCopyWithImpl(
-      _SearchStringChanged _value, $Res Function(_SearchStringChanged) _then)
-      : super(_value, (v) => _then(v as _SearchStringChanged));
+class __$$_SearchStringChangedCopyWithImpl<$Res>
+    extends _$RockListEventCopyWithImpl<$Res, _$_SearchStringChanged>
+    implements _$$_SearchStringChangedCopyWith<$Res> {
+  __$$_SearchStringChangedCopyWithImpl(_$_SearchStringChanged _value,
+      $Res Function(_$_SearchStringChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _SearchStringChanged get _value => super._value as _SearchStringChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchString = freezed,
+    Object? searchString = null,
   }) {
-    return _then(_SearchStringChanged(
-      searchString: searchString == freezed
+    return _then(_$_SearchStringChanged(
+      searchString: null == searchString
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
               as String,
@@ -310,19 +272,19 @@ class _$_SearchStringChanged implements _SearchStringChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchStringChanged &&
-            const DeepCollectionEquality()
-                .equals(other.searchString, searchString));
+            other is _$_SearchStringChanged &&
+            (identical(other.searchString, searchString) ||
+                other.searchString == searchString));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(searchString));
+  int get hashCode => Object.hash(runtimeType, searchString);
 
   @JsonKey(ignore: true)
   @override
-  _$SearchStringChangedCopyWith<_SearchStringChanged> get copyWith =>
-      __$SearchStringChangedCopyWithImpl<_SearchStringChanged>(
+  @pragma('vm:prefer-inline')
+  _$$_SearchStringChangedCopyWith<_$_SearchStringChanged> get copyWith =>
+      __$$_SearchStringChangedCopyWithImpl<_$_SearchStringChanged>(
           this, _$identity);
 
   @override
@@ -341,12 +303,12 @@ class _$_SearchStringChanged implements _SearchStringChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) {
     return searchStringChanged?.call(searchString);
   }
@@ -384,12 +346,12 @@ class _$_SearchStringChanged implements _SearchStringChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) {
     return searchStringChanged?.call(this);
   }
@@ -413,29 +375,29 @@ class _$_SearchStringChanged implements _SearchStringChanged {
 }
 
 abstract class _SearchStringChanged implements RockListEvent {
-  const factory _SearchStringChanged({required String searchString}) =
+  const factory _SearchStringChanged({required final String searchString}) =
       _$_SearchStringChanged;
 
   String get searchString;
   @JsonKey(ignore: true)
-  _$SearchStringChangedCopyWith<_SearchStringChanged> get copyWith =>
+  _$$_SearchStringChangedCopyWith<_$_SearchStringChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FilteredCopyWith<$Res> {
-  factory _$FilteredCopyWith(_Filtered value, $Res Function(_Filtered) then) =
-      __$FilteredCopyWithImpl<$Res>;
+abstract class _$$_FilteredCopyWith<$Res> {
+  factory _$$_FilteredCopyWith(
+          _$_Filtered value, $Res Function(_$_Filtered) then) =
+      __$$_FilteredCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FilteredCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
-    implements _$FilteredCopyWith<$Res> {
-  __$FilteredCopyWithImpl(_Filtered _value, $Res Function(_Filtered) _then)
-      : super(_value, (v) => _then(v as _Filtered));
-
-  @override
-  _Filtered get _value => super._value as _Filtered;
+class __$$_FilteredCopyWithImpl<$Res>
+    extends _$RockListEventCopyWithImpl<$Res, _$_Filtered>
+    implements _$$_FilteredCopyWith<$Res> {
+  __$$_FilteredCopyWithImpl(
+      _$_Filtered _value, $Res Function(_$_Filtered) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -451,7 +413,7 @@ class _$_Filtered implements _Filtered {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Filtered);
+        (other.runtimeType == runtimeType && other is _$_Filtered);
   }
 
   @override
@@ -473,12 +435,12 @@ class _$_Filtered implements _Filtered {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) {
     return filtered?.call();
   }
@@ -516,12 +478,12 @@ class _$_Filtered implements _Filtered {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) {
     return filtered?.call(this);
   }
@@ -549,19 +511,17 @@ abstract class _Filtered implements RockListEvent {
 }
 
 /// @nodoc
-abstract class _$SortedCopyWith<$Res> {
-  factory _$SortedCopyWith(_Sorted value, $Res Function(_Sorted) then) =
-      __$SortedCopyWithImpl<$Res>;
+abstract class _$$_SortedCopyWith<$Res> {
+  factory _$$_SortedCopyWith(_$_Sorted value, $Res Function(_$_Sorted) then) =
+      __$$_SortedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SortedCopyWithImpl<$Res> extends _$RockListEventCopyWithImpl<$Res>
-    implements _$SortedCopyWith<$Res> {
-  __$SortedCopyWithImpl(_Sorted _value, $Res Function(_Sorted) _then)
-      : super(_value, (v) => _then(v as _Sorted));
-
-  @override
-  _Sorted get _value => super._value as _Sorted;
+class __$$_SortedCopyWithImpl<$Res>
+    extends _$RockListEventCopyWithImpl<$Res, _$_Sorted>
+    implements _$$_SortedCopyWith<$Res> {
+  __$$_SortedCopyWithImpl(_$_Sorted _value, $Res Function(_$_Sorted) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -577,7 +537,7 @@ class _$_Sorted implements _Sorted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Sorted);
+        (other.runtimeType == runtimeType && other is _$_Sorted);
   }
 
   @override
@@ -599,12 +559,12 @@ class _$_Sorted implements _Sorted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) {
     return sorted?.call();
   }
@@ -642,12 +602,12 @@ class _$_Sorted implements _Sorted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) {
     return sorted?.call(this);
   }
@@ -675,30 +635,29 @@ abstract class _Sorted implements RockListEvent {
 }
 
 /// @nodoc
-abstract class _$LocationChangedCopyWith<$Res> {
-  factory _$LocationChangedCopyWith(
-          _LocationChanged value, $Res Function(_LocationChanged) then) =
-      __$LocationChangedCopyWithImpl<$Res>;
+abstract class _$$_LocationChangedCopyWith<$Res> {
+  factory _$$_LocationChangedCopyWith(
+          _$_LocationChanged value, $Res Function(_$_LocationChanged) then) =
+      __$$_LocationChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({LatLng location});
 }
 
 /// @nodoc
-class __$LocationChangedCopyWithImpl<$Res>
-    extends _$RockListEventCopyWithImpl<$Res>
-    implements _$LocationChangedCopyWith<$Res> {
-  __$LocationChangedCopyWithImpl(
-      _LocationChanged _value, $Res Function(_LocationChanged) _then)
-      : super(_value, (v) => _then(v as _LocationChanged));
+class __$$_LocationChangedCopyWithImpl<$Res>
+    extends _$RockListEventCopyWithImpl<$Res, _$_LocationChanged>
+    implements _$$_LocationChangedCopyWith<$Res> {
+  __$$_LocationChangedCopyWithImpl(
+      _$_LocationChanged _value, $Res Function(_$_LocationChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _LocationChanged get _value => super._value as _LocationChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? location = freezed,
+    Object? location = null,
   }) {
-    return _then(_LocationChanged(
-      location: location == freezed
+    return _then(_$_LocationChanged(
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -723,18 +682,19 @@ class _$_LocationChanged implements _LocationChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LocationChanged &&
-            const DeepCollectionEquality().equals(other.location, location));
+            other is _$_LocationChanged &&
+            (identical(other.location, location) ||
+                other.location == location));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
+  int get hashCode => Object.hash(runtimeType, location);
 
   @JsonKey(ignore: true)
   @override
-  _$LocationChangedCopyWith<_LocationChanged> get copyWith =>
-      __$LocationChangedCopyWithImpl<_LocationChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LocationChangedCopyWith<_$_LocationChanged> get copyWith =>
+      __$$_LocationChangedCopyWithImpl<_$_LocationChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -752,12 +712,12 @@ class _$_LocationChanged implements _LocationChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) {
     return locationChanged?.call(location);
   }
@@ -795,12 +755,12 @@ class _$_LocationChanged implements _LocationChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) {
     return locationChanged?.call(this);
   }
@@ -824,32 +784,29 @@ class _$_LocationChanged implements _LocationChanged {
 }
 
 abstract class _LocationChanged implements RockListEvent {
-  const factory _LocationChanged({required LatLng location}) =
+  const factory _LocationChanged({required final LatLng location}) =
       _$_LocationChanged;
 
   LatLng get location;
   @JsonKey(ignore: true)
-  _$LocationChangedCopyWith<_LocationChanged> get copyWith =>
+  _$$_LocationChangedCopyWith<_$_LocationChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SearchLineClearedCopyWith<$Res> {
-  factory _$SearchLineClearedCopyWith(
-          _SearchLineCleared value, $Res Function(_SearchLineCleared) then) =
-      __$SearchLineClearedCopyWithImpl<$Res>;
+abstract class _$$_SearchLineClearedCopyWith<$Res> {
+  factory _$$_SearchLineClearedCopyWith(_$_SearchLineCleared value,
+          $Res Function(_$_SearchLineCleared) then) =
+      __$$_SearchLineClearedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SearchLineClearedCopyWithImpl<$Res>
-    extends _$RockListEventCopyWithImpl<$Res>
-    implements _$SearchLineClearedCopyWith<$Res> {
-  __$SearchLineClearedCopyWithImpl(
-      _SearchLineCleared _value, $Res Function(_SearchLineCleared) _then)
-      : super(_value, (v) => _then(v as _SearchLineCleared));
-
-  @override
-  _SearchLineCleared get _value => super._value as _SearchLineCleared;
+class __$$_SearchLineClearedCopyWithImpl<$Res>
+    extends _$RockListEventCopyWithImpl<$Res, _$_SearchLineCleared>
+    implements _$$_SearchLineClearedCopyWith<$Res> {
+  __$$_SearchLineClearedCopyWithImpl(
+      _$_SearchLineCleared _value, $Res Function(_$_SearchLineCleared) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -865,7 +822,7 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SearchLineCleared);
+        (other.runtimeType == runtimeType && other is _$_SearchLineCleared);
   }
 
   @override
@@ -887,12 +844,12 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String searchString)? searchStringChanged,
-    TResult Function()? filtered,
-    TResult Function()? sorted,
-    TResult Function(LatLng location)? locationChanged,
-    TResult Function()? searchLineCleared,
+    TResult? Function()? initialized,
+    TResult? Function(String searchString)? searchStringChanged,
+    TResult? Function()? filtered,
+    TResult? Function()? sorted,
+    TResult? Function(LatLng location)? locationChanged,
+    TResult? Function()? searchLineCleared,
   }) {
     return searchLineCleared?.call();
   }
@@ -930,12 +887,12 @@ class _$_SearchLineCleared implements _SearchLineCleared {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchStringChanged value)? searchStringChanged,
-    TResult Function(_Filtered value)? filtered,
-    TResult Function(_Sorted value)? sorted,
-    TResult Function(_LocationChanged value)? locationChanged,
-    TResult Function(_SearchLineCleared value)? searchLineCleared,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchStringChanged value)? searchStringChanged,
+    TResult? Function(_Filtered value)? filtered,
+    TResult? Function(_Sorted value)? sorted,
+    TResult? Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_SearchLineCleared value)? searchLineCleared,
   }) {
     return searchLineCleared?.call(this);
   }
@@ -963,31 +920,6 @@ abstract class _SearchLineCleared implements RockListEvent {
 }
 
 /// @nodoc
-class _$RockListStateTearOff {
-  const _$RockListStateTearOff();
-
-  _RockListState call(
-      {required List<RockEntity> allRocks,
-      required List<RockEntity> rocksToShow,
-      required List<RockPhoto> rockPhotos,
-      required String searchString,
-      required Option<LatLng> userLocation,
-      required bool loading}) {
-    return _RockListState(
-      allRocks: allRocks,
-      rocksToShow: rocksToShow,
-      rockPhotos: rockPhotos,
-      searchString: searchString,
-      userLocation: userLocation,
-      loading: loading,
-    );
-  }
-}
-
-/// @nodoc
-const $RockListState = _$RockListStateTearOff();
-
-/// @nodoc
 mixin _$RockListState {
   List<RockEntity> get allRocks => throw _privateConstructorUsedError;
   List<RockEntity> get rocksToShow => throw _privateConstructorUsedError;
@@ -1005,7 +937,8 @@ mixin _$RockListState {
 abstract class $RockListStateCopyWith<$Res> {
   factory $RockListStateCopyWith(
           RockListState value, $Res Function(RockListState) then) =
-      _$RockListStateCopyWithImpl<$Res>;
+      _$RockListStateCopyWithImpl<$Res, RockListState>;
+  @useResult
   $Res call(
       {List<RockEntity> allRocks,
       List<RockEntity> rocksToShow,
@@ -1016,59 +949,62 @@ abstract class $RockListStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RockListStateCopyWithImpl<$Res>
+class _$RockListStateCopyWithImpl<$Res, $Val extends RockListState>
     implements $RockListStateCopyWith<$Res> {
   _$RockListStateCopyWithImpl(this._value, this._then);
 
-  final RockListState _value;
   // ignore: unused_field
-  final $Res Function(RockListState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allRocks = freezed,
-    Object? rocksToShow = freezed,
-    Object? rockPhotos = freezed,
-    Object? searchString = freezed,
-    Object? userLocation = freezed,
-    Object? loading = freezed,
+    Object? allRocks = null,
+    Object? rocksToShow = null,
+    Object? rockPhotos = null,
+    Object? searchString = null,
+    Object? userLocation = null,
+    Object? loading = null,
   }) {
     return _then(_value.copyWith(
-      allRocks: allRocks == freezed
+      allRocks: null == allRocks
           ? _value.allRocks
           : allRocks // ignore: cast_nullable_to_non_nullable
               as List<RockEntity>,
-      rocksToShow: rocksToShow == freezed
+      rocksToShow: null == rocksToShow
           ? _value.rocksToShow
           : rocksToShow // ignore: cast_nullable_to_non_nullable
               as List<RockEntity>,
-      rockPhotos: rockPhotos == freezed
+      rockPhotos: null == rockPhotos
           ? _value.rockPhotos
           : rockPhotos // ignore: cast_nullable_to_non_nullable
               as List<RockPhoto>,
-      searchString: searchString == freezed
+      searchString: null == searchString
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
               as String,
-      userLocation: userLocation == freezed
+      userLocation: null == userLocation
           ? _value.userLocation
           : userLocation // ignore: cast_nullable_to_non_nullable
               as Option<LatLng>,
-      loading: loading == freezed
+      loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RockListStateCopyWith<$Res>
+abstract class _$$_RockListStateCopyWith<$Res>
     implements $RockListStateCopyWith<$Res> {
-  factory _$RockListStateCopyWith(
-          _RockListState value, $Res Function(_RockListState) then) =
-      __$RockListStateCopyWithImpl<$Res>;
+  factory _$$_RockListStateCopyWith(
+          _$_RockListState value, $Res Function(_$_RockListState) then) =
+      __$$_RockListStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<RockEntity> allRocks,
       List<RockEntity> rocksToShow,
@@ -1079,47 +1015,45 @@ abstract class _$RockListStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RockListStateCopyWithImpl<$Res>
-    extends _$RockListStateCopyWithImpl<$Res>
-    implements _$RockListStateCopyWith<$Res> {
-  __$RockListStateCopyWithImpl(
-      _RockListState _value, $Res Function(_RockListState) _then)
-      : super(_value, (v) => _then(v as _RockListState));
+class __$$_RockListStateCopyWithImpl<$Res>
+    extends _$RockListStateCopyWithImpl<$Res, _$_RockListState>
+    implements _$$_RockListStateCopyWith<$Res> {
+  __$$_RockListStateCopyWithImpl(
+      _$_RockListState _value, $Res Function(_$_RockListState) _then)
+      : super(_value, _then);
 
-  @override
-  _RockListState get _value => super._value as _RockListState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allRocks = freezed,
-    Object? rocksToShow = freezed,
-    Object? rockPhotos = freezed,
-    Object? searchString = freezed,
-    Object? userLocation = freezed,
-    Object? loading = freezed,
+    Object? allRocks = null,
+    Object? rocksToShow = null,
+    Object? rockPhotos = null,
+    Object? searchString = null,
+    Object? userLocation = null,
+    Object? loading = null,
   }) {
-    return _then(_RockListState(
-      allRocks: allRocks == freezed
-          ? _value.allRocks
+    return _then(_$_RockListState(
+      allRocks: null == allRocks
+          ? _value._allRocks
           : allRocks // ignore: cast_nullable_to_non_nullable
               as List<RockEntity>,
-      rocksToShow: rocksToShow == freezed
-          ? _value.rocksToShow
+      rocksToShow: null == rocksToShow
+          ? _value._rocksToShow
           : rocksToShow // ignore: cast_nullable_to_non_nullable
               as List<RockEntity>,
-      rockPhotos: rockPhotos == freezed
-          ? _value.rockPhotos
+      rockPhotos: null == rockPhotos
+          ? _value._rockPhotos
           : rockPhotos // ignore: cast_nullable_to_non_nullable
               as List<RockPhoto>,
-      searchString: searchString == freezed
+      searchString: null == searchString
           ? _value.searchString
           : searchString // ignore: cast_nullable_to_non_nullable
               as String,
-      userLocation: userLocation == freezed
+      userLocation: null == userLocation
           ? _value.userLocation
           : userLocation // ignore: cast_nullable_to_non_nullable
               as Option<LatLng>,
-      loading: loading == freezed
+      loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1131,19 +1065,40 @@ class __$RockListStateCopyWithImpl<$Res>
 
 class _$_RockListState implements _RockListState {
   const _$_RockListState(
-      {required this.allRocks,
-      required this.rocksToShow,
-      required this.rockPhotos,
+      {required final List<RockEntity> allRocks,
+      required final List<RockEntity> rocksToShow,
+      required final List<RockPhoto> rockPhotos,
       required this.searchString,
       required this.userLocation,
-      required this.loading});
+      required this.loading})
+      : _allRocks = allRocks,
+        _rocksToShow = rocksToShow,
+        _rockPhotos = rockPhotos;
 
+  final List<RockEntity> _allRocks;
   @override
-  final List<RockEntity> allRocks;
+  List<RockEntity> get allRocks {
+    if (_allRocks is EqualUnmodifiableListView) return _allRocks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allRocks);
+  }
+
+  final List<RockEntity> _rocksToShow;
   @override
-  final List<RockEntity> rocksToShow;
+  List<RockEntity> get rocksToShow {
+    if (_rocksToShow is EqualUnmodifiableListView) return _rocksToShow;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rocksToShow);
+  }
+
+  final List<RockPhoto> _rockPhotos;
   @override
-  final List<RockPhoto> rockPhotos;
+  List<RockPhoto> get rockPhotos {
+    if (_rockPhotos is EqualUnmodifiableListView) return _rockPhotos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rockPhotos);
+  }
+
   @override
   final String searchString;
   @override
@@ -1160,43 +1115,44 @@ class _$_RockListState implements _RockListState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RockListState &&
-            const DeepCollectionEquality().equals(other.allRocks, allRocks) &&
+            other is _$_RockListState &&
+            const DeepCollectionEquality().equals(other._allRocks, _allRocks) &&
             const DeepCollectionEquality()
-                .equals(other.rocksToShow, rocksToShow) &&
+                .equals(other._rocksToShow, _rocksToShow) &&
             const DeepCollectionEquality()
-                .equals(other.rockPhotos, rockPhotos) &&
-            const DeepCollectionEquality()
-                .equals(other.searchString, searchString) &&
-            const DeepCollectionEquality()
-                .equals(other.userLocation, userLocation) &&
-            const DeepCollectionEquality().equals(other.loading, loading));
+                .equals(other._rockPhotos, _rockPhotos) &&
+            (identical(other.searchString, searchString) ||
+                other.searchString == searchString) &&
+            (identical(other.userLocation, userLocation) ||
+                other.userLocation == userLocation) &&
+            (identical(other.loading, loading) || other.loading == loading));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(allRocks),
-      const DeepCollectionEquality().hash(rocksToShow),
-      const DeepCollectionEquality().hash(rockPhotos),
-      const DeepCollectionEquality().hash(searchString),
-      const DeepCollectionEquality().hash(userLocation),
-      const DeepCollectionEquality().hash(loading));
+      const DeepCollectionEquality().hash(_allRocks),
+      const DeepCollectionEquality().hash(_rocksToShow),
+      const DeepCollectionEquality().hash(_rockPhotos),
+      searchString,
+      userLocation,
+      loading);
 
   @JsonKey(ignore: true)
   @override
-  _$RockListStateCopyWith<_RockListState> get copyWith =>
-      __$RockListStateCopyWithImpl<_RockListState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_RockListStateCopyWith<_$_RockListState> get copyWith =>
+      __$$_RockListStateCopyWithImpl<_$_RockListState>(this, _$identity);
 }
 
 abstract class _RockListState implements RockListState {
   const factory _RockListState(
-      {required List<RockEntity> allRocks,
-      required List<RockEntity> rocksToShow,
-      required List<RockPhoto> rockPhotos,
-      required String searchString,
-      required Option<LatLng> userLocation,
-      required bool loading}) = _$_RockListState;
+      {required final List<RockEntity> allRocks,
+      required final List<RockEntity> rocksToShow,
+      required final List<RockPhoto> rockPhotos,
+      required final String searchString,
+      required final Option<LatLng> userLocation,
+      required final bool loading}) = _$_RockListState;
 
   @override
   List<RockEntity> get allRocks;
@@ -1212,6 +1168,6 @@ abstract class _RockListState implements RockListState {
   bool get loading;
   @override
   @JsonKey(ignore: true)
-  _$RockListStateCopyWith<_RockListState> get copyWith =>
+  _$$_RockListStateCopyWith<_$_RockListState> get copyWith =>
       throw _privateConstructorUsedError;
 }

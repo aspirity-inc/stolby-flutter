@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'map_bloc.dart';
 
@@ -12,31 +12,7 @@ part of 'map_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MapEventTearOff {
-  const _$MapEventTearOff();
-
-  _Initialized initialized() {
-    return const _Initialized();
-  }
-
-  _ZoomChanged zoomChanged(double zoom) {
-    return _ZoomChanged(
-      zoom,
-    );
-  }
-
-  _AngleChanged angleChanged(double angle) {
-    return _AngleChanged(
-      angle,
-    );
-  }
-}
-
-/// @nodoc
-const $MapEvent = _$MapEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MapEvent {
@@ -49,9 +25,9 @@ mixin _$MapEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
+    TResult? Function()? initialized,
+    TResult? Function(double zoom)? zoomChanged,
+    TResult? Function(double angle)? angleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,9 +47,9 @@ mixin _$MapEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ZoomChanged value)? zoomChanged,
+    TResult? Function(_AngleChanged value)? angleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,34 +65,34 @@ mixin _$MapEvent {
 /// @nodoc
 abstract class $MapEventCopyWith<$Res> {
   factory $MapEventCopyWith(MapEvent value, $Res Function(MapEvent) then) =
-      _$MapEventCopyWithImpl<$Res>;
+      _$MapEventCopyWithImpl<$Res, MapEvent>;
 }
 
 /// @nodoc
-class _$MapEventCopyWithImpl<$Res> implements $MapEventCopyWith<$Res> {
+class _$MapEventCopyWithImpl<$Res, $Val extends MapEvent>
+    implements $MapEventCopyWith<$Res> {
   _$MapEventCopyWithImpl(this._value, this._then);
 
-  final MapEvent _value;
   // ignore: unused_field
-  final $Res Function(MapEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$MapEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
-
-  @override
-  _Initialized get _value => super._value as _Initialized;
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -132,7 +108,7 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initialized);
+        (other.runtimeType == runtimeType && other is _$_Initialized);
   }
 
   @override
@@ -151,9 +127,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
+    TResult? Function()? initialized,
+    TResult? Function(double zoom)? zoomChanged,
+    TResult? Function(double angle)? angleChanged,
   }) {
     return initialized?.call();
   }
@@ -185,9 +161,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ZoomChanged value)? zoomChanged,
+    TResult? Function(_AngleChanged value)? angleChanged,
   }) {
     return initialized?.call(this);
   }
@@ -212,29 +188,29 @@ abstract class _Initialized implements MapEvent {
 }
 
 /// @nodoc
-abstract class _$ZoomChangedCopyWith<$Res> {
-  factory _$ZoomChangedCopyWith(
-          _ZoomChanged value, $Res Function(_ZoomChanged) then) =
-      __$ZoomChangedCopyWithImpl<$Res>;
+abstract class _$$_ZoomChangedCopyWith<$Res> {
+  factory _$$_ZoomChangedCopyWith(
+          _$_ZoomChanged value, $Res Function(_$_ZoomChanged) then) =
+      __$$_ZoomChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({double zoom});
 }
 
 /// @nodoc
-class __$ZoomChangedCopyWithImpl<$Res> extends _$MapEventCopyWithImpl<$Res>
-    implements _$ZoomChangedCopyWith<$Res> {
-  __$ZoomChangedCopyWithImpl(
-      _ZoomChanged _value, $Res Function(_ZoomChanged) _then)
-      : super(_value, (v) => _then(v as _ZoomChanged));
+class __$$_ZoomChangedCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$_ZoomChanged>
+    implements _$$_ZoomChangedCopyWith<$Res> {
+  __$$_ZoomChangedCopyWithImpl(
+      _$_ZoomChanged _value, $Res Function(_$_ZoomChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _ZoomChanged get _value => super._value as _ZoomChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? zoom = freezed,
+    Object? zoom = null,
   }) {
-    return _then(_ZoomChanged(
-      zoom == freezed
+    return _then(_$_ZoomChanged(
+      null == zoom
           ? _value.zoom
           : zoom // ignore: cast_nullable_to_non_nullable
               as double,
@@ -259,18 +235,18 @@ class _$_ZoomChanged implements _ZoomChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ZoomChanged &&
-            const DeepCollectionEquality().equals(other.zoom, zoom));
+            other is _$_ZoomChanged &&
+            (identical(other.zoom, zoom) || other.zoom == zoom));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(zoom));
+  int get hashCode => Object.hash(runtimeType, zoom);
 
   @JsonKey(ignore: true)
   @override
-  _$ZoomChangedCopyWith<_ZoomChanged> get copyWith =>
-      __$ZoomChangedCopyWithImpl<_ZoomChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ZoomChangedCopyWith<_$_ZoomChanged> get copyWith =>
+      __$$_ZoomChangedCopyWithImpl<_$_ZoomChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -285,9 +261,9 @@ class _$_ZoomChanged implements _ZoomChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
+    TResult? Function()? initialized,
+    TResult? Function(double zoom)? zoomChanged,
+    TResult? Function(double angle)? angleChanged,
   }) {
     return zoomChanged?.call(zoom);
   }
@@ -319,9 +295,9 @@ class _$_ZoomChanged implements _ZoomChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ZoomChanged value)? zoomChanged,
+    TResult? Function(_AngleChanged value)? angleChanged,
   }) {
     return zoomChanged?.call(this);
   }
@@ -342,38 +318,38 @@ class _$_ZoomChanged implements _ZoomChanged {
 }
 
 abstract class _ZoomChanged implements MapEvent {
-  const factory _ZoomChanged(double zoom) = _$_ZoomChanged;
+  const factory _ZoomChanged(final double zoom) = _$_ZoomChanged;
 
   double get zoom;
   @JsonKey(ignore: true)
-  _$ZoomChangedCopyWith<_ZoomChanged> get copyWith =>
+  _$$_ZoomChangedCopyWith<_$_ZoomChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$AngleChangedCopyWith<$Res> {
-  factory _$AngleChangedCopyWith(
-          _AngleChanged value, $Res Function(_AngleChanged) then) =
-      __$AngleChangedCopyWithImpl<$Res>;
+abstract class _$$_AngleChangedCopyWith<$Res> {
+  factory _$$_AngleChangedCopyWith(
+          _$_AngleChanged value, $Res Function(_$_AngleChanged) then) =
+      __$$_AngleChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({double angle});
 }
 
 /// @nodoc
-class __$AngleChangedCopyWithImpl<$Res> extends _$MapEventCopyWithImpl<$Res>
-    implements _$AngleChangedCopyWith<$Res> {
-  __$AngleChangedCopyWithImpl(
-      _AngleChanged _value, $Res Function(_AngleChanged) _then)
-      : super(_value, (v) => _then(v as _AngleChanged));
+class __$$_AngleChangedCopyWithImpl<$Res>
+    extends _$MapEventCopyWithImpl<$Res, _$_AngleChanged>
+    implements _$$_AngleChangedCopyWith<$Res> {
+  __$$_AngleChangedCopyWithImpl(
+      _$_AngleChanged _value, $Res Function(_$_AngleChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _AngleChanged get _value => super._value as _AngleChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? angle = freezed,
+    Object? angle = null,
   }) {
-    return _then(_AngleChanged(
-      angle == freezed
+    return _then(_$_AngleChanged(
+      null == angle
           ? _value.angle
           : angle // ignore: cast_nullable_to_non_nullable
               as double,
@@ -398,18 +374,18 @@ class _$_AngleChanged implements _AngleChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AngleChanged &&
-            const DeepCollectionEquality().equals(other.angle, angle));
+            other is _$_AngleChanged &&
+            (identical(other.angle, angle) || other.angle == angle));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(angle));
+  int get hashCode => Object.hash(runtimeType, angle);
 
   @JsonKey(ignore: true)
   @override
-  _$AngleChangedCopyWith<_AngleChanged> get copyWith =>
-      __$AngleChangedCopyWithImpl<_AngleChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_AngleChangedCopyWith<_$_AngleChanged> get copyWith =>
+      __$$_AngleChangedCopyWithImpl<_$_AngleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -424,9 +400,9 @@ class _$_AngleChanged implements _AngleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(double zoom)? zoomChanged,
-    TResult Function(double angle)? angleChanged,
+    TResult? Function()? initialized,
+    TResult? Function(double zoom)? zoomChanged,
+    TResult? Function(double angle)? angleChanged,
   }) {
     return angleChanged?.call(angle);
   }
@@ -458,9 +434,9 @@ class _$_AngleChanged implements _AngleChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ZoomChanged value)? zoomChanged,
-    TResult Function(_AngleChanged value)? angleChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ZoomChanged value)? zoomChanged,
+    TResult? Function(_AngleChanged value)? angleChanged,
   }) {
     return angleChanged?.call(this);
   }
@@ -481,34 +457,13 @@ class _$_AngleChanged implements _AngleChanged {
 }
 
 abstract class _AngleChanged implements MapEvent {
-  const factory _AngleChanged(double angle) = _$_AngleChanged;
+  const factory _AngleChanged(final double angle) = _$_AngleChanged;
 
   double get angle;
   @JsonKey(ignore: true)
-  _$AngleChangedCopyWith<_AngleChanged> get copyWith =>
+  _$$_AngleChangedCopyWith<_$_AngleChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$MapStateTearOff {
-  const _$MapStateTearOff();
-
-  _MapState call(
-      {required List<RockEntity> rocks,
-      required bool loading,
-      required double zoom,
-      required double angle}) {
-    return _MapState(
-      rocks: rocks,
-      loading: loading,
-      zoom: zoom,
-      angle: angle,
-    );
-  }
-}
-
-/// @nodoc
-const $MapState = _$MapStateTearOff();
 
 /// @nodoc
 mixin _$MapState {
@@ -525,84 +480,90 @@ mixin _$MapState {
 /// @nodoc
 abstract class $MapStateCopyWith<$Res> {
   factory $MapStateCopyWith(MapState value, $Res Function(MapState) then) =
-      _$MapStateCopyWithImpl<$Res>;
+      _$MapStateCopyWithImpl<$Res, MapState>;
+  @useResult
   $Res call({List<RockEntity> rocks, bool loading, double zoom, double angle});
 }
 
 /// @nodoc
-class _$MapStateCopyWithImpl<$Res> implements $MapStateCopyWith<$Res> {
+class _$MapStateCopyWithImpl<$Res, $Val extends MapState>
+    implements $MapStateCopyWith<$Res> {
   _$MapStateCopyWithImpl(this._value, this._then);
 
-  final MapState _value;
   // ignore: unused_field
-  final $Res Function(MapState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rocks = freezed,
-    Object? loading = freezed,
-    Object? zoom = freezed,
-    Object? angle = freezed,
+    Object? rocks = null,
+    Object? loading = null,
+    Object? zoom = null,
+    Object? angle = null,
   }) {
     return _then(_value.copyWith(
-      rocks: rocks == freezed
+      rocks: null == rocks
           ? _value.rocks
           : rocks // ignore: cast_nullable_to_non_nullable
               as List<RockEntity>,
-      loading: loading == freezed
+      loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      zoom: zoom == freezed
+      zoom: null == zoom
           ? _value.zoom
           : zoom // ignore: cast_nullable_to_non_nullable
               as double,
-      angle: angle == freezed
+      angle: null == angle
           ? _value.angle
           : angle // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
-  factory _$MapStateCopyWith(_MapState value, $Res Function(_MapState) then) =
-      __$MapStateCopyWithImpl<$Res>;
+abstract class _$$_MapStateCopyWith<$Res> implements $MapStateCopyWith<$Res> {
+  factory _$$_MapStateCopyWith(
+          _$_MapState value, $Res Function(_$_MapState) then) =
+      __$$_MapStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<RockEntity> rocks, bool loading, double zoom, double angle});
 }
 
 /// @nodoc
-class __$MapStateCopyWithImpl<$Res> extends _$MapStateCopyWithImpl<$Res>
-    implements _$MapStateCopyWith<$Res> {
-  __$MapStateCopyWithImpl(_MapState _value, $Res Function(_MapState) _then)
-      : super(_value, (v) => _then(v as _MapState));
+class __$$_MapStateCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$_MapState>
+    implements _$$_MapStateCopyWith<$Res> {
+  __$$_MapStateCopyWithImpl(
+      _$_MapState _value, $Res Function(_$_MapState) _then)
+      : super(_value, _then);
 
-  @override
-  _MapState get _value => super._value as _MapState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rocks = freezed,
-    Object? loading = freezed,
-    Object? zoom = freezed,
-    Object? angle = freezed,
+    Object? rocks = null,
+    Object? loading = null,
+    Object? zoom = null,
+    Object? angle = null,
   }) {
-    return _then(_MapState(
-      rocks: rocks == freezed
-          ? _value.rocks
+    return _then(_$_MapState(
+      rocks: null == rocks
+          ? _value._rocks
           : rocks // ignore: cast_nullable_to_non_nullable
               as List<RockEntity>,
-      loading: loading == freezed
+      loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      zoom: zoom == freezed
+      zoom: null == zoom
           ? _value.zoom
           : zoom // ignore: cast_nullable_to_non_nullable
               as double,
-      angle: angle == freezed
+      angle: null == angle
           ? _value.angle
           : angle // ignore: cast_nullable_to_non_nullable
               as double,
@@ -614,13 +575,20 @@ class __$MapStateCopyWithImpl<$Res> extends _$MapStateCopyWithImpl<$Res>
 
 class _$_MapState implements _MapState {
   const _$_MapState(
-      {required this.rocks,
+      {required final List<RockEntity> rocks,
       required this.loading,
       required this.zoom,
-      required this.angle});
+      required this.angle})
+      : _rocks = rocks;
 
+  final List<RockEntity> _rocks;
   @override
-  final List<RockEntity> rocks;
+  List<RockEntity> get rocks {
+    if (_rocks is EqualUnmodifiableListView) return _rocks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rocks);
+  }
+
   @override
   final bool loading;
   @override
@@ -637,33 +605,30 @@ class _$_MapState implements _MapState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MapState &&
-            const DeepCollectionEquality().equals(other.rocks, rocks) &&
-            const DeepCollectionEquality().equals(other.loading, loading) &&
-            const DeepCollectionEquality().equals(other.zoom, zoom) &&
-            const DeepCollectionEquality().equals(other.angle, angle));
+            other is _$_MapState &&
+            const DeepCollectionEquality().equals(other._rocks, _rocks) &&
+            (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.zoom, zoom) || other.zoom == zoom) &&
+            (identical(other.angle, angle) || other.angle == angle));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(rocks),
-      const DeepCollectionEquality().hash(loading),
-      const DeepCollectionEquality().hash(zoom),
-      const DeepCollectionEquality().hash(angle));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_rocks), loading, zoom, angle);
 
   @JsonKey(ignore: true)
   @override
-  _$MapStateCopyWith<_MapState> get copyWith =>
-      __$MapStateCopyWithImpl<_MapState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_MapStateCopyWith<_$_MapState> get copyWith =>
+      __$$_MapStateCopyWithImpl<_$_MapState>(this, _$identity);
 }
 
 abstract class _MapState implements MapState {
   const factory _MapState(
-      {required List<RockEntity> rocks,
-      required bool loading,
-      required double zoom,
-      required double angle}) = _$_MapState;
+      {required final List<RockEntity> rocks,
+      required final bool loading,
+      required final double zoom,
+      required final double angle}) = _$_MapState;
 
   @override
   List<RockEntity> get rocks;
@@ -675,6 +640,6 @@ abstract class _MapState implements MapState {
   double get angle;
   @override
   @JsonKey(ignore: true)
-  _$MapStateCopyWith<_MapState> get copyWith =>
+  _$$_MapStateCopyWith<_$_MapState> get copyWith =>
       throw _privateConstructorUsedError;
 }

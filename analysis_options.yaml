@@ -10,9 +10,6 @@ analyzer:
     - "**/*.chopper.dart" # Generated files
     - "**/*.gr.dart" # Generated routes
     - "**/*.freezed.dart" # Generated files
-  strong-mode:
-    implicit-casts: false # Show cast errors
-    implicit-dynamic: false # Show when return dynamic
   language:
     strict-casts: true # Ensures that the type inference engine never implicitly casts from dynamic to a more specific type
     strict-inference: true # Ensures that the type inference engine never chooses the dynamic type when it can’t determine a static type
@@ -63,7 +60,6 @@ dart_code_metrics:
     - avoid-collection-methods-with-unrelated-types
     - avoid-dynamic
     - avoid-global-state
-    - avoid-non-null-assertion
     - avoid-throw-in-catch-block
     - avoid-unnecessary-type-assertions
     - avoid-unnecessary-type-casts
@@ -198,7 +194,6 @@ linter:
     join_return_with_assignment: true
     leading_newlines_in_multiline_strings: true
     library_prefixes: true
-    lines_longer_than_80_chars: true
     no_leading_underscores_for_library_prefixes: true
     no_leading_underscores_for_local_identifiers: true
     no_runtimeType_toString: true
@@ -226,7 +221,6 @@ linter:
     prefer_expression_function_bodies: true
     prefer_final_fields: true
     prefer_final_in_for_each: true
-    prefer_final_locals: true
     prefer_foreach: true
     prefer_for_elements_to_map_fromIterable: true
     prefer_function_declarations_over_variables: true

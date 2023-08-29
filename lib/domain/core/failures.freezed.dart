@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'failures.dart';
 
@@ -12,19 +12,7 @@ part of 'failures.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DatabaseFailureTearOff {
-  const _$DatabaseFailureTearOff();
-
-  NotFound notFound() {
-    return const NotFound();
-  }
-}
-
-/// @nodoc
-const $DatabaseFailure = _$DatabaseFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DatabaseFailure {
@@ -35,7 +23,7 @@ mixin _$DatabaseFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notFound,
+    TResult? Function()? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,7 +39,7 @@ mixin _$DatabaseFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
+    TResult? Function(NotFound value)? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,33 +54,33 @@ mixin _$DatabaseFailure {
 abstract class $DatabaseFailureCopyWith<$Res> {
   factory $DatabaseFailureCopyWith(
           DatabaseFailure value, $Res Function(DatabaseFailure) then) =
-      _$DatabaseFailureCopyWithImpl<$Res>;
+      _$DatabaseFailureCopyWithImpl<$Res, DatabaseFailure>;
 }
 
 /// @nodoc
-class _$DatabaseFailureCopyWithImpl<$Res>
+class _$DatabaseFailureCopyWithImpl<$Res, $Val extends DatabaseFailure>
     implements $DatabaseFailureCopyWith<$Res> {
   _$DatabaseFailureCopyWithImpl(this._value, this._then);
 
-  final DatabaseFailure _value;
   // ignore: unused_field
-  final $Res Function(DatabaseFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $NotFoundCopyWith<$Res> {
-  factory $NotFoundCopyWith(NotFound value, $Res Function(NotFound) then) =
-      _$NotFoundCopyWithImpl<$Res>;
+abstract class _$$NotFoundCopyWith<$Res> {
+  factory _$$NotFoundCopyWith(
+          _$NotFound value, $Res Function(_$NotFound) then) =
+      __$$NotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NotFoundCopyWithImpl<$Res> extends _$DatabaseFailureCopyWithImpl<$Res>
-    implements $NotFoundCopyWith<$Res> {
-  _$NotFoundCopyWithImpl(NotFound _value, $Res Function(NotFound) _then)
-      : super(_value, (v) => _then(v as NotFound));
-
-  @override
-  NotFound get _value => super._value as NotFound;
+class __$$NotFoundCopyWithImpl<$Res>
+    extends _$DatabaseFailureCopyWithImpl<$Res, _$NotFound>
+    implements _$$NotFoundCopyWith<$Res> {
+  __$$NotFoundCopyWithImpl(_$NotFound _value, $Res Function(_$NotFound) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -108,7 +96,7 @@ class _$NotFound implements NotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NotFound);
+        (other.runtimeType == runtimeType && other is _$NotFound);
   }
 
   @override
@@ -125,7 +113,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notFound,
+    TResult? Function()? notFound,
   }) {
     return notFound?.call();
   }
@@ -153,7 +141,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
+    TResult? Function(NotFound value)? notFound,
   }) {
     return notFound?.call(this);
   }
@@ -176,26 +164,6 @@ abstract class NotFound implements DatabaseFailure {
 }
 
 /// @nodoc
-class _$LocationFailureTearOff {
-  const _$LocationFailureTearOff();
-
-  NotGranted notGranted() {
-    return const NotGranted();
-  }
-
-  DisabledService disabledService() {
-    return const DisabledService();
-  }
-
-  Unexpected unexpected() {
-    return const Unexpected();
-  }
-}
-
-/// @nodoc
-const $LocationFailure = _$LocationFailureTearOff();
-
-/// @nodoc
 mixin _$LocationFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -206,9 +174,9 @@ mixin _$LocationFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabledService,
-    TResult Function()? unexpected,
+    TResult? Function()? notGranted,
+    TResult? Function()? disabledService,
+    TResult? Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -228,9 +196,9 @@ mixin _$LocationFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(DisabledService value)? disabledService,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(NotGranted value)? notGranted,
+    TResult? Function(DisabledService value)? disabledService,
+    TResult? Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -247,34 +215,34 @@ mixin _$LocationFailure {
 abstract class $LocationFailureCopyWith<$Res> {
   factory $LocationFailureCopyWith(
           LocationFailure value, $Res Function(LocationFailure) then) =
-      _$LocationFailureCopyWithImpl<$Res>;
+      _$LocationFailureCopyWithImpl<$Res, LocationFailure>;
 }
 
 /// @nodoc
-class _$LocationFailureCopyWithImpl<$Res>
+class _$LocationFailureCopyWithImpl<$Res, $Val extends LocationFailure>
     implements $LocationFailureCopyWith<$Res> {
   _$LocationFailureCopyWithImpl(this._value, this._then);
 
-  final LocationFailure _value;
   // ignore: unused_field
-  final $Res Function(LocationFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $NotGrantedCopyWith<$Res> {
-  factory $NotGrantedCopyWith(
-          NotGranted value, $Res Function(NotGranted) then) =
-      _$NotGrantedCopyWithImpl<$Res>;
+abstract class _$$NotGrantedCopyWith<$Res> {
+  factory _$$NotGrantedCopyWith(
+          _$NotGranted value, $Res Function(_$NotGranted) then) =
+      __$$NotGrantedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NotGrantedCopyWithImpl<$Res> extends _$LocationFailureCopyWithImpl<$Res>
-    implements $NotGrantedCopyWith<$Res> {
-  _$NotGrantedCopyWithImpl(NotGranted _value, $Res Function(NotGranted) _then)
-      : super(_value, (v) => _then(v as NotGranted));
-
-  @override
-  NotGranted get _value => super._value as NotGranted;
+class __$$NotGrantedCopyWithImpl<$Res>
+    extends _$LocationFailureCopyWithImpl<$Res, _$NotGranted>
+    implements _$$NotGrantedCopyWith<$Res> {
+  __$$NotGrantedCopyWithImpl(
+      _$NotGranted _value, $Res Function(_$NotGranted) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -290,7 +258,7 @@ class _$NotGranted implements NotGranted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NotGranted);
+        (other.runtimeType == runtimeType && other is _$NotGranted);
   }
 
   @override
@@ -309,9 +277,9 @@ class _$NotGranted implements NotGranted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabledService,
-    TResult Function()? unexpected,
+    TResult? Function()? notGranted,
+    TResult? Function()? disabledService,
+    TResult? Function()? unexpected,
   }) {
     return notGranted?.call();
   }
@@ -343,9 +311,9 @@ class _$NotGranted implements NotGranted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(DisabledService value)? disabledService,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(NotGranted value)? notGranted,
+    TResult? Function(DisabledService value)? disabledService,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return notGranted?.call(this);
   }
@@ -370,22 +338,19 @@ abstract class NotGranted implements LocationFailure {
 }
 
 /// @nodoc
-abstract class $DisabledServiceCopyWith<$Res> {
-  factory $DisabledServiceCopyWith(
-          DisabledService value, $Res Function(DisabledService) then) =
-      _$DisabledServiceCopyWithImpl<$Res>;
+abstract class _$$DisabledServiceCopyWith<$Res> {
+  factory _$$DisabledServiceCopyWith(
+          _$DisabledService value, $Res Function(_$DisabledService) then) =
+      __$$DisabledServiceCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DisabledServiceCopyWithImpl<$Res>
-    extends _$LocationFailureCopyWithImpl<$Res>
-    implements $DisabledServiceCopyWith<$Res> {
-  _$DisabledServiceCopyWithImpl(
-      DisabledService _value, $Res Function(DisabledService) _then)
-      : super(_value, (v) => _then(v as DisabledService));
-
-  @override
-  DisabledService get _value => super._value as DisabledService;
+class __$$DisabledServiceCopyWithImpl<$Res>
+    extends _$LocationFailureCopyWithImpl<$Res, _$DisabledService>
+    implements _$$DisabledServiceCopyWith<$Res> {
+  __$$DisabledServiceCopyWithImpl(
+      _$DisabledService _value, $Res Function(_$DisabledService) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -401,7 +366,7 @@ class _$DisabledService implements DisabledService {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DisabledService);
+        (other.runtimeType == runtimeType && other is _$DisabledService);
   }
 
   @override
@@ -420,9 +385,9 @@ class _$DisabledService implements DisabledService {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabledService,
-    TResult Function()? unexpected,
+    TResult? Function()? notGranted,
+    TResult? Function()? disabledService,
+    TResult? Function()? unexpected,
   }) {
     return disabledService?.call();
   }
@@ -454,9 +419,9 @@ class _$DisabledService implements DisabledService {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(DisabledService value)? disabledService,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(NotGranted value)? notGranted,
+    TResult? Function(DisabledService value)? disabledService,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return disabledService?.call(this);
   }
@@ -481,20 +446,19 @@ abstract class DisabledService implements LocationFailure {
 }
 
 /// @nodoc
-abstract class $UnexpectedCopyWith<$Res> {
-  factory $UnexpectedCopyWith(
-          Unexpected value, $Res Function(Unexpected) then) =
-      _$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$UnexpectedCopyWith<$Res> {
+  factory _$$UnexpectedCopyWith(
+          _$Unexpected value, $Res Function(_$Unexpected) then) =
+      __$$UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnexpectedCopyWithImpl<$Res> extends _$LocationFailureCopyWithImpl<$Res>
-    implements $UnexpectedCopyWith<$Res> {
-  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
-      : super(_value, (v) => _then(v as Unexpected));
-
-  @override
-  Unexpected get _value => super._value as Unexpected;
+class __$$UnexpectedCopyWithImpl<$Res>
+    extends _$LocationFailureCopyWithImpl<$Res, _$Unexpected>
+    implements _$$UnexpectedCopyWith<$Res> {
+  __$$UnexpectedCopyWithImpl(
+      _$Unexpected _value, $Res Function(_$Unexpected) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -510,7 +474,7 @@ class _$Unexpected implements Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unexpected);
+        (other.runtimeType == runtimeType && other is _$Unexpected);
   }
 
   @override
@@ -529,9 +493,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? notGranted,
-    TResult Function()? disabledService,
-    TResult Function()? unexpected,
+    TResult? Function()? notGranted,
+    TResult? Function()? disabledService,
+    TResult? Function()? unexpected,
   }) {
     return unexpected?.call();
   }
@@ -563,9 +527,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotGranted value)? notGranted,
-    TResult Function(DisabledService value)? disabledService,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(NotGranted value)? notGranted,
+    TResult? Function(DisabledService value)? disabledService,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }

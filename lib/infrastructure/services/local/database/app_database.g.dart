@@ -2,11 +2,123 @@
 
 part of 'app_database.dart';
 
-// **************************************************************************
-// MoorGenerator
-// **************************************************************************
+// ignore_for_file: type=lint
+class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $RocksTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+      'id', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: false);
+  static const VerificationMeta _latitudeMeta =
+      const VerificationMeta('latitude');
+  @override
+  late final GeneratedColumn<double> latitude = GeneratedColumn<double>(
+      'latitude', aliasedName, false,
+      type: DriftSqlType.double, requiredDuringInsert: true);
+  static const VerificationMeta _longitudeMeta =
+      const VerificationMeta('longitude');
+  @override
+  late final GeneratedColumn<double> longitude = GeneratedColumn<double>(
+      'longitude', aliasedName, false,
+      type: DriftSqlType.double, requiredDuringInsert: true);
+  static const VerificationMeta _heightMeta = const VerificationMeta('height');
+  @override
+  late final GeneratedColumn<int> height = GeneratedColumn<int>(
+      'height', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _difficultyMeta =
+      const VerificationMeta('difficulty');
+  @override
+  late final GeneratedColumn<int> difficulty = GeneratedColumn<int>(
+      'difficulty', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _picNameMeta =
+      const VerificationMeta('picName');
+  @override
+  late final GeneratedColumn<String> picName = GeneratedColumn<String>(
+      'pic_name', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns =>
+      [id, latitude, longitude, height, difficulty, picName];
+  @override
+  String get aliasedName => _alias ?? 'rocks';
+  @override
+  String get actualTableName => 'rocks';
+  @override
+  VerificationContext validateIntegrity(Insertable<Rock> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('latitude')) {
+      context.handle(_latitudeMeta,
+          latitude.isAcceptableOrUnknown(data['latitude']!, _latitudeMeta));
+    } else if (isInserting) {
+      context.missing(_latitudeMeta);
+    }
+    if (data.containsKey('longitude')) {
+      context.handle(_longitudeMeta,
+          longitude.isAcceptableOrUnknown(data['longitude']!, _longitudeMeta));
+    } else if (isInserting) {
+      context.missing(_longitudeMeta);
+    }
+    if (data.containsKey('height')) {
+      context.handle(_heightMeta,
+          height.isAcceptableOrUnknown(data['height']!, _heightMeta));
+    } else if (isInserting) {
+      context.missing(_heightMeta);
+    }
+    if (data.containsKey('difficulty')) {
+      context.handle(
+          _difficultyMeta,
+          difficulty.isAcceptableOrUnknown(
+              data['difficulty']!, _difficultyMeta));
+    } else if (isInserting) {
+      context.missing(_difficultyMeta);
+    }
+    if (data.containsKey('pic_name')) {
+      context.handle(_picNameMeta,
+          picName.isAcceptableOrUnknown(data['pic_name']!, _picNameMeta));
+    } else if (isInserting) {
+      context.missing(_picNameMeta);
+    }
+    return context;
+  }
 
-// ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  Rock map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return Rock(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
+      latitude: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}latitude'])!,
+      longitude: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}longitude'])!,
+      height: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}height'])!,
+      difficulty: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}difficulty'])!,
+      picName: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}pic_name'])!,
+    );
+  }
+
+  @override
+  $RocksTable createAlias(String alias) {
+    return $RocksTable(attachedDatabase, alias);
+  }
+}
+
 class Rock extends DataClass implements Insertable<Rock> {
   final int id;
   final double latitude;
@@ -14,30 +126,13 @@ class Rock extends DataClass implements Insertable<Rock> {
   final int height;
   final int difficulty;
   final String picName;
-  Rock(
+  const Rock(
       {required this.id,
       required this.latitude,
       required this.longitude,
       required this.height,
       required this.difficulty,
       required this.picName});
-  factory Rock.fromData(Map<String, dynamic> data, {String? prefix}) {
-    final effectivePrefix = prefix ?? '';
-    return Rock(
-      id: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
-      latitude: const RealType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}latitude'])!,
-      longitude: const RealType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}longitude'])!,
-      height: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}height'])!,
-      difficulty: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}difficulty'])!,
-      picName: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}pic_name'])!,
-    );
-  }
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -229,87 +324,91 @@ class RocksCompanion extends UpdateCompanion<Rock> {
   }
 }
 
-class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
+class $RocksLocalizedTable extends RocksLocalized
+    with TableInfo<$RocksLocalizedTable, RocksLocalizedData> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $RocksTable(this.attachedDatabase, [this._alias]);
-  final VerificationMeta _idMeta = const VerificationMeta('id');
+  $RocksLocalizedTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
   @override
-  late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
       'id', aliasedName, false,
-      type: const IntType(), requiredDuringInsert: false);
-  final VerificationMeta _latitudeMeta = const VerificationMeta('latitude');
+      type: DriftSqlType.int, requiredDuringInsert: false);
+  static const VerificationMeta _rockIdMeta = const VerificationMeta('rockId');
   @override
-  late final GeneratedColumn<double?> latitude = GeneratedColumn<double?>(
-      'latitude', aliasedName, false,
-      type: const RealType(), requiredDuringInsert: true);
-  final VerificationMeta _longitudeMeta = const VerificationMeta('longitude');
+  late final GeneratedColumn<int> rockId = GeneratedColumn<int>(
+      'rock_id', aliasedName, false,
+      type: DriftSqlType.int,
+      requiredDuringInsert: true,
+      $customConstraints: 'NOT NULL REFERENCES rocks(id)');
+  static const VerificationMeta _languageMeta =
+      const VerificationMeta('language');
   @override
-  late final GeneratedColumn<double?> longitude = GeneratedColumn<double?>(
-      'longitude', aliasedName, false,
-      type: const RealType(), requiredDuringInsert: true);
-  final VerificationMeta _heightMeta = const VerificationMeta('height');
+  late final GeneratedColumn<String> language = GeneratedColumn<String>(
+      'language', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
   @override
-  late final GeneratedColumn<int?> height = GeneratedColumn<int?>(
-      'height', aliasedName, false,
-      type: const IntType(), requiredDuringInsert: true);
-  final VerificationMeta _difficultyMeta = const VerificationMeta('difficulty');
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+      'name', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _shortInfoMeta =
+      const VerificationMeta('shortInfo');
   @override
-  late final GeneratedColumn<int?> difficulty = GeneratedColumn<int?>(
-      'difficulty', aliasedName, false,
-      type: const IntType(), requiredDuringInsert: true);
-  final VerificationMeta _picNameMeta = const VerificationMeta('picName');
+  late final GeneratedColumn<String> shortInfo = GeneratedColumn<String>(
+      'short_info', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _fullInfoMeta =
+      const VerificationMeta('fullInfo');
   @override
-  late final GeneratedColumn<String?> picName = GeneratedColumn<String?>(
-      'pic_name', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
+  late final GeneratedColumn<String> fullInfo = GeneratedColumn<String>(
+      'full_info', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
-      [id, latitude, longitude, height, difficulty, picName];
+      [id, rockId, language, name, shortInfo, fullInfo];
   @override
-  String get aliasedName => _alias ?? 'rocks';
+  String get aliasedName => _alias ?? 'rocks_localized';
   @override
-  String get actualTableName => 'rocks';
+  String get actualTableName => 'rocks_localized';
   @override
-  VerificationContext validateIntegrity(Insertable<Rock> instance,
+  VerificationContext validateIntegrity(Insertable<RocksLocalizedData> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
     if (data.containsKey('id')) {
       context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
     }
-    if (data.containsKey('latitude')) {
-      context.handle(_latitudeMeta,
-          latitude.isAcceptableOrUnknown(data['latitude']!, _latitudeMeta));
+    if (data.containsKey('rock_id')) {
+      context.handle(_rockIdMeta,
+          rockId.isAcceptableOrUnknown(data['rock_id']!, _rockIdMeta));
     } else if (isInserting) {
-      context.missing(_latitudeMeta);
+      context.missing(_rockIdMeta);
     }
-    if (data.containsKey('longitude')) {
-      context.handle(_longitudeMeta,
-          longitude.isAcceptableOrUnknown(data['longitude']!, _longitudeMeta));
+    if (data.containsKey('language')) {
+      context.handle(_languageMeta,
+          language.isAcceptableOrUnknown(data['language']!, _languageMeta));
     } else if (isInserting) {
-      context.missing(_longitudeMeta);
+      context.missing(_languageMeta);
     }
-    if (data.containsKey('height')) {
-      context.handle(_heightMeta,
-          height.isAcceptableOrUnknown(data['height']!, _heightMeta));
-    } else if (isInserting) {
-      context.missing(_heightMeta);
-    }
-    if (data.containsKey('difficulty')) {
+    if (data.containsKey('name')) {
       context.handle(
-          _difficultyMeta,
-          difficulty.isAcceptableOrUnknown(
-              data['difficulty']!, _difficultyMeta));
+          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
     } else if (isInserting) {
-      context.missing(_difficultyMeta);
+      context.missing(_nameMeta);
     }
-    if (data.containsKey('pic_name')) {
-      context.handle(_picNameMeta,
-          picName.isAcceptableOrUnknown(data['pic_name']!, _picNameMeta));
+    if (data.containsKey('short_info')) {
+      context.handle(_shortInfoMeta,
+          shortInfo.isAcceptableOrUnknown(data['short_info']!, _shortInfoMeta));
     } else if (isInserting) {
-      context.missing(_picNameMeta);
+      context.missing(_shortInfoMeta);
+    }
+    if (data.containsKey('full_info')) {
+      context.handle(_fullInfoMeta,
+          fullInfo.isAcceptableOrUnknown(data['full_info']!, _fullInfoMeta));
+    } else if (isInserting) {
+      context.missing(_fullInfoMeta);
     }
     return context;
   }
@@ -317,14 +416,27 @@ class $RocksTable extends Rocks with TableInfo<$RocksTable, Rock> {
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  Rock map(Map<String, dynamic> data, {String? tablePrefix}) {
-    return Rock.fromData(data,
-        prefix: tablePrefix != null ? '$tablePrefix.' : null);
+  RocksLocalizedData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return RocksLocalizedData(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
+      rockId: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}rock_id'])!,
+      language: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}language'])!,
+      name: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
+      shortInfo: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}short_info'])!,
+      fullInfo: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}full_info'])!,
+    );
   }
 
   @override
-  $RocksTable createAlias(String alias) {
-    return $RocksTable(attachedDatabase, alias);
+  $RocksLocalizedTable createAlias(String alias) {
+    return $RocksLocalizedTable(attachedDatabase, alias);
   }
 }
 
@@ -336,31 +448,13 @@ class RocksLocalizedData extends DataClass
   final String name;
   final String shortInfo;
   final String fullInfo;
-  RocksLocalizedData(
+  const RocksLocalizedData(
       {required this.id,
       required this.rockId,
       required this.language,
       required this.name,
       required this.shortInfo,
       required this.fullInfo});
-  factory RocksLocalizedData.fromData(Map<String, dynamic> data,
-      {String? prefix}) {
-    final effectivePrefix = prefix ?? '';
-    return RocksLocalizedData(
-      id: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}id'])!,
-      rockId: const IntType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}rock_id'])!,
-      language: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}language'])!,
-      name: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}name'])!,
-      shortInfo: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}short_info'])!,
-      fullInfo: const StringType()
-          .mapFromDatabaseResponse(data['${effectivePrefix}full_info'])!,
-    );
-  }
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -552,112 +646,13 @@ class RocksLocalizedCompanion extends UpdateCompanion<RocksLocalizedData> {
   }
 }
 
-class $RocksLocalizedTable extends RocksLocalized
-    with TableInfo<$RocksLocalizedTable, RocksLocalizedData> {
-  @override
-  final GeneratedDatabase attachedDatabase;
-  final String? _alias;
-  $RocksLocalizedTable(this.attachedDatabase, [this._alias]);
-  final VerificationMeta _idMeta = const VerificationMeta('id');
-  @override
-  late final GeneratedColumn<int?> id = GeneratedColumn<int?>(
-      'id', aliasedName, false,
-      type: const IntType(), requiredDuringInsert: false);
-  final VerificationMeta _rockIdMeta = const VerificationMeta('rockId');
-  @override
-  late final GeneratedColumn<int?> rockId = GeneratedColumn<int?>(
-      'rock_id', aliasedName, false,
-      type: const IntType(),
-      requiredDuringInsert: true,
-      $customConstraints: 'NOT NULL REFERENCES rocks(id)');
-  final VerificationMeta _languageMeta = const VerificationMeta('language');
-  @override
-  late final GeneratedColumn<String?> language = GeneratedColumn<String?>(
-      'language', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _nameMeta = const VerificationMeta('name');
-  @override
-  late final GeneratedColumn<String?> name = GeneratedColumn<String?>(
-      'name', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _shortInfoMeta = const VerificationMeta('shortInfo');
-  @override
-  late final GeneratedColumn<String?> shortInfo = GeneratedColumn<String?>(
-      'short_info', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  final VerificationMeta _fullInfoMeta = const VerificationMeta('fullInfo');
-  @override
-  late final GeneratedColumn<String?> fullInfo = GeneratedColumn<String?>(
-      'full_info', aliasedName, false,
-      type: const StringType(), requiredDuringInsert: true);
-  @override
-  List<GeneratedColumn> get $columns =>
-      [id, rockId, language, name, shortInfo, fullInfo];
-  @override
-  String get aliasedName => _alias ?? 'rocks_localized';
-  @override
-  String get actualTableName => 'rocks_localized';
-  @override
-  VerificationContext validateIntegrity(Insertable<RocksLocalizedData> instance,
-      {bool isInserting = false}) {
-    final context = VerificationContext();
-    final data = instance.toColumns(true);
-    if (data.containsKey('id')) {
-      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
-    }
-    if (data.containsKey('rock_id')) {
-      context.handle(_rockIdMeta,
-          rockId.isAcceptableOrUnknown(data['rock_id']!, _rockIdMeta));
-    } else if (isInserting) {
-      context.missing(_rockIdMeta);
-    }
-    if (data.containsKey('language')) {
-      context.handle(_languageMeta,
-          language.isAcceptableOrUnknown(data['language']!, _languageMeta));
-    } else if (isInserting) {
-      context.missing(_languageMeta);
-    }
-    if (data.containsKey('name')) {
-      context.handle(
-          _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
-    } else if (isInserting) {
-      context.missing(_nameMeta);
-    }
-    if (data.containsKey('short_info')) {
-      context.handle(_shortInfoMeta,
-          shortInfo.isAcceptableOrUnknown(data['short_info']!, _shortInfoMeta));
-    } else if (isInserting) {
-      context.missing(_shortInfoMeta);
-    }
-    if (data.containsKey('full_info')) {
-      context.handle(_fullInfoMeta,
-          fullInfo.isAcceptableOrUnknown(data['full_info']!, _fullInfoMeta));
-    } else if (isInserting) {
-      context.missing(_fullInfoMeta);
-    }
-    return context;
-  }
-
-  @override
-  Set<GeneratedColumn> get $primaryKey => {id};
-  @override
-  RocksLocalizedData map(Map<String, dynamic> data, {String? tablePrefix}) {
-    return RocksLocalizedData.fromData(data,
-        prefix: tablePrefix != null ? '$tablePrefix.' : null);
-  }
-
-  @override
-  $RocksLocalizedTable createAlias(String alias) {
-    return $RocksLocalizedTable(attachedDatabase, alias);
-  }
-}
-
 abstract class _$AppDatabase extends GeneratedDatabase {
-  _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+  _$AppDatabase(QueryExecutor e) : super(e);
   late final $RocksTable rocks = $RocksTable(this);
   late final $RocksLocalizedTable rocksLocalized = $RocksLocalizedTable(this);
   @override
-  Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
+  Iterable<TableInfo<Table, Object?>> get allTables =>
+      allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [rocks, rocksLocalized];
 }

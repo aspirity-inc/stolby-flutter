@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'app_settings_entity.dart';
 
@@ -12,32 +12,7 @@ part of 'app_settings_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AppSettingsEntityTearOff {
-  const _$AppSettingsEntityTearOff();
-
-  _AppSettingsEntity call(
-      {required bool geolocationEnabled,
-      required bool reversedMap,
-      required bool mapUserCentering,
-      required bool autoThemeChange,
-      required bool darkTheme,
-      required bool onboardingVisited}) {
-    return _AppSettingsEntity(
-      geolocationEnabled: geolocationEnabled,
-      reversedMap: reversedMap,
-      mapUserCentering: mapUserCentering,
-      autoThemeChange: autoThemeChange,
-      darkTheme: darkTheme,
-      onboardingVisited: onboardingVisited,
-    );
-  }
-}
-
-/// @nodoc
-const $AppSettingsEntity = _$AppSettingsEntityTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AppSettingsEntity {
@@ -57,7 +32,8 @@ mixin _$AppSettingsEntity {
 abstract class $AppSettingsEntityCopyWith<$Res> {
   factory $AppSettingsEntityCopyWith(
           AppSettingsEntity value, $Res Function(AppSettingsEntity) then) =
-      _$AppSettingsEntityCopyWithImpl<$Res>;
+      _$AppSettingsEntityCopyWithImpl<$Res, AppSettingsEntity>;
+  @useResult
   $Res call(
       {bool geolocationEnabled,
       bool reversedMap,
@@ -68,59 +44,62 @@ abstract class $AppSettingsEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppSettingsEntityCopyWithImpl<$Res>
+class _$AppSettingsEntityCopyWithImpl<$Res, $Val extends AppSettingsEntity>
     implements $AppSettingsEntityCopyWith<$Res> {
   _$AppSettingsEntityCopyWithImpl(this._value, this._then);
 
-  final AppSettingsEntity _value;
   // ignore: unused_field
-  final $Res Function(AppSettingsEntity) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? geolocationEnabled = freezed,
-    Object? reversedMap = freezed,
-    Object? mapUserCentering = freezed,
-    Object? autoThemeChange = freezed,
-    Object? darkTheme = freezed,
-    Object? onboardingVisited = freezed,
+    Object? geolocationEnabled = null,
+    Object? reversedMap = null,
+    Object? mapUserCentering = null,
+    Object? autoThemeChange = null,
+    Object? darkTheme = null,
+    Object? onboardingVisited = null,
   }) {
     return _then(_value.copyWith(
-      geolocationEnabled: geolocationEnabled == freezed
+      geolocationEnabled: null == geolocationEnabled
           ? _value.geolocationEnabled
           : geolocationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      reversedMap: reversedMap == freezed
+      reversedMap: null == reversedMap
           ? _value.reversedMap
           : reversedMap // ignore: cast_nullable_to_non_nullable
               as bool,
-      mapUserCentering: mapUserCentering == freezed
+      mapUserCentering: null == mapUserCentering
           ? _value.mapUserCentering
           : mapUserCentering // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoThemeChange: autoThemeChange == freezed
+      autoThemeChange: null == autoThemeChange
           ? _value.autoThemeChange
           : autoThemeChange // ignore: cast_nullable_to_non_nullable
               as bool,
-      darkTheme: darkTheme == freezed
+      darkTheme: null == darkTheme
           ? _value.darkTheme
           : darkTheme // ignore: cast_nullable_to_non_nullable
               as bool,
-      onboardingVisited: onboardingVisited == freezed
+      onboardingVisited: null == onboardingVisited
           ? _value.onboardingVisited
           : onboardingVisited // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$AppSettingsEntityCopyWith<$Res>
+abstract class _$$_AppSettingsEntityCopyWith<$Res>
     implements $AppSettingsEntityCopyWith<$Res> {
-  factory _$AppSettingsEntityCopyWith(
-          _AppSettingsEntity value, $Res Function(_AppSettingsEntity) then) =
-      __$AppSettingsEntityCopyWithImpl<$Res>;
+  factory _$$_AppSettingsEntityCopyWith(_$_AppSettingsEntity value,
+          $Res Function(_$_AppSettingsEntity) then) =
+      __$$_AppSettingsEntityCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool geolocationEnabled,
       bool reversedMap,
@@ -131,47 +110,45 @@ abstract class _$AppSettingsEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AppSettingsEntityCopyWithImpl<$Res>
-    extends _$AppSettingsEntityCopyWithImpl<$Res>
-    implements _$AppSettingsEntityCopyWith<$Res> {
-  __$AppSettingsEntityCopyWithImpl(
-      _AppSettingsEntity _value, $Res Function(_AppSettingsEntity) _then)
-      : super(_value, (v) => _then(v as _AppSettingsEntity));
+class __$$_AppSettingsEntityCopyWithImpl<$Res>
+    extends _$AppSettingsEntityCopyWithImpl<$Res, _$_AppSettingsEntity>
+    implements _$$_AppSettingsEntityCopyWith<$Res> {
+  __$$_AppSettingsEntityCopyWithImpl(
+      _$_AppSettingsEntity _value, $Res Function(_$_AppSettingsEntity) _then)
+      : super(_value, _then);
 
-  @override
-  _AppSettingsEntity get _value => super._value as _AppSettingsEntity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? geolocationEnabled = freezed,
-    Object? reversedMap = freezed,
-    Object? mapUserCentering = freezed,
-    Object? autoThemeChange = freezed,
-    Object? darkTheme = freezed,
-    Object? onboardingVisited = freezed,
+    Object? geolocationEnabled = null,
+    Object? reversedMap = null,
+    Object? mapUserCentering = null,
+    Object? autoThemeChange = null,
+    Object? darkTheme = null,
+    Object? onboardingVisited = null,
   }) {
-    return _then(_AppSettingsEntity(
-      geolocationEnabled: geolocationEnabled == freezed
+    return _then(_$_AppSettingsEntity(
+      geolocationEnabled: null == geolocationEnabled
           ? _value.geolocationEnabled
           : geolocationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      reversedMap: reversedMap == freezed
+      reversedMap: null == reversedMap
           ? _value.reversedMap
           : reversedMap // ignore: cast_nullable_to_non_nullable
               as bool,
-      mapUserCentering: mapUserCentering == freezed
+      mapUserCentering: null == mapUserCentering
           ? _value.mapUserCentering
           : mapUserCentering // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoThemeChange: autoThemeChange == freezed
+      autoThemeChange: null == autoThemeChange
           ? _value.autoThemeChange
           : autoThemeChange // ignore: cast_nullable_to_non_nullable
               as bool,
-      darkTheme: darkTheme == freezed
+      darkTheme: null == darkTheme
           ? _value.darkTheme
           : darkTheme // ignore: cast_nullable_to_non_nullable
               as bool,
-      onboardingVisited: onboardingVisited == freezed
+      onboardingVisited: null == onboardingVisited
           ? _value.onboardingVisited
           : onboardingVisited // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -212,44 +189,41 @@ class _$_AppSettingsEntity implements _AppSettingsEntity {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AppSettingsEntity &&
-            const DeepCollectionEquality()
-                .equals(other.geolocationEnabled, geolocationEnabled) &&
-            const DeepCollectionEquality()
-                .equals(other.reversedMap, reversedMap) &&
-            const DeepCollectionEquality()
-                .equals(other.mapUserCentering, mapUserCentering) &&
-            const DeepCollectionEquality()
-                .equals(other.autoThemeChange, autoThemeChange) &&
-            const DeepCollectionEquality().equals(other.darkTheme, darkTheme) &&
-            const DeepCollectionEquality()
-                .equals(other.onboardingVisited, onboardingVisited));
+            other is _$_AppSettingsEntity &&
+            (identical(other.geolocationEnabled, geolocationEnabled) ||
+                other.geolocationEnabled == geolocationEnabled) &&
+            (identical(other.reversedMap, reversedMap) ||
+                other.reversedMap == reversedMap) &&
+            (identical(other.mapUserCentering, mapUserCentering) ||
+                other.mapUserCentering == mapUserCentering) &&
+            (identical(other.autoThemeChange, autoThemeChange) ||
+                other.autoThemeChange == autoThemeChange) &&
+            (identical(other.darkTheme, darkTheme) ||
+                other.darkTheme == darkTheme) &&
+            (identical(other.onboardingVisited, onboardingVisited) ||
+                other.onboardingVisited == onboardingVisited));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(geolocationEnabled),
-      const DeepCollectionEquality().hash(reversedMap),
-      const DeepCollectionEquality().hash(mapUserCentering),
-      const DeepCollectionEquality().hash(autoThemeChange),
-      const DeepCollectionEquality().hash(darkTheme),
-      const DeepCollectionEquality().hash(onboardingVisited));
+  int get hashCode => Object.hash(runtimeType, geolocationEnabled, reversedMap,
+      mapUserCentering, autoThemeChange, darkTheme, onboardingVisited);
 
   @JsonKey(ignore: true)
   @override
-  _$AppSettingsEntityCopyWith<_AppSettingsEntity> get copyWith =>
-      __$AppSettingsEntityCopyWithImpl<_AppSettingsEntity>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_AppSettingsEntityCopyWith<_$_AppSettingsEntity> get copyWith =>
+      __$$_AppSettingsEntityCopyWithImpl<_$_AppSettingsEntity>(
+          this, _$identity);
 }
 
 abstract class _AppSettingsEntity implements AppSettingsEntity {
   const factory _AppSettingsEntity(
-      {required bool geolocationEnabled,
-      required bool reversedMap,
-      required bool mapUserCentering,
-      required bool autoThemeChange,
-      required bool darkTheme,
-      required bool onboardingVisited}) = _$_AppSettingsEntity;
+      {required final bool geolocationEnabled,
+      required final bool reversedMap,
+      required final bool mapUserCentering,
+      required final bool autoThemeChange,
+      required final bool darkTheme,
+      required final bool onboardingVisited}) = _$_AppSettingsEntity;
 
   @override
   bool get geolocationEnabled;
@@ -265,6 +239,6 @@ abstract class _AppSettingsEntity implements AppSettingsEntity {
   bool get onboardingVisited;
   @override
   @JsonKey(ignore: true)
-  _$AppSettingsEntityCopyWith<_AppSettingsEntity> get copyWith =>
+  _$$_AppSettingsEntityCopyWith<_$_AppSettingsEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

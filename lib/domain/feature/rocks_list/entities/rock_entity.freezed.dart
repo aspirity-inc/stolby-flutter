@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rock_entity.dart';
 
@@ -12,34 +12,7 @@ part of 'rock_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RockEntityTearOff {
-  const _$RockEntityTearOff();
-
-  _RockEntity call(
-      {required int id,
-      required double latitude,
-      required double longitude,
-      required int difficulty,
-      required int height,
-      required String picName,
-      required String localizedName}) {
-    return _RockEntity(
-      id: id,
-      latitude: latitude,
-      longitude: longitude,
-      difficulty: difficulty,
-      height: height,
-      picName: picName,
-      localizedName: localizedName,
-    );
-  }
-}
-
-/// @nodoc
-const $RockEntity = _$RockEntityTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RockEntity {
@@ -60,7 +33,8 @@ mixin _$RockEntity {
 abstract class $RockEntityCopyWith<$Res> {
   factory $RockEntityCopyWith(
           RockEntity value, $Res Function(RockEntity) then) =
-      _$RockEntityCopyWithImpl<$Res>;
+      _$RockEntityCopyWithImpl<$Res, RockEntity>;
+  @useResult
   $Res call(
       {int id,
       double latitude,
@@ -72,62 +46,67 @@ abstract class $RockEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RockEntityCopyWithImpl<$Res> implements $RockEntityCopyWith<$Res> {
+class _$RockEntityCopyWithImpl<$Res, $Val extends RockEntity>
+    implements $RockEntityCopyWith<$Res> {
   _$RockEntityCopyWithImpl(this._value, this._then);
 
-  final RockEntity _value;
   // ignore: unused_field
-  final $Res Function(RockEntity) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? difficulty = freezed,
-    Object? height = freezed,
-    Object? picName = freezed,
-    Object? localizedName = freezed,
+    Object? id = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? difficulty = null,
+    Object? height = null,
+    Object? picName = null,
+    Object? localizedName = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      difficulty: difficulty == freezed
+      difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedName: localizedName == freezed
+      localizedName: null == localizedName
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RockEntityCopyWith<$Res> implements $RockEntityCopyWith<$Res> {
-  factory _$RockEntityCopyWith(
-          _RockEntity value, $Res Function(_RockEntity) then) =
-      __$RockEntityCopyWithImpl<$Res>;
+abstract class _$$_RockEntityCopyWith<$Res>
+    implements $RockEntityCopyWith<$Res> {
+  factory _$$_RockEntityCopyWith(
+          _$_RockEntity value, $Res Function(_$_RockEntity) then) =
+      __$$_RockEntityCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       double latitude,
@@ -139,51 +118,50 @@ abstract class _$RockEntityCopyWith<$Res> implements $RockEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RockEntityCopyWithImpl<$Res> extends _$RockEntityCopyWithImpl<$Res>
-    implements _$RockEntityCopyWith<$Res> {
-  __$RockEntityCopyWithImpl(
-      _RockEntity _value, $Res Function(_RockEntity) _then)
-      : super(_value, (v) => _then(v as _RockEntity));
+class __$$_RockEntityCopyWithImpl<$Res>
+    extends _$RockEntityCopyWithImpl<$Res, _$_RockEntity>
+    implements _$$_RockEntityCopyWith<$Res> {
+  __$$_RockEntityCopyWithImpl(
+      _$_RockEntity _value, $Res Function(_$_RockEntity) _then)
+      : super(_value, _then);
 
-  @override
-  _RockEntity get _value => super._value as _RockEntity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? difficulty = freezed,
-    Object? height = freezed,
-    Object? picName = freezed,
-    Object? localizedName = freezed,
+    Object? id = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? difficulty = null,
+    Object? height = null,
+    Object? picName = null,
+    Object? localizedName = null,
   }) {
-    return _then(_RockEntity(
-      id: id == freezed
+    return _then(_$_RockEntity(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      difficulty: difficulty == freezed
+      difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedName: localizedName == freezed
+      localizedName: null == localizedName
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -227,44 +205,40 @@ class _$_RockEntity implements _RockEntity {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RockEntity &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.latitude, latitude) &&
-            const DeepCollectionEquality().equals(other.longitude, longitude) &&
-            const DeepCollectionEquality()
-                .equals(other.difficulty, difficulty) &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.picName, picName) &&
-            const DeepCollectionEquality()
-                .equals(other.localizedName, localizedName));
+            other is _$_RockEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.picName, picName) || other.picName == picName) &&
+            (identical(other.localizedName, localizedName) ||
+                other.localizedName == localizedName));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(latitude),
-      const DeepCollectionEquality().hash(longitude),
-      const DeepCollectionEquality().hash(difficulty),
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(picName),
-      const DeepCollectionEquality().hash(localizedName));
+  int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
+      difficulty, height, picName, localizedName);
 
   @JsonKey(ignore: true)
   @override
-  _$RockEntityCopyWith<_RockEntity> get copyWith =>
-      __$RockEntityCopyWithImpl<_RockEntity>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_RockEntityCopyWith<_$_RockEntity> get copyWith =>
+      __$$_RockEntityCopyWithImpl<_$_RockEntity>(this, _$identity);
 }
 
 abstract class _RockEntity implements RockEntity {
   const factory _RockEntity(
-      {required int id,
-      required double latitude,
-      required double longitude,
-      required int difficulty,
-      required int height,
-      required String picName,
-      required String localizedName}) = _$_RockEntity;
+      {required final int id,
+      required final double latitude,
+      required final double longitude,
+      required final int difficulty,
+      required final int height,
+      required final String picName,
+      required final String localizedName}) = _$_RockEntity;
 
   @override
   int get id;
@@ -282,6 +256,6 @@ abstract class _RockEntity implements RockEntity {
   String get localizedName;
   @override
   @JsonKey(ignore: true)
-  _$RockEntityCopyWith<_RockEntity> get copyWith =>
+  _$$_RockEntityCopyWith<_$_RockEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

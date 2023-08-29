@@ -4,6 +4,5 @@ import 'package:stolby_flutter/injection.config.dart';
 
 final GetIt getIt = GetIt.instance;
 
-@injectableInit
-Future<void> configureInjection(String env) =>
-    $initGetIt(getIt, environment: env);
+@InjectableInit()
+Future<void> configureInjection() => getIt.init();
