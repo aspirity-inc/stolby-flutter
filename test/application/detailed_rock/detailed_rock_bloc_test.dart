@@ -48,7 +48,7 @@ void main() {
 
           return bloc;
         },
-        seed: () => DetailedRockState.initial(),
+        seed: DetailedRockState.initial,
         act: (bloc) => bloc.add(
           const DetailedRockEvent.initialized(
             id: 0,
@@ -70,7 +70,7 @@ void main() {
 
           return bloc;
         },
-        seed: () => DetailedRockState.initial(),
+        seed: DetailedRockState.initial,
         act: (bloc) => bloc.add(
           const DetailedRockEvent.initialized(
             id: 0,
@@ -86,7 +86,7 @@ void main() {
       build: () => bloc,
       seed: () => DetailedRockState(rock: some(testItem), distance: none()),
       act: (bloc) => bloc.add(
-        DetailedRockEvent.locationChanged(
+        const DetailedRockEvent.locationChanged(
           location: LatLng(55.9074, 92.73843),
         ),
       ),

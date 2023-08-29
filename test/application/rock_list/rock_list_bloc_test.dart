@@ -50,7 +50,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => RockListState.initial(),
+      seed: RockListState.initial,
       act: (_) => bloc.add(const RockListEvent.initialized()),
       expect: () => [
         RockListState.initial().copyWith(loading: true),
@@ -146,7 +146,7 @@ void main() {
           ),
         ],
         searchString: '',
-        userLocation: some(LatLng(55.9174, 92.73843)),
+        userLocation: some(const LatLng(55.9174, 92.73843)),
       ),
       act: (_) => bloc.add(const RockListEvent.sorted()),
       expect: () => [
@@ -172,7 +172,7 @@ void main() {
             ),
           ],
           searchString: '',
-          userLocation: some(LatLng(55.9174, 92.73843)),
+          userLocation: some(const LatLng(55.9174, 92.73843)),
         ),
       ],
     );
@@ -254,7 +254,7 @@ void main() {
         ],
       ),
       act: (_) => bloc.add(
-        RockListEvent.locationChanged(
+        const RockListEvent.locationChanged(
           location: LatLng(55.9174, 92.73843),
         ),
       ),
@@ -281,7 +281,7 @@ void main() {
             ),
           ],
           searchString: '',
-          userLocation: some(LatLng(55.9174, 92.73843)),
+          userLocation: some(const LatLng(55.9174, 92.73843)),
         ),
         RockListState.initial().copyWith(
           allRocks: [
@@ -305,7 +305,7 @@ void main() {
             ),
           ],
           searchString: '',
-          userLocation: some(LatLng(55.9174, 92.73843)),
+          userLocation: some(const LatLng(55.9174, 92.73843)),
         ),
       ],
     );

@@ -26,8 +26,7 @@ class _MapWidgetState extends State<MapWidget> {
   late MapboxMapController mapController;
 
   @override
-  Widget build(BuildContext context) =>
-      BlocListener<MapControlBloc, MapControlState>(
+  Widget build(BuildContext context) => BlocListener<MapControlBloc, MapControlState>(
         listener: (context, _) => _handleSelected(
           _getCurrentTheme(context),
         ),
@@ -45,8 +44,7 @@ class _MapWidgetState extends State<MapWidget> {
               return state.rocks.isEmpty
                   ? const SizedBox()
                   : MapboxMap(
-                      accessToken:
-                          'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkc'
+                      accessToken: 'pk.eyJ1IjoiYXNwaXJpdHkiLCJhIjoiY2syem53azIyMGFpMzNkc'
                           'Wo2eGJsaGxtYyJ9.NQCPk2eMLJmnuO0yh5LYpg',
                       initialCameraPosition: CameraPosition(
                         bearing: settingsState.reversedMap ? 180 : 0,
@@ -58,6 +56,7 @@ class _MapWidgetState extends State<MapWidget> {
                               ),
                         zoom: state.zoom,
                       ),
+                      doubleClickZoomEnabled: true,
                       minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
                       styleString: _getCurrentTheme(context)
                           ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
@@ -68,11 +67,10 @@ class _MapWidgetState extends State<MapWidget> {
                           ? MyLocationTrackingMode.TrackingGPS
                           : MyLocationTrackingMode.None,
                       myLocationEnabled: settingsState.geolocationEnabled,
-                      logoViewMargins: const Point(16, 32),
+                      logoViewMargins: const Point(16, 102),
                       attributionButtonMargins: const Point(106, 32),
                       onMapCreated: _handleMapCreated,
-                      onStyleLoadedCallback: () =>
-                          _handleStyleLoadedCallback(context),
+                      onStyleLoadedCallback: () => _handleStyleLoadedCallback(context),
                     );
             },
           ),
@@ -83,39 +81,31 @@ class _MapWidgetState extends State<MapWidget> {
     setState(() {
       mapController = controller;
     });
-    mapController
-      ..matchMapLanguageWithDeviceDefault()
-      ..setSymbolIconAllowOverlap(true)
-      ..setSymbolIconIgnorePlacement(true)
-      ..onSymbolTapped.add(
-        (symbol) {
-          try {
-            final rockId = symbol.data?['id'] as int?;
-            final rock = context
-                .read<MapBloc>()
-                .state
-                .rocks
-                .firstWhere((r) => r.id == rockId);
+    mapController.onSymbolTapped.add(
+      (symbol) {
+        try {
+          final rockId = symbol.data?['id'] as int?;
+          final rock = context.read<MapBloc>().state.rocks.firstWhere((r) => r.id == rockId);
 
-            context.read<MapControlBloc>().add(
-                  MapControlEvent.rockClicked(rock),
-                );
-            _handleSelected(_getCurrentTheme(context));
-          } on FormatException {
-            return;
-          }
+          context.read<MapControlBloc>().add(
+                MapControlEvent.rockClicked(rock),
+              );
+          _handleSelected(_getCurrentTheme(context));
+        } on FormatException {
+          return;
+        }
 
-          mapController.animateCamera(
-            CameraUpdate.newLatLng(
-              symbol.options.geometry ??
-                  const LatLng(
-                    55.915964,
-                    92.738896,
-                  ),
-            ),
-          );
-        },
-      );
+        mapController.animateCamera(
+          CameraUpdate.newLatLng(
+            symbol.options.geometry ??
+                const LatLng(
+                  55.915964,
+                  92.738896,
+                ),
+          ),
+        );
+      },
+    );
   }
 
   LatLng _latlongTransformer(latlong.LatLng coordinates) =>
@@ -156,17 +146,16 @@ class _MapWidgetState extends State<MapWidget> {
   Future<void> _handleSelected(
     bool darkTheme,
   ) async {
-    final selectedRock = context
-        .read<MapControlBloc>()
-        .state
-        .setMarkerRock
-        .fold(() => null, (a) => a.id);
+    final setMarkerRock =
+        context.read<MapControlBloc>().state.setMarkerRock.fold(() => null, (a) => a.id);
+
     await Future.wait(
       mapController.symbols.map(
         (symbol) async {
+          final id = symbol.data?['id'] as int?;
           await mapController.updateSymbol(
             symbol,
-            symbol.id == selectedRock.toString()
+            id == setMarkerRock
                 ? SymbolOptions(
                     iconImage: darkTheme ? 'dark_marker' : 'light_marker',
                   )
@@ -180,22 +169,26 @@ class _MapWidgetState extends State<MapWidget> {
   }
 
   Future<void> _handleStyleLoadedCallback(BuildContext context) async {
-    await _initMarkerImages();
     final rocks = context.read<MapBloc>().state.rocks;
     final darkTheme = context.read<SettingsBloc>().state.darkTheme;
+
+    await _initMarkerImages();
+
+    await mapController.setSymbolIconAllowOverlap(true);
+    await mapController.setSymbolIconIgnorePlacement(true);
+    await mapController.matchMapLanguageWithDeviceDefault();
 
     await Future.wait(
       rocks.map((e) async {
         await mapController.addSymbol(
           SymbolOptions(
             iconImage: darkTheme ? 'dark_object' : 'light_object',
-            iconSize: 1.2,
             iconAnchor: 'bottom',
+            iconSize: 1.2,
             geometry: LatLng(
               e.latitude,
               e.longitude,
             ),
-            zIndex: 1,
           ),
           <String, int>{'id': e.id},
         );
@@ -210,6 +203,8 @@ class _MapWidgetState extends State<MapWidget> {
     BuildContext context,
     SettingsState state,
   ) async {
+    final themeDark = Theme.of(context).colorScheme.onBackground == Colors.white;
+
     if (state.reversedMap) {
       await mapController.moveCamera(
         CameraUpdate.bearingTo(180),
@@ -218,6 +213,6 @@ class _MapWidgetState extends State<MapWidget> {
     await Future<void>.delayed(
       const Duration(milliseconds: 300),
     );
-    await _handleSelected(_getCurrentTheme(context));
+    await _handleSelected(themeDark);
   }
 }

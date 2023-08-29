@@ -6,10 +6,10 @@ class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SafeArea(
+  Widget build(BuildContext context) => const SafeArea(
         child: Scaffold(
           body: Column(
-            children: const [
+            children: [
               SettingsContentTop(),
               SettingsContentBottom(),
             ],

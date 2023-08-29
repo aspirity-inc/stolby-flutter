@@ -12,8 +12,7 @@ class LocationService {
 
   Future<PermissionStatus> checkPermission() => _location.hasPermission();
 
-  Future<PermissionStatus> requestLocationPermission() =>
-      _location.requestPermission();
+  Future<PermissionStatus> requestLocationPermission() => _location.requestPermission();
 
   Future<bool> geolocationService() async {
     final serviceEnabled = await _location.serviceEnabled();
@@ -28,8 +27,7 @@ class LocationService {
     return serviceEnabled;
   }
 
-  Stream<UserLocationDto> getUserLocation() =>
-      _location.onLocationChanged.map<UserLocationDto>(
-        (event) => UserLocationDto.fromLocationData(event),
+  Stream<UserLocationDto> getUserLocation() => _location.onLocationChanged.map<UserLocationDto>(
+        UserLocationDto.fromLocationData,
       );
 }

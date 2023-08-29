@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
-class AppTransactionsBuilders {
+class AppTransitionBuilders {
   static const RouteTransitionsBuilder zoomIn = _zoomIn;
 
   static Widget _zoomIn(

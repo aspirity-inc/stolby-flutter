@@ -42,7 +42,7 @@ void main() {
 
           return bloc;
         },
-        seed: () => MapState.initial(),
+        seed: MapState.initial,
         act: (bloc) => bloc.add(const MapEvent.initialized()),
         expect: () => [
           MapState.initial().copyWith(loading: true),
@@ -62,7 +62,7 @@ void main() {
 
           return bloc;
         },
-        seed: () => MapState.initial(),
+        seed: MapState.initial,
         act: (bloc) => bloc.add(const MapEvent.initialized()),
         expect: () => [
           MapState.initial().copyWith(loading: true),

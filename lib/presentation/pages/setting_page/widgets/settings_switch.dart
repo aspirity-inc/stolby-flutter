@@ -18,10 +18,12 @@ class SettingsSwitch extends StatelessWidget {
   Widget build(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            text,
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
+          Flexible(
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
           CupertinoSwitch(

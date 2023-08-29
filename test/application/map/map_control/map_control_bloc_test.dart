@@ -29,7 +29,7 @@ void main() {
       blocTest<MapControlBloc, MapControlState>(
         'Should emit state with clicked rock',
         build: () => bloc,
-        seed: () => MapControlState.initial(),
+        seed: MapControlState.initial,
         act: (_) => bloc.add(
           const MapControlEvent.rockClicked(testItem),
         ),
@@ -48,7 +48,7 @@ void main() {
       blocTest(
         'Should emit state with tapped rock',
         build: () => bloc,
-        seed: () => MapControlState.initial(),
+        seed: MapControlState.initial,
         act: (_) => bloc.add(
           const MapControlEvent.rockMarkerPut(testItem),
         ),
@@ -110,7 +110,7 @@ void main() {
       blocTest(
         'Should emit nothing if rock was not clicked',
         build: () => bloc,
-        seed: () => MapControlState.initial(),
+        seed: MapControlState.initial,
         act: (_) => bloc.add(
           const MapControlEvent.clickedRockRemoved(),
         ),
@@ -125,7 +125,7 @@ void main() {
       blocTest(
         'Should emit state with rock if there is not initial rock',
         build: () => bloc,
-        seed: () => MapControlState.initial(),
+        seed: MapControlState.initial,
         act: (_) => bloc.add(
           const MapControlEvent.handleMarkerSelection(testItem),
         ),

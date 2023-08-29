@@ -7,8 +7,8 @@ class SettingsContentBottom extends StatelessWidget {
   const SettingsContentBottom({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Column(
-        children: const [
+  Widget build(BuildContext context) => const Column(
+        children: [
           Divider(
             height: 1,
           ),

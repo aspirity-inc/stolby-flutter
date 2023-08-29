@@ -23,13 +23,13 @@ class MapPage extends StatelessWidget {
             MapWidget(
               initialCoordinates: initialCoordinates,
             ),
-            Positioned(
+            const Positioned(
               top: 0,
               bottom: 0,
               right: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   MapZoomIconButton(
                     action: ZoomIconButtonAction.moreZoom,
                   ),

@@ -38,18 +38,20 @@ class MapMarkerButton extends StatelessWidget {
                 const SizedBox(
                   width: 16,
                 ),
-                Text(
-                  state.setMarkerRock.fold(
-                        () => localization?.dialog_rock_item_mark,
-                        (a) => a.id == rock.id
-                            ? localization?.dialog_rock_item_hide_mark
-                            : localization?.dialog_rock_item_mark,
-                      ) ??
-                      '',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
+                Flexible(
+                  child: Text(
+                    state.setMarkerRock.fold(
+                          () => localization?.dialog_rock_item_mark,
+                          (a) => a.id == rock.id
+                              ? localization?.dialog_rock_item_hide_mark
+                              : localization?.dialog_rock_item_mark,
+                        ) ??
+                        '',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],

@@ -20,9 +20,11 @@ class FeedbackPage extends StatelessWidget {
       appBar: const DetailedRockAppbar(
         localizedName: null,
       ),
+      resizeToAvoidBottomInset: true,
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
           children: [
             const SizedBox(
               height: 8,
@@ -50,11 +52,12 @@ class FeedbackPage extends StatelessWidget {
               child: TextField(
                 key: const ValueKey('feedback_page_device_text_field'),
                 controller: _deviceController,
-                maxLines: 1,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
+                    vertical: 12,
                   ),
+                  hintMaxLines: 2,
                   focusedBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
@@ -87,7 +90,7 @@ class FeedbackPage extends StatelessWidget {
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
-                    vertical: 8,
+                    vertical: 12,
                   ),
                   focusedBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
@@ -113,8 +116,7 @@ class FeedbackPage extends StatelessWidget {
                   horizontal: 16,
                   vertical: 8,
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(24)),
                   color: color,
@@ -146,6 +148,6 @@ class FeedbackPage extends StatelessWidget {
         'body': body,
       },
     );
-    await launch(emailLaunchUri.toString().replaceAll('+', ' '));
+    await launchUrl(Uri.parse(emailLaunchUri.toString().replaceAll('+', ' ')));
   }
 }

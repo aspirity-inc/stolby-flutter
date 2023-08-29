@@ -96,19 +96,6 @@ dart_code_metrics:
     - prefer-correct-type-name:
         min-length: 3
         max-length: 40
-    - member-ordering-extended:
-        alphabetize: false
-        order:
-          - const-fields
-          - public-fields
-          - private-fields
-          - static-methods
-          - named-constructors
-          - factory-constructors
-          - getters-setters
-          - overridden-methods
-          - public-methods
-          - private-methods
 
 
 
@@ -190,7 +177,6 @@ linter:
     eol_at_end_of_file: true
     exhaustive_cases: true
     file_names: true
-    flutter_style_todos: true
     implementation_imports: true
     join_return_with_assignment: true
     leading_newlines_in_multiline_strings: true
