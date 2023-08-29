@@ -15,7 +15,7 @@ final ThemeData darkTheme = ThemeData(
     color: Colors.white,
   ),
   textTheme: const TextTheme(
-    bodyText1: TextStyle(color: Colors.white),
+    bodyLarge: TextStyle(color: Colors.white),
   ),
   primaryColorLight: Colors.white,
   primaryColorDark: AppColors.secondaryDark,

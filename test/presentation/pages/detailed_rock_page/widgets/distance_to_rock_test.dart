@@ -1,4 +1,3 @@
-import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:stolby_flutter/presentation/pages/detailed_rock_page/widgets/distance_to_rock.dart';
 
 void main() {
-  const tIconData = CommunityMaterialIcons.map_marker_distance;
   testWidgets(
     'Given distance to rock widget when initialized with null distance then distance is n/a',
     (tester) async {

@@ -39,7 +39,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.initialized()),
       expect: () => <SettingsState>[],
     );
@@ -59,7 +59,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.toggledGeolocation()),
       expect: () => [
         SettingsState.initial().copyWith(geolocationEnabled: true),
@@ -81,7 +81,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.toggledMapReverse()),
       expect: () => [
         SettingsState.initial().copyWith(reversedMap: true),
@@ -103,7 +103,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.toggledUserMapCentering()),
       expect: () => [
         SettingsState.initial().copyWith(mapUserCentering: true),
@@ -125,7 +125,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.toggledAutoTheme()),
       expect: () => [
         SettingsState.initial().copyWith(autoThemeChange: false),
@@ -147,7 +147,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.toggledDarkTheme()),
       expect: () => [
         SettingsState.initial().copyWith(darkTheme: true),
@@ -167,7 +167,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => SettingsState.initial(),
+      seed: SettingsState.initial,
       act: (_) => bloc.add(const SettingsEvent.onboardingVisited()),
       expect: () => [
         SettingsState.initial().copyWith(onboardingVisited: true),

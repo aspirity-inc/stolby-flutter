@@ -41,9 +41,8 @@ void main() {
           ).thenAnswer((_) async => tList);
           return bloc;
         },
-        seed: () => ImagesViewerState.initial(),
-        act: (bloc) =>
-            bloc.add(const ImagesViewerEvent.initialized(picName: tImageName)),
+        seed: ImagesViewerState.initial,
+        act: (bloc) => bloc.add(const ImagesViewerEvent.initialized(picName: tImageName)),
         verify: (_) {
           verify(repository.getImagesByPicName(picName: tImageName));
         },
@@ -66,9 +65,8 @@ void main() {
           ).thenAnswer((_) async => [tImageName]);
           return bloc;
         },
-        seed: () => ImagesViewerState.initial(),
-        act: (bloc) =>
-            bloc.add(const ImagesViewerEvent.initialized(picName: tImageName)),
+        seed: ImagesViewerState.initial,
+        act: (bloc) => bloc.add(const ImagesViewerEvent.initialized(picName: tImageName)),
         verify: (_) {
           verify(repository.getImagesByPicName(picName: tImageName));
         },

@@ -32,16 +32,14 @@ void main() {
     blocTest<LocationBloc, LocationState>(
       'Should emit true if locationPermission is enable',
       build: () {
-        when(repository.getLocationPermissions())
-            .thenAnswer((_) async => right(unit));
+        when(repository.getLocationPermissions()).thenAnswer((_) async => right(unit));
 
         return bloc;
       },
-      seed: () => LocationState.initial(),
+      seed: LocationState.initial,
       act: (bloc) => bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
-        LocationState.initial()
-            .copyWith(hasPermission: true, permissionAsked: true),
+        LocationState.initial().copyWith(hasPermission: true, permissionAsked: true),
       ],
     );
 
@@ -53,7 +51,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => LocationState.initial(),
+      seed: LocationState.initial,
       act: (bloc) => bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
         LocationState.initial().copyWith(
@@ -72,7 +70,7 @@ void main() {
 
         return bloc;
       },
-      seed: () => LocationState.initial(),
+      seed: LocationState.initial,
       act: (bloc) => bloc.add(const LocationEvent.checkedPermission()),
       expect: () => [
         LocationState.initial().copyWith(
