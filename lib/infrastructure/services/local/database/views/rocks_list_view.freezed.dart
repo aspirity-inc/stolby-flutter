@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rocks_list_view.dart';
 
@@ -12,34 +12,7 @@ part of 'rocks_list_view.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RocksListViewTearOff {
-  const _$RocksListViewTearOff();
-
-  _RocksListView call(
-      {required int id,
-      required double latitude,
-      required double longitude,
-      required int difficulty,
-      required int height,
-      required String picName,
-      required String localizedName}) {
-    return _RocksListView(
-      id: id,
-      latitude: latitude,
-      longitude: longitude,
-      difficulty: difficulty,
-      height: height,
-      picName: picName,
-      localizedName: localizedName,
-    );
-  }
-}
-
-/// @nodoc
-const $RocksListView = _$RocksListViewTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RocksListView {
@@ -60,7 +33,8 @@ mixin _$RocksListView {
 abstract class $RocksListViewCopyWith<$Res> {
   factory $RocksListViewCopyWith(
           RocksListView value, $Res Function(RocksListView) then) =
-      _$RocksListViewCopyWithImpl<$Res>;
+      _$RocksListViewCopyWithImpl<$Res, RocksListView>;
+  @useResult
   $Res call(
       {int id,
       double latitude,
@@ -72,64 +46,67 @@ abstract class $RocksListViewCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RocksListViewCopyWithImpl<$Res>
+class _$RocksListViewCopyWithImpl<$Res, $Val extends RocksListView>
     implements $RocksListViewCopyWith<$Res> {
   _$RocksListViewCopyWithImpl(this._value, this._then);
 
-  final RocksListView _value;
   // ignore: unused_field
-  final $Res Function(RocksListView) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? difficulty = freezed,
-    Object? height = freezed,
-    Object? picName = freezed,
-    Object? localizedName = freezed,
+    Object? id = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? difficulty = null,
+    Object? height = null,
+    Object? picName = null,
+    Object? localizedName = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      difficulty: difficulty == freezed
+      difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedName: localizedName == freezed
+      localizedName: null == localizedName
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RocksListViewCopyWith<$Res>
+abstract class _$$_RocksListViewCopyWith<$Res>
     implements $RocksListViewCopyWith<$Res> {
-  factory _$RocksListViewCopyWith(
-          _RocksListView value, $Res Function(_RocksListView) then) =
-      __$RocksListViewCopyWithImpl<$Res>;
+  factory _$$_RocksListViewCopyWith(
+          _$_RocksListView value, $Res Function(_$_RocksListView) then) =
+      __$$_RocksListViewCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       double latitude,
@@ -141,52 +118,50 @@ abstract class _$RocksListViewCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RocksListViewCopyWithImpl<$Res>
-    extends _$RocksListViewCopyWithImpl<$Res>
-    implements _$RocksListViewCopyWith<$Res> {
-  __$RocksListViewCopyWithImpl(
-      _RocksListView _value, $Res Function(_RocksListView) _then)
-      : super(_value, (v) => _then(v as _RocksListView));
+class __$$_RocksListViewCopyWithImpl<$Res>
+    extends _$RocksListViewCopyWithImpl<$Res, _$_RocksListView>
+    implements _$$_RocksListViewCopyWith<$Res> {
+  __$$_RocksListViewCopyWithImpl(
+      _$_RocksListView _value, $Res Function(_$_RocksListView) _then)
+      : super(_value, _then);
 
-  @override
-  _RocksListView get _value => super._value as _RocksListView;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? difficulty = freezed,
-    Object? height = freezed,
-    Object? picName = freezed,
-    Object? localizedName = freezed,
+    Object? id = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? difficulty = null,
+    Object? height = null,
+    Object? picName = null,
+    Object? localizedName = null,
   }) {
-    return _then(_RocksListView(
-      id: id == freezed
+    return _then(_$_RocksListView(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      difficulty: difficulty == freezed
+      difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedName: localizedName == freezed
+      localizedName: null == localizedName
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -231,44 +206,40 @@ class _$_RocksListView extends _RocksListView {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RocksListView &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.latitude, latitude) &&
-            const DeepCollectionEquality().equals(other.longitude, longitude) &&
-            const DeepCollectionEquality()
-                .equals(other.difficulty, difficulty) &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.picName, picName) &&
-            const DeepCollectionEquality()
-                .equals(other.localizedName, localizedName));
+            other is _$_RocksListView &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.picName, picName) || other.picName == picName) &&
+            (identical(other.localizedName, localizedName) ||
+                other.localizedName == localizedName));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(latitude),
-      const DeepCollectionEquality().hash(longitude),
-      const DeepCollectionEquality().hash(difficulty),
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(picName),
-      const DeepCollectionEquality().hash(localizedName));
+  int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
+      difficulty, height, picName, localizedName);
 
   @JsonKey(ignore: true)
   @override
-  _$RocksListViewCopyWith<_RocksListView> get copyWith =>
-      __$RocksListViewCopyWithImpl<_RocksListView>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_RocksListViewCopyWith<_$_RocksListView> get copyWith =>
+      __$$_RocksListViewCopyWithImpl<_$_RocksListView>(this, _$identity);
 }
 
 abstract class _RocksListView extends RocksListView {
   const factory _RocksListView(
-      {required int id,
-      required double latitude,
-      required double longitude,
-      required int difficulty,
-      required int height,
-      required String picName,
-      required String localizedName}) = _$_RocksListView;
+      {required final int id,
+      required final double latitude,
+      required final double longitude,
+      required final int difficulty,
+      required final int height,
+      required final String picName,
+      required final String localizedName}) = _$_RocksListView;
   const _RocksListView._() : super._();
 
   @override
@@ -287,6 +258,6 @@ abstract class _RocksListView extends RocksListView {
   String get localizedName;
   @override
   @JsonKey(ignore: true)
-  _$RocksListViewCopyWith<_RocksListView> get copyWith =>
+  _$$_RocksListViewCopyWith<_$_RocksListView> get copyWith =>
       throw _privateConstructorUsedError;
 }

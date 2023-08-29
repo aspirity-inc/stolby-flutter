@@ -3,7 +3,6 @@ import 'dart:ui' as ui;
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:drift/drift.dart' hide JsonKey;
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image/image.dart' as img;
@@ -68,7 +67,12 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
           loading: false,
           rocksToShow: rocks,
           allRocks: rocks,
-          rockPhotos: photos.whereNotNull().toList(),
+          rockPhotos: photos
+              .where(
+                (element) => element != null,
+              )
+              .map((e) => e!)
+              .toList(),
         ),
       );
     } else {
@@ -159,9 +163,7 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
   ) =>
       list
           .where(
-            (element) => element.localizedName
-                .toLowerCase()
-                .contains(filter.toLowerCase()),
+            (element) => element.localizedName.toLowerCase().contains(filter.toLowerCase()),
           )
           .toList();
 
@@ -180,19 +182,22 @@ class RockListBloc extends Bloc<RockListEvent, RockListState> {
   ) {
     const distance = Distance();
 
-    return list.sorted(
-      (a, b) => distance
-          .distance(
-            LatLng(a.latitude, a.longitude),
-            latLng,
-          )
-          .compareTo(
-            distance.distance(
-              LatLng(b.latitude, b.longitude),
+    var rocks = List<RockEntity>.of(list)
+      ..sort(
+        (a, b) => distance
+            .distance(
+              LatLng(a.latitude, a.longitude),
               latLng,
+            )
+            .compareTo(
+              distance.distance(
+                LatLng(b.latitude, b.longitude),
+                latLng,
+              ),
             ),
-          ),
-    );
+      );
+
+    return rocks;
   }
 
   EventTransformer<Event> _restartable<Event>() =>

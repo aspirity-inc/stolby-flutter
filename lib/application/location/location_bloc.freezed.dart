@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'location_bloc.dart';
 
@@ -12,34 +12,7 @@ part of 'location_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LocationEventTearOff {
-  const _$LocationEventTearOff();
-
-  _CheckedPermission checkedPermission() {
-    return const _CheckedPermission();
-  }
-
-  _StartWatchingLocation startWatchingLocation() {
-    return const _StartWatchingLocation();
-  }
-
-  _StopWatchingLocation stopWatchingLocation() {
-    return const _StopWatchingLocation();
-  }
-
-  _LocationReceived locationReceived(
-      {required Either<LocationFailure, UserLocationEntity> location}) {
-    return _LocationReceived(
-      location: location,
-    );
-  }
-}
-
-/// @nodoc
-const $LocationEvent = _$LocationEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LocationEvent {
@@ -55,10 +28,10 @@ mixin _$LocationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkedPermission,
-    TResult Function()? startWatchingLocation,
-    TResult Function()? stopWatchingLocation,
-    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+    TResult? Function()? checkedPermission,
+    TResult? Function()? startWatchingLocation,
+    TResult? Function()? stopWatchingLocation,
+    TResult? Function(Either<LocationFailure, UserLocationEntity> location)?
         locationReceived,
   }) =>
       throw _privateConstructorUsedError;
@@ -83,10 +56,10 @@ mixin _$LocationEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CheckedPermission value)? checkedPermission,
-    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
-    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult? Function(_CheckedPermission value)? checkedPermission,
+    TResult? Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult? Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult? Function(_LocationReceived value)? locationReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -104,36 +77,34 @@ mixin _$LocationEvent {
 abstract class $LocationEventCopyWith<$Res> {
   factory $LocationEventCopyWith(
           LocationEvent value, $Res Function(LocationEvent) then) =
-      _$LocationEventCopyWithImpl<$Res>;
+      _$LocationEventCopyWithImpl<$Res, LocationEvent>;
 }
 
 /// @nodoc
-class _$LocationEventCopyWithImpl<$Res>
+class _$LocationEventCopyWithImpl<$Res, $Val extends LocationEvent>
     implements $LocationEventCopyWith<$Res> {
   _$LocationEventCopyWithImpl(this._value, this._then);
 
-  final LocationEvent _value;
   // ignore: unused_field
-  final $Res Function(LocationEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$CheckedPermissionCopyWith<$Res> {
-  factory _$CheckedPermissionCopyWith(
-          _CheckedPermission value, $Res Function(_CheckedPermission) then) =
-      __$CheckedPermissionCopyWithImpl<$Res>;
+abstract class _$$_CheckedPermissionCopyWith<$Res> {
+  factory _$$_CheckedPermissionCopyWith(_$_CheckedPermission value,
+          $Res Function(_$_CheckedPermission) then) =
+      __$$_CheckedPermissionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CheckedPermissionCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res>
-    implements _$CheckedPermissionCopyWith<$Res> {
-  __$CheckedPermissionCopyWithImpl(
-      _CheckedPermission _value, $Res Function(_CheckedPermission) _then)
-      : super(_value, (v) => _then(v as _CheckedPermission));
-
-  @override
-  _CheckedPermission get _value => super._value as _CheckedPermission;
+class __$$_CheckedPermissionCopyWithImpl<$Res>
+    extends _$LocationEventCopyWithImpl<$Res, _$_CheckedPermission>
+    implements _$$_CheckedPermissionCopyWith<$Res> {
+  __$$_CheckedPermissionCopyWithImpl(
+      _$_CheckedPermission _value, $Res Function(_$_CheckedPermission) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -149,7 +120,7 @@ class _$_CheckedPermission implements _CheckedPermission {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CheckedPermission);
+        (other.runtimeType == runtimeType && other is _$_CheckedPermission);
   }
 
   @override
@@ -171,10 +142,10 @@ class _$_CheckedPermission implements _CheckedPermission {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkedPermission,
-    TResult Function()? startWatchingLocation,
-    TResult Function()? stopWatchingLocation,
-    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+    TResult? Function()? checkedPermission,
+    TResult? Function()? startWatchingLocation,
+    TResult? Function()? stopWatchingLocation,
+    TResult? Function(Either<LocationFailure, UserLocationEntity> location)?
         locationReceived,
   }) {
     return checkedPermission?.call();
@@ -211,10 +182,10 @@ class _$_CheckedPermission implements _CheckedPermission {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CheckedPermission value)? checkedPermission,
-    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
-    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult? Function(_CheckedPermission value)? checkedPermission,
+    TResult? Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult? Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult? Function(_LocationReceived value)? locationReceived,
   }) {
     return checkedPermission?.call(this);
   }
@@ -240,22 +211,19 @@ abstract class _CheckedPermission implements LocationEvent {
 }
 
 /// @nodoc
-abstract class _$StartWatchingLocationCopyWith<$Res> {
-  factory _$StartWatchingLocationCopyWith(_StartWatchingLocation value,
-          $Res Function(_StartWatchingLocation) then) =
-      __$StartWatchingLocationCopyWithImpl<$Res>;
+abstract class _$$_StartWatchingLocationCopyWith<$Res> {
+  factory _$$_StartWatchingLocationCopyWith(_$_StartWatchingLocation value,
+          $Res Function(_$_StartWatchingLocation) then) =
+      __$$_StartWatchingLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartWatchingLocationCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res>
-    implements _$StartWatchingLocationCopyWith<$Res> {
-  __$StartWatchingLocationCopyWithImpl(_StartWatchingLocation _value,
-      $Res Function(_StartWatchingLocation) _then)
-      : super(_value, (v) => _then(v as _StartWatchingLocation));
-
-  @override
-  _StartWatchingLocation get _value => super._value as _StartWatchingLocation;
+class __$$_StartWatchingLocationCopyWithImpl<$Res>
+    extends _$LocationEventCopyWithImpl<$Res, _$_StartWatchingLocation>
+    implements _$$_StartWatchingLocationCopyWith<$Res> {
+  __$$_StartWatchingLocationCopyWithImpl(_$_StartWatchingLocation _value,
+      $Res Function(_$_StartWatchingLocation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -271,7 +239,7 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _StartWatchingLocation);
+        (other.runtimeType == runtimeType && other is _$_StartWatchingLocation);
   }
 
   @override
@@ -293,10 +261,10 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkedPermission,
-    TResult Function()? startWatchingLocation,
-    TResult Function()? stopWatchingLocation,
-    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+    TResult? Function()? checkedPermission,
+    TResult? Function()? startWatchingLocation,
+    TResult? Function()? stopWatchingLocation,
+    TResult? Function(Either<LocationFailure, UserLocationEntity> location)?
         locationReceived,
   }) {
     return startWatchingLocation?.call();
@@ -333,10 +301,10 @@ class _$_StartWatchingLocation implements _StartWatchingLocation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CheckedPermission value)? checkedPermission,
-    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
-    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult? Function(_CheckedPermission value)? checkedPermission,
+    TResult? Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult? Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult? Function(_LocationReceived value)? locationReceived,
   }) {
     return startWatchingLocation?.call(this);
   }
@@ -362,22 +330,19 @@ abstract class _StartWatchingLocation implements LocationEvent {
 }
 
 /// @nodoc
-abstract class _$StopWatchingLocationCopyWith<$Res> {
-  factory _$StopWatchingLocationCopyWith(_StopWatchingLocation value,
-          $Res Function(_StopWatchingLocation) then) =
-      __$StopWatchingLocationCopyWithImpl<$Res>;
+abstract class _$$_StopWatchingLocationCopyWith<$Res> {
+  factory _$$_StopWatchingLocationCopyWith(_$_StopWatchingLocation value,
+          $Res Function(_$_StopWatchingLocation) then) =
+      __$$_StopWatchingLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StopWatchingLocationCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res>
-    implements _$StopWatchingLocationCopyWith<$Res> {
-  __$StopWatchingLocationCopyWithImpl(
-      _StopWatchingLocation _value, $Res Function(_StopWatchingLocation) _then)
-      : super(_value, (v) => _then(v as _StopWatchingLocation));
-
-  @override
-  _StopWatchingLocation get _value => super._value as _StopWatchingLocation;
+class __$$_StopWatchingLocationCopyWithImpl<$Res>
+    extends _$LocationEventCopyWithImpl<$Res, _$_StopWatchingLocation>
+    implements _$$_StopWatchingLocationCopyWith<$Res> {
+  __$$_StopWatchingLocationCopyWithImpl(_$_StopWatchingLocation _value,
+      $Res Function(_$_StopWatchingLocation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -393,7 +358,7 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _StopWatchingLocation);
+        (other.runtimeType == runtimeType && other is _$_StopWatchingLocation);
   }
 
   @override
@@ -415,10 +380,10 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkedPermission,
-    TResult Function()? startWatchingLocation,
-    TResult Function()? stopWatchingLocation,
-    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+    TResult? Function()? checkedPermission,
+    TResult? Function()? startWatchingLocation,
+    TResult? Function()? stopWatchingLocation,
+    TResult? Function(Either<LocationFailure, UserLocationEntity> location)?
         locationReceived,
   }) {
     return stopWatchingLocation?.call();
@@ -455,10 +420,10 @@ class _$_StopWatchingLocation implements _StopWatchingLocation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CheckedPermission value)? checkedPermission,
-    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
-    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult? Function(_CheckedPermission value)? checkedPermission,
+    TResult? Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult? Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult? Function(_LocationReceived value)? locationReceived,
   }) {
     return stopWatchingLocation?.call(this);
   }
@@ -484,30 +449,29 @@ abstract class _StopWatchingLocation implements LocationEvent {
 }
 
 /// @nodoc
-abstract class _$LocationReceivedCopyWith<$Res> {
-  factory _$LocationReceivedCopyWith(
-          _LocationReceived value, $Res Function(_LocationReceived) then) =
-      __$LocationReceivedCopyWithImpl<$Res>;
+abstract class _$$_LocationReceivedCopyWith<$Res> {
+  factory _$$_LocationReceivedCopyWith(
+          _$_LocationReceived value, $Res Function(_$_LocationReceived) then) =
+      __$$_LocationReceivedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Either<LocationFailure, UserLocationEntity> location});
 }
 
 /// @nodoc
-class __$LocationReceivedCopyWithImpl<$Res>
-    extends _$LocationEventCopyWithImpl<$Res>
-    implements _$LocationReceivedCopyWith<$Res> {
-  __$LocationReceivedCopyWithImpl(
-      _LocationReceived _value, $Res Function(_LocationReceived) _then)
-      : super(_value, (v) => _then(v as _LocationReceived));
+class __$$_LocationReceivedCopyWithImpl<$Res>
+    extends _$LocationEventCopyWithImpl<$Res, _$_LocationReceived>
+    implements _$$_LocationReceivedCopyWith<$Res> {
+  __$$_LocationReceivedCopyWithImpl(
+      _$_LocationReceived _value, $Res Function(_$_LocationReceived) _then)
+      : super(_value, _then);
 
-  @override
-  _LocationReceived get _value => super._value as _LocationReceived;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? location = freezed,
+    Object? location = null,
   }) {
-    return _then(_LocationReceived(
-      location: location == freezed
+    return _then(_$_LocationReceived(
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as Either<LocationFailure, UserLocationEntity>,
@@ -532,18 +496,19 @@ class _$_LocationReceived implements _LocationReceived {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LocationReceived &&
-            const DeepCollectionEquality().equals(other.location, location));
+            other is _$_LocationReceived &&
+            (identical(other.location, location) ||
+                other.location == location));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
+  int get hashCode => Object.hash(runtimeType, location);
 
   @JsonKey(ignore: true)
   @override
-  _$LocationReceivedCopyWith<_LocationReceived> get copyWith =>
-      __$LocationReceivedCopyWithImpl<_LocationReceived>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LocationReceivedCopyWith<_$_LocationReceived> get copyWith =>
+      __$$_LocationReceivedCopyWithImpl<_$_LocationReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -561,10 +526,10 @@ class _$_LocationReceived implements _LocationReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? checkedPermission,
-    TResult Function()? startWatchingLocation,
-    TResult Function()? stopWatchingLocation,
-    TResult Function(Either<LocationFailure, UserLocationEntity> location)?
+    TResult? Function()? checkedPermission,
+    TResult? Function()? startWatchingLocation,
+    TResult? Function()? stopWatchingLocation,
+    TResult? Function(Either<LocationFailure, UserLocationEntity> location)?
         locationReceived,
   }) {
     return locationReceived?.call(location);
@@ -601,10 +566,10 @@ class _$_LocationReceived implements _LocationReceived {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CheckedPermission value)? checkedPermission,
-    TResult Function(_StartWatchingLocation value)? startWatchingLocation,
-    TResult Function(_StopWatchingLocation value)? stopWatchingLocation,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult? Function(_CheckedPermission value)? checkedPermission,
+    TResult? Function(_StartWatchingLocation value)? startWatchingLocation,
+    TResult? Function(_StopWatchingLocation value)? stopWatchingLocation,
+    TResult? Function(_LocationReceived value)? locationReceived,
   }) {
     return locationReceived?.call(this);
   }
@@ -627,35 +592,14 @@ class _$_LocationReceived implements _LocationReceived {
 
 abstract class _LocationReceived implements LocationEvent {
   const factory _LocationReceived(
-          {required Either<LocationFailure, UserLocationEntity> location}) =
-      _$_LocationReceived;
+      {required final Either<LocationFailure, UserLocationEntity>
+          location}) = _$_LocationReceived;
 
   Either<LocationFailure, UserLocationEntity> get location;
   @JsonKey(ignore: true)
-  _$LocationReceivedCopyWith<_LocationReceived> get copyWith =>
+  _$$_LocationReceivedCopyWith<_$_LocationReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$LocationStateTearOff {
-  const _$LocationStateTearOff();
-
-  _LocationState call(
-      {required bool hasPermission,
-      required bool permissionAsked,
-      required Option<LocationFailure> failureOption,
-      required Option<UserLocationEntity> userLocation}) {
-    return _LocationState(
-      hasPermission: hasPermission,
-      permissionAsked: permissionAsked,
-      failureOption: failureOption,
-      userLocation: userLocation,
-    );
-  }
-}
-
-/// @nodoc
-const $LocationState = _$LocationStateTearOff();
 
 /// @nodoc
 mixin _$LocationState {
@@ -675,7 +619,8 @@ mixin _$LocationState {
 abstract class $LocationStateCopyWith<$Res> {
   factory $LocationStateCopyWith(
           LocationState value, $Res Function(LocationState) then) =
-      _$LocationStateCopyWithImpl<$Res>;
+      _$LocationStateCopyWithImpl<$Res, LocationState>;
+  @useResult
   $Res call(
       {bool hasPermission,
       bool permissionAsked,
@@ -684,49 +629,52 @@ abstract class $LocationStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LocationStateCopyWithImpl<$Res>
+class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
     implements $LocationStateCopyWith<$Res> {
   _$LocationStateCopyWithImpl(this._value, this._then);
 
-  final LocationState _value;
   // ignore: unused_field
-  final $Res Function(LocationState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hasPermission = freezed,
-    Object? permissionAsked = freezed,
-    Object? failureOption = freezed,
-    Object? userLocation = freezed,
+    Object? hasPermission = null,
+    Object? permissionAsked = null,
+    Object? failureOption = null,
+    Object? userLocation = null,
   }) {
     return _then(_value.copyWith(
-      hasPermission: hasPermission == freezed
+      hasPermission: null == hasPermission
           ? _value.hasPermission
           : hasPermission // ignore: cast_nullable_to_non_nullable
               as bool,
-      permissionAsked: permissionAsked == freezed
+      permissionAsked: null == permissionAsked
           ? _value.permissionAsked
           : permissionAsked // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<LocationFailure>,
-      userLocation: userLocation == freezed
+      userLocation: null == userLocation
           ? _value.userLocation
           : userLocation // ignore: cast_nullable_to_non_nullable
               as Option<UserLocationEntity>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$LocationStateCopyWith<$Res>
+abstract class _$$_LocationStateCopyWith<$Res>
     implements $LocationStateCopyWith<$Res> {
-  factory _$LocationStateCopyWith(
-          _LocationState value, $Res Function(_LocationState) then) =
-      __$LocationStateCopyWithImpl<$Res>;
+  factory _$$_LocationStateCopyWith(
+          _$_LocationState value, $Res Function(_$_LocationState) then) =
+      __$$_LocationStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool hasPermission,
       bool permissionAsked,
@@ -735,37 +683,35 @@ abstract class _$LocationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocationStateCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res>
-    implements _$LocationStateCopyWith<$Res> {
-  __$LocationStateCopyWithImpl(
-      _LocationState _value, $Res Function(_LocationState) _then)
-      : super(_value, (v) => _then(v as _LocationState));
+class __$$_LocationStateCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$_LocationState>
+    implements _$$_LocationStateCopyWith<$Res> {
+  __$$_LocationStateCopyWithImpl(
+      _$_LocationState _value, $Res Function(_$_LocationState) _then)
+      : super(_value, _then);
 
-  @override
-  _LocationState get _value => super._value as _LocationState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hasPermission = freezed,
-    Object? permissionAsked = freezed,
-    Object? failureOption = freezed,
-    Object? userLocation = freezed,
+    Object? hasPermission = null,
+    Object? permissionAsked = null,
+    Object? failureOption = null,
+    Object? userLocation = null,
   }) {
-    return _then(_LocationState(
-      hasPermission: hasPermission == freezed
+    return _then(_$_LocationState(
+      hasPermission: null == hasPermission
           ? _value.hasPermission
           : hasPermission // ignore: cast_nullable_to_non_nullable
               as bool,
-      permissionAsked: permissionAsked == freezed
+      permissionAsked: null == permissionAsked
           ? _value.permissionAsked
           : permissionAsked // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<LocationFailure>,
-      userLocation: userLocation == freezed
+      userLocation: null == userLocation
           ? _value.userLocation
           : userLocation // ignore: cast_nullable_to_non_nullable
               as Option<UserLocationEntity>,
@@ -800,37 +746,35 @@ class _$_LocationState implements _LocationState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LocationState &&
-            const DeepCollectionEquality()
-                .equals(other.hasPermission, hasPermission) &&
-            const DeepCollectionEquality()
-                .equals(other.permissionAsked, permissionAsked) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.userLocation, userLocation));
+            other is _$_LocationState &&
+            (identical(other.hasPermission, hasPermission) ||
+                other.hasPermission == hasPermission) &&
+            (identical(other.permissionAsked, permissionAsked) ||
+                other.permissionAsked == permissionAsked) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.userLocation, userLocation) ||
+                other.userLocation == userLocation));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(hasPermission),
-      const DeepCollectionEquality().hash(permissionAsked),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(userLocation));
+      runtimeType, hasPermission, permissionAsked, failureOption, userLocation);
 
   @JsonKey(ignore: true)
   @override
-  _$LocationStateCopyWith<_LocationState> get copyWith =>
-      __$LocationStateCopyWithImpl<_LocationState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LocationStateCopyWith<_$_LocationState> get copyWith =>
+      __$$_LocationStateCopyWithImpl<_$_LocationState>(this, _$identity);
 }
 
 abstract class _LocationState implements LocationState {
   const factory _LocationState(
-      {required bool hasPermission,
-      required bool permissionAsked,
-      required Option<LocationFailure> failureOption,
-      required Option<UserLocationEntity> userLocation}) = _$_LocationState;
+          {required final bool hasPermission,
+          required final bool permissionAsked,
+          required final Option<LocationFailure> failureOption,
+          required final Option<UserLocationEntity> userLocation}) =
+      _$_LocationState;
 
   @override
   bool get hasPermission;
@@ -842,6 +786,6 @@ abstract class _LocationState implements LocationState {
   Option<UserLocationEntity> get userLocation;
   @override
   @JsonKey(ignore: true)
-  _$LocationStateCopyWith<_LocationState> get copyWith =>
+  _$$_LocationStateCopyWith<_$_LocationState> get copyWith =>
       throw _privateConstructorUsedError;
 }

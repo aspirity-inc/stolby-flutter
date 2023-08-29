@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'detailed_rock_entity.dart';
 
@@ -12,38 +12,7 @@ part of 'detailed_rock_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DetailedRockEntityTearOff {
-  const _$DetailedRockEntityTearOff();
-
-  _DetailedRockEntity call(
-      {required int id,
-      required double latitude,
-      required double longitude,
-      required int difficulty,
-      required int height,
-      required String picName,
-      required String localizedName,
-      required String shortInfo,
-      required String fullInfo}) {
-    return _DetailedRockEntity(
-      id: id,
-      latitude: latitude,
-      longitude: longitude,
-      difficulty: difficulty,
-      height: height,
-      picName: picName,
-      localizedName: localizedName,
-      shortInfo: shortInfo,
-      fullInfo: fullInfo,
-    );
-  }
-}
-
-/// @nodoc
-const $DetailedRockEntity = _$DetailedRockEntityTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DetailedRockEntity {
@@ -66,7 +35,8 @@ mixin _$DetailedRockEntity {
 abstract class $DetailedRockEntityCopyWith<$Res> {
   factory $DetailedRockEntityCopyWith(
           DetailedRockEntity value, $Res Function(DetailedRockEntity) then) =
-      _$DetailedRockEntityCopyWithImpl<$Res>;
+      _$DetailedRockEntityCopyWithImpl<$Res, DetailedRockEntity>;
+  @useResult
   $Res call(
       {int id,
       double latitude,
@@ -80,74 +50,77 @@ abstract class $DetailedRockEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DetailedRockEntityCopyWithImpl<$Res>
+class _$DetailedRockEntityCopyWithImpl<$Res, $Val extends DetailedRockEntity>
     implements $DetailedRockEntityCopyWith<$Res> {
   _$DetailedRockEntityCopyWithImpl(this._value, this._then);
 
-  final DetailedRockEntity _value;
   // ignore: unused_field
-  final $Res Function(DetailedRockEntity) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? difficulty = freezed,
-    Object? height = freezed,
-    Object? picName = freezed,
-    Object? localizedName = freezed,
-    Object? shortInfo = freezed,
-    Object? fullInfo = freezed,
+    Object? id = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? difficulty = null,
+    Object? height = null,
+    Object? picName = null,
+    Object? localizedName = null,
+    Object? shortInfo = null,
+    Object? fullInfo = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      difficulty: difficulty == freezed
+      difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedName: localizedName == freezed
+      localizedName: null == localizedName
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
-      shortInfo: shortInfo == freezed
+      shortInfo: null == shortInfo
           ? _value.shortInfo
           : shortInfo // ignore: cast_nullable_to_non_nullable
               as String,
-      fullInfo: fullInfo == freezed
+      fullInfo: null == fullInfo
           ? _value.fullInfo
           : fullInfo // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DetailedRockEntityCopyWith<$Res>
+abstract class _$$_DetailedRockEntityCopyWith<$Res>
     implements $DetailedRockEntityCopyWith<$Res> {
-  factory _$DetailedRockEntityCopyWith(
-          _DetailedRockEntity value, $Res Function(_DetailedRockEntity) then) =
-      __$DetailedRockEntityCopyWithImpl<$Res>;
+  factory _$$_DetailedRockEntityCopyWith(_$_DetailedRockEntity value,
+          $Res Function(_$_DetailedRockEntity) then) =
+      __$$_DetailedRockEntityCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       double latitude,
@@ -161,62 +134,60 @@ abstract class _$DetailedRockEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DetailedRockEntityCopyWithImpl<$Res>
-    extends _$DetailedRockEntityCopyWithImpl<$Res>
-    implements _$DetailedRockEntityCopyWith<$Res> {
-  __$DetailedRockEntityCopyWithImpl(
-      _DetailedRockEntity _value, $Res Function(_DetailedRockEntity) _then)
-      : super(_value, (v) => _then(v as _DetailedRockEntity));
+class __$$_DetailedRockEntityCopyWithImpl<$Res>
+    extends _$DetailedRockEntityCopyWithImpl<$Res, _$_DetailedRockEntity>
+    implements _$$_DetailedRockEntityCopyWith<$Res> {
+  __$$_DetailedRockEntityCopyWithImpl(
+      _$_DetailedRockEntity _value, $Res Function(_$_DetailedRockEntity) _then)
+      : super(_value, _then);
 
-  @override
-  _DetailedRockEntity get _value => super._value as _DetailedRockEntity;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? difficulty = freezed,
-    Object? height = freezed,
-    Object? picName = freezed,
-    Object? localizedName = freezed,
-    Object? shortInfo = freezed,
-    Object? fullInfo = freezed,
+    Object? id = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? difficulty = null,
+    Object? height = null,
+    Object? picName = null,
+    Object? localizedName = null,
+    Object? shortInfo = null,
+    Object? fullInfo = null,
   }) {
-    return _then(_DetailedRockEntity(
-      id: id == freezed
+    return _then(_$_DetailedRockEntity(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      difficulty: difficulty == freezed
+      difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
               as int,
-      height: height == freezed
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-      localizedName: localizedName == freezed
+      localizedName: null == localizedName
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
               as String,
-      shortInfo: shortInfo == freezed
+      shortInfo: null == shortInfo
           ? _value.shortInfo
           : shortInfo // ignore: cast_nullable_to_non_nullable
               as String,
-      fullInfo: fullInfo == freezed
+      fullInfo: null == fullInfo
           ? _value.fullInfo
           : fullInfo // ignore: cast_nullable_to_non_nullable
               as String,
@@ -267,50 +238,47 @@ class _$_DetailedRockEntity extends _DetailedRockEntity {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DetailedRockEntity &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.latitude, latitude) &&
-            const DeepCollectionEquality().equals(other.longitude, longitude) &&
-            const DeepCollectionEquality()
-                .equals(other.difficulty, difficulty) &&
-            const DeepCollectionEquality().equals(other.height, height) &&
-            const DeepCollectionEquality().equals(other.picName, picName) &&
-            const DeepCollectionEquality()
-                .equals(other.localizedName, localizedName) &&
-            const DeepCollectionEquality().equals(other.shortInfo, shortInfo) &&
-            const DeepCollectionEquality().equals(other.fullInfo, fullInfo));
+            other is _$_DetailedRockEntity &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.picName, picName) || other.picName == picName) &&
+            (identical(other.localizedName, localizedName) ||
+                other.localizedName == localizedName) &&
+            (identical(other.shortInfo, shortInfo) ||
+                other.shortInfo == shortInfo) &&
+            (identical(other.fullInfo, fullInfo) ||
+                other.fullInfo == fullInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(latitude),
-      const DeepCollectionEquality().hash(longitude),
-      const DeepCollectionEquality().hash(difficulty),
-      const DeepCollectionEquality().hash(height),
-      const DeepCollectionEquality().hash(picName),
-      const DeepCollectionEquality().hash(localizedName),
-      const DeepCollectionEquality().hash(shortInfo),
-      const DeepCollectionEquality().hash(fullInfo));
+  int get hashCode => Object.hash(runtimeType, id, latitude, longitude,
+      difficulty, height, picName, localizedName, shortInfo, fullInfo);
 
   @JsonKey(ignore: true)
   @override
-  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
-      __$DetailedRockEntityCopyWithImpl<_DetailedRockEntity>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DetailedRockEntityCopyWith<_$_DetailedRockEntity> get copyWith =>
+      __$$_DetailedRockEntityCopyWithImpl<_$_DetailedRockEntity>(
+          this, _$identity);
 }
 
 abstract class _DetailedRockEntity extends DetailedRockEntity {
   const factory _DetailedRockEntity(
-      {required int id,
-      required double latitude,
-      required double longitude,
-      required int difficulty,
-      required int height,
-      required String picName,
-      required String localizedName,
-      required String shortInfo,
-      required String fullInfo}) = _$_DetailedRockEntity;
+      {required final int id,
+      required final double latitude,
+      required final double longitude,
+      required final int difficulty,
+      required final int height,
+      required final String picName,
+      required final String localizedName,
+      required final String shortInfo,
+      required final String fullInfo}) = _$_DetailedRockEntity;
   const _DetailedRockEntity._() : super._();
 
   @override
@@ -333,6 +301,6 @@ abstract class _DetailedRockEntity extends DetailedRockEntity {
   String get fullInfo;
   @override
   @JsonKey(ignore: true)
-  _$DetailedRockEntityCopyWith<_DetailedRockEntity> get copyWith =>
+  _$$_DetailedRockEntityCopyWith<_$_DetailedRockEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

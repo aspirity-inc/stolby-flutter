@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_location_dto.dart';
 
@@ -12,26 +12,7 @@ part of 'user_location_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserLocationDtoTearOff {
-  const _$UserLocationDtoTearOff();
-
-  _UserLocationDto call(
-      {required double latitude,
-      required double longitude,
-      required double heading}) {
-    return _UserLocationDto(
-      latitude: latitude,
-      longitude: longitude,
-      heading: heading,
-    );
-  }
-}
-
-/// @nodoc
-const $UserLocationDto = _$UserLocationDtoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UserLocationDto {
@@ -48,79 +29,81 @@ mixin _$UserLocationDto {
 abstract class $UserLocationDtoCopyWith<$Res> {
   factory $UserLocationDtoCopyWith(
           UserLocationDto value, $Res Function(UserLocationDto) then) =
-      _$UserLocationDtoCopyWithImpl<$Res>;
+      _$UserLocationDtoCopyWithImpl<$Res, UserLocationDto>;
+  @useResult
   $Res call({double latitude, double longitude, double heading});
 }
 
 /// @nodoc
-class _$UserLocationDtoCopyWithImpl<$Res>
+class _$UserLocationDtoCopyWithImpl<$Res, $Val extends UserLocationDto>
     implements $UserLocationDtoCopyWith<$Res> {
   _$UserLocationDtoCopyWithImpl(this._value, this._then);
 
-  final UserLocationDto _value;
   // ignore: unused_field
-  final $Res Function(UserLocationDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? heading = freezed,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? heading = null,
   }) {
     return _then(_value.copyWith(
-      latitude: latitude == freezed
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      heading: heading == freezed
+      heading: null == heading
           ? _value.heading
           : heading // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$UserLocationDtoCopyWith<$Res>
+abstract class _$$_UserLocationDtoCopyWith<$Res>
     implements $UserLocationDtoCopyWith<$Res> {
-  factory _$UserLocationDtoCopyWith(
-          _UserLocationDto value, $Res Function(_UserLocationDto) then) =
-      __$UserLocationDtoCopyWithImpl<$Res>;
+  factory _$$_UserLocationDtoCopyWith(
+          _$_UserLocationDto value, $Res Function(_$_UserLocationDto) then) =
+      __$$_UserLocationDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({double latitude, double longitude, double heading});
 }
 
 /// @nodoc
-class __$UserLocationDtoCopyWithImpl<$Res>
-    extends _$UserLocationDtoCopyWithImpl<$Res>
-    implements _$UserLocationDtoCopyWith<$Res> {
-  __$UserLocationDtoCopyWithImpl(
-      _UserLocationDto _value, $Res Function(_UserLocationDto) _then)
-      : super(_value, (v) => _then(v as _UserLocationDto));
+class __$$_UserLocationDtoCopyWithImpl<$Res>
+    extends _$UserLocationDtoCopyWithImpl<$Res, _$_UserLocationDto>
+    implements _$$_UserLocationDtoCopyWith<$Res> {
+  __$$_UserLocationDtoCopyWithImpl(
+      _$_UserLocationDto _value, $Res Function(_$_UserLocationDto) _then)
+      : super(_value, _then);
 
-  @override
-  _UserLocationDto get _value => super._value as _UserLocationDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? heading = freezed,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? heading = null,
   }) {
-    return _then(_UserLocationDto(
-      latitude: latitude == freezed
+    return _then(_$_UserLocationDto(
+      latitude: null == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: longitude == freezed
+      longitude: null == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      heading: heading == freezed
+      heading: null == heading
           ? _value.heading
           : heading // ignore: cast_nullable_to_non_nullable
               as double,
@@ -161,30 +144,29 @@ class _$_UserLocationDto extends _UserLocationDto with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UserLocationDto &&
-            const DeepCollectionEquality().equals(other.latitude, latitude) &&
-            const DeepCollectionEquality().equals(other.longitude, longitude) &&
-            const DeepCollectionEquality().equals(other.heading, heading));
+            other is _$_UserLocationDto &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.heading, heading) || other.heading == heading));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(latitude),
-      const DeepCollectionEquality().hash(longitude),
-      const DeepCollectionEquality().hash(heading));
+  int get hashCode => Object.hash(runtimeType, latitude, longitude, heading);
 
   @JsonKey(ignore: true)
   @override
-  _$UserLocationDtoCopyWith<_UserLocationDto> get copyWith =>
-      __$UserLocationDtoCopyWithImpl<_UserLocationDto>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UserLocationDtoCopyWith<_$_UserLocationDto> get copyWith =>
+      __$$_UserLocationDtoCopyWithImpl<_$_UserLocationDto>(this, _$identity);
 }
 
 abstract class _UserLocationDto extends UserLocationDto {
   const factory _UserLocationDto(
-      {required double latitude,
-      required double longitude,
-      required double heading}) = _$_UserLocationDto;
+      {required final double latitude,
+      required final double longitude,
+      required final double heading}) = _$_UserLocationDto;
   const _UserLocationDto._() : super._();
 
   @override
@@ -195,6 +177,6 @@ abstract class _UserLocationDto extends UserLocationDto {
   double get heading;
   @override
   @JsonKey(ignore: true)
-  _$UserLocationDtoCopyWith<_UserLocationDto> get copyWith =>
+  _$$_UserLocationDtoCopyWith<_$_UserLocationDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_bloc.dart';
 
@@ -12,43 +12,7 @@ part of 'settings_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SettingsEventTearOff {
-  const _$SettingsEventTearOff();
-
-  _Initialized initialized() {
-    return const _Initialized();
-  }
-
-  _ToggledGeolocation toggledGeolocation() {
-    return const _ToggledGeolocation();
-  }
-
-  _ToggledMapReverse toggledMapReverse() {
-    return const _ToggledMapReverse();
-  }
-
-  _ToggledUserMapCentering toggledUserMapCentering() {
-    return const _ToggledUserMapCentering();
-  }
-
-  _ToggledAutoTheme toggledAutoTheme() {
-    return const _ToggledAutoTheme();
-  }
-
-  _ToggledDarkTheme toggledDarkTheme() {
-    return const _ToggledDarkTheme();
-  }
-
-  _OnboardingVisited onboardingVisited() {
-    return const _OnboardingVisited();
-  }
-}
-
-/// @nodoc
-const $SettingsEvent = _$SettingsEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SettingsEvent {
@@ -65,13 +29,13 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,13 +64,13 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -127,35 +91,34 @@ mixin _$SettingsEvent {
 abstract class $SettingsEventCopyWith<$Res> {
   factory $SettingsEventCopyWith(
           SettingsEvent value, $Res Function(SettingsEvent) then) =
-      _$SettingsEventCopyWithImpl<$Res>;
+      _$SettingsEventCopyWithImpl<$Res, SettingsEvent>;
 }
 
 /// @nodoc
-class _$SettingsEventCopyWithImpl<$Res>
+class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent>
     implements $SettingsEventCopyWith<$Res> {
   _$SettingsEventCopyWithImpl(this._value, this._then);
 
-  final SettingsEvent _value;
   // ignore: unused_field
-  final $Res Function(SettingsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
-
-  @override
-  _Initialized get _value => super._value as _Initialized;
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -171,7 +134,7 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initialized);
+        (other.runtimeType == runtimeType && other is _$_Initialized);
   }
 
   @override
@@ -194,13 +157,13 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return initialized?.call();
   }
@@ -241,13 +204,13 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return initialized?.call(this);
   }
@@ -276,22 +239,19 @@ abstract class _Initialized implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$ToggledGeolocationCopyWith<$Res> {
-  factory _$ToggledGeolocationCopyWith(
-          _ToggledGeolocation value, $Res Function(_ToggledGeolocation) then) =
-      __$ToggledGeolocationCopyWithImpl<$Res>;
+abstract class _$$_ToggledGeolocationCopyWith<$Res> {
+  factory _$$_ToggledGeolocationCopyWith(_$_ToggledGeolocation value,
+          $Res Function(_$_ToggledGeolocation) then) =
+      __$$_ToggledGeolocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToggledGeolocationCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToggledGeolocationCopyWith<$Res> {
-  __$ToggledGeolocationCopyWithImpl(
-      _ToggledGeolocation _value, $Res Function(_ToggledGeolocation) _then)
-      : super(_value, (v) => _then(v as _ToggledGeolocation));
-
-  @override
-  _ToggledGeolocation get _value => super._value as _ToggledGeolocation;
+class __$$_ToggledGeolocationCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ToggledGeolocation>
+    implements _$$_ToggledGeolocationCopyWith<$Res> {
+  __$$_ToggledGeolocationCopyWithImpl(
+      _$_ToggledGeolocation _value, $Res Function(_$_ToggledGeolocation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -307,7 +267,7 @@ class _$_ToggledGeolocation implements _ToggledGeolocation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToggledGeolocation);
+        (other.runtimeType == runtimeType && other is _$_ToggledGeolocation);
   }
 
   @override
@@ -330,13 +290,13 @@ class _$_ToggledGeolocation implements _ToggledGeolocation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return toggledGeolocation?.call();
   }
@@ -377,13 +337,13 @@ class _$_ToggledGeolocation implements _ToggledGeolocation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return toggledGeolocation?.call(this);
   }
@@ -412,22 +372,19 @@ abstract class _ToggledGeolocation implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$ToggledMapReverseCopyWith<$Res> {
-  factory _$ToggledMapReverseCopyWith(
-          _ToggledMapReverse value, $Res Function(_ToggledMapReverse) then) =
-      __$ToggledMapReverseCopyWithImpl<$Res>;
+abstract class _$$_ToggledMapReverseCopyWith<$Res> {
+  factory _$$_ToggledMapReverseCopyWith(_$_ToggledMapReverse value,
+          $Res Function(_$_ToggledMapReverse) then) =
+      __$$_ToggledMapReverseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToggledMapReverseCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToggledMapReverseCopyWith<$Res> {
-  __$ToggledMapReverseCopyWithImpl(
-      _ToggledMapReverse _value, $Res Function(_ToggledMapReverse) _then)
-      : super(_value, (v) => _then(v as _ToggledMapReverse));
-
-  @override
-  _ToggledMapReverse get _value => super._value as _ToggledMapReverse;
+class __$$_ToggledMapReverseCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ToggledMapReverse>
+    implements _$$_ToggledMapReverseCopyWith<$Res> {
+  __$$_ToggledMapReverseCopyWithImpl(
+      _$_ToggledMapReverse _value, $Res Function(_$_ToggledMapReverse) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -443,7 +400,7 @@ class _$_ToggledMapReverse implements _ToggledMapReverse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToggledMapReverse);
+        (other.runtimeType == runtimeType && other is _$_ToggledMapReverse);
   }
 
   @override
@@ -466,13 +423,13 @@ class _$_ToggledMapReverse implements _ToggledMapReverse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return toggledMapReverse?.call();
   }
@@ -513,13 +470,13 @@ class _$_ToggledMapReverse implements _ToggledMapReverse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return toggledMapReverse?.call(this);
   }
@@ -548,23 +505,19 @@ abstract class _ToggledMapReverse implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$ToggledUserMapCenteringCopyWith<$Res> {
-  factory _$ToggledUserMapCenteringCopyWith(_ToggledUserMapCentering value,
-          $Res Function(_ToggledUserMapCentering) then) =
-      __$ToggledUserMapCenteringCopyWithImpl<$Res>;
+abstract class _$$_ToggledUserMapCenteringCopyWith<$Res> {
+  factory _$$_ToggledUserMapCenteringCopyWith(_$_ToggledUserMapCentering value,
+          $Res Function(_$_ToggledUserMapCentering) then) =
+      __$$_ToggledUserMapCenteringCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToggledUserMapCenteringCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToggledUserMapCenteringCopyWith<$Res> {
-  __$ToggledUserMapCenteringCopyWithImpl(_ToggledUserMapCentering _value,
-      $Res Function(_ToggledUserMapCentering) _then)
-      : super(_value, (v) => _then(v as _ToggledUserMapCentering));
-
-  @override
-  _ToggledUserMapCentering get _value =>
-      super._value as _ToggledUserMapCentering;
+class __$$_ToggledUserMapCenteringCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ToggledUserMapCentering>
+    implements _$$_ToggledUserMapCenteringCopyWith<$Res> {
+  __$$_ToggledUserMapCenteringCopyWithImpl(_$_ToggledUserMapCentering _value,
+      $Res Function(_$_ToggledUserMapCentering) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -580,7 +533,8 @@ class _$_ToggledUserMapCentering implements _ToggledUserMapCentering {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToggledUserMapCentering);
+        (other.runtimeType == runtimeType &&
+            other is _$_ToggledUserMapCentering);
   }
 
   @override
@@ -603,13 +557,13 @@ class _$_ToggledUserMapCentering implements _ToggledUserMapCentering {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return toggledUserMapCentering?.call();
   }
@@ -650,13 +604,13 @@ class _$_ToggledUserMapCentering implements _ToggledUserMapCentering {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return toggledUserMapCentering?.call(this);
   }
@@ -685,22 +639,19 @@ abstract class _ToggledUserMapCentering implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$ToggledAutoThemeCopyWith<$Res> {
-  factory _$ToggledAutoThemeCopyWith(
-          _ToggledAutoTheme value, $Res Function(_ToggledAutoTheme) then) =
-      __$ToggledAutoThemeCopyWithImpl<$Res>;
+abstract class _$$_ToggledAutoThemeCopyWith<$Res> {
+  factory _$$_ToggledAutoThemeCopyWith(
+          _$_ToggledAutoTheme value, $Res Function(_$_ToggledAutoTheme) then) =
+      __$$_ToggledAutoThemeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToggledAutoThemeCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToggledAutoThemeCopyWith<$Res> {
-  __$ToggledAutoThemeCopyWithImpl(
-      _ToggledAutoTheme _value, $Res Function(_ToggledAutoTheme) _then)
-      : super(_value, (v) => _then(v as _ToggledAutoTheme));
-
-  @override
-  _ToggledAutoTheme get _value => super._value as _ToggledAutoTheme;
+class __$$_ToggledAutoThemeCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ToggledAutoTheme>
+    implements _$$_ToggledAutoThemeCopyWith<$Res> {
+  __$$_ToggledAutoThemeCopyWithImpl(
+      _$_ToggledAutoTheme _value, $Res Function(_$_ToggledAutoTheme) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -716,7 +667,7 @@ class _$_ToggledAutoTheme implements _ToggledAutoTheme {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToggledAutoTheme);
+        (other.runtimeType == runtimeType && other is _$_ToggledAutoTheme);
   }
 
   @override
@@ -739,13 +690,13 @@ class _$_ToggledAutoTheme implements _ToggledAutoTheme {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return toggledAutoTheme?.call();
   }
@@ -786,13 +737,13 @@ class _$_ToggledAutoTheme implements _ToggledAutoTheme {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return toggledAutoTheme?.call(this);
   }
@@ -821,22 +772,19 @@ abstract class _ToggledAutoTheme implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$ToggledDarkThemeCopyWith<$Res> {
-  factory _$ToggledDarkThemeCopyWith(
-          _ToggledDarkTheme value, $Res Function(_ToggledDarkTheme) then) =
-      __$ToggledDarkThemeCopyWithImpl<$Res>;
+abstract class _$$_ToggledDarkThemeCopyWith<$Res> {
+  factory _$$_ToggledDarkThemeCopyWith(
+          _$_ToggledDarkTheme value, $Res Function(_$_ToggledDarkTheme) then) =
+      __$$_ToggledDarkThemeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ToggledDarkThemeCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$ToggledDarkThemeCopyWith<$Res> {
-  __$ToggledDarkThemeCopyWithImpl(
-      _ToggledDarkTheme _value, $Res Function(_ToggledDarkTheme) _then)
-      : super(_value, (v) => _then(v as _ToggledDarkTheme));
-
-  @override
-  _ToggledDarkTheme get _value => super._value as _ToggledDarkTheme;
+class __$$_ToggledDarkThemeCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_ToggledDarkTheme>
+    implements _$$_ToggledDarkThemeCopyWith<$Res> {
+  __$$_ToggledDarkThemeCopyWithImpl(
+      _$_ToggledDarkTheme _value, $Res Function(_$_ToggledDarkTheme) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -852,7 +800,7 @@ class _$_ToggledDarkTheme implements _ToggledDarkTheme {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ToggledDarkTheme);
+        (other.runtimeType == runtimeType && other is _$_ToggledDarkTheme);
   }
 
   @override
@@ -875,13 +823,13 @@ class _$_ToggledDarkTheme implements _ToggledDarkTheme {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return toggledDarkTheme?.call();
   }
@@ -922,13 +870,13 @@ class _$_ToggledDarkTheme implements _ToggledDarkTheme {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return toggledDarkTheme?.call(this);
   }
@@ -957,22 +905,19 @@ abstract class _ToggledDarkTheme implements SettingsEvent {
 }
 
 /// @nodoc
-abstract class _$OnboardingVisitedCopyWith<$Res> {
-  factory _$OnboardingVisitedCopyWith(
-          _OnboardingVisited value, $Res Function(_OnboardingVisited) then) =
-      __$OnboardingVisitedCopyWithImpl<$Res>;
+abstract class _$$_OnboardingVisitedCopyWith<$Res> {
+  factory _$$_OnboardingVisitedCopyWith(_$_OnboardingVisited value,
+          $Res Function(_$_OnboardingVisited) then) =
+      __$$_OnboardingVisitedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OnboardingVisitedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
-    implements _$OnboardingVisitedCopyWith<$Res> {
-  __$OnboardingVisitedCopyWithImpl(
-      _OnboardingVisited _value, $Res Function(_OnboardingVisited) _then)
-      : super(_value, (v) => _then(v as _OnboardingVisited));
-
-  @override
-  _OnboardingVisited get _value => super._value as _OnboardingVisited;
+class __$$_OnboardingVisitedCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$_OnboardingVisited>
+    implements _$$_OnboardingVisitedCopyWith<$Res> {
+  __$$_OnboardingVisitedCopyWithImpl(
+      _$_OnboardingVisited _value, $Res Function(_$_OnboardingVisited) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -988,7 +933,7 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _OnboardingVisited);
+        (other.runtimeType == runtimeType && other is _$_OnboardingVisited);
   }
 
   @override
@@ -1011,13 +956,13 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function()? toggledGeolocation,
-    TResult Function()? toggledMapReverse,
-    TResult Function()? toggledUserMapCentering,
-    TResult Function()? toggledAutoTheme,
-    TResult Function()? toggledDarkTheme,
-    TResult Function()? onboardingVisited,
+    TResult? Function()? initialized,
+    TResult? Function()? toggledGeolocation,
+    TResult? Function()? toggledMapReverse,
+    TResult? Function()? toggledUserMapCentering,
+    TResult? Function()? toggledAutoTheme,
+    TResult? Function()? toggledDarkTheme,
+    TResult? Function()? onboardingVisited,
   }) {
     return onboardingVisited?.call();
   }
@@ -1058,13 +1003,13 @@ class _$_OnboardingVisited implements _OnboardingVisited {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ToggledGeolocation value)? toggledGeolocation,
-    TResult Function(_ToggledMapReverse value)? toggledMapReverse,
-    TResult Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
-    TResult Function(_ToggledAutoTheme value)? toggledAutoTheme,
-    TResult Function(_ToggledDarkTheme value)? toggledDarkTheme,
-    TResult Function(_OnboardingVisited value)? onboardingVisited,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ToggledGeolocation value)? toggledGeolocation,
+    TResult? Function(_ToggledMapReverse value)? toggledMapReverse,
+    TResult? Function(_ToggledUserMapCentering value)? toggledUserMapCentering,
+    TResult? Function(_ToggledAutoTheme value)? toggledAutoTheme,
+    TResult? Function(_ToggledDarkTheme value)? toggledDarkTheme,
+    TResult? Function(_OnboardingVisited value)? onboardingVisited,
   }) {
     return onboardingVisited?.call(this);
   }
@@ -1093,31 +1038,6 @@ abstract class _OnboardingVisited implements SettingsEvent {
 }
 
 /// @nodoc
-class _$SettingsStateTearOff {
-  const _$SettingsStateTearOff();
-
-  _SettingsState call(
-      {required bool geolocationEnabled,
-      required bool reversedMap,
-      required bool mapUserCentering,
-      required bool autoThemeChange,
-      required bool darkTheme,
-      required bool onboardingVisited}) {
-    return _SettingsState(
-      geolocationEnabled: geolocationEnabled,
-      reversedMap: reversedMap,
-      mapUserCentering: mapUserCentering,
-      autoThemeChange: autoThemeChange,
-      darkTheme: darkTheme,
-      onboardingVisited: onboardingVisited,
-    );
-  }
-}
-
-/// @nodoc
-const $SettingsState = _$SettingsStateTearOff();
-
-/// @nodoc
 mixin _$SettingsState {
   bool get geolocationEnabled => throw _privateConstructorUsedError;
   bool get reversedMap => throw _privateConstructorUsedError;
@@ -1135,7 +1055,8 @@ mixin _$SettingsState {
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res>;
+      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
+  @useResult
   $Res call(
       {bool geolocationEnabled,
       bool reversedMap,
@@ -1146,59 +1067,62 @@ abstract class $SettingsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res>
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
-  final SettingsState _value;
   // ignore: unused_field
-  final $Res Function(SettingsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? geolocationEnabled = freezed,
-    Object? reversedMap = freezed,
-    Object? mapUserCentering = freezed,
-    Object? autoThemeChange = freezed,
-    Object? darkTheme = freezed,
-    Object? onboardingVisited = freezed,
+    Object? geolocationEnabled = null,
+    Object? reversedMap = null,
+    Object? mapUserCentering = null,
+    Object? autoThemeChange = null,
+    Object? darkTheme = null,
+    Object? onboardingVisited = null,
   }) {
     return _then(_value.copyWith(
-      geolocationEnabled: geolocationEnabled == freezed
+      geolocationEnabled: null == geolocationEnabled
           ? _value.geolocationEnabled
           : geolocationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      reversedMap: reversedMap == freezed
+      reversedMap: null == reversedMap
           ? _value.reversedMap
           : reversedMap // ignore: cast_nullable_to_non_nullable
               as bool,
-      mapUserCentering: mapUserCentering == freezed
+      mapUserCentering: null == mapUserCentering
           ? _value.mapUserCentering
           : mapUserCentering // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoThemeChange: autoThemeChange == freezed
+      autoThemeChange: null == autoThemeChange
           ? _value.autoThemeChange
           : autoThemeChange // ignore: cast_nullable_to_non_nullable
               as bool,
-      darkTheme: darkTheme == freezed
+      darkTheme: null == darkTheme
           ? _value.darkTheme
           : darkTheme // ignore: cast_nullable_to_non_nullable
               as bool,
-      onboardingVisited: onboardingVisited == freezed
+      onboardingVisited: null == onboardingVisited
           ? _value.onboardingVisited
           : onboardingVisited // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SettingsStateCopyWith<$Res>
+abstract class _$$_SettingsStateCopyWith<$Res>
     implements $SettingsStateCopyWith<$Res> {
-  factory _$SettingsStateCopyWith(
-          _SettingsState value, $Res Function(_SettingsState) then) =
-      __$SettingsStateCopyWithImpl<$Res>;
+  factory _$$_SettingsStateCopyWith(
+          _$_SettingsState value, $Res Function(_$_SettingsState) then) =
+      __$$_SettingsStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool geolocationEnabled,
       bool reversedMap,
@@ -1209,47 +1133,45 @@ abstract class _$SettingsStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingsStateCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$SettingsStateCopyWith<$Res> {
-  __$SettingsStateCopyWithImpl(
-      _SettingsState _value, $Res Function(_SettingsState) _then)
-      : super(_value, (v) => _then(v as _SettingsState));
+class __$$_SettingsStateCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_SettingsState>
+    implements _$$_SettingsStateCopyWith<$Res> {
+  __$$_SettingsStateCopyWithImpl(
+      _$_SettingsState _value, $Res Function(_$_SettingsState) _then)
+      : super(_value, _then);
 
-  @override
-  _SettingsState get _value => super._value as _SettingsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? geolocationEnabled = freezed,
-    Object? reversedMap = freezed,
-    Object? mapUserCentering = freezed,
-    Object? autoThemeChange = freezed,
-    Object? darkTheme = freezed,
-    Object? onboardingVisited = freezed,
+    Object? geolocationEnabled = null,
+    Object? reversedMap = null,
+    Object? mapUserCentering = null,
+    Object? autoThemeChange = null,
+    Object? darkTheme = null,
+    Object? onboardingVisited = null,
   }) {
-    return _then(_SettingsState(
-      geolocationEnabled: geolocationEnabled == freezed
+    return _then(_$_SettingsState(
+      geolocationEnabled: null == geolocationEnabled
           ? _value.geolocationEnabled
           : geolocationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      reversedMap: reversedMap == freezed
+      reversedMap: null == reversedMap
           ? _value.reversedMap
           : reversedMap // ignore: cast_nullable_to_non_nullable
               as bool,
-      mapUserCentering: mapUserCentering == freezed
+      mapUserCentering: null == mapUserCentering
           ? _value.mapUserCentering
           : mapUserCentering // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoThemeChange: autoThemeChange == freezed
+      autoThemeChange: null == autoThemeChange
           ? _value.autoThemeChange
           : autoThemeChange // ignore: cast_nullable_to_non_nullable
               as bool,
-      darkTheme: darkTheme == freezed
+      darkTheme: null == darkTheme
           ? _value.darkTheme
           : darkTheme // ignore: cast_nullable_to_non_nullable
               as bool,
-      onboardingVisited: onboardingVisited == freezed
+      onboardingVisited: null == onboardingVisited
           ? _value.onboardingVisited
           : onboardingVisited // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1290,44 +1212,40 @@ class _$_SettingsState implements _SettingsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsState &&
-            const DeepCollectionEquality()
-                .equals(other.geolocationEnabled, geolocationEnabled) &&
-            const DeepCollectionEquality()
-                .equals(other.reversedMap, reversedMap) &&
-            const DeepCollectionEquality()
-                .equals(other.mapUserCentering, mapUserCentering) &&
-            const DeepCollectionEquality()
-                .equals(other.autoThemeChange, autoThemeChange) &&
-            const DeepCollectionEquality().equals(other.darkTheme, darkTheme) &&
-            const DeepCollectionEquality()
-                .equals(other.onboardingVisited, onboardingVisited));
+            other is _$_SettingsState &&
+            (identical(other.geolocationEnabled, geolocationEnabled) ||
+                other.geolocationEnabled == geolocationEnabled) &&
+            (identical(other.reversedMap, reversedMap) ||
+                other.reversedMap == reversedMap) &&
+            (identical(other.mapUserCentering, mapUserCentering) ||
+                other.mapUserCentering == mapUserCentering) &&
+            (identical(other.autoThemeChange, autoThemeChange) ||
+                other.autoThemeChange == autoThemeChange) &&
+            (identical(other.darkTheme, darkTheme) ||
+                other.darkTheme == darkTheme) &&
+            (identical(other.onboardingVisited, onboardingVisited) ||
+                other.onboardingVisited == onboardingVisited));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(geolocationEnabled),
-      const DeepCollectionEquality().hash(reversedMap),
-      const DeepCollectionEquality().hash(mapUserCentering),
-      const DeepCollectionEquality().hash(autoThemeChange),
-      const DeepCollectionEquality().hash(darkTheme),
-      const DeepCollectionEquality().hash(onboardingVisited));
+  int get hashCode => Object.hash(runtimeType, geolocationEnabled, reversedMap,
+      mapUserCentering, autoThemeChange, darkTheme, onboardingVisited);
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsStateCopyWith<_SettingsState> get copyWith =>
-      __$SettingsStateCopyWithImpl<_SettingsState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
+      __$$_SettingsStateCopyWithImpl<_$_SettingsState>(this, _$identity);
 }
 
 abstract class _SettingsState implements SettingsState {
   const factory _SettingsState(
-      {required bool geolocationEnabled,
-      required bool reversedMap,
-      required bool mapUserCentering,
-      required bool autoThemeChange,
-      required bool darkTheme,
-      required bool onboardingVisited}) = _$_SettingsState;
+      {required final bool geolocationEnabled,
+      required final bool reversedMap,
+      required final bool mapUserCentering,
+      required final bool autoThemeChange,
+      required final bool darkTheme,
+      required final bool onboardingVisited}) = _$_SettingsState;
 
   @override
   bool get geolocationEnabled;
@@ -1343,6 +1261,6 @@ abstract class _SettingsState implements SettingsState {
   bool get onboardingVisited;
   @override
   @JsonKey(ignore: true)
-  _$SettingsStateCopyWith<_SettingsState> get copyWith =>
+  _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
       throw _privateConstructorUsedError;
 }

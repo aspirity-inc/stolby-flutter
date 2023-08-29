@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'images_viewer_bloc.dart';
 
@@ -12,26 +12,11 @@ part of 'images_viewer_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ImagesViewerEventTearOff {
-  const _$ImagesViewerEventTearOff();
-
-  _Initialized initialized({required String picName}) {
-    return _Initialized(
-      picName: picName,
-    );
-  }
-}
-
-/// @nodoc
-const $ImagesViewerEvent = _$ImagesViewerEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ImagesViewerEvent {
   String get picName => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String picName) initialized,
@@ -39,7 +24,7 @@ mixin _$ImagesViewerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String picName)? initialized,
+    TResult? Function(String picName)? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +40,7 @@ mixin _$ImagesViewerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_Initialized value)? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,59 +59,61 @@ mixin _$ImagesViewerEvent {
 abstract class $ImagesViewerEventCopyWith<$Res> {
   factory $ImagesViewerEventCopyWith(
           ImagesViewerEvent value, $Res Function(ImagesViewerEvent) then) =
-      _$ImagesViewerEventCopyWithImpl<$Res>;
+      _$ImagesViewerEventCopyWithImpl<$Res, ImagesViewerEvent>;
+  @useResult
   $Res call({String picName});
 }
 
 /// @nodoc
-class _$ImagesViewerEventCopyWithImpl<$Res>
+class _$ImagesViewerEventCopyWithImpl<$Res, $Val extends ImagesViewerEvent>
     implements $ImagesViewerEventCopyWith<$Res> {
   _$ImagesViewerEventCopyWithImpl(this._value, this._then);
 
-  final ImagesViewerEvent _value;
   // ignore: unused_field
-  final $Res Function(ImagesViewerEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? picName = freezed,
+    Object? picName = null,
   }) {
     return _then(_value.copyWith(
-      picName: picName == freezed
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res>
+abstract class _$$_InitializedCopyWith<$Res>
     implements $ImagesViewerEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String picName});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$ImagesViewerEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$ImagesViewerEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialized get _value => super._value as _Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? picName = freezed,
+    Object? picName = null,
   }) {
-    return _then(_Initialized(
-      picName: picName == freezed
+    return _then(_$_Initialized(
+      picName: null == picName
           ? _value.picName
           : picName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -151,18 +138,18 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialized &&
-            const DeepCollectionEquality().equals(other.picName, picName));
+            other is _$_Initialized &&
+            (identical(other.picName, picName) || other.picName == picName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(picName));
+  int get hashCode => Object.hash(runtimeType, picName);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
+      __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -175,7 +162,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String picName)? initialized,
+    TResult? Function(String picName)? initialized,
   }) {
     return initialized?.call(picName);
   }
@@ -203,7 +190,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_Initialized value)? initialized,
   }) {
     return initialized?.call(this);
   }
@@ -222,31 +209,15 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ImagesViewerEvent {
-  const factory _Initialized({required String picName}) = _$_Initialized;
+  const factory _Initialized({required final String picName}) = _$_Initialized;
 
   @override
   String get picName;
   @override
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith =>
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$ImagesViewerStateTearOff {
-  const _$ImagesViewerStateTearOff();
-
-  _ImagesViewerState call(
-      {required Option<String> mainImage, required List<String> imagesNames}) {
-    return _ImagesViewerState(
-      mainImage: mainImage,
-      imagesNames: imagesNames,
-    );
-  }
-}
-
-/// @nodoc
-const $ImagesViewerState = _$ImagesViewerStateTearOff();
 
 /// @nodoc
 mixin _$ImagesViewerState {
@@ -262,70 +233,72 @@ mixin _$ImagesViewerState {
 abstract class $ImagesViewerStateCopyWith<$Res> {
   factory $ImagesViewerStateCopyWith(
           ImagesViewerState value, $Res Function(ImagesViewerState) then) =
-      _$ImagesViewerStateCopyWithImpl<$Res>;
+      _$ImagesViewerStateCopyWithImpl<$Res, ImagesViewerState>;
+  @useResult
   $Res call({Option<String> mainImage, List<String> imagesNames});
 }
 
 /// @nodoc
-class _$ImagesViewerStateCopyWithImpl<$Res>
+class _$ImagesViewerStateCopyWithImpl<$Res, $Val extends ImagesViewerState>
     implements $ImagesViewerStateCopyWith<$Res> {
   _$ImagesViewerStateCopyWithImpl(this._value, this._then);
 
-  final ImagesViewerState _value;
   // ignore: unused_field
-  final $Res Function(ImagesViewerState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mainImage = freezed,
-    Object? imagesNames = freezed,
+    Object? mainImage = null,
+    Object? imagesNames = null,
   }) {
     return _then(_value.copyWith(
-      mainImage: mainImage == freezed
+      mainImage: null == mainImage
           ? _value.mainImage
           : mainImage // ignore: cast_nullable_to_non_nullable
               as Option<String>,
-      imagesNames: imagesNames == freezed
+      imagesNames: null == imagesNames
           ? _value.imagesNames
           : imagesNames // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ImagesViewerStateCopyWith<$Res>
+abstract class _$$_ImagesViewerStateCopyWith<$Res>
     implements $ImagesViewerStateCopyWith<$Res> {
-  factory _$ImagesViewerStateCopyWith(
-          _ImagesViewerState value, $Res Function(_ImagesViewerState) then) =
-      __$ImagesViewerStateCopyWithImpl<$Res>;
+  factory _$$_ImagesViewerStateCopyWith(_$_ImagesViewerState value,
+          $Res Function(_$_ImagesViewerState) then) =
+      __$$_ImagesViewerStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Option<String> mainImage, List<String> imagesNames});
 }
 
 /// @nodoc
-class __$ImagesViewerStateCopyWithImpl<$Res>
-    extends _$ImagesViewerStateCopyWithImpl<$Res>
-    implements _$ImagesViewerStateCopyWith<$Res> {
-  __$ImagesViewerStateCopyWithImpl(
-      _ImagesViewerState _value, $Res Function(_ImagesViewerState) _then)
-      : super(_value, (v) => _then(v as _ImagesViewerState));
+class __$$_ImagesViewerStateCopyWithImpl<$Res>
+    extends _$ImagesViewerStateCopyWithImpl<$Res, _$_ImagesViewerState>
+    implements _$$_ImagesViewerStateCopyWith<$Res> {
+  __$$_ImagesViewerStateCopyWithImpl(
+      _$_ImagesViewerState _value, $Res Function(_$_ImagesViewerState) _then)
+      : super(_value, _then);
 
-  @override
-  _ImagesViewerState get _value => super._value as _ImagesViewerState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mainImage = freezed,
-    Object? imagesNames = freezed,
+    Object? mainImage = null,
+    Object? imagesNames = null,
   }) {
-    return _then(_ImagesViewerState(
-      mainImage: mainImage == freezed
+    return _then(_$_ImagesViewerState(
+      mainImage: null == mainImage
           ? _value.mainImage
           : mainImage // ignore: cast_nullable_to_non_nullable
               as Option<String>,
-      imagesNames: imagesNames == freezed
-          ? _value.imagesNames
+      imagesNames: null == imagesNames
+          ? _value._imagesNames
           : imagesNames // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -336,12 +309,18 @@ class __$ImagesViewerStateCopyWithImpl<$Res>
 
 class _$_ImagesViewerState implements _ImagesViewerState {
   const _$_ImagesViewerState(
-      {required this.mainImage, required this.imagesNames});
+      {required this.mainImage, required final List<String> imagesNames})
+      : _imagesNames = imagesNames;
 
   @override
   final Option<String> mainImage;
+  final List<String> _imagesNames;
   @override
-  final List<String> imagesNames;
+  List<String> get imagesNames {
+    if (_imagesNames is EqualUnmodifiableListView) return _imagesNames;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_imagesNames);
+  }
 
   @override
   String toString() {
@@ -352,28 +331,29 @@ class _$_ImagesViewerState implements _ImagesViewerState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ImagesViewerState &&
-            const DeepCollectionEquality().equals(other.mainImage, mainImage) &&
+            other is _$_ImagesViewerState &&
+            (identical(other.mainImage, mainImage) ||
+                other.mainImage == mainImage) &&
             const DeepCollectionEquality()
-                .equals(other.imagesNames, imagesNames));
+                .equals(other._imagesNames, _imagesNames));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(mainImage),
-      const DeepCollectionEquality().hash(imagesNames));
+  int get hashCode => Object.hash(runtimeType, mainImage,
+      const DeepCollectionEquality().hash(_imagesNames));
 
   @JsonKey(ignore: true)
   @override
-  _$ImagesViewerStateCopyWith<_ImagesViewerState> get copyWith =>
-      __$ImagesViewerStateCopyWithImpl<_ImagesViewerState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ImagesViewerStateCopyWith<_$_ImagesViewerState> get copyWith =>
+      __$$_ImagesViewerStateCopyWithImpl<_$_ImagesViewerState>(
+          this, _$identity);
 }
 
 abstract class _ImagesViewerState implements ImagesViewerState {
   const factory _ImagesViewerState(
-      {required Option<String> mainImage,
-      required List<String> imagesNames}) = _$_ImagesViewerState;
+      {required final Option<String> mainImage,
+      required final List<String> imagesNames}) = _$_ImagesViewerState;
 
   @override
   Option<String> get mainImage;
@@ -381,6 +361,6 @@ abstract class _ImagesViewerState implements ImagesViewerState {
   List<String> get imagesNames;
   @override
   @JsonKey(ignore: true)
-  _$ImagesViewerStateCopyWith<_ImagesViewerState> get copyWith =>
+  _$$_ImagesViewerStateCopyWith<_$_ImagesViewerState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'detailed_rock_bloc.dart';
 
@@ -12,27 +12,7 @@ part of 'detailed_rock_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DetailedRockEventTearOff {
-  const _$DetailedRockEventTearOff();
-
-  _Initialized initialized({required int id}) {
-    return _Initialized(
-      id: id,
-    );
-  }
-
-  _LocationChanged locationChanged({required LatLng location}) {
-    return _LocationChanged(
-      location: location,
-    );
-  }
-}
-
-/// @nodoc
-const $DetailedRockEvent = _$DetailedRockEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DetailedRockEvent {
@@ -44,8 +24,8 @@ mixin _$DetailedRockEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int id)? initialized,
-    TResult Function(LatLng location)? locationChanged,
+    TResult? Function(int id)? initialized,
+    TResult? Function(LatLng location)? locationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,8 +43,8 @@ mixin _$DetailedRockEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_LocationChanged value)? locationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,44 +60,44 @@ mixin _$DetailedRockEvent {
 abstract class $DetailedRockEventCopyWith<$Res> {
   factory $DetailedRockEventCopyWith(
           DetailedRockEvent value, $Res Function(DetailedRockEvent) then) =
-      _$DetailedRockEventCopyWithImpl<$Res>;
+      _$DetailedRockEventCopyWithImpl<$Res, DetailedRockEvent>;
 }
 
 /// @nodoc
-class _$DetailedRockEventCopyWithImpl<$Res>
+class _$DetailedRockEventCopyWithImpl<$Res, $Val extends DetailedRockEvent>
     implements $DetailedRockEventCopyWith<$Res> {
   _$DetailedRockEventCopyWithImpl(this._value, this._then);
 
-  final DetailedRockEvent _value;
   // ignore: unused_field
-  final $Res Function(DetailedRockEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$DetailedRockEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$DetailedRockEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialized get _value => super._value as _Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
   }) {
-    return _then(_Initialized(
-      id: id == freezed
+    return _then(_$_Initialized(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
@@ -142,18 +122,18 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialized &&
-            const DeepCollectionEquality().equals(other.id, id));
+            other is _$_Initialized &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+  int get hashCode => Object.hash(runtimeType, id);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
+      __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -167,8 +147,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int id)? initialized,
-    TResult Function(LatLng location)? locationChanged,
+    TResult? Function(int id)? initialized,
+    TResult? Function(LatLng location)? locationChanged,
   }) {
     return initialized?.call(id);
   }
@@ -198,8 +178,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_LocationChanged value)? locationChanged,
   }) {
     return initialized?.call(this);
   }
@@ -219,39 +199,38 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements DetailedRockEvent {
-  const factory _Initialized({required int id}) = _$_Initialized;
+  const factory _Initialized({required final int id}) = _$_Initialized;
 
   int get id;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith =>
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LocationChangedCopyWith<$Res> {
-  factory _$LocationChangedCopyWith(
-          _LocationChanged value, $Res Function(_LocationChanged) then) =
-      __$LocationChangedCopyWithImpl<$Res>;
+abstract class _$$_LocationChangedCopyWith<$Res> {
+  factory _$$_LocationChangedCopyWith(
+          _$_LocationChanged value, $Res Function(_$_LocationChanged) then) =
+      __$$_LocationChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({LatLng location});
 }
 
 /// @nodoc
-class __$LocationChangedCopyWithImpl<$Res>
-    extends _$DetailedRockEventCopyWithImpl<$Res>
-    implements _$LocationChangedCopyWith<$Res> {
-  __$LocationChangedCopyWithImpl(
-      _LocationChanged _value, $Res Function(_LocationChanged) _then)
-      : super(_value, (v) => _then(v as _LocationChanged));
+class __$$_LocationChangedCopyWithImpl<$Res>
+    extends _$DetailedRockEventCopyWithImpl<$Res, _$_LocationChanged>
+    implements _$$_LocationChangedCopyWith<$Res> {
+  __$$_LocationChangedCopyWithImpl(
+      _$_LocationChanged _value, $Res Function(_$_LocationChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _LocationChanged get _value => super._value as _LocationChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? location = freezed,
+    Object? location = null,
   }) {
-    return _then(_LocationChanged(
-      location: location == freezed
+    return _then(_$_LocationChanged(
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -276,18 +255,19 @@ class _$_LocationChanged implements _LocationChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LocationChanged &&
-            const DeepCollectionEquality().equals(other.location, location));
+            other is _$_LocationChanged &&
+            (identical(other.location, location) ||
+                other.location == location));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
+  int get hashCode => Object.hash(runtimeType, location);
 
   @JsonKey(ignore: true)
   @override
-  _$LocationChangedCopyWith<_LocationChanged> get copyWith =>
-      __$LocationChangedCopyWithImpl<_LocationChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LocationChangedCopyWith<_$_LocationChanged> get copyWith =>
+      __$$_LocationChangedCopyWithImpl<_$_LocationChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -301,8 +281,8 @@ class _$_LocationChanged implements _LocationChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int id)? initialized,
-    TResult Function(LatLng location)? locationChanged,
+    TResult? Function(int id)? initialized,
+    TResult? Function(LatLng location)? locationChanged,
   }) {
     return locationChanged?.call(location);
   }
@@ -332,8 +312,8 @@ class _$_LocationChanged implements _LocationChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_LocationChanged value)? locationChanged,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_LocationChanged value)? locationChanged,
   }) {
     return locationChanged?.call(this);
   }
@@ -353,31 +333,14 @@ class _$_LocationChanged implements _LocationChanged {
 }
 
 abstract class _LocationChanged implements DetailedRockEvent {
-  const factory _LocationChanged({required LatLng location}) =
+  const factory _LocationChanged({required final LatLng location}) =
       _$_LocationChanged;
 
   LatLng get location;
   @JsonKey(ignore: true)
-  _$LocationChangedCopyWith<_LocationChanged> get copyWith =>
+  _$$_LocationChangedCopyWith<_$_LocationChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$DetailedRockStateTearOff {
-  const _$DetailedRockStateTearOff();
-
-  _DetailedRockState call(
-      {required Option<DetailedRockEntity> rock,
-      required Option<double> distance}) {
-    return _DetailedRockState(
-      rock: rock,
-      distance: distance,
-    );
-  }
-}
-
-/// @nodoc
-const $DetailedRockState = _$DetailedRockStateTearOff();
 
 /// @nodoc
 mixin _$DetailedRockState {
@@ -393,69 +356,71 @@ mixin _$DetailedRockState {
 abstract class $DetailedRockStateCopyWith<$Res> {
   factory $DetailedRockStateCopyWith(
           DetailedRockState value, $Res Function(DetailedRockState) then) =
-      _$DetailedRockStateCopyWithImpl<$Res>;
+      _$DetailedRockStateCopyWithImpl<$Res, DetailedRockState>;
+  @useResult
   $Res call({Option<DetailedRockEntity> rock, Option<double> distance});
 }
 
 /// @nodoc
-class _$DetailedRockStateCopyWithImpl<$Res>
+class _$DetailedRockStateCopyWithImpl<$Res, $Val extends DetailedRockState>
     implements $DetailedRockStateCopyWith<$Res> {
   _$DetailedRockStateCopyWithImpl(this._value, this._then);
 
-  final DetailedRockState _value;
   // ignore: unused_field
-  final $Res Function(DetailedRockState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rock = freezed,
-    Object? distance = freezed,
+    Object? rock = null,
+    Object? distance = null,
   }) {
     return _then(_value.copyWith(
-      rock: rock == freezed
+      rock: null == rock
           ? _value.rock
           : rock // ignore: cast_nullable_to_non_nullable
               as Option<DetailedRockEntity>,
-      distance: distance == freezed
+      distance: null == distance
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
               as Option<double>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DetailedRockStateCopyWith<$Res>
+abstract class _$$_DetailedRockStateCopyWith<$Res>
     implements $DetailedRockStateCopyWith<$Res> {
-  factory _$DetailedRockStateCopyWith(
-          _DetailedRockState value, $Res Function(_DetailedRockState) then) =
-      __$DetailedRockStateCopyWithImpl<$Res>;
+  factory _$$_DetailedRockStateCopyWith(_$_DetailedRockState value,
+          $Res Function(_$_DetailedRockState) then) =
+      __$$_DetailedRockStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Option<DetailedRockEntity> rock, Option<double> distance});
 }
 
 /// @nodoc
-class __$DetailedRockStateCopyWithImpl<$Res>
-    extends _$DetailedRockStateCopyWithImpl<$Res>
-    implements _$DetailedRockStateCopyWith<$Res> {
-  __$DetailedRockStateCopyWithImpl(
-      _DetailedRockState _value, $Res Function(_DetailedRockState) _then)
-      : super(_value, (v) => _then(v as _DetailedRockState));
+class __$$_DetailedRockStateCopyWithImpl<$Res>
+    extends _$DetailedRockStateCopyWithImpl<$Res, _$_DetailedRockState>
+    implements _$$_DetailedRockStateCopyWith<$Res> {
+  __$$_DetailedRockStateCopyWithImpl(
+      _$_DetailedRockState _value, $Res Function(_$_DetailedRockState) _then)
+      : super(_value, _then);
 
-  @override
-  _DetailedRockState get _value => super._value as _DetailedRockState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rock = freezed,
-    Object? distance = freezed,
+    Object? rock = null,
+    Object? distance = null,
   }) {
-    return _then(_DetailedRockState(
-      rock: rock == freezed
+    return _then(_$_DetailedRockState(
+      rock: null == rock
           ? _value.rock
           : rock // ignore: cast_nullable_to_non_nullable
               as Option<DetailedRockEntity>,
-      distance: distance == freezed
+      distance: null == distance
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
               as Option<double>,
@@ -482,27 +447,27 @@ class _$_DetailedRockState implements _DetailedRockState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DetailedRockState &&
-            const DeepCollectionEquality().equals(other.rock, rock) &&
-            const DeepCollectionEquality().equals(other.distance, distance));
+            other is _$_DetailedRockState &&
+            (identical(other.rock, rock) || other.rock == rock) &&
+            (identical(other.distance, distance) ||
+                other.distance == distance));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(rock),
-      const DeepCollectionEquality().hash(distance));
+  int get hashCode => Object.hash(runtimeType, rock, distance);
 
   @JsonKey(ignore: true)
   @override
-  _$DetailedRockStateCopyWith<_DetailedRockState> get copyWith =>
-      __$DetailedRockStateCopyWithImpl<_DetailedRockState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DetailedRockStateCopyWith<_$_DetailedRockState> get copyWith =>
+      __$$_DetailedRockStateCopyWithImpl<_$_DetailedRockState>(
+          this, _$identity);
 }
 
 abstract class _DetailedRockState implements DetailedRockState {
   const factory _DetailedRockState(
-      {required Option<DetailedRockEntity> rock,
-      required Option<double> distance}) = _$_DetailedRockState;
+      {required final Option<DetailedRockEntity> rock,
+      required final Option<double> distance}) = _$_DetailedRockState;
 
   @override
   Option<DetailedRockEntity> get rock;
@@ -510,6 +475,6 @@ abstract class _DetailedRockState implements DetailedRockState {
   Option<double> get distance;
   @override
   @JsonKey(ignore: true)
-  _$DetailedRockStateCopyWith<_DetailedRockState> get copyWith =>
+  _$$_DetailedRockStateCopyWith<_$_DetailedRockState> get copyWith =>
       throw _privateConstructorUsedError;
 }
