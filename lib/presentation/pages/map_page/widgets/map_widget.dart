@@ -56,6 +56,7 @@ class _MapWidgetState extends State<MapWidget> {
                               ),
                         zoom: state.zoom,
                       ),
+                      doubleClickZoomEnabled: true,
                       minMaxZoomPreference: const MinMaxZoomPreference(9, 18),
                       styleString: _getCurrentTheme(context)
                           ? 'mapbox://styles/aspirity/cke8ds2gt1rjr19qozmvblrr5'
@@ -80,35 +81,31 @@ class _MapWidgetState extends State<MapWidget> {
     setState(() {
       mapController = controller;
     });
-    mapController
-      ..matchMapLanguageWithDeviceDefault()
-      ..setSymbolIconAllowOverlap(true)
-      ..setSymbolIconIgnorePlacement(true)
-      ..onSymbolTapped.add(
-        (symbol) {
-          try {
-            final rockId = symbol.data?['id'] as int?;
-            final rock = context.read<MapBloc>().state.rocks.firstWhere((r) => r.id == rockId);
+    mapController.onSymbolTapped.add(
+      (symbol) {
+        try {
+          final rockId = symbol.data?['id'] as int?;
+          final rock = context.read<MapBloc>().state.rocks.firstWhere((r) => r.id == rockId);
 
-            context.read<MapControlBloc>().add(
-                  MapControlEvent.rockClicked(rock),
-                );
-            _handleSelected(_getCurrentTheme(context));
-          } on FormatException {
-            return;
-          }
+          context.read<MapControlBloc>().add(
+                MapControlEvent.rockClicked(rock),
+              );
+          _handleSelected(_getCurrentTheme(context));
+        } on FormatException {
+          return;
+        }
 
-          mapController.animateCamera(
-            CameraUpdate.newLatLng(
-              symbol.options.geometry ??
-                  const LatLng(
-                    55.915964,
-                    92.738896,
-                  ),
-            ),
-          );
-        },
-      );
+        mapController.animateCamera(
+          CameraUpdate.newLatLng(
+            symbol.options.geometry ??
+                const LatLng(
+                  55.915964,
+                  92.738896,
+                ),
+          ),
+        );
+      },
+    );
   }
 
   LatLng _latlongTransformer(latlong.LatLng coordinates) =>
@@ -151,6 +148,7 @@ class _MapWidgetState extends State<MapWidget> {
   ) async {
     final setMarkerRock =
         context.read<MapControlBloc>().state.setMarkerRock.fold(() => null, (a) => a.id);
+
     await Future.wait(
       mapController.symbols.map(
         (symbol) async {
@@ -176,18 +174,21 @@ class _MapWidgetState extends State<MapWidget> {
 
     await _initMarkerImages();
 
+    await mapController.setSymbolIconAllowOverlap(true);
+    await mapController.setSymbolIconIgnorePlacement(true);
+    await mapController.matchMapLanguageWithDeviceDefault();
+
     await Future.wait(
       rocks.map((e) async {
         await mapController.addSymbol(
           SymbolOptions(
             iconImage: darkTheme ? 'dark_object' : 'light_object',
-            iconSize: 1.2,
             iconAnchor: 'bottom',
+            iconSize: 1.2,
             geometry: LatLng(
               e.latitude,
               e.longitude,
             ),
-            zIndex: 1,
           ),
           <String, int>{'id': e.id},
         );
