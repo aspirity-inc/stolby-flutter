@@ -60,21 +60,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 OnboardingPageWidget(
                   assetName: AppIcons.mapPicture,
                   title: localization?.activity_tutorial_discover_title ?? '',
-                  description:
-                      localization?.activity_tutorial_discover_description ??
-                          '',
+                  description: localization?.activity_tutorial_discover_description ?? '',
                 ),
                 OnboardingPageWidget(
                   assetName: AppIcons.rockPicture,
                   title: localization?.activity_tutorial_find_title ?? '',
-                  description:
-                      localization?.activity_tutorial_find_description ?? '',
+                  description: localization?.activity_tutorial_find_description ?? '',
                 ),
                 OnboardingPageWidget(
                   assetName: AppIcons.phonePicture,
                   title: localization?.activity_tutorial_help_title ?? '',
-                  description:
-                      localization?.activity_tutorial_help_description ?? '',
+                  description: localization?.activity_tutorial_help_description ?? '',
                 ),
               ],
             ),
@@ -96,9 +92,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 }),
                 onRightPressed: () => setState(() {
                   if (currentIndex == 2) {
-                    context
-                        .read<SettingsBloc>()
-                        .add(const SettingsEvent.onboardingVisited());
+                    context.read<SettingsBloc>().add(const SettingsEvent.onboardingVisited());
                     context.router.pop();
                   } else {
                     currentIndex++;
