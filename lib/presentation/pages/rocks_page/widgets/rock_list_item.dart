@@ -43,7 +43,7 @@ class RockListItem extends StatelessWidget {
         child: FadeInAnimation(
           child: InkWell(
             onTap: () => context.router.push(
-              DetailedRockRoute(rockId: index),
+              DetailedRockRoute(rockId: item.id),
             ),
             child: Container(
               height: 188,
@@ -108,18 +108,15 @@ class RockListItem extends StatelessWidget {
                                   ),
                                   BlocBuilder<SettingsBloc, SettingsState>(
                                     buildWhen: (p, c) =>
-                                        p.geolocationEnabled !=
-                                        c.geolocationEnabled,
+                                        p.geolocationEnabled != c.geolocationEnabled,
                                     builder: (context, settingsState) => Text(
-                                      (settingsState.geolocationEnabled &&
-                                                  locationObj != null
+                                      (settingsState.geolocationEnabled && locationObj != null
                                               ? _getDistance(
                                                   locationObj,
                                                   item,
                                                   localization,
                                                 )
-                                              : localization
-                                                  ?.distance_not_defined) ??
+                                              : localization?.distance_not_defined) ??
                                           '',
                                       style: const TextStyle(
                                         color: Colors.white,
