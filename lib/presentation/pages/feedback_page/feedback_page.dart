@@ -113,8 +113,7 @@ class FeedbackPage extends StatelessWidget {
                   horizontal: 16,
                   vertical: 8,
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(24)),
                   color: color,
@@ -146,6 +145,6 @@ class FeedbackPage extends StatelessWidget {
         'body': body,
       },
     );
-    await launch(emailLaunchUri.toString().replaceAll('+', ' '));
+    await launchUrl(Uri.parse(emailLaunchUri.toString().replaceAll('+', ' ')));
   }
 }
